@@ -6,6 +6,7 @@ import About from "./pages/About";
 import CareerPathway from "./pages/CareerPathway";
 import Corporate from "./pages/Corporate";
 import Contact from "./pages/Contact";
+import PathwayDetails from "./pages/PathwayDetails";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="career-pathway" element={<CareerPathway />} />
         <Route path="corporate" element={<Corporate />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="pathway-details" element={<PathwayDetails />} />
       </Routes>
     </div>
   );
