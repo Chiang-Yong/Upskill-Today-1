@@ -5,16 +5,16 @@ const PathwayDetails = () => {
   return (
     <div>
       <Breadcrumb>
-        <Breadcrumb.Item href="career-pathway">Career Pathway</Breadcrumb.Item>
-        <Breadcrumb.Item active href="pathway-details">
+        <Breadcrumb.Item href="careerpathway">Career Pathway</Breadcrumb.Item>
+        <Breadcrumb.Item active href="pathwaydetails">
           Pathway Details
         </Breadcrumb.Item>
       </Breadcrumb>
       <Card>
-        <Card.Title>Pathway Details</Card.Title>
-        <Card.Text><a href='java-course'>Java Course</a></Card.Text>
-        <Card.Text><a href='javascript-course'>Javascript Course</a></Card.Text>
-        <Card.Text><a href='devOps-course'>DevOps Course</a></Card.Text>
+        <Card.Title className='d-flex justify-content-center' style={{color:'#ff7b00'}}>Pathway Details</Card.Title>
+        <Card.Text className='d-flex justify-content-center'><a href='javacourse'>Java Course</a></Card.Text>
+        <Card.Text className='d-flex justify-content-center'><a href='javascriptcourse'>Javascript Course</a></Card.Text>
+        <Card.Text className='d-flex justify-content-center'><a href='devOpscourse'>DevOps Course</a></Card.Text>
       </Card>
      {/* <Button size="lg" href="career-pathway">
         Career Pathway

@@ -3,7 +3,7 @@ import { Card } from "react-bootstrap";
 
 const CorpStyle = {
   main: {
-    backgroundColor: "#000",
+    backgroundColor: "#fff9eb",
     height: "100vh",
   },
   title: {
@@ -12,7 +12,7 @@ const CorpStyle = {
   },
 
   text: {
-    color: "#fff",
+    color: "#000",
     marginTop: "30px",
   },
 };
@@ -20,10 +20,10 @@ const Corporate = () => {
   return (
     <div>
       <Card style={CorpStyle.main}>
-        <Card.Title style={CorpStyle.title}>
+        <Card.Title style={CorpStyle.title} className="d-flex justify-content-center shadow-lg">
           <h1>Corporate</h1>
         </Card.Title>
-        <Card.Text style={CorpStyle.text}>
+        <Card.Text style={CorpStyle.text} className="d-flex justify-content-center" variant="dark">
           Upskill Today has a pool of committed, motivated and reliable IT
           professionals and ready to deploy to your organisation.
         </Card.Text>

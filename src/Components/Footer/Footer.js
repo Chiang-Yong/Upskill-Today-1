@@ -58,7 +58,7 @@ const Footer = () => {
 
                   <a
                     href="https://www.linkedin.com/company/upskilltoday"
-                    className=" btn btn-floating text-white"
+                    className="btn btn-floating text-white"
                   >
                     <i
                       className="bi bi-linkedin"

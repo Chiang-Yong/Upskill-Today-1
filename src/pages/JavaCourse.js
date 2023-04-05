@@ -5,13 +5,13 @@ const JavaCourse = () => {
   return (
     <div>
         <Breadcrumb>
-        <Breadcrumb.Item href="career-pathway">Career Pathway</Breadcrumb.Item>
-        <Breadcrumb.Item href="pathway-details">
+        <Breadcrumb.Item href="careerpathway">Career Pathway</Breadcrumb.Item>
+        <Breadcrumb.Item href="pathwaydetails">
           Pathway Details
         </Breadcrumb.Item>
         <Breadcrumb.Item active>Java Course</Breadcrumb.Item>
       </Breadcrumb>
-      <h1>Java Course</h1>
+      <h1 className='d-flex justify-content-center'>Java Course</h1>
       </div>
   )
 }
