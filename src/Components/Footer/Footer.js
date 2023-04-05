@@ -51,7 +51,7 @@ const Footer = () => {
                     className=" btn btn-floating text-white"
                   >
                     <i
-                      className="bi bi-facebook"
+                      className="bi bi-facebook hover-effect"
                       style={{ fontSize: "1.5rem" }}
                     ></i>
                   </a>
@@ -61,7 +61,7 @@ const Footer = () => {
                     className="btn btn-floating text-white"
                   >
                     <i
-                      className="bi bi-linkedin"
+                      className="bi bi-linkedin hover-effect"
                       style={{ fontSize: "1.5rem" }}
                     ></i>
                   </a>
@@ -71,7 +71,7 @@ const Footer = () => {
                     className=" btn btn-floating text-white"
                   >
                     <i
-                      className="bi bi-youtube"
+                      className="bi bi-youtube hover-effect"
                       style={{ fontSize: "1.5rem" }}
                     ></i>
                   </a>

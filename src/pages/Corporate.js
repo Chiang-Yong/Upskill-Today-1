@@ -4,7 +4,7 @@ import { Card } from "react-bootstrap";
 const CorpStyle = {
   main: {
     backgroundColor: "#fff9eb",
-    height: "100vh",
+    height: "50vh",
   },
   title: {
     color: "#ff7b00",
