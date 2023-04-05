@@ -103,7 +103,7 @@ const Footer = () => {
                   <Link
                     className="text-white"
                     style={{ textDecoration: "none", fontWeight: "500" }}
-                    to="/Pathways"
+                    to="/CareerPathway"
                   >
                     Career Pathways
                   </Link>

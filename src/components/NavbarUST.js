@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
-import Upskill from "../images/UpskillToday Logo.bmp";
+import Upskill from "../images/WhiteLogo.png";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -20,7 +20,18 @@ const NavbarUST = () => {
     <Navbar bg="dark" expand="lg" variant="dark">
       <Container fluid>
         <Navbar.Brand href="/">
-          <img src={Upskill} alt="logo" className="d-inline-block align-top" />
+          <img
+            src={Upskill}
+            alt="logo"
+            className="d-inline-block align-top"
+            style={{
+              display:'block',
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              height: "60px",
+              width: "200px",
+            }}
+          />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -36,9 +47,9 @@ const NavbarUST = () => {
                 backgroundColor: isHovering ? "blue" : "#ff7b00",
                 border: "none",
                 outline: "none",
-                alignItems:"center",
-                justifyContent:"center",
-                whiteSpace:"nowrap",
+                alignItems: "center",
+                justifyContent: "center",
+                whiteSpace: "nowrap",
               }}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
