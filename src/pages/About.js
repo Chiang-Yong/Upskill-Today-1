@@ -13,7 +13,7 @@ const StyleAbout = {
   },
 
   cardHeader: {
-    marignTop: '50px',
+    marginTop: '50px',
     backgroundColor: '',
     color: 'white',
 
@@ -22,14 +22,14 @@ const StyleAbout = {
   body:{
     color: 'white',
     backgroundColor: '',
+    marginTop:'50px',
   }
 };
 
 const About = () => {
   return (
-    
         <Card className='bg-dark text-white' style={StyleAbout.main}>
-          <Card.Img src='holder.js/100pxx270' alt='Card Image' rounded='true'/>
+          <Card.Img src='holder.js/100pxx270' alt='Card Image Placeholder'/>
           <Card.ImgOverlay>
           <Card.Title style={StyleAbout.cardHeader}><h1>About Us</h1></Card.Title>
           <Card.Text style={StyleAbout.body}>
@@ -38,7 +38,6 @@ const About = () => {
           </Card.Text>
           </Card.ImgOverlay>
         </Card>
-    
   );
 };
 
