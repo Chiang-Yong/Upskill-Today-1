@@ -76,10 +76,9 @@ const Logo = styled(Link)`
   height: 60px;
   width: 200px;
   text-decoration: none;
-  margin-left:50px;
+  margin-left: 50px;
   align-items: center;
   justify-content: center;
-  
 `;
 
 const NavbarUST = () => {
