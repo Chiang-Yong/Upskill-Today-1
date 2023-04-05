@@ -38,8 +38,9 @@ const NavStyle = {
 
   link: {
     alignItems: "center",
-    justifyContent: "Center",
+    justifyContent: "center",
     textDecoration: "none",
+    marginLeft: "0px",
 
     "&:hover": {
       color: "#ff7b00",
@@ -52,6 +53,7 @@ const NavLink = css`
   font-weight: bold;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
@@ -74,6 +76,9 @@ const Logo = styled(Link)`
   height: 60px;
   width: 200px;
   text-decoration: none;
+  margin-left:50px;
+  align-items: center;
+  justify-content: center;
   
 `;
 

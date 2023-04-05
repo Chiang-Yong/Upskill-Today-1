@@ -6,20 +6,19 @@ const PathwayDetails = () => {
     <div>
       <Breadcrumb>
         <Breadcrumb.Item href="career-pathway">Career Pathway</Breadcrumb.Item>
-        <Breadcrumb.Item href="pathway-details">
+        <Breadcrumb.Item active href="pathway-details">
           Pathway Details
         </Breadcrumb.Item>
-        <Breadcrumb.Item active>Java</Breadcrumb.Item>
       </Breadcrumb>
       <Card>
         <Card.Title>Pathway Details</Card.Title>
-        <Card.Text>Java Pathway</Card.Text>
-        <Card.Text>Javascript</Card.Text>
-        <Card.Text>DevOps</Card.Text>
+        <Card.Text><a href='java-course'>Java Course</a></Card.Text>
+        <Card.Text><a href='javascript-course'>Javascript Course</a></Card.Text>
+        <Card.Text><a href='devOps-course'>DevOps Course</a></Card.Text>
       </Card>
-      <Button size="lg" href="career-pathway">
+     {/* <Button size="lg" href="career-pathway">
         Career Pathway
-      </Button>
+      </Button> */} 
     </div>
   );
 };
