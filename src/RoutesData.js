@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import Pathways from "./Components/Pathways/Pathways";
 
 import Home from "./pages/Home/Home";
-import About from "./pages/About";
+import About from "./pages/About/About";
 import CareerPathway from "./pages/CareerPathway";
 import Corporate from "./pages/Corporate";
 import Contact from "./pages/Contact";
