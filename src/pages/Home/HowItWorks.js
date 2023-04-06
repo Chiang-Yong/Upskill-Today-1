@@ -1,8 +1,13 @@
 import React from "react";
+import { Container } from "react-bootstrap";
+
 const HowItWorks = () => {
-    <div>
-        <h1 style={{ color: 'black' }}>HowItWorks</h1>
-    </div>
+    return (
+        <div>
+            <h1>HowItWorks</h1>
+        </div>
+    )
+
 }
 
 export default HowItWorks;

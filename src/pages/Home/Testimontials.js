@@ -1,7 +1,8 @@
 import React from "react";
 const Testimontials = () => {
-
-    <h1>Testimontials</h1>
+    return (
+        <h1> Testimontials</h1>
+    )
 
 }
 

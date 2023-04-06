@@ -11,6 +11,7 @@ import Testimontials from "./Testimontials";
 const Home = () => {
   return (
     <>
+
       <HomeCarousel />
 
       <HowItWorks />
