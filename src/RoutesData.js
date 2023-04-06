@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import Pathways from "./Components/Pathways/Pathways";
 
 import Home from "./pages/Home/Home";
-import About from "./pages/About";
+import About from "./pages/About/About";
 import CareerPathway from "./pages/CareerPathway";
 import Corporate from "./pages/Corporate";
 import Contact from "./pages/Contact";
@@ -15,7 +15,7 @@ import PathwayDetails from "./pages/PathwayDetails";
 import JavaCourse from "./pages/JavaCourse";
 import JavascriptCourse from "./pages/JavascriptCourse";
 import DevOpsCourse from "./pages/DevOpsCourse";
-import NavbarUST from "./components/NavbarUST";
+import NavbarUST from "./components/Navbar/NavbarUST";
 import Footer from "./components/Footer/Footer";
 
 const RoutesData = () => {

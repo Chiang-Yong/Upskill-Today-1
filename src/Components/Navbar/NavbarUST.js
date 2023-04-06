@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
-import Upskill from "../images/WhiteLogo.png";
+import Upskill from "../../images/WhiteLogo.png";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import "./navbar.css";
 
 const NavbarUST = () => {
   const [isHovering, setIsHovering] = useState(false);
@@ -23,19 +24,12 @@ const NavbarUST = () => {
           <img
             src={Upskill}
             alt="logo"
-            className="d-inline-block align-top"
-            style={{
-              display:'block',
-              backgroundSize: "contain",
-              backgroundRepeat: "no-repeat",
-              height: "60px",
-              width: "200px",
-            }}
+            className="d-inline-block align-top navbar-image "
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto d-flex fs-5">
+          <Nav className="ms-auto d-flex fw-bold fs-5">
             <Nav.Link href="home">Home</Nav.Link>
             <Nav.Link href="about">About</Nav.Link>
             <Nav.Link href="careerpathway">Career Pathway</Nav.Link>
@@ -45,16 +39,11 @@ const NavbarUST = () => {
             <Button
               style={{
                 backgroundColor: isHovering ? "blue" : "#ff7b00",
-                border: "none",
-                outline: "none",
-                alignItems: "center",
-                justifyContent: "center",
-                whiteSpace: "nowrap",
               }}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
               href="contact"
-              className="me-4 fs-5"
+              className="me-4 fs-5 navbar-button"
             >
               Contact Us
             </Button>
