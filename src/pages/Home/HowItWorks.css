@@ -1,0 +1,33 @@
+.howitworks-main {
+    background-color: black;
+    color:white;
+    height:auto;
+    padding-bottom: 20px;
+    padding-top: 20px;
+
+
+}
+
+.howitworks-title {
+    color:goldenrod;
+}
+
+.howitworks-image {
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 45px;
+    width: 45px;
+}
+
+.howitworks-text {
+    color: #000;
+}
+
+h1 {
+    color:#fff;
+}
+
+p {
+    color: #fff;
+}

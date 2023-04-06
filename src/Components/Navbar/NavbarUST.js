@@ -4,7 +4,7 @@ import Upskill from "../../images/WhiteLogo.png";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import "./Navbar.css";
+import "./navbar.css";
 
 const NavbarUST = () => {
   const [isHovering, setIsHovering] = useState(false);
@@ -24,12 +24,7 @@ const NavbarUST = () => {
           <img
             src={Upskill}
             alt="logo"
-            display="block"
-            backgroundSize="contain"
-            backgroundRepeat="no-repeat"
-            height="60px"
-            width="200px"
-            className="d-inline-block align-top"
+            className="d-inline-block align-top navbar-image "
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -44,16 +39,11 @@ const NavbarUST = () => {
             <Button
               style={{
                 backgroundColor: isHovering ? "blue" : "#ff7b00",
-                border: "none",
-                outline: "none",
-                alignItems: "center",
-                justifyContent: "center",
-                whiteSpace: "nowrap",
               }}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
               href="contact"
-              className="me-4 fs-5"
+              className="me-4 fs-5 navbar-button"
             >
               Contact Us
             </Button>
