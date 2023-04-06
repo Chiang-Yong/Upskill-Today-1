@@ -15,7 +15,7 @@ import PathwayDetails from "./pages/PathwayDetails";
 import JavaCourse from "./pages/JavaCourse";
 import JavascriptCourse from "./pages/JavascriptCourse";
 import DevOpsCourse from "./pages/DevOpsCourse";
-import NavbarUST from "./components/NavbarUST";
+import NavbarUST from "./components/Navbar/NavbarUST";
 import Footer from "./components/Footer/Footer";
 
 const RoutesData = () => {
