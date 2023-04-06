@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import homemain from "../../images/upskill-main.jpeg";
-
 import homebc from "../../images/home-b2c.png";
 import homebb from "../../images/team-meeting.jpeg";
 import "./homecarousel.css";
@@ -28,7 +27,7 @@ const HomeCarousel = () => {
           <h3 className=" carousel-text pb-4 d-none d-md-block">
             Begin The First Step Of Your IT Journey With Us
           </h3>
-          <Button className=" carousel-call">
+          <Button className="carousel-call">
             <Link
               className="text-decoration-none text-white"
               to="/CareerPathway"
@@ -49,7 +48,7 @@ const HomeCarousel = () => {
           <h3 className=" carousel-text pb-4  d-none d-md-block">
             Get To Know More About Us
           </h3>
-          <Button className=" carousel-call">
+          <Button className="carousel-call">
             <Link className="text-decoration-none text-white" to="/About">
               About
             </Link>

@@ -32,7 +32,7 @@
 }
 
 .carousel-call {
-  background-color: #ff7b00;
+  background-color: #ff7b00 !important;
   color: white;
   -webkit-transition: font-size 0.5s;
   transition: font-size 0.5s;
