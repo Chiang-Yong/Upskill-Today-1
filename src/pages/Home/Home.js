@@ -6,6 +6,20 @@ const Home = () => {
   return (
     <>
       <HomeCarousel />
+
+      <HowItWorks />
+
+      <Statistics />
+
+      <FindOutMore />
+
+      <Companies />
+
+      <Testimontials />
+
+
+
+
     </>
   );
 };
