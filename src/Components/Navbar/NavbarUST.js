@@ -36,14 +36,18 @@ const NavbarUST = () => {
             <Nav.Link href="corporate" className="me-5">
               Corporate
             </Nav.Link>
-            <Button
+            <Button className="me-4 fs-5 navbar-button"
               style={{
                 backgroundColor: isHovering ? "blue" : "#ff7b00",
+                border: 'none',
+                outline: 'none',
+                alignItems: 'center',
+                justifyContent: 'center',
+                whiteSpace: 'nowrap',
               }}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
               href="contact"
-              className="me-4 fs-5 navbar-button"
             >
               Contact Us
             </Button>

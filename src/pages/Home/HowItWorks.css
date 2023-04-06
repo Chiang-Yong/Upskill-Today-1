@@ -4,8 +4,10 @@
     height:auto;
     padding-bottom: 20px;
     padding-top: 20px;
+}
 
-
+.howitworks-card {
+    height: 10rem;
 }
 
 .howitworks-title {
