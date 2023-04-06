@@ -40,9 +40,9 @@ const Companies = () => {
                     display: " block",
                     backgroundSize: "contain",
                     backgroundRepeat: "no-repeat",
-                    height: "145px",
+                    height: "150px",
                     maxWidth: "350px",
-                    marginTop: "15px",
+                    marginTop: "80px",
                     marginBottom: "10px",
                   }}
                 />
