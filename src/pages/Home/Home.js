@@ -6,6 +6,7 @@ import Statistics from "./Statistics";
 import FindOutMore from "./FindOutMore";
 import Companies from "./Companies";
 import Testimontials from "./Testimontials";
+import CompanyScroll from "./CompanyScroll.tsx";
 
 
 const Home = () => {
@@ -21,6 +22,8 @@ const Home = () => {
       <FindOutMore />
 
       <Companies />
+
+      <CompanyScroll />
 
       <Testimontials />
 

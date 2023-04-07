@@ -37,7 +37,7 @@ const Companies = () => {
                   src={slide.image}
                   alt={slide.alt}
                   style={{
-                    display: " block",
+                    display: "inline-block",
                     backgroundSize: "contain",
                     backgroundRepeat: "no-repeat",
                     height: "150px",

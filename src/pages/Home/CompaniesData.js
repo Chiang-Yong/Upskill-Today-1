@@ -15,6 +15,8 @@ import Image14 from "../../images/TataLogo.png";
 import Image15 from "../../images/TMLogo.png";
 import Image16 from "../../images/TriumphLogo.png";
 import Image17 from "../../images/UnileverLogo.png";
+import Image18 from "../../images/UtopiaLogo.png";
+import Image19 from "../../images/VisyLogo.png";
 
 export const companiesData = [
   {
@@ -101,5 +103,15 @@ export const companiesData = [
     title: "Unilever",
     image: Image17,
     alt: "Unilever Logo",
+  },
+  {
+    title: "Utopia Logo",
+    image: Image18,
+    alt: "Utopia Logo",
+  },
+  {
+    title: "Visy Logo",
+    image: Image19,
+    alt: "Vishy Logo",
   },
 ];
