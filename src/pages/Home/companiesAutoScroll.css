@@ -32,7 +32,7 @@
 
 @keyframes primary {
   from {
-    left: -20%;
+    left: -10%;
   }
   to {
     left: -100%;
@@ -41,7 +41,7 @@
 
 @keyframes secondary {
   from {
-    left: 80%;
+    left: 90%;
   }
   to {
     left: 0%;

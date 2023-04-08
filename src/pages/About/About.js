@@ -3,7 +3,8 @@ import React from 'react'
 import AboutUsCarousel from "./AboutUsCarousel";
 import VisionMission from "./VisionMission";
 import WhatIsUpSkilled from "./WhatIsUpSkilled";
-import Testimontials from "./Testimontials"
+import WhyUpskill from "./WhyUpskill";
+import Testimontials from "./Testimontials";
 
 const About = () => {
     return (
@@ -13,6 +14,8 @@ const About = () => {
             <VisionMission />
 
             <WhatIsUpSkilled />
+
+            <WhyUpskill />
 
             <Testimontials />
 
