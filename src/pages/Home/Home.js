@@ -4,8 +4,8 @@ import HomeCarousel from "./HomeCarousel";
 import HowItWorks from "./HowItWorks";
 import Statistics from "./Statistics";
 import FindOutMore from "./FindOutMore";
-import Companies from "./Companies";
 import Testimontials from "./Testimontials";
+import CompaniesAutoScroll from "./CompaniesAutoScroll";
 
 
 const Home = () => {
@@ -20,8 +20,8 @@ const Home = () => {
 
       <FindOutMore />
 
-      <Companies />
-
+      <CompaniesAutoScroll />
+    
       <Testimontials />
 
     </>
