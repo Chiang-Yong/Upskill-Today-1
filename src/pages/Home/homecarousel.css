@@ -1,19 +1,22 @@
 .slide-img {
-  object-position: center;
+  height: 100%;
+  /* object-position: center; */
   object-fit: cover;
-  overflow: hidden;
+  /* overflow: hidden; */
+  filter: brightness(0.6);
 }
 
 .carousel-caption {
-  top: 50%;
+  top: 0;
+  /* margin-top:; */
   transform: translateY(-50%);
   bottom: inital;
 }
 .carousel-item {
-  height: 93vh;
-  -webkit-transform-style: preserve-3d;
+  height: 80vh;
+  /* -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
-  transform-style: preserve-3d;
+  transform-style: preserve-3d; */
 }
 
 .carousel-title {
@@ -32,7 +35,7 @@
 }
 
 .carousel-call {
-  background-color: #ff7b00;
+  background-color: #ff7b00 !important;
   color: white;
   -webkit-transition: font-size 0.5s;
   transition: font-size 0.5s;

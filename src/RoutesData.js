@@ -1,11 +1,5 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import Home from "./Components/Home/Home";
-// import About from "./Components/About/About";
-// import Contact from "./Components/Contact/Contact";
-// import Corporate from "./Components/Corporate/Corporate";
-// import Pathways from "./Components/Pathways/Pathways";
-
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import CareerPathway from "./pages/CareerPathway";
@@ -33,7 +27,6 @@ const RoutesData = () => {
           <Route path="/JavascriptCourse" element={<JavascriptCourse />} />
           <Route path="/DevOpsCourse" element={<DevOpsCourse />} />
           <Route path="/PathwayDetails" element={<PathwayDetails />} />
-
           <Route path="/Corporate" element={<Corporate />} />
           <Route path="/Contact" element={<Contact />} />
         </Routes>
