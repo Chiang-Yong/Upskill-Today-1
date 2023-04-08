@@ -4,9 +4,8 @@ import HomeCarousel from "./HomeCarousel";
 import HowItWorks from "./HowItWorks";
 import Statistics from "./Statistics";
 import FindOutMore from "./FindOutMore";
-import Companies from "./Companies";
 import Testimontials from "./Testimontials";
-import CompanyScroll from "./CompanyScroll.tsx";
+import CompaniesAutoScroll from "./CompaniesAutoScroll";
 
 
 const Home = () => {
@@ -21,10 +20,8 @@ const Home = () => {
 
       <FindOutMore />
 
-      <Companies />
-
-      <CompanyScroll />
-
+      <CompaniesAutoScroll />
+    
       <Testimontials />
 
     </>
