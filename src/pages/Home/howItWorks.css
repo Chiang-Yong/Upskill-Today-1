@@ -24,6 +24,7 @@
 
 .howitworks-text {
     color: #000;
+    font-size: 16px;
 }
 
 h1 {
@@ -32,4 +33,5 @@ h1 {
 
 p {
     color: #fff;
+    
 }
