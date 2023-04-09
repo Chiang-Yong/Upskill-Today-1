@@ -14,6 +14,7 @@ const AboutUsCarousel = () => {
       <Carousel.Item interval={2000}>
         <img
           className="d-block w-100"
+          class='about-img'
           src={ImgAbout2}
           alt="First About Us Slide"
         />

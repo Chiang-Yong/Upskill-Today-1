@@ -7,7 +7,7 @@
 }
 
 .carousel-caption {
-  top: 0;
+  top: -80;
   /* margin-top:; */
   transform: translateY(-50%);
   bottom: inital;
