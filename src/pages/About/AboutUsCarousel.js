@@ -1,7 +1,7 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
-import ImgAbout1  from "../../images/ImgAbout1.jpg";
-import ImgAbout2  from "../../images/ImgAbout2.jpg";
+import ImgAbout1 from "../../images/ImgAbout1.jpg";
+import ImgAbout2 from "../../images/ImgAbout2.jpg";
 import VisionMission from "./VisionMission";
 import Testimontials from "./Testimontials";
 import WhatIsUpSkilled from "./WhatIsUpSkilled";
@@ -18,13 +18,14 @@ const AboutUsCarousel = () => {
           alt="About Us 2"
         />
         <Carousel.Caption>
-          <h1 className="fw-bold fs-3">About US</h1>
-          <p className="fw-bold">
+         
+          <h1 className="fw-bold fs-1 about-title">About Us</h1>
+          <p className="fw-bold fs-4 about-description">
             An innovative and highly curated ​Hire, Upskill & Deploy Program
           </p>
         </Carousel.Caption>
       </Carousel.Item>
-        <Carousel.Item interval={5000}>
+      <Carousel.Item interval={5000}>
         <VisionMission />
       </Carousel.Item>
       <Carousel.Item interval={5000}>
