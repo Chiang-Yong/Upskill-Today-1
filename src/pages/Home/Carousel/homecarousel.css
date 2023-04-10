@@ -49,3 +49,14 @@
   height: 10px;
   border-radius: 50%;
 }
+
+.carousel .carousel-control-next-icon {
+  background-image: url("../../../images/chevron-right.svg");
+  width: 50px;
+  height: 50px;
+}
+.carousel .carousel-control-prev-icon {
+  background-image: url("../../../images/chevron-left.svg");
+  width: 50px;
+  height: 50px;
+}
