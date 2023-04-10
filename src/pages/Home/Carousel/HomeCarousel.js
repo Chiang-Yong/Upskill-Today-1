@@ -14,7 +14,12 @@ const HomeCarousel = () => {
     setIndex(selectedIndex);
   };
   return (
-    <Carousel fade activeIndex={index} onSelect={handleSelect}>
+    <Carousel
+      fade
+      activeIndex={index}
+      onSelect={handleSelect}
+      className="carousel-home"
+    >
       <Carousel.Item>
         <img
           className="d-block w-100 slide-img"

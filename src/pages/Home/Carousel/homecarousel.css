@@ -9,6 +9,7 @@
   transform: translateY(-50%);
   bottom: inital;
 }
+
 .carousel-item {
   height: 87vh;
 }
@@ -26,7 +27,7 @@
   text-shadow: 0 0 20px black;
 }
 
-.carousel .carousel-call {
+.carousel-home .carousel-call {
   background-color: #ff7b00;
   color: white;
   border-color: #ff7b00;
@@ -36,7 +37,7 @@
   padding: 0.8rem;
 }
 
-.carousel .carousel-call:hover {
+.carousel-home .carousel-call:hover {
   background-color: #a60037;
   border-color: #a60037;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
@@ -47,4 +48,16 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
+}
+
+.carousel .carousel-control-next-icon {
+  background-image: url("../../../images/chevron-right.svg");
+  height: 50px;
+  width: 50px;
+}
+
+.carousel .carousel-control-prev-icon {
+  background-image: url("../../../images/chevron-left.svg");
+  height: 50px;
+  width: 50px;
 }
