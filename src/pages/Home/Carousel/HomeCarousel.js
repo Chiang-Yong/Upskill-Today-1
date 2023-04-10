@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import homemain from "../../images/upskill-main.jpeg";
-import homebc from "../../images/home-b2c.png";
-import homebb from "../../images/team-meeting.jpeg";
+import homemain from "../../../images/upskill-main.jpeg";
+import homebc from "../../../images/home-b2c.png";
+import homebb from "../../../images/home-tgt.jpeg";
 import "./homecarousel.css";
 import Carousel from "react-bootstrap/Carousel";
-import { Button } from "react-bootstrap";
-
+import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 
 const HomeCarousel = () => {
@@ -23,16 +22,16 @@ const HomeCarousel = () => {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h1 className="carousel-title">PATHWAYS</h1>
-          <h3 className=" carousel-text pb-4 d-none d-md-block">
-            Begin The First Step Of Your IT Journey With Us
+          <h1 className="carousel-title">UPSKILL TODAY</h1>
+          <h3 className="carousel-text pb-4 d-none d-md-block">
+            Begin Your IT Journey With Us
           </h3>
           <Button className="carousel-call">
             <Link
               className="text-decoration-none text-white"
-              to="/CareerPathway"
+              to="/CareerPathways"
             >
-              Get Started
+              Find Out More
             </Link>
           </Button>
         </Carousel.Caption>
@@ -44,13 +43,13 @@ const HomeCarousel = () => {
           alt="Second slide"
         />
         <Carousel.Caption>
-          <h1 className="carousel-title">About Upskill</h1>
-          <h3 className=" carousel-text pb-4  d-none d-md-block">
-            Get To Know More About Us
+          <h1 className="carousel-title">UPSKILL TODAY</h1>
+          <h3 className="carousel-text pb-4  d-none d-md-block">
+            Begin Your IT Journey With Us
           </h3>
           <Button className="carousel-call">
-            <Link className="text-decoration-none text-white" to="/About">
-              About
+            <Link className="text-decoration-none text-white" to="/Services">
+              Find Out More
             </Link>
           </Button>
         </Carousel.Caption>
@@ -62,13 +61,13 @@ const HomeCarousel = () => {
           alt="Third slide"
         />
         <Carousel.Caption>
-          <h1 className="carousel-title">CORPORATE</h1>
+          <h1 className="carousel-title">UPSKILL TODAY</h1>
           <h3 className=" carousel-text pb-4 d-none d-md-block">
-            Work With Us
+            Begin Your IT Journey With Us
           </h3>
-          <Button className="carousel-call">
-            <Link className="text-decoration-none text-white" to="/Corporate">
-              Corporate
+          <Button className=" carousel-call">
+            <Link className="text-decoration-none text-white" to="/Join">
+              Find Out More
             </Link>
           </Button>
         </Carousel.Caption>

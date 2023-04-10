@@ -1,0 +1,32 @@
+.statistics {
+    background-color: #fff9eb;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.statistics .row {
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+.statistics .card {
+    background-color: #fff9eb;
+    border: 0px;
+
+}
+
+
+.statistics .card-body {
+    background-color: #fff9eb;
+
+}
+
+.statistics .card-title {
+    color: #ff7b00;
+    font-size: 45px;
+    font-weight: 1000;
+}
+
+.statistics .card-text {
+    color: #000000;
+}
