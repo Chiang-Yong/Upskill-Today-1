@@ -13,7 +13,7 @@ const AboutUsCarousel = () => {
     <Carousel className="about-section">
       <Carousel.Item interval={2000}>
         <img
-          className="d-block w-100 about-img"
+          className="d-block w-100"
           src={ImgAbout2}
           alt="About Us 2"
         />
