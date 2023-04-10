@@ -49,15 +49,3 @@
   height: 10px;
   border-radius: 50%;
 }
-
-.carousel .carousel-control-next-icon {
-  background-image: url("../../../images/chevron-right.svg");
-  height: 50px;
-  width: 50px;
-}
-
-.carousel .carousel-control-prev-icon {
-  background-image: url("../../../images/chevron-left.svg");
-  height: 50px;
-  width: 50px;
-}
