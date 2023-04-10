@@ -25,7 +25,7 @@ import Image19 from "../../images/VisyLogo.png";
 
 const CompaniesAutoScroll = () => {
   return (
-    <div className='ms-auto'>
+    <div className='companies ms-auto'>
       <h1 className='text-center' style={{color:'black'}}>Come Aboard With Top Tech Companies</h1>         
       <div className='scroll-parent' >
         <div className='scroll-element primary'>
@@ -47,9 +47,7 @@ const CompaniesAutoScroll = () => {
           <img src={Image16} alt="accenture" />
           <img src={Image17} alt="accenture" />
           <img src={Image18} alt="accenture" />
-          <img src={Image19} alt="accenture" />
-          
-                       
+          <img src={Image19} alt="accenture" />             
         </div>
      <div className='scroll-element secondary'>
           <img src={Image1} alt="accenture" />
@@ -70,12 +68,8 @@ const CompaniesAutoScroll = () => {
           <img src={Image16} alt="accenture" />
           <img src={Image17} alt="accenture" />
           <img src={Image18} alt="accenture" />
-          <img src={Image19} alt="accenture" />
-                       
-        </div> 
-        
-       
-                    
+          <img src={Image19} alt="accenture" />                       
+        </div>     
       </div>
     </div>
   )

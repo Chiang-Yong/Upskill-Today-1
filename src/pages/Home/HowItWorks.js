@@ -1,6 +1,6 @@
 import React from "react";
 import "./howItWorks.css";
-import { Col, Row, Card, CardGroup, Container } from "react-bootstrap";
+import { Col, Row, Card, Container } from "react-bootstrap";
 import HireIcon from "../../images/HireIcon.png";
 import TrainIcon from "../../images/TrainIcon.png";
 import DeployIcon from "../../images/DeployIcon.png";
@@ -35,7 +35,8 @@ const HowItWorks = () => {
                 <Card.Title className="text-center fs-3 fw-bold howitworks-title">
                   Hire
                 </Card.Title>
-                <Card.Text className="text-center fw-bold howitworks-text">
+                <Card.Text className="text-center fw-bold"
+                  style={{color:'black', fontSize:'18px',}} >
                   Select top consultants from our pool of talent to join your
                   project
                 </Card.Text>
@@ -62,7 +63,8 @@ const HowItWorks = () => {
                 <Card.Title className="text-center fs-3 fw-bold howitworks-title">
                   Train
                 </Card.Title>
-                <Card.Text className="text-center fw-bold howitworks-text">
+                <Card.Text className="text-center fw-bold" 
+                style={{color:'black', fontSize:'18px',}}>
                   Your selected consultants are upskilled to meet your specific
                   skill requirements
                 </Card.Text>
@@ -91,7 +93,8 @@ const HowItWorks = () => {
                 <Card.Title className="text-center fs-3 fw-bold howitworks-title">
                   Deploy
                 </Card.Title>
-                <Card.Text className="text-center fw-bold howitworks-text">
+                <Card.Text className="text-center fw-bold"
+                  style={{color:'black', fontSize:'18px',}}>
                   Your consultants will work on your project while being
                   mentored by our coaches
                 </Card.Text>
