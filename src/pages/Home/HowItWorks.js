@@ -36,7 +36,7 @@ const HowItWorks = () => {
                   Hire
                 </Card.Title>
                 <Card.Text className="text-center fw-bold"
-                  style={{color:'black', fontSize:'18px',}} >
+                  style={{color:'black', fontSize:'16px',}} >
                   Select top consultants from our pool of talent to join your
                   project
                 </Card.Text>
@@ -64,7 +64,7 @@ const HowItWorks = () => {
                   Train
                 </Card.Title>
                 <Card.Text className="text-center fw-bold" 
-                style={{color:'black', fontSize:'18px',}}>
+                style={{color:'black', fontSize:'16px',}}>
                   Your selected consultants are upskilled to meet your specific
                   skill requirements
                 </Card.Text>
@@ -94,7 +94,7 @@ const HowItWorks = () => {
                   Deploy
                 </Card.Title>
                 <Card.Text className="text-center fw-bold"
-                  style={{color:'black', fontSize:'18px',}}>
+                  style={{color:'black', fontSize:'16px',}}>
                   Your consultants will work on your project while being
                   mentored by our coaches
                 </Card.Text>
