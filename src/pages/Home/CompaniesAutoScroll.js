@@ -1,7 +1,5 @@
 import React from 'react'
-import { Container } from 'react-bootstrap'
 import './companiesAutoScroll.css';
-import { companiesData } from './CompaniesData';
 
 import Image1 from "../../images/AccentureLogo.png";
 import Image2 from "../../images/CemexLogo.png";
@@ -27,8 +25,8 @@ const CompaniesAutoScroll = () => {
   return (
     <div className='companies ms-auto'>
       <h1 className='text-center' style={{color:'black'}}>Come Aboard With Top Tech Companies</h1>         
-      <div className='scroll-parent' >
-        <div className='scroll-element primary'>
+      <div className='scroll-parent artist_media content' >
+        <div className='scroll-element primary img-fluid'>
           <img src={Image1} alt="accenture" />
           <img src={Image2} alt="accenture" />
           <img src={Image3} alt="accenture" />
@@ -49,7 +47,7 @@ const CompaniesAutoScroll = () => {
           <img src={Image18} alt="accenture" />
           <img src={Image19} alt="accenture" />             
         </div>
-     <div className='scroll-element secondary'>
+        <div className='scroll-element secondary img-fluid'>
           <img src={Image1} alt="accenture" />
           <img src={Image2} alt="accenture" />
           <img src={Image3} alt="accenture" />
