@@ -1,0 +1,43 @@
+.what-upskill {
+    height: 100%;
+    max-height: 1000px;
+    display: block;
+  }
+  
+  .what-upskill img{
+    height: auto;
+    width:45%;
+    object-fit: cover;
+    filter: brightness(0.8);
+    display:inline-block;
+    margin-top: -15%;
+    position:relative;
+    
+        }
+  
+
+
+  @media only screen and (min-width:768px) {
+    img {
+        width: 20%;
+        margin-top: -20%;
+    }
+    
+  }
+
+  .what-upskill .centered {
+    position: relative;
+    margin-left: 47%;
+    margin-top: -40%;
+}
+
+.what-upskill h1 {
+    font-weight: 800;
+    color:#ff7b00;
+    text-transform: uppercase;
+    text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.6);
+}
+
+.what-upskill p {
+    font-weight: 700;
+}
