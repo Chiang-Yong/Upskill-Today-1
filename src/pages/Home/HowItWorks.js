@@ -7,28 +7,29 @@ import DeployIcon from "../../images/DeployIcon.png";
 
 const HowItWorks = () => {
   return (
-
     <div className="howitworks-main">
       <Container bg="dark" variant="dark">
-        <h1 className="text-center">HOW IT WORKS</h1>
+        <h1 className="text-center" style={{ color: "#fff" }}>
+          HOW IT WORKS
+        </h1>
         <p className="text-center fs-4 fw-bold">
           An Investment In Knowledge Pays The Best Interest
         </p>
         <Row xs={1} md={3} className="mx-auto g-4">
           <Col>
-            <Card className="ms-auto p-2" style={{ height: '18rem', }}>
+            <Card className="ms-auto p-2" style={{ height: "18rem" }}>
               <Card.Img
                 variant="top"
                 src={HireIcon}
                 className="rounded mx-auto d-block"
                 style={{
-                  display: ' block',
-                  backgroundSize: 'contain',
-                  backgroundRepeat: 'no-repeat',
-                  height: '45px',
-                  width: '45px',
-                  marginTop: '15px',
-                  marginBottom: '10px',
+                  display: " block",
+                  backgroundSize: "contain",
+                  backgroundRepeat: "no-repeat",
+                  height: "45px",
+                  width: "45px",
+                  marginTop: "15px",
+                  marginBottom: "10px",
                 }}
               />
               <Card.Body>
@@ -44,19 +45,19 @@ const HowItWorks = () => {
             </Card>
           </Col>
           <Col>
-            <Card className="ms-auto p-2" style={{ height: '18rem', }}>
+            <Card className="ms-auto p-2" style={{ height: "18rem" }}>
               <Card.Img
                 variant="top"
                 src={TrainIcon}
                 className="howitworks-image rounded mx-auto d-block "
                 style={{
-                  display: ' block',
-                  backgroundSize: 'contain',
-                  backgroundRepeat: 'no-repeat',
-                  height: '50px',
-                  width: '45px',
-                  marginTop: '15px',
-                  marginBottom: '10px',
+                  display: " block",
+                  backgroundSize: "contain",
+                  backgroundRepeat: "no-repeat",
+                  height: "50px",
+                  width: "45px",
+                  marginTop: "15px",
+                  marginBottom: "10px",
                 }}
               />
               <Card.Body>
@@ -72,21 +73,21 @@ const HowItWorks = () => {
             </Card>
           </Col>
           <Col>
-            <Card className="ms-auto p-2" style={{ height: '18rem', }}>
+            <Card className="ms-auto p-2" style={{ height: "18rem" }}>
               <Card.Img
                 variant="top"
                 src={DeployIcon}
                 className="rounded mx-auto d-block howitworks-image"
                 style={{
-                  display: ' block',
-                  backgroundSize: 'contain',
-                  backgroundRepeat: 'no-repeat',
-                  height: '50px',
-                  width: '45px',
-                  marginTop: '15px',
-                  marginBottom: '10px',
-                  borderRadius: '50%',
-                  backgroundColor: 'lightblue',
+                  display: " block",
+                  backgroundSize: "contain",
+                  backgroundRepeat: "no-repeat",
+                  height: "50px",
+                  width: "45px",
+                  marginTop: "15px",
+                  marginBottom: "10px",
+                  borderRadius: "50%",
+                  backgroundColor: "lightblue",
                 }}
               />
               <Card.Body>

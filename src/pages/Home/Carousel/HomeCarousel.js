@@ -20,13 +20,13 @@ const HomeCarousel = () => {
       onSelect={handleSelect}
       className="carousel-home"
     >
-      <Carousel.Item>
+      <Carousel.Item className="homecarousel-item">
         <img
           className="d-block w-100 slide-img"
           src={homemain}
           alt="First slide"
         />
-        <Carousel.Caption>
+        <Carousel.Caption className="home-caption">
           <h1 className="carousel-title">UPSKILL TODAY</h1>
           <h3 className="carousel-text pb-4 d-none d-md-block">
             Begin Your IT Journey With Us
@@ -41,13 +41,13 @@ const HomeCarousel = () => {
           </Button>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item className="homecarousel-item">
         <img
           className="d-block w-100 slide-img"
           src={homebc}
           alt="Second slide"
         />
-        <Carousel.Caption>
+        <Carousel.Caption className="home-caption">
           <h1 className="carousel-title">UPSKILL TODAY</h1>
           <h3 className="carousel-text pb-4  d-none d-md-block">
             Begin Your IT Journey With Us
@@ -59,13 +59,13 @@ const HomeCarousel = () => {
           </Button>
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item className="homecarousel-item">
         <img
           className="d-block w-100 slide-img"
           src={homebb}
           alt="Third slide"
         />
-        <Carousel.Caption>
+        <Carousel.Caption className="home-caption">
           <h1 className="carousel-title">UPSKILL TODAY</h1>
           <h3 className=" carousel-text pb-4 d-none d-md-block">
             Begin Your IT Journey With Us
