@@ -23,11 +23,11 @@
 }
 
 .primary {
-  animation: primary 20s linear 1s infinite;
+  animation: primary 50s linear 1s infinite;
 }
 
 .secondary {
-  animation: secondary 20s linear 1s infinite;
+  animation: secondary 50s linear 1s infinite;
 }
 
 @keyframes primary {
