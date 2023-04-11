@@ -1,37 +1,36 @@
 .howitworks-main {
-    background-color: black;
-    color:white;
-    height:auto;
-    padding-bottom: 20px;
-    padding-top: 20px;
+  background-color: black;
+  color: white;
+  height: auto;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 .howitworks-card {
-    height: 10rem;
+  height: 10rem;
 }
 
 .howitworks-title {
-    color:goldenrod;
+  color: goldenrod;
 }
 
 .howitworks-image {
-    display: block;
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 45px;
-    width: 45px;
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 45px;
+  width: 45px;
 }
 
 .howitworks-text {
-    color: #000;
-    font-size: 16px;
+  color: #000;
+  font-size: 16px;
 }
 
-h1 {
+/* h1 {
     color:#fff;
-}
+} */
 
 p {
-    color: #fff;
-    
+  color: #fff;
 }

@@ -26,12 +26,12 @@
   filter: brightness(0.5);
 }
 
-@media only screen and (max-width: 768px) {
+/* @media only screen and (max-width: 768px) {
   h1 p {
     line-height: 0.4;
     font-size: clamp(1rem, 8vw, 3.5rem);
   }
-}
+} */
 
 .about-content {
   position: relative;
@@ -43,7 +43,7 @@
   color: #fff;
 }
 
-h1 {
+/* h1 {
   font-size: clamp(1rem, 8vw, 2rem);
   font-weight: 600;
   text-transform: uppercase;
@@ -51,7 +51,7 @@ h1 {
   text-align: center;
   margin-bottom: 0.8rem;
   color: #ff7b00;
-}
+} */
 
 p {
   margin-bottom: 1.2rem;
