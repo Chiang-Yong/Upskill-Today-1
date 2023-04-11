@@ -49,13 +49,6 @@ const FindOutMore = () => {
             </Container>
         </div>
 
-
-
-
-
-
-
-
     )
 }
 
