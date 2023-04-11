@@ -4,13 +4,13 @@
   filter: brightness(0.6);
 }
 
-.carousel-caption {
+.home-caption {
   top: 50%;
   transform: translateY(-50%);
   bottom: inital;
 }
 
-.carousel-item {
+.homecarousel-item {
   height: 87vh;
 }
 
@@ -44,18 +44,18 @@
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-.carousel .carousel-indicators button {
+.carousel-home .carousel-indicators button {
   width: 10px;
   height: 10px;
   border-radius: 50%;
 }
 
-.carousel .carousel-control-next-icon {
+.carousel-home .carousel-control-next-icon {
   background-image: url("../../../images/chevron-right.svg");
   width: 50px;
   height: 50px;
 }
-.carousel .carousel-control-prev-icon {
+.carousel-home .carousel-control-prev-icon {
   background-image: url("../../../images/chevron-left.svg");
   width: 50px;
   height: 50px;

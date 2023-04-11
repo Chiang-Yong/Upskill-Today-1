@@ -1,17 +1,23 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import TestimonialCarousel from "./TestimonialCarousel";
 const Testimontials = () => {
   return (
-    <Row>
-      <Col md={6}>
-        <h1>Get Inspired </h1>
-        <h5>testing</h5>
-      </Col>
-      <Col md={6}>
-        <TestimonialCarousel />
-      </Col>
-    </Row>
+    <Container fluid style={{ backgroundColor: "#fff9eb" }}>
+      <Row className="px-5 py-5">
+        <Col md={5} className="  text-center align-self-center">
+          <h1 className="display-2 fw-bold" style={{ color: "#ff7b00" }}>
+            Get Inspired
+          </h1>
+          <h2 className="display-6">
+            View the success stories of our graduates
+          </h2>
+        </Col>
+        <Col md={7}>
+          <TestimonialCarousel />
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

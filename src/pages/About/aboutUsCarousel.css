@@ -22,3 +22,20 @@
   font-size: 22px;
   color: #fff;
 }
+
+.about-section .carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.about-section .carousel-control-next-icon {
+  background-image: url("../../images/chevron-right.svg");
+  width: 50px;
+  height: 50px;
+}
+.about-section .carousel-control-prev-icon {
+  background-image: url("../../images/chevron-left.svg");
+  width: 50px;
+  height: 50px;
+}
