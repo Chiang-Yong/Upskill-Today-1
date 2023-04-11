@@ -22,15 +22,14 @@
   width: 45px;
 }
 
-.howitworks-text {
-  color: #000;
-  font-size: 16px;
+.howitworks-main h1 {
+  color: #ff7b00;
+  font-size: 25px;
+  font-weight: 800;
 }
 
-/* h1 {
-    color:#fff;
-} */
-
-p {
-  color: #fff;
+.howitworks-main p {
+  color: white;
+  font-size: 35px;
+  font-weight: 600;
 }

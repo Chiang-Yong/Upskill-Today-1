@@ -13,11 +13,12 @@ const AboutUsCarousel = () => {
     <Carousel className="about-section">
       <Carousel.Item interval={2000}>
         <img
-          className="d-block w-100 about-img"
+          className="d-block w-100"
           src={ImgAbout2}
-          alt="First About Us Slide"
+          alt="About Us 2"
         />
         <Carousel.Caption>
+         
           <h1 className="fw-bold fs-1 about-title">About Us</h1>
           <p className="fw-bold fs-4 about-description">
             An innovative and highly curated ​Hire, Upskill & Deploy Program

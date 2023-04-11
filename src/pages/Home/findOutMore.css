@@ -1,0 +1,21 @@
+.findoutmore {
+    background-color: #fff9eb;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.findoutmore .card {
+    background-color: #ffffff;
+    padding-left: 0px;
+    padding-right: 0px;
+
+}
+
+.findoutmore .card-title {
+    color: #ff7b00;
+    font-weight: 800;
+}
+
+.findoutmore .card-text {
+    color: #000000;
+}
