@@ -37,6 +37,7 @@ const Statistics = () => {
         </Row>
       </Container>
     </div>
+
   );
 };
 
