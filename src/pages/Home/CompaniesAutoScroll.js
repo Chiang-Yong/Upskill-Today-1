@@ -1,30 +1,30 @@
 import React from 'react'
 import './companiesAutoScroll.css';
 
-import Image1 from "../../images/AccentureLogo.png";
-import Image2 from "../../images/CemexLogo.png";
-import Image3 from "../../images/CloudComradeLogo.png";
-import Image4 from "../../images/DaimlerLogo.png";
-import Image5 from "../../images/DoleLogo.png";
-import Image6 from "../../images/GrundfosLogo.png";
-import Image7 from "../../images/HPEnterpriseLogo.png";
-import Image8 from "../../images/InfosysLogo.png";
-import Image9 from "../../images/MetaLogo.png";
-import Image10 from "../../images/NeorisLogo.png";
-import Image11 from "../../images/NewportLogo.png";
-import Image12 from "../../images/OracleLogo.png";
-import Image13 from "../../images/SAPLogo.png";
-import Image14 from "../../images/TataLogo.png";
-import Image15 from "../../images/TMLogo.png";
-import Image16 from "../../images/TriumphLogo.png";
-import Image17 from "../../images/UnileverLogo.png";
-import Image18 from "../../images/UtopiaLogo.png";
-import Image19 from "../../images/VisyLogo.png";
+import Image1 from "../../images/accenture.png";
+import Image2 from "../../images/cemex.png";
+import Image3 from "../../images/cloudcomrade.png";
+import Image4 from "../../images/daimler.png";
+import Image5 from "../../images/dole.webp";
+import Image6 from "../../images/grundfos.jfif";
+import Image7 from "../../images/Hewlett_Packard_Enterprise.png";
+import Image8 from "../../images/Infosys.png";
+import Image9 from "../../images/meta.svg";
+import Image10 from "../../images/neoris.jfif";
+import Image11 from "../../images/newport.jfif";
+import Image12 from "../../images/oracle.jfif";
+import Image13 from "../../images/SAP.png";
+import Image14 from "../../images/tcs.jfif";
+import Image15 from "../../images/tm.jfif";
+import Image16 from "../../images/triumph.jfif";
+import Image17 from "../../images/unilever.jfif";
+import Image18 from "../../images/utopia.jfif";
+import Image19 from "../../images/visy.jfif";
 
 const CompaniesAutoScroll = () => {
   return (
     <div className='companies ms-auto'>
-      <h1 className='text-center' style={{color:'black'}}>Come Aboard With Top Tech Companies</h1>         
+      <h1 className='text-center' style={{color:'#ff7b00'}}>Come Aboard With Top Tech Companies</h1>         
       <div className='scroll-parent artist_media content' >
         <div className='scroll-element primary img-fluid'>
           <img src={Image1} alt="accenture" />

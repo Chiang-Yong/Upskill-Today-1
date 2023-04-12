@@ -1,3 +1,22 @@
+.companies {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding: 2%;
+  background-color: white;
+
+}
+
+.companies h1 {
+  color: #ff7b00;
+  font-weight: 800;
+  /* text-transform: uppercase; */
+  /*text-shadow: 0px 6px 6px rgba(0, 0, 0, 0.5); */
+  text-align: center;
+  margin-bottom: 0.8rem;
+
+}
+
+
 .scroll-parent {
   position: relative;
   width: 100vw;
@@ -19,7 +38,8 @@
 
 .scroll-element img {
   width: 10%;
-  padding: 10px;
+  padding: 2%;
+  margin-top:1%;
 }
 
 .primary {
@@ -32,36 +52,22 @@
 
 @keyframes primary {
   from {
-    left: -0%;
+    left: -5%;
   }
 
   to {
-    left: -190%;
+    left: -185%;
   }
 }
 
 @keyframes secondary {
   from {
-    left: 190%;
+    left: 185%;
   }
 
   to {
-    left: 0%;
+    left: 5%;
   }
-}
-
-.companies {
-  background-color: white;
-}
-
-.companies h1 {
-  color: black;
-  font-weight: 600;
-  /* text-transform: uppercase; */
-  text-shadow: 0px 6px 6px rgba(0, 0, 0, 0.5);
-  text-align: center;
-  margin-bottom: 0.8rem;
-
 }
 
 .artist__media {
@@ -78,7 +84,7 @@
   bottom: 15px;
   pointer-events: none;
   background-image: linear-gradient(to left, rgba(255, 255, 255, 0), white 85%);
-  width: 15%;
+  width: 25%;
 }
 
 .artist_media::after {
@@ -89,8 +95,8 @@
   right: 0;
   bottom: 15px;
   pointer-events: none;
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), white 85%);
-  width: 15%;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), white 95%);
+  width: 25%;
 }
 
 .artist_media .content {
@@ -109,21 +115,21 @@
 
   @keyframes primary {
     from {
-      left: -0%;
+      left: -5%;
     }
 
     to {
-      left: -290%;
+      left: -285%;
     }
   }
 
   @keyframes secondary {
     from {
-      left: 290%;
+      left: 285%;
     }
 
     to {
-      left: 0%;
+      left: 5%;
     }
   }
 }
