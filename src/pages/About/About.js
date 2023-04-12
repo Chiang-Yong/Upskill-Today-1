@@ -2,9 +2,9 @@ import React from 'react'
 
 import AboutUsCarousel from "./AboutUsCarousel";
 import VisionMission from "./VisionMission";
-import WhatIsUpSkilled from "./WhatIsUpSkilled";
+import WhatIsUpSkill from "./WhatIsUpSkill";
 import WhyUpskill from "./WhyUpskill";
-import Testimontials from "./Testimontials";
+import Testimonials from "./Testimonials";
 
 const About = () => {
     return (
@@ -13,11 +13,11 @@ const About = () => {
 
             <VisionMission />
 
-            <WhatIsUpSkilled />
+            <WhatIsUpSkill />
 
             <WhyUpskill />
 
-            <Testimontials />
+            <Testimonials />
 
         </>
     )
