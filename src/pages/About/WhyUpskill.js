@@ -4,7 +4,7 @@ import whyUpskill from "../../images/Why Upskill Today.png";
 
 const WhyUpskill = () => {
   return (
-    <div className="why-upskill">
+    <div className="why-upskill d-inline-block">
       <img src={whyUpskill} alt="why upskill?" />
       <div className="centered">
         <h1 className="text-center" style={{ color: "#ff7b00" }}>

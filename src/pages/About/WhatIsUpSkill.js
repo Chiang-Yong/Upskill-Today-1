@@ -5,7 +5,7 @@ import "./whatIsUpskill.css";
 
 const WhatIsUpSkilled = () => {
   return (
-    <div className="what-upskill">
+    <div className="what-upskill d-inline-block">
       <img src={WhatIsUpskillToday} alt="what is upskill" />
       <div className="centered">
         <h1 className="text-center" style={{color:'#ff7b00'}}>What is Upskill Today?</h1>
