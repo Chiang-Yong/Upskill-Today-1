@@ -1,8 +1,25 @@
 .testimonials {
-    display: block;
-    height: auto;
+    display: inline-block;
+    height: 100%;
     width: 100%;
     background-color: #fff9eb;
+}
+
+.testimonials img {
+    height: 100%;
+    width:45%;
+    object-fit: scale-down;
+    filter: brightness(0.8);
+    display:inline-block;
+    margin-top: 1%;
+    position:relative;
+    margin-bottom: 2%;
+}
+
+.testimonials .centered {
+    position: relative;
+    margin-left: 10%;
+    margin-top: -20%;
 }
 
 .testimonials h1{

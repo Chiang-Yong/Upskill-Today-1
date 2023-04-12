@@ -1,9 +1,10 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
-import ImgAbout1 from "../../images/ImgAbout1.jpg";
 import ImgAbout2 from "../../images/ImgAbout2.jpg";
 import WhatIsUpskillToday from "../../images/WhatIsUpskillToday.png";
 import WhyUpskill from "../../images/Why Upskill Today.png";
+import visionMission from "../../images/VisionMission_50.jpg";
+import testimonials from "../../images/testimonials.jpg";
 
 import "./aboutUsCarousel.css";
 
@@ -20,7 +21,7 @@ const AboutUsCarousel = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={5000}>
-        <img className="d-block w-100" src={ImgAbout1} alt="About Us 1" />
+        <img className="d-block w-100" src={visionMission} alt="Vision Mission" />
         <Carousel.Caption>
           <h1 className="fw-bold fs-1 about-title">Our Vision</h1>
           <p className="fw-bold fs-4 about-description">
@@ -39,6 +40,7 @@ const AboutUsCarousel = () => {
           className="d-block w-50"
           src={WhatIsUpskillToday}
           alt="What Is Upskill?"
+          style={{ width:"100%", objectFit:"scale-down" }}
         />
         <Carousel.Caption>
           <h1
@@ -64,7 +66,7 @@ const AboutUsCarousel = () => {
           className="d-block w-50"
           src={WhyUpskill}
           alt="Why Upskill Today?"
-          style={{ marginLeft: "45%", width:"100%",objectFit:"scale-down" }}
+          style={{ marginLeft: "45%", width:"100%", objectFit:"scale-down" }}
         />
         <Carousel.Caption>
           <h1
@@ -86,19 +88,24 @@ const AboutUsCarousel = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={5000}>
-       
+        <img
+          className="d-block w-50"
+          src={testimonials}
+          alt="testimonials"
+          style={{ width:"100%", objectFit:"scale-down" }}
+        />
         <Carousel.Caption>
           <h1
             className="fw-bold fs-1 about-title1"
             style={{ marginLeft: "0%" }}
           >
-            Testmonials
+            Testimonials
           </h1>
           <p
             className="fw-bold fs-6 about-description1"
-            style={{ marginLeft: "0%", color: "black" }}
+            style={{ marginLeft: "50%", color: "black" }}
           >
-            Testimonials
+            Testimonials ..................Testimonials
           </p>
         </Carousel.Caption>
       </Carousel.Item>
