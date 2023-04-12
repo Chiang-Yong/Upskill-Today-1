@@ -1,10 +1,12 @@
 import React from "react";
 import "./testimonialcarousel.css";
+import openquote from "../../images/open-quote.svg";
+import closequote from "../../images/close-quote.svg";
 import { Carousel, Col } from "react-bootstrap";
 
 const TestimonialCarousel = () => {
   return (
-    <Carousel variant="dark" fade className=" testimonial-home px-3 py-5">
+    <Carousel variant="dark" fade className=" testimonial-home py-5">
       <Carousel.Item className="text-center">
         <img
           className="rounded-circle shadow-1-strong mb-4"

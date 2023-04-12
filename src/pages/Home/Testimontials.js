@@ -6,12 +6,10 @@ const Testimontials = () => {
     <Container fluid style={{ backgroundColor: "#fff9eb" }}>
       <Row className="px-5 py-5">
         <Col md={5} className="  text-center align-self-center">
-          <h1 className="display-2 fw-bold" style={{ color: "#ff7b00" }}>
+          <h1 className=" fw-bold" style={{ color: "#ff7b00", fontSize: 70 }}>
             Get Inspired
           </h1>
-          <h2 className="display-6">
-            View the success stories of our graduates
-          </h2>
+          <h3>View the success stories of our graduates</h3>
         </Col>
         <Col md={7}>
           <TestimonialCarousel />
