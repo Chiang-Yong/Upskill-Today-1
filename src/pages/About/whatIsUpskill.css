@@ -1,7 +1,8 @@
 .what-upskill {
-    height: 100%;
-    max-height: 1000px;
+    height: auto;
+    width:100%;
     display: block;
+   /* background-color: #fff9eb; */
   }
   
   .what-upskill img{
@@ -21,6 +22,7 @@
     img {
         width: 20%;
         margin-top: -20%;
+        padding: 2%;
     }
     
   }
@@ -40,4 +42,5 @@
 
 .what-upskill p {
     font-weight: 700;
+    padding: 2%;
 }

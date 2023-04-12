@@ -4,7 +4,7 @@ import "./visionMission.css"
 
 const VisionMission = () => {
   return (
-    <div className="vision-mission container">
+    <div className="vision-mission">
         <img src={ImgAbout1} alt="about us 1"/>
         <div className="centered">
             <h1 className="text-center">Our Vision</h1>

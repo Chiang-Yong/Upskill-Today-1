@@ -1,16 +1,17 @@
 .vision-mission {
-  height: 100%;
-  max-height: 1100px;
+  height: 90%;
+  width: 100%;
   display: block;
+  /*background-color: #fff9eb;*/
 }
 
 .vision-mission img{
   height: auto;
-  width:160%;
-  object-fit: cover;
+  width:100%;
+  object-fit: scale-down;
   filter: brightness(0.6);
   display: block;
-  margin-left: -25%;
+
   }
 
 .vision-mission .centered {

@@ -86,11 +86,7 @@ const AboutUsCarousel = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={5000}>
-        <img
-          className="d-block w-50"
-          src=""
-          alt="Testimonials"
-        />
+       
         <Carousel.Caption>
           <h1
             className="fw-bold fs-1 about-title1"

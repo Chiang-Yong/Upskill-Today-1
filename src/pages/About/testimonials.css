@@ -1,0 +1,19 @@
+.testimonials {
+    display: block;
+    height: auto;
+    width: 100%;
+    background-color: #fff9eb;
+}
+
+.testimonials h1{
+    color:#ff7b00;
+    padding: 2%;
+    justify-content: center;
+
+}
+
+.testimonials p {
+    color: black;
+    padding: 2%;
+    justify-content: center;
+}

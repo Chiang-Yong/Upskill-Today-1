@@ -4,7 +4,7 @@ import AboutUsCarousel from "./AboutUsCarousel";
 import VisionMission from "./VisionMission";
 import WhatIsUpSkill from "./WhatIsUpSkill";
 import WhyUpskill from "./WhyUpskill";
-import Testimontials from "./Testimontials";
+import Testimonials from "./Testimonials";
 
 const About = () => {
     return (
@@ -17,7 +17,7 @@ const About = () => {
 
             <WhyUpskill />
 
-            <Testimontials />
+            <Testimonials />
 
         </>
     )
