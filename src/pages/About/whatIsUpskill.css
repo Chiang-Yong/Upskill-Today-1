@@ -2,45 +2,41 @@
     height: auto;
     width:100%;
     display: block;
-   /* background-color: #fff9eb; */
+    background-color: #fff9eb;
   }
   
   .what-upskill img{
     height: auto;
-    width:45%;
-    object-fit: cover;
+    width:80%;
+    object-fit: contain;
     filter: brightness(0.8);
     display:inline-block;
-    margin-top: -15%;
+    margin-top: 12%;
+    margin-left: 15%;
+    padding-left: 5%;
     position:relative;
     
         }
   
-
-
-  @media only screen and (min-width:768px) {
-    img {
-        width: 20%;
-        margin-top: -20%;
-        padding: 2%;
-    }
-    
-  }
-
-  .what-upskill .centered {
-    position: relative;
-    margin-left: 47%;
-    margin-top: -40%;
-}
-
 .what-upskill h1 {
-    font-weight: 800;
+    font-size: 35px;
     color:#ff7b00;
-    text-transform: uppercase;
-    text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.6);
+    font-weight: 800;
+    justify-content: flex-start;
+    align-items: center;
+    text-transform: uppercase; 
+    margin-top: 12%;
+    position:relative;
 }
 
 .what-upskill p {
+    color: black;
     font-weight: 700;
-    padding: 2%;
+    font-size: clamp(0.5rem, 2.0vw, 1.5rem);
+    justify-content:flex-start;
+    align-items: center;
+    margin-right: 5%;
+    
+    position:relative;
 }
+
