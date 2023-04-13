@@ -20,7 +20,7 @@
 .scroll-parent {
   position: relative;
   width: 100vw;
-  height: 10rem;
+  height: 12rem;
   padding: 2rem 0;
   overflow-x: hidden;
 }
@@ -52,21 +52,21 @@
 
 @keyframes primary {
   from {
-    left: -5%;
+    left: -0%;
   }
 
   to {
-    left: -185%;
+    left: -180%;
   }
 }
 
 @keyframes secondary {
   from {
-    left: 185%;
+    left: 180%;
   }
 
   to {
-    left: 5%;
+    left: 0%;
   }
 }
 
@@ -106,8 +106,8 @@
   position: relative;
 }
 
-/*On screens that are 768px or less, set the image to bigger width */
-@media only screen and (max-width:1100px) {
+/*On screens that are 1199px or less, set the image to bigger width */
+@media only screen and (max-width:1199px) {
 
   .scroll-element img {
     width: 15%;
@@ -115,21 +115,21 @@
 
   @keyframes primary {
     from {
-      left: -5%;
+      left: -0%;
     }
 
     to {
-      left: -285%;
+      left: -280%;
     }
   }
 
   @keyframes secondary {
     from {
-      left: 285%;
+      left: 280%;
     }
 
     to {
-      left: 5%;
+      left: 0%;
     }
   }
 }
