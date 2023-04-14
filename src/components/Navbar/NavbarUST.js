@@ -41,22 +41,11 @@ const NavbarUST = () => {
               style={{ textDecoration: "none", fontWeight: "700" }}>
               Corporate
             </Link>
-            <Button className="me-4 fs-5 navbar-button"
-              style={{
-                backgroundColor: isHovering ? "blue" : "#ff7b00",
-                border: 'none',
-                outline: 'none',
-                alignItems: 'center',
-                justifyContent: 'center',
-                whiteSpace: 'nowrap',
-                maxWidth: '200px',
-              }}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              to="/Contact"
-            >
-              Contact Us
-            </Button>
+            <Link to="/Contact" className="text-white mx-2"
+              style={{ textDecoration: "none", fontWeight: "700" }}>
+              Contact-Us
+            </Link>
+
           </Nav>
         </Navbar.Collapse>
       </Container>
