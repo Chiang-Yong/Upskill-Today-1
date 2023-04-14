@@ -1,7 +1,11 @@
 import React from "react";
+import FAQ from "./FAQ";
 
 const Contact = () => {
-  return <div>Contact</div>;
+  return(
+    
+  <FAQ />
+  );
 };
 
 export default Contact;

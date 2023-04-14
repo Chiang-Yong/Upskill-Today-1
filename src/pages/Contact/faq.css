@@ -1,0 +1,72 @@
+.faq {
+    height: auto;
+    width: 100%;
+    background-color: whitesmoke;
+}
+
+.faq h1 {
+    color:#ff7b00;
+    font-weight: 800;
+    padding:1%;
+
+}
+
+.faq h2 {
+    color:rgb(0, 0, 0);
+    font-weight:700;
+    padding: 1%;
+}
+
+
+.faq p {
+    color: black;
+    font-weight:700;
+}
+
+.faq .accordion {
+    max-width: 800px;   
+}
+
+.faq .accordion-item {
+    border: 3px solid rgba(248, 219, 4, 0.15);
+    /* border: none; */
+  }
+  
+.faq  .accordion-button {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  
+.faq  .accordion-button:not(.collapsed) {
+    color: white;
+    background-color: orange;
+  }
+  
+.faq  .accordion-button:not(.collapsed)::after {
+    filter: brightness(0%) invert(70%);
+  }
+  
+.faq  .accordion-body:not(.collapsed) {
+    font-size: 1.3rem;
+    background-color:antiquewhite;
+  }
+
+.faq  .accordion-button:focus {
+    box-shadow: inherit;
+  }
+  
+  /*.faq .accordion-item:first-of-type .accordion-button {
+    border-top-left-radius: 1.2rem;
+    border-top-right-radius: 1.2rem;
+  }
+  .faq .accordion-item:last-of-type .accordion-button.collapsed {
+    border-bottom-left-radius: 1.2rem;
+    border-bottom-right-radius: 1.2rem;
+  } */
+
+  .faq .col-sm-1 {
+    align-items: center;
+    justify-content: center;
+    background-color: bisque;
+    height:auto;
+  }
