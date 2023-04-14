@@ -30,10 +30,10 @@ const NavbarUST = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto d-flex fw-bold fs-5">
-            <Nav.Link href="home" className="mx-2">Home</Nav.Link>
-            <Nav.Link href="about" className="mx-2">About Us</Nav.Link>
-            <Nav.Link href="careerpathway" className="mx-2">Career Pathway</Nav.Link>
-            <Nav.Link href="corporate" className="mx-3">
+            <Nav.Link href="/Home" className="mx-2">Home</Nav.Link>
+            <Nav.Link href="/About" className="mx-2">About Us</Nav.Link>
+            <Nav.Link href="/CareerPathway" className="mx-2">Career Pathway</Nav.Link>
+            <Nav.Link href="/Corporate" className="mx-3">
               Corporate
             </Nav.Link>
             <Button className="me-4 fs-5 navbar-button"
@@ -48,7 +48,7 @@ const NavbarUST = () => {
               }}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
-              href="contact"
+              href="/Contact"
             >
               Contact Us
             </Button>
