@@ -44,6 +44,7 @@ const NavbarUST = () => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 whiteSpace: 'nowrap',
+                maxWidth: '200px',
               }}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}

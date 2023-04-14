@@ -56,13 +56,13 @@
   }
 
   to {
-    left: -180%;
+    left: -190%;
   }
 }
 
 @keyframes secondary {
   from {
-    left: 180%;
+    left: 190%;
   }
 
   to {
@@ -119,13 +119,13 @@
     }
 
     to {
-      left: -280%;
+      left: -290%;
     }
   }
 
   @keyframes secondary {
     from {
-      left: 280%;
+      left: 290%;
     }
 
     to {
