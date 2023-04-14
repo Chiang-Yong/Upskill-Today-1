@@ -4,7 +4,7 @@ import AboutUs from "./AboutUs";
 import VisionMission from "./VisionMission";
 import WhatIsUpSkill from "./WhatIsUpSkill";
 import WhyUpskill from "./WhyUpskill";
-import Testimontials from "./Testimontials"
+import AboutTestimontials from "./AboutTestimontials"
 
 
 const About = () => {
@@ -18,7 +18,7 @@ const About = () => {
 
             <WhyUpskill />
 
-            <Testimontials />
+            <AboutTestimontials />
 
         </>
     )
