@@ -1,7 +1,7 @@
 import React from "react";
 import "./testimonialcarousel.css";
-import openquote from "../../images/open-quote.svg";
-import closequote from "../../images/close-quote.svg";
+// import openquote from "../../images/open-quote.svg";
+// import closequote from "../../images/close-quote.svg";
 import { Carousel, Col } from "react-bootstrap";
 
 const TestimonialCarousel = () => {
