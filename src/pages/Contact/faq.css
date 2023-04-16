@@ -1,20 +1,19 @@
 .faq {
     height: auto;
     width: 100%;
-    background-color: whitesmoke;
+    background-color: burlywood;
+    
 }
 
 .faq h1 {
-    color:#ff7b00;
+    color:#000;
     font-weight: 800;
-    padding:1%;
 
 }
 
 .faq h2 {
     color:rgb(0, 0, 0);
     font-weight:700;
-    padding: 1%;
 }
 
 
@@ -24,35 +23,42 @@
 }
 
 .faq .accordion {
-    max-width: 800px;   
+    max-width: 800px;
+    background-color: #fff9eb;   
+    box-sizing: border-box;
 }
 
 .faq .accordion-item {
-    border: 3px solid rgba(248, 219, 4, 0.15);
+    border: 0px solid rgba(248, 219, 4, 0.15);
+    background: transparent;
+    box-sizing: border-box;
+    word-break: break-word;
     /* border: none; */
   }
   
 .faq  .accordion-button {
     font-weight: 600;
     font-size: 1.5rem;
+    background-color: burlywood;
   }
   
 .faq  .accordion-button:not(.collapsed) {
-    color: white;
-    background-color: orange;
+    color: black;
+    background-color: burlywood;
   }
   
 .faq  .accordion-button:not(.collapsed)::after {
-    filter: brightness(0%) invert(70%);
+    filter: brightness(10%) invert(70%);
   }
   
 .faq  .accordion-body:not(.collapsed) {
-    font-size: 1.3rem;
-    background-color:antiquewhite;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background-color:burlywood;
   }
 
 .faq  .accordion-button:focus {
-    box-shadow: inherit;
+    box-shadow: none;
   }
   
   /*.faq .accordion-item:first-of-type .accordion-button {
@@ -65,8 +71,17 @@
   } */
 
   .faq .col-sm-1 {
-    align-items: center;
-    justify-content: center;
-    background-color: bisque;
-    height:auto;
-  }
+    background-color: rgb(168, 120, 57);
+    }
+
+  .faq .col-sm-11 {
+    background-color:burlywood;
+    border: 1%;
+    
+  }  
+
+.faq .row {
+    border-width: 1%;
+    border-color:#000;
+    
+}
