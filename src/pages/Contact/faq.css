@@ -2,6 +2,7 @@
     height: auto;
     width: 100%;
     background-color: burlywood;
+    padding-bottom: 3%;
     
 }
 
@@ -39,16 +40,16 @@
 .faq  .accordion-button {
     font-weight: 600;
     font-size: 1.5rem;
-    background-color: burlywood;
+    background-color: rgb(224, 178, 118) ;
   }
   
 .faq  .accordion-button:not(.collapsed) {
     color: black;
-    background-color: burlywood;
+    background-color: rgb(224, 178, 118);
   }
   
 .faq  .accordion-button:not(.collapsed)::after {
-    filter: brightness(10%) invert(70%);
+    filter: brightness(10%) invert(50%);
   }
   
 .faq  .accordion-body:not(.collapsed) {
@@ -71,17 +72,17 @@
   } */
 
   .faq .col-sm-1 {
-    background-color: rgb(168, 120, 57);
+    background-color: rgba(0, 0, 0, 0.1);
     }
 
   .faq .col-sm-11 {
-    background-color:burlywood;
     border: 1%;
     
   }  
 
 .faq .row {
-    border-width: 1%;
-    border-color:#000;
+    border-color: burlywood;
+    padding-bottom: 1%;
+    background-color: burlywood;
     
 }

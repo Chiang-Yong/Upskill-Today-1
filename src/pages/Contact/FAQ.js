@@ -10,10 +10,9 @@ const FAQ = () => {
       {FAQData.map((faq) => {
         return (
           
-            <Accordion className="faq mx-auto" flush key={faq.id}>
+            <Accordion className="mx-auto" flush key={faq.id}>
               <Accordion.Item eventKey={faq.id}>
-                <Row className="text-center" 
-                  style={{borderColor:'black',borderWidth:'2px'}}>
+                <Row className="text-center">
                     <Col className="text-center" sm={1}>
                         <h2 className="text-center my-2" 
                         style={{color:'black'}}>
@@ -21,7 +20,7 @@ const FAQ = () => {
                         </h2>
                     </Col>
                     <Col sm={11}>
-                        <Accordion.Header className="accodian-collapse" data-bs-toggle="collapse">{faq.qtn}</Accordion.Header>
+                        <Accordion.Header className="accodian-collapse">{faq.qtn}</Accordion.Header>
                     </Col>
                 </Row>
                
@@ -37,11 +36,11 @@ const FAQ = () => {
               </Accordion.Item>
             </Accordion>
           
-        );
+        )
       })}
-      ;
+      
     </Container>
-  );
-};
+  )
+}
 
 export default FAQ;
