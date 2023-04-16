@@ -1,0 +1,27 @@
+.about-testimontial {
+    height: auto;
+    width: 100%;
+    display: block;
+    background-color: #fff9eb;
+}
+
+.about-testimontial .card {
+    background-color: #fff9eb;
+    padding-bottom: 10px;
+}
+
+.about-testimontial .Card.Title {
+    font-size: 90px;
+    font-weight: 2500;
+}
+
+
+.about-testimontial .h1 {
+    font-size: 35px;
+    font-weight: 800;
+}
+
+.about-testimontial .button {
+    color: #ff7b00;
+    align-items: center;
+}
