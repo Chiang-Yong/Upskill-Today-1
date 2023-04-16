@@ -1,12 +1,13 @@
 import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import "./whyupskill.css";
 import whyUpskill from "../../images/Why Upskill Today.png";
 
 const WhyUpskill = () => {
   return (
-    <div className="why-upskill d-inline-block">
-      <img src={whyUpskill} alt="why upskill?" />
-      <div className="centered">
+    <Container className="why-upskill d-inline-block" fluid='true'>
+      <Row>
+        <Col>
         <h1 className="text-center" style={{ color: "#ff7b00" }}>
           Why Upskill Today?
         </h1>
@@ -17,8 +18,12 @@ const WhyUpskill = () => {
           chart, navigate and grow your career, thus making a complete
           transformation in the shortest possible time.
         </p>
-      </div>
-    </div>
+        </Col>
+        <Col>
+         <img src={whyUpskill} alt="why up<skill?" />
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

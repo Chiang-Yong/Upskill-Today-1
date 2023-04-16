@@ -4,7 +4,7 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import CareerPathway from "./pages/CareerPathway";
 import Corporate from "./pages/Corporate";
-import Contact from "./pages/Contact";
+import Contact from "./pages/Contact/Contact";
 import PathwayDetails from "./pages/PathwayDetails";
 import JavaCourse from "./pages/JavaCourse";
 import JavascriptCourse from "./pages/JavascriptCourse";

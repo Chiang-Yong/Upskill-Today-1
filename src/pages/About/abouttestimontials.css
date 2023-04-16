@@ -1,0 +1,48 @@
+.about-testimontial {
+    height: auto;
+    width: 100%;
+    display: block;
+    background-color: #fff9eb;
+   
+}
+
+.about-testimontial .card {
+    background-color: #fff9eb;
+    padding-bottom: 10px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.about-testimontial .card-title {
+    font-size: 35px;
+    font-weight: 800;
+    color:#ff7b00;
+}
+
+.about-testimontial .card-text {
+    font-weight: 700;
+    font-size: clamp(0.5rem, 2.0vw, 1.5rem);
+    margin-top: 3%
+}
+
+
+.about-testimontial h1 {
+    font-size: 35px;
+    font-weight: 800;
+    color: #ff7b00;
+}
+
+.about-testimontial .btn {
+    background-color: #ff7b00;
+    align-items: center;
+    border: none;
+    outline: none;
+    margin-top: 3%;
+
+}
+
+.about-testimontial .btn:hover{
+    opacity: 0.5;
+    fill:royalblue;
+  }
+

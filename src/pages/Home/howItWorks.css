@@ -1,6 +1,6 @@
 .howitworks-main {
   background-color: black;
-  color: white;
+  color: #ff7b00;
   height: auto;
   padding-bottom: 20px;
   padding-top: 20px;
@@ -11,7 +11,7 @@
 }
 
 .howitworks-title {
-  color: goldenrod;
+  color: #ff7b00;
 }
 
 .howitworks-image {
@@ -24,12 +24,10 @@
 
 .howitworks-main h1 {
   color: #ff7b00;
-  font-size: 25px;
   font-weight: 800;
 }
 
 .howitworks-main p {
   color: white;
-  font-size: 35px;
-  font-weight: 600;
+  font-weight: 700;
 }

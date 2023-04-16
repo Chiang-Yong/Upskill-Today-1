@@ -9,10 +9,10 @@ const HowItWorks = () => {
   return (
     <div className="howitworks-main">
       <Container bg="dark" variant="dark">
-        <h1 className="text-center" style={{ color: "#fff" }}>
+        <h1 className="text-center" >
           HOW IT WORKS
         </h1>
-        <p className="text-center fs-4 fw-bold">
+        <p className="text-center">
           An Investment In Knowledge Pays The Best Interest
         </p>
         <Row xs={1} md={3} className="mx-auto g-4">
@@ -79,7 +79,7 @@ const HowItWorks = () => {
                 src={DeployIcon}
                 className="rounded mx-auto d-block howitworks-image"
                 style={{
-                  display: " block",
+                  display: "block",
                   backgroundSize: "contain",
                   backgroundRepeat: "no-repeat",
                   height: "50px",
