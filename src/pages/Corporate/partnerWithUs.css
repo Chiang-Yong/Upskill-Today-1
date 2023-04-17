@@ -1,0 +1,44 @@
+.partnerus {
+    height: auto;
+    width: 100%;
+    display: inline-block;
+    background-color: #fff9eb;
+
+}
+
+.partnerus img {
+    height: auto;
+    width: 75%;
+    object-fit: contain;
+    filter: brightness(0.8);
+    display: block;
+    margin-left: 5%;
+    margin-bottom: 10%
+}
+
+.partnerus h1 {
+    font-size: 35px;
+    color: #ff7b00;
+    font-weight: 800;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 10%;
+    text-transform: uppercase;
+}
+
+.partnerus p {
+    color: black;
+    font-weight: 700;
+    font-size: clamp(0.5rem, 2.0vw, 1.5rem);
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 10%;
+}
+
+.partnerus .row {
+    margin-top: 5%;
+}
+
+.partnerus .col {
+    align-items: center;
+}

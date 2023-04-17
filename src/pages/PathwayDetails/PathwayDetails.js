@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Button, Breadcrumb } from "react-bootstrap";
+import JavaCourse from "./JavaCourse";
 
 const PathwayDetails = () => {
   return (
@@ -15,6 +16,7 @@ const PathwayDetails = () => {
         <Card.Text className='d-flex justify-content-center'><a href='javacourse'>Java Course</a></Card.Text>
         <Card.Text className='d-flex justify-content-center'><a href='javascriptcourse'>Javascript Course</a></Card.Text>
         <Card.Text className='d-flex justify-content-center'><a href='devOpscourse'>DevOps Course</a></Card.Text>
+        <JavaCourse />
       </Card>
      {/* <Button size="lg" href="career-pathway">
         Career Pathway

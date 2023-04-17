@@ -1,35 +1,31 @@
-import React from "react";
-import { Card } from "react-bootstrap";
+import React from 'react'
+import CorporateHeader from "./CorporateHeader";
+import PartnerWithUs from "./PartnerWithUs";
+import Benefits from "./Benefits";
+import CorprateTestimonials from "./CorprateTestimonials";
+import AccelerateLogos from "./AccelerateLogos";
+import CorporateStatistics from "./CorporateStatistics";
+import CollaborateWithUsForm from "./CollaborateWithUsForm"
 
-const CorpStyle = {
-  main: {
-    backgroundColor: "#fff9eb",
-    height: "50vh",
-  },
-  title: {
-    color: "#ff7b00",
-    marginTop: "50px",
-  },
-
-  text: {
-    color: "#000",
-    marginTop: "30px",
-  },
-};
 const Corporate = () => {
-  return (
-    <div>
-      <Card style={CorpStyle.main}>
-        <Card.Title style={CorpStyle.title} className="d-flex justify-content-center shadow-lg">
-          <h1>Corporate</h1>
-        </Card.Title>
-        <Card.Text style={CorpStyle.text} className="d-flex justify-content-center" variant="dark">
-          Upskill Today has a pool of committed, motivated and reliable IT
-          professionals and ready to deploy to your organisation.
-        </Card.Text>
-      </Card>
-    </div>
-  );
-};
+    return (
+        <>
+            <CorporateHeader />
 
-export default Corporate;
+            <PartnerWithUs />
+
+            <Benefits />
+
+            <CorprateTestimonials />
+
+            <AccelerateLogos />
+
+            <CorporateStatistics />
+
+            <CollaborateWithUsForm />
+
+        </>
+    )
+}
+
+export default Corporate

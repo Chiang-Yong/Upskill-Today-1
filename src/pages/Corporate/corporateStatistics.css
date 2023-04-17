@@ -1,0 +1,19 @@
+.corporatestatistics {
+    background-color: #fff9eb;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.corporatestatistics .card {
+    background-color: #fff9eb;
+    border: 0px;
+}
+
+.corporatestatistics .card-title {
+    color: #ff7b00;
+    font-weight: 800;
+}
+
+.corporatestatistics .card-text {
+    color: #000000;
+}

@@ -80,7 +80,7 @@ const GetInTouch = () => {
             type="submit"
             style={{
               backgroundColor: "#ff7b00",
-              fontWeight:'600',
+              fontWeight: "600",
               border: "none",
               outline: "none",
             }}
