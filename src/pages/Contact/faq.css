@@ -24,7 +24,7 @@
 }
 
 .faq .accordion {
-    max-width: 800px;
+    width: 800px;
     background-color: #fff9eb;   
     box-sizing: border-box;
 }
