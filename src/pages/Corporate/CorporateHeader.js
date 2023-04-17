@@ -4,13 +4,13 @@ import "./corporateHeader.css"
 
 const CorporateHeader = () => {
     return (
-        <Container className="corporateHeader">
+        <Container className="corporateHeader" fluid>
             <Row>
-                <Col style={{ padding: "0px" }}>
-                    <h1 className="corporateHeader-title">
-                        Corporate
-                    </h1>
-                </Col>
+
+                <h1 className="corporateHeader-title">
+                    Corporate
+                </h1>
+
             </Row>
 
 

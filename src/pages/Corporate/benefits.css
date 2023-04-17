@@ -1,0 +1,20 @@
+.benefits {
+    height: 100%;
+    padding-top: 0%;
+    background-color: #fff9eb;
+}
+
+.benefits-title {
+    width: 100%;
+    font-size: 45px;
+    font-weight: 800;
+    text-align: center;
+    color: #ff7b00;
+    background-color: #fff9eb;
+    line-height: 1em;
+    padding-top: 50px;
+    margin-bottom: 20px;
+
+}
+
+.benefits .card-img-top {}
