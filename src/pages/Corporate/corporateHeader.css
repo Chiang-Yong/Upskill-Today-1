@@ -1,0 +1,22 @@
+.corporateHeader {
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff9eb;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.corporateHeader-title {
+    width: 100%;
+    font-size: 65px;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background-color: #fff9eb;
+    color: #ff7b00
+}
