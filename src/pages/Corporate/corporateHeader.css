@@ -14,9 +14,9 @@
     font-weight: 800;
     text-transform: uppercase;
     text-align: center;
+    color: #ff7b00;
+    background-color: #fff9eb;
     line-height: 1em;
     margin-top: 1em;
     margin-bottom: 1em;
-    background-color: #fff9eb;
-    color: #ff7b00
 }
