@@ -16,6 +16,8 @@ const CorpStyle = {
     marginTop: "30px",
   },
 };
+
+
 const Corporate = () => {
   return (
     <div>

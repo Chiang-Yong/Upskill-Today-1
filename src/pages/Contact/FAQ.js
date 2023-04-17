@@ -5,7 +5,7 @@ import "./faq.css";
 
 const FAQ = () => {
   return (
-    <Container className="faq">
+    <Container className="faq border rounded-3">
       <h1 className="text-center pt-5 my-5">Most Frequently Ask Questions</h1>
       {FAQData.map((faq) => {
         return (

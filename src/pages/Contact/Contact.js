@@ -4,10 +4,10 @@ import GetInTouch from "./GetInTouch";
 
 const Contact = () => {
   return (
-    <>
+    <div>
       <FAQ />
       <GetInTouch />
-    </>
+    </div>
   );
 };
 
