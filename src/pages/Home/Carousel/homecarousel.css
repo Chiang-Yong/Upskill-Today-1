@@ -5,18 +5,18 @@
 }
 
 .home-caption {
-  top: 50%;
+  top: 70%;
   transform: translateY(-50%);
   bottom: inital;
 }
 
 .homecarousel-item {
-  height: 87vh;
+  height: 89vh;
 }
 
 .carousel-title {
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-shadow: 1px 0px 13px black;
   color: #ff7b00;
 }
@@ -31,8 +31,8 @@
   background-color: #ff7b00;
   color: white;
   border-color: #ff7b00;
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.2em;
+  font-weight: 600;
   border-radius: 20px;
   padding: 0.8rem;
 }

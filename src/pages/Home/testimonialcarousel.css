@@ -1,6 +1,7 @@
 .testimonial-home {
   border-radius: 40px;
-  background-color: white;
+  border: 2px solid #ff7b00;
+  background-color: #fff9eb;
 }
 
 /* .testimonial-home .testopenquote {

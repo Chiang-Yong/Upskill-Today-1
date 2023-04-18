@@ -3,15 +3,13 @@ import { Col, Container, Row } from "react-bootstrap";
 import TestimonialCarousel from "./TestimonialCarousel";
 const Testimontials = () => {
   return (
-    <Container fluid style={{ backgroundColor: "#fff9eb" }}>
+    <Container fluid>
       <Row className="px-5 py-5">
-        <Col md={5} className="  text-center align-self-center">
-          <h1 className=" fw-bold" style={{ color: "#ff7b00", fontSize: 70 }}>
-            Get Inspired
-          </h1>
+        <Col md={4} className="  text-center align-self-center">
+          <h1 className=" fw-bold">Get Inspired</h1>
           <h3>View the success stories of our graduates</h3>
         </Col>
-        <Col md={7}>
+        <Col md={{ span: 6, offset: 1 }}>
           <TestimonialCarousel />
         </Col>
       </Row>

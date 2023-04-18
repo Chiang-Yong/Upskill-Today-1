@@ -4,7 +4,7 @@ import { Row, Container, Card } from "react-bootstrap";
 
 const Statistics = () => {
   return (
-    <div className="statistics">
+    <div className="statistics py-5">
       <Container fluid>
         <Row className="px-5 py-3 mx-auto justify-content-around ">
           <Card style={{ width: "18rem" }}>
@@ -37,7 +37,6 @@ const Statistics = () => {
         </Row>
       </Container>
     </div>
-
   );
 };
 

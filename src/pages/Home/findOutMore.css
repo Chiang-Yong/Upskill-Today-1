@@ -1,22 +1,14 @@
-.findoutmore {
-    background-color: #fff9eb;
-    padding-bottom: 20px;
-    padding-top: 20px;
+.find-out .more-button {
+  font-size: 1.2em;
+  font-weight: 600;
+  background-color: #ff7b00;
+  border: none;
+  border-radius: 20px;
+  padding: 0.8rem;
 }
-
-.findoutmore .card {
-    background-color: #ffffff;
-    padding-left: 0px;
-    padding-right: 0px;
-
-    padding-bottom: 10px;
-}
-
-.findoutmore .card-title {
-    color: #ff7b00;
-    font-weight: 800;
-}
-
-.findoutmore .card-text {
-    color: #000000;
+.find-out .more-button:hover {
+  background-color: #a60037;
+  border-color: #a60037;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
