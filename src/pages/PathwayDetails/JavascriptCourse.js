@@ -4,6 +4,7 @@ import JavaScriptDeveloper from "./JavaScriptDeveloper";
 import SelfPaceGuildedTrack from "./SelfPaceGuidedTrack";
 import JobRoles from "./JobRoles";
 import ApplyJSCourse from "./ApplyJSCourse";
+import { Link } from "react-router-dom";
 
 const JSstyle = {
   main:{
@@ -43,7 +44,7 @@ const JavascriptCourse = () => {
     <div style={JSstyle.main} className="justify-content-center">
        <h1 style={JSstyle.title} className="d-flex justify-content-center">JAVASCRIPT COURSE</h1>
       <Breadcrumb style={JSstyle.breadcrumb} className="text-decoration-none">
-        <Breadcrumb.Item style={JSstyle.link} className="text-center text-decoration-none d-flex justify-content-center" href="/CareerPathway">Career Pathway</Breadcrumb.Item>
+        <Breadcrumb.Item style={JSstyle.link} className="text-center text-decoration-none d-flex justify-content-center"><Link to="/CareerPathway">Career Pathway</Link></Breadcrumb.Item>
         <Breadcrumb.Item className="text-center d-flex justify-content-center" active>JavaScript Course</Breadcrumb.Item>
       </Breadcrumb>
 
