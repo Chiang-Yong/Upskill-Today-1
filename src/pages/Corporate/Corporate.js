@@ -16,9 +16,6 @@ const Corporate = () => {
 
             <Benefits />
 
-            <CorprateTestimonials />
-
-            <AccelerateLogos />
 
             <CorporateStatistics />
 
