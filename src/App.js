@@ -23,7 +23,7 @@ function App() {
           <Route path="/Home" element={<Home />} />
           <Route path="/About" element={<About />} />
           <Route path="/CareerPathway" element={<CareerPathway />} />
-          <Route path="/JavaCourse" element={<JavaCourse />} />
+          <Route path="/PathwayDetails/JavaCourse" element={<JavaCourse />} />
           <Route path="/JavascriptCourse" element={<JavascriptCourse />} />
           <Route path="/DevOpsCourse" element={<DevOpsCourse />} />
           <Route path="/PathwayDetails" element={<PathwayDetails />} />

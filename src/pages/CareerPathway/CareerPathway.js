@@ -92,7 +92,7 @@ const CareerPathway = () => {
             </Card.Title>
             <Card.Text className="d-flex justify-content-center"></Card.Text>
             <Card.Text className="d-flex justify-content-center">
-              <Link to="/JavaCourse"><Button style={CPStyle.button}>Find Out More</Button></Link>
+              <Link to="/PathwayDetails/JavaCourse"><Button style={CPStyle.button}>Find Out More</Button></Link>
             </Card.Text>
           </Card.Body>
         </Card>
