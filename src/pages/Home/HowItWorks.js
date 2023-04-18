@@ -10,12 +10,9 @@ import Order from "../../images/order.png";
 
 const HowItWorks = () => {
   return (
-    <Container fluid style={{ backgroundColor: " #fff9eb" }}>
+    <Container fluid>
       <Row xs={1} md={3} className="mx-auto  justify-content-around px-5 py-5">
-        <Card
-          className="border-0 mb-4"
-          style={{ width: "20rem", backgroundColor: " #fff9eb" }}
-        >
+        <Card className="border-0 mb-4" style={{ width: "20rem" }}>
           <Card.Img
             variant="top"
             src={Order}
@@ -38,10 +35,7 @@ const HowItWorks = () => {
           </Card.Body>
         </Card>
 
-        <Card
-          className=" border-0 mb-4"
-          style={{ width: "20rem", backgroundColor: " #fff9eb" }}
-        >
+        <Card className=" border-0 mb-4" style={{ width: "20rem" }}>
           <Card.Img
             variant="top"
             src={Competence}
@@ -64,10 +58,7 @@ const HowItWorks = () => {
           </Card.Body>
         </Card>
 
-        <Card
-          className=" border-0 mb-4"
-          style={{ width: "20rem", backgroundColor: " #fff9eb" }}
-        >
+        <Card className=" border-0 mb-4" style={{ width: "20rem" }}>
           <Card.Img
             variant="top"
             src={Partner}

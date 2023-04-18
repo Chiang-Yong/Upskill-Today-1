@@ -20,26 +20,22 @@ const FindOutMore = () => {
           <h1 className="fw-bold mb-3  ">Follow Your Passion</h1>
 
           <h3 className="lh-md">Explore Our Various Career IT Pathways </h3>
-
-          <Button size="lg" className=" mt-3 more-button">
-            <Link
-              className="text-decoration-none text-white"
-              to="/CareerPathway"
-            >
+          <Link className="text-decoration-none text-white" to="/CareerPathway">
+            <Button size="lg" className=" mt-3 more-button">
               Visit Pathways
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         </Col>
       </Row>
       <Row className="px-5 py-3 align-items-center">
         <Col md={6} className="text-center px-5 pb-5  ">
           <h1 className="fw-bold mb-3">Find Your Match</h1>
           <h3 className="lh-md">Colloborate With Us For Business Solutions</h3>
-          <Button size="lg" className=" mt-3 more-button">
-            <Link className="text-decoration-none text-white" to="/Corporate">
+          <Link className="text-decoration-none text-white" to="/Corporate">
+            <Button size="lg" className=" mt-3 more-button">
               View Corporate
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         </Col>
         <Col md={6} className="px-5  text-center  ">
           <img

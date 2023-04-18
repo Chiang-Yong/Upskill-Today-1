@@ -1,28 +1,28 @@
-import React from 'react'
+import React from "react";
 import CorporateHeader from "./CorporateHeader";
 import PartnerWithUs from "./PartnerWithUs";
 import Benefits from "./Benefits";
 import CorprateTestimonials from "./CorprateTestimonials";
 import AccelerateLogos from "./AccelerateLogos";
 import CorporateStatistics from "./CorporateStatistics";
-import CollaborateWithUsForm from "./CollaborateWithUsForm"
+import CollaborateWithUsForm from "./CollaborateWithUsForm";
+import BackTopButton from "../../components/BackToTopButton";
 
 const Corporate = () => {
-    return (
-        <>
-            <CorporateHeader />
+  return (
+    <>
+      <CorporateHeader />
 
-            <PartnerWithUs />
+      <PartnerWithUs />
 
-            <Benefits />
+      <Benefits />
 
+      <CorporateStatistics />
 
-            <CorporateStatistics />
+      <CollaborateWithUsForm />
+      <BackTopButton />
+    </>
+  );
+};
 
-            <CollaborateWithUsForm />
-
-        </>
-    )
-}
-
-export default Corporate
+export default Corporate;

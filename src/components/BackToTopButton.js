@@ -33,8 +33,8 @@ function BackTopButton() {
             position: "fixed",
             bottom: "50px",
             right: "50px",
-            height: "60px",
-            width: "60px",
+            height: "50px",
+            width: "50px",
             cursor: "pointer",
           }}
         />

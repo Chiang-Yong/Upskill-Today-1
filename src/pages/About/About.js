@@ -1,27 +1,28 @@
-import React from 'react'
+import React from "react";
 
 import AboutUs from "./AboutUs";
 import VisionMission from "./VisionMission";
 import WhatIsUpSkill from "./WhatIsUpSkill";
 import WhyUpskill from "./WhyUpskill";
-import AboutTestimontials from "./AboutTestimontials"
-
+import AboutTestimontials from "./AboutTestimontials";
+import BackTopButton from "../../components/BackToTopButton";
 
 const About = () => {
-    return (
-        <>
-            <AboutUs />
+  return (
+    <>
+      <AboutUs />
 
-            <VisionMission />
+      <VisionMission />
 
-            <WhatIsUpSkill />
+      <WhatIsUpSkill />
 
-            <WhyUpskill />
+      <WhyUpskill />
 
-            <AboutTestimontials />
+      <AboutTestimontials />
 
-        </>
-    )
-}
+      <BackTopButton />
+    </>
+  );
+};
 
 export default About;

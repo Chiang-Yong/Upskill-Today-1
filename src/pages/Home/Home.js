@@ -19,9 +19,9 @@ const Home = () => {
 
       <HowItWorks />
 
-      <FindOutMore />
-
       <Statistics />
+
+      <FindOutMore />
 
       <CompaniesAutoScroll />
 
