@@ -30,38 +30,38 @@ const NavbarUST = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto d-flex fw-bold fs-5">
-            <Link
+          <Nav className="ms-auto d-flex fw-bold fs-5 ">
+            <Link 
               to="/Home"
-              className="text-white mx-2"
+              className="text-white mx-2 hover-navbar"
               style={{ textDecoration: "none", fontWeight: "700" }}
             >
               Home
             </Link>
             <Link
               to="/About"
-              className="text-white mx-2"
+              className="text-white mx-2 hover-navbar"
               style={{ textDecoration: "none", fontWeight: "700" }}
             >
               About-Us
             </Link>
             <Link
               to="/CareerPathway"
-              className="text-white mx-2"
+              className="text-white mx-2 hover-navbar"
               style={{ textDecoration: "none", fontWeight: "700" }}
             >
               Career-Pathway
             </Link>
             <Link
               to="/Corporate"
-              className="text-white mx-2"
+              className="text-white mx-2 hover-navbar"
               style={{ textDecoration: "none", fontWeight: "700" }}
             >
               Corporate
             </Link>
             <Link
               to="/Contact"
-              className="text-white mx-2"
+              className="text-white mx-2 hover-navbar"
               style={{ textDecoration: "none", fontWeight: "700" }}
             >
               Contact-Us
