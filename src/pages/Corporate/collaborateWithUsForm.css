@@ -1,10 +1,27 @@
+.cws {
+    background-color: #fff9eb;
+    padding: 0px;
+}
+
 .collaborateWithUsForm {
-    width: 70%;
+    width: 60%;
     margin-top: 45px;
     margin-bottom: 5%;
     padding-top: 15px;
+    padding-bottom: 15px;
     position: relative;
-    margin-left: 15%;
+    margin-left: 20%;
     border-width: 5%;
-    background-color: #fff9eb;
+    background-color: rgba(224, 178, 118, 0.1);
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.collaborateWithUsForm h1 {
+    text-align: center;
+    font-size: 35px;
+    font-weight: 800;
+    color: #ff7b00;
+    padding-top: 10px;
+    padding-bottom: 30px;
 }
