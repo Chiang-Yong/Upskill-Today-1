@@ -1,5 +1,5 @@
-import React from 'react'
-import './companiesAutoScroll.css';
+import React from "react";
+import "./companiesAutoScroll.css";
 
 import Image1 from "../../images/accenture.png";
 import Image2 from "../../images/cemex.png";
@@ -23,10 +23,12 @@ import Image19 from "../../images/visy.jfif";
 
 const CompaniesAutoScroll = () => {
   return (
-    <div className='companies ms-auto'>
-      <h1 className='text-center' style={{color:'#ff7b00'}}>Come Aboard With Top Tech Companies</h1>         
-      <div className='scroll-parent artist_media content' >
-        <div className='scroll-element primary img-fluid'>
+    <div className="companies ms-auto  py-5">
+      <h1 className="text-center fw-bold">
+        Come Aboard With Top Tech Companies
+      </h1>
+      <div className="scroll-parent artist_media content">
+        <div className="scroll-element primary img-fluid">
           <img src={Image1} alt="accenture" />
           <img src={Image2} alt="accenture" />
           <img src={Image3} alt="accenture" />
@@ -45,9 +47,9 @@ const CompaniesAutoScroll = () => {
           <img src={Image16} alt="accenture" />
           <img src={Image17} alt="accenture" />
           <img src={Image18} alt="accenture" />
-          <img src={Image19} alt="accenture" />             
+          <img src={Image19} alt="accenture" />
         </div>
-        <div className='scroll-element secondary img-fluid'>
+        <div className="scroll-element secondary img-fluid">
           <img src={Image1} alt="accenture" />
           <img src={Image2} alt="accenture" />
           <img src={Image3} alt="accenture" />
@@ -66,11 +68,11 @@ const CompaniesAutoScroll = () => {
           <img src={Image16} alt="accenture" />
           <img src={Image17} alt="accenture" />
           <img src={Image18} alt="accenture" />
-          <img src={Image19} alt="accenture" />                       
-        </div>     
+          <img src={Image19} alt="accenture" />
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CompaniesAutoScroll
+export default CompaniesAutoScroll;
