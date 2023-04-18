@@ -1,6 +1,8 @@
 import React from 'react'
+import { useState } from 'react';
 import { Card, Col, Row, Button } from 'react-bootstrap'
 import Placeholder from '../../images/placeholder.jpg'
+import JobRolesModal from './JobRolesModal';
 
 const JRStyle = {
     main: {
@@ -51,6 +53,11 @@ const JRStyle = {
   };
 
 const JobRoles = () => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <div style={JRStyle.main}>
         <h1 className='text-center' style={JRStyle.title}>JOB ROLES</h1>
@@ -71,7 +78,8 @@ const JobRoles = () => {
             </Card.Title>
             <Card.Text className="d-flex justify-content-center"></Card.Text>
             <Card.Text className="d-flex justify-content-center">
-              <Button style={JRStyle.button} href="/JavascriptCourse">Find Out More</Button>
+              <Button style={JRStyle.button} onClick={handleShow}>Find Out More</Button>
+              <JobRolesModal show={show} />
             </Card.Text>
           </Card.Body>
         </Card>

@@ -3,6 +3,7 @@ import { Container, Button, Card, Carousel, Row } from "react-bootstrap";
 import Placeholder from "../../images/placeholder.jpg";
 import Quiz from "./Quiz";
 import RegisterYourInterest from "./RegisterYourInterest";
+import { Link } from 'react-router-dom'
 
 const CPStyle = {
   container: {
@@ -62,7 +63,7 @@ const CareerPathway = () => {
             src={Placeholder}
             className="rounded mx-0 d-block"
             style={{
-              display: " block",
+              display: "block",
             }}
           />
           <Card.Body>
@@ -71,7 +72,7 @@ const CareerPathway = () => {
             </Card.Title>
             <Card.Text className="d-flex justify-content-center"></Card.Text>
             <Card.Text className="d-flex justify-content-center">
-              <Button style={CPStyle.button} href="/JavascriptCourse">Find Out More</Button>
+              <Link to="/JavascriptCourse"><Button style={CPStyle.button} >Find Out More</Button></Link>
             </Card.Text>
           </Card.Body>
         </Card>
@@ -91,7 +92,7 @@ const CareerPathway = () => {
             </Card.Title>
             <Card.Text className="d-flex justify-content-center"></Card.Text>
             <Card.Text className="d-flex justify-content-center">
-              <Button style={CPStyle.button} href="/JavaCourse">Find Out More</Button>
+              <Link to="/JavaCourse"><Button style={CPStyle.button}>Find Out More</Button></Link>
             </Card.Text>
           </Card.Body>
         </Card>
@@ -111,7 +112,7 @@ const CareerPathway = () => {
             </Card.Title>
             <Card.Text className="d-flex justify-content-center"></Card.Text>
             <Card.Text className="d-flex justify-content-center">
-              <Button style={CPStyle.button} href="/DevOpsCourse">Find Out More</Button>
+              <Link to="/DevOpsCourse"><Button style={CPStyle.button}>Find Out More</Button></Link>
             </Card.Text>
           </Card.Body>
         </Card>

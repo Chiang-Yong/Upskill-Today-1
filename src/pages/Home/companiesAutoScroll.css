@@ -38,7 +38,7 @@
 
 .scroll-element img {
   width: 10%;
-  padding: 2%;
+  padding-left: 5%;
   margin-top:1%;
 }
 
@@ -56,17 +56,45 @@
   }
 
   to {
-    left: -190%;
+    left: -185%;
   }
 }
 
 @keyframes secondary {
   from {
-    left: 190%;
+    left: 185%;
   }
 
   to {
     left: 0%;
+  }
+}
+
+/*On screens that are 1199px or less, set the image to bigger width */
+@media only screen and (max-width:1199px) {
+
+  .scroll-element img {
+    width: 15%;
+  }
+
+  @keyframes primary {
+    from {
+      left: -0%;
+    }
+
+    to {
+      left: -280%;
+    }
+  }
+
+  @keyframes secondary {
+    from {
+      left: 280%;
+    }
+
+    to {
+      left: 0%;
+    }
   }
 }
 
@@ -104,32 +132,4 @@
   overflow-x: scroll;
   overflow-y: hidden;
   position: relative;
-}
-
-/*On screens that are 1199px or less, set the image to bigger width */
-@media only screen and (max-width:1199px) {
-
-  .scroll-element img {
-    width: 15%;
-  }
-
-  @keyframes primary {
-    from {
-      left: -0%;
-    }
-
-    to {
-      left: -290%;
-    }
-  }
-
-  @keyframes secondary {
-    from {
-      left: 290%;
-    }
-
-    to {
-      left: 0%;
-    }
-  }
 }
