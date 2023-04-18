@@ -24,8 +24,8 @@ function App() {
           <Route path="/About" element={<About />} />
           <Route path="/CareerPathway" element={<CareerPathway />} />
           <Route path="/PathwayDetails/JavaCourse" element={<JavaCourse />} />
-          <Route path="/JavascriptCourse" element={<JavascriptCourse />} />
-          <Route path="/DevOpsCourse" element={<DevOpsCourse />} />
+          <Route path="/PathwayDetails/JavascriptCourse" element={<JavascriptCourse />} />
+          <Route path="/PathwayDetails/DevOpsCourse" element={<DevOpsCourse />} />
           <Route path="/PathwayDetails" element={<PathwayDetails />} />
           <Route path="/Corporate" element={<Corporate />} />
           <Route path="/Contact" element={<Contact />} />

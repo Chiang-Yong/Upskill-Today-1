@@ -77,9 +77,9 @@ const CareerPathway = () => {
               </Card.Title>
               <Card.Text className="d-flex justify-content-center"></Card.Text>
               <Card.Text className="d-flex justify-content-center">
-                <Button style={CPStyle.button} href="/JavascriptCourse">
+               <Link to="/PathwayDetails/JavascriptCourse"><Button style={CPStyle.button} href="/JavascriptCourse">
                   Find Out More
-                </Button>
+                </Button> </Link> 
               </Card.Text>
             </Card.Body>
           </Card>
@@ -99,7 +99,7 @@ const CareerPathway = () => {
             </Card.Title>
             <Card.Text className="d-flex justify-content-center"></Card.Text>
             <Card.Text className="d-flex justify-content-center">
-              <Link to="/JavaCourse"><Button style={CPStyle.button}>Find Out More</Button></Link>
+              <Link to="/PathwayDetails/JavaCourse"><Button style={CPStyle.button}>Find Out More</Button></Link>
             </Card.Text>
           </Card.Body>
         </Card>
@@ -119,9 +119,9 @@ const CareerPathway = () => {
               </Card.Title>
               <Card.Text className="d-flex justify-content-center"></Card.Text>
               <Card.Text className="d-flex justify-content-center">
-                <Button style={CPStyle.button} href="/DevOpsCourse">
+              <Link to="/PathwayDetails/DevOpsCourse"> <Button style={CPStyle.button} href="/DevOpsCourse">
                   Find Out More
-                </Button>
+                </Button></Link> 
               </Card.Text>
             </Card.Body>
           </Card>
