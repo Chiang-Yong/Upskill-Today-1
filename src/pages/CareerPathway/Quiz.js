@@ -13,6 +13,7 @@ const QuizStyle = {
     color: "#fff",
     border: "none",
     outline: "none",
+    fontWeight:600,
   },
 
   image: {
@@ -29,6 +30,7 @@ const QuizStyle = {
     fontWeight: 800,
     fontSize: "35px",
     color: "#ff7b00",
+    marginTop:"5%",
   },
 
   text:{
@@ -50,7 +52,7 @@ const QuizStyle = {
 
 const Quiz = () => {
   return (
-    <div className="text-center justify-content-center" style={QuizStyle.main}>
+    <div className="text-center justify-content-center border border-1" style={QuizStyle.main}>
       <Row style={QuizStyle.row}>
       <h1 style={QuizStyle.title}>QUIZ</h1>
       <p style={QuizStyle.text}>Take the quiz to help you to decide the course path</p>

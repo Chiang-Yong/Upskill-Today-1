@@ -20,6 +20,5 @@
   }
   
 .hover-navbar:hover{
-    opacity: 0.5;
-    fill:royalblue;
+    opacity: 0.5; 
   }

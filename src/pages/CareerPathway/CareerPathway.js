@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Button, Card, Carousel, Row } from "react-bootstrap";
 import Placeholder from "../../images/placeholder.jpg";
 import Quiz from "./Quiz";
+import RegisterYourInterest from "./RegisterYourInterest";
 
 const CPStyle = {
   container: {
@@ -70,7 +71,7 @@ const CareerPathway = () => {
             </Card.Title>
             <Card.Text className="d-flex justify-content-center"></Card.Text>
             <Card.Text className="d-flex justify-content-center">
-              <Button style={CPStyle.button}>Find Out More</Button>
+              <Button style={CPStyle.button} href="/JavascriptCourse">Find Out More</Button>
             </Card.Text>
           </Card.Body>
         </Card>
@@ -90,7 +91,7 @@ const CareerPathway = () => {
             </Card.Title>
             <Card.Text className="d-flex justify-content-center"></Card.Text>
             <Card.Text className="d-flex justify-content-center">
-              <Button style={CPStyle.button}>Find Out More</Button>
+              <Button style={CPStyle.button} href="/JavaCourse">Find Out More</Button>
             </Card.Text>
           </Card.Body>
         </Card>
@@ -110,7 +111,7 @@ const CareerPathway = () => {
             </Card.Title>
             <Card.Text className="d-flex justify-content-center"></Card.Text>
             <Card.Text className="d-flex justify-content-center">
-              <Button style={CPStyle.button}>Find Out More</Button>
+              <Button style={CPStyle.button} href="/DevOpsCourse">Find Out More</Button>
             </Card.Text>
           </Card.Body>
         </Card>
@@ -118,7 +119,12 @@ const CareerPathway = () => {
       {/*} <Button className='me-auto mt-3 mb-3' size="md" href="/pathwaydetails" style={CPStyle.button}>
         Pathway Details
               </Button> */}
-      <Quiz />     
+      <Row>
+        <Quiz />
+      </Row>
+      <Row>
+        <RegisterYourInterest />
+      </Row>
     </Container>
   );
 };

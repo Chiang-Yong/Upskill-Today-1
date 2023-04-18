@@ -14,14 +14,12 @@ const Benefits = () => {
                 <h1 className="benefits-title"> Benefits</h1>
             </Row>
 
-            <Row xs={1} md={3} className="g-3 d-flex justify-content-center">
+            <Row xs={1} md={3} className="px-5 py-3 mx-auto justify-content-around">
 
                 <Card>
                     <Card.Body>
                         <Icon size={64} icon={dollar} style={{ color: "#ff7b00" }} className="d-flex justify-content-center" />
-                        <Card.Title className="d-flex justify-content-center">
-                            Cost Savings
-                        </Card.Title>
+                        <h1>Cost Savings</h1>
                         <Card.Text className="d-flex justify-content-center"></Card.Text>
                         <Card.Text className="d-flex justify-content-center">
                             Up to 50% savings on usual rates from recruitment campanies
@@ -32,9 +30,7 @@ const Benefits = () => {
                 <Card>
                     <Card.Body>
                         <Icon size={64} icon={chain} style={{ color: "#ff7b00" }} className="d-flex justify-content-center" />
-                        <Card.Title className="d-flex justify-content-center">
-                            Best Match
-                        </Card.Title>
+                        <h1>Best Match</h1>
                         <Card.Text className="d-flex justify-content-center"></Card.Text>
                         <Card.Text className="d-flex justify-content-center">
                             A pool of ready candidates trainable on your custom requirements
@@ -45,9 +41,8 @@ const Benefits = () => {
                 <Card>
                     <Card.Body>
                         <Icon size={64} icon={thumbsOUp} style={{ color: "#ff7b00" }} className="d-flex justify-content-center" />
-                        <Card.Title className="d-flex justify-content-center">
-                            Competent Ready
-                        </Card.Title>
+
+                        <h1>Competent Ready</h1>
                         <Card.Text className="d-flex justify-content-center"></Card.Text>
                         <Card.Text className="d-flex justify-content-center">
                             Readily available competent consultants to support your charter
