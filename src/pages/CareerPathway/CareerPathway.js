@@ -4,6 +4,7 @@ import Placeholder from "../../images/placeholder.jpg";
 import Quiz from "./Quiz";
 import RegisterYourInterest from "./RegisterYourInterest";
 import BackTopButton from "../../components/BackToTopButton";
+import { Link } from 'react-router-dom'
 
 const CPStyle = {
   container: {
