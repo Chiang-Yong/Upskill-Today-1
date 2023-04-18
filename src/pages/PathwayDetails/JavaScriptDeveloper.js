@@ -15,16 +15,17 @@ const JSDstyle = {
   },
 
   frame: {
-    paddingLeft: "1%",
-    paddingRight: "1%",
-  },
+    display:"flex",
+    justifyContent:"center",
+    alignItems:"center",
+    },
 
   form: {
-    width: "60%",
+    width: "80%",
   },
 
   formCol: {
-    width: "70%",
+    width: "80%",
     paddingBottom: "2%",
     backgroundColor: "rgba(255,123,0,0.5)",
   },
@@ -37,12 +38,28 @@ const JSDstyle = {
     border: "none",
     outline: "none",
   },
+
+  video:{
+    display:"flex",
+    justifyContent:"center",
+    alignItems:"center",
+    
+  },
+
+  title:{
+    fontSize:"35px",
+    fontWeight:800,
+    color:"#000",
+    paddingBottom:"2%",
+  },
 };
 const JavaScriptDeveloper = () => {
   return (
     <div style={JSDstyle.main}>
-      <Row className="text-center" style={JSDstyle.row}>
-        <Col>
+      
+      <Row className="d-flex justify-content-center text-center border border-1" style={JSDstyle.row}>
+      <h1 className="text-center" style={JSDstyle.title}>READY TO BE NEXT JAVASCRIPT DEVELOPER</h1>
+        <Col style={JSDstyle.video}>
           <iframe
             width="560"
             height="315"
@@ -50,10 +67,10 @@ const JavaScriptDeveloper = () => {
             title="Youtube Player"
             frameborder="0"
             allowFullScreen
-            style={JSDstyle.frame}
+            style={JSDstyle.video}
           />
         </Col>
-        <Col>
+        <Col style={JSDstyle.frame}>
           <div
             style={JSDstyle.formCol}
             className="d-flex justify-content-center border border-1 rounded-3"

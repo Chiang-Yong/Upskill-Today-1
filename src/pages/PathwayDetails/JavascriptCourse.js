@@ -1,6 +1,9 @@
 import React from "react";
 import { Breadcrumb, Row } from "react-bootstrap";
 import JavaScriptDeveloper from "./JavaScriptDeveloper";
+import SelfPaceGuildedTrack from "./SelfPaceGuildedTrack";
+import JobRoles from "./JobRoles";
+import ApplyJSCourse from "./ApplyJSCourse";
 
 const JSstyle = {
   main:{
@@ -11,6 +14,12 @@ const JSstyle = {
 
   breadcrumb:{
     marginLeft:"40%",
+  },
+
+  link:{
+    textDecoration:"none",
+    color:"red",
+
   },
 
   title:{
@@ -32,14 +41,23 @@ const JSstyle = {
 const JavascriptCourse = () => {
   return (
     <div style={JSstyle.main} className="justify-content-center">
-       <h1 style={JSstyle.title} className="d-flex justify-content-center">JavaScript Course</h1>
-      <Breadcrumb style={JSstyle.breadcrumb}>
-        <Breadcrumb.Item className="text-center d-flex justify-content-center" href="CareerPathway">Career Pathway</Breadcrumb.Item>
+       <h1 style={JSstyle.title} className="d-flex justify-content-center">JAVASCRIPT COURSE</h1>
+      <Breadcrumb style={JSstyle.breadcrumb} className="text-decoration-none">
+        <Breadcrumb.Item style={JSstyle.link} className="text-center text-decoration-none d-flex justify-content-center" href="/CareerPathway">Career Pathway</Breadcrumb.Item>
         <Breadcrumb.Item className="text-center d-flex justify-content-center" active>JavaScript Course</Breadcrumb.Item>
       </Breadcrumb>
 
-      <Row>
+      <Row className="border rounded">
         <JavaScriptDeveloper />
+      </Row>
+      <Row className="border rounded">  
+        <SelfPaceGuildedTrack />
+      </Row>
+      <Row className="border rounded">  
+        <JobRoles />
+      </Row>
+      <Row className="border rounded">  
+        <ApplyJSCourse />
       </Row>
     </div>
   );
