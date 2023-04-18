@@ -70,11 +70,9 @@ const HomeCarousel = () => {
           <h3 className=" carousel-text pb-4 d-none d-md-block">
             Begin Your IT Journey With Us
           </h3>
-          <Button className=" carousel-call">
-            <Link className="text-decoration-none text-white" to="/Join">
-              Find Out More
-            </Link>
-          </Button>
+          <Link className="text-decoration-none text-white" to="/CareerPathway">
+            <Button className=" carousel-call">Find Out More</Button>
+          </Link>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

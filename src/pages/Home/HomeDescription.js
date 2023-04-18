@@ -6,11 +6,7 @@ import "./homedescription.css";
 const HomeDescription = () => {
   return (
     <>
-      <Container
-        fluid
-        className="pt-5 home-description"
-        style={{ backgroundColor: " #fff9eb" }}
-      >
+      <Container fluid className="pt-5 home-description">
         <Row className="px-5 py-5">
           <Col lg={6} className="px-5 py-3">
             <h1 className="fw-bold">
@@ -25,12 +21,11 @@ const HomeDescription = () => {
               pellentesque sem eget, maximus quam. Vestibulum hendrerit, ante
               quis dapibus
             </p>
-
-            <Button size="lg" className=" mt-3 home-button">
-              <Link className="text-decoration-none text-white" to="/About">
-                Learn More
-              </Link>
-            </Button>
+            <Link className="text-decoration-none text-white" to="/About">
+              <Button size="lg" className=" mt-3 home-button">
+                About Us
+              </Button>
+            </Link>
           </Col>
         </Row>
       </Container>
