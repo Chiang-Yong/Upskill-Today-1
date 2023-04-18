@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col, Card, Button } from "react-bootstrap";
 import SoftUni from "../../images/SoftUni.png";
-import GuildedTrack from '../../images/GuildedTrack.png'
+import GuidedTrack from '../../images/GuildedTrack.png'
 
 const SPGTstyle = {
   main: {
@@ -54,7 +54,7 @@ const SPGTstyle = {
   },
 };
 
-const SelfPaceGuildedTrack = () => {
+const SelfPaceGuidedTrack = () => {
   return (
     <div style={SPGTstyle.main}>
       <Row style={SPGTstyle.row} className="d-flex text-center justify-content-center">
@@ -72,9 +72,9 @@ const SelfPaceGuildedTrack = () => {
         <Col className="d-flex text-center justify-content-center">
           <Card style={SPGTstyle.card}>
             <Card.Title className="text-center" style={SPGTstyle.title}>
-              Guilded Track Pathway
+              Guided Track Pathway
             </Card.Title>
-            <Card.Img style={SPGTstyle.image} src={GuildedTrack}></Card.Img>
+            <Card.Img style={SPGTstyle.image} src={GuidedTrack}></Card.Img>
             <div className="d-flex justify-content-center">
               <Button type="submit" style={SPGTstyle.button}>
                 Click For More Info
@@ -87,4 +87,4 @@ const SelfPaceGuildedTrack = () => {
   );
 };
 
-export default SelfPaceGuildedTrack;
+export default SelfPaceGuidedTrack;
