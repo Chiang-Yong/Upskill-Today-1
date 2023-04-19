@@ -34,7 +34,7 @@ const HomeCarousel = () => {
           <Button className="carousel-call">
             <Link
               className="text-decoration-none text-white"
-              to="/CareerPathways"
+              to="/CareerPathway"
             >
               Find Out More
             </Link>
@@ -53,7 +53,10 @@ const HomeCarousel = () => {
             Begin Your IT Journey With Us
           </h3>
           <Button className="carousel-call">
-            <Link className="text-decoration-none text-white" to="/Services">
+            <Link
+              className="text-decoration-none text-white"
+              to="/CareerPathway"
+            >
               Find Out More
             </Link>
           </Button>
@@ -70,7 +73,11 @@ const HomeCarousel = () => {
           <h3 className=" carousel-text pb-4 d-none d-md-block">
             Begin Your IT Journey With Us
           </h3>
-          <Link className="text-decoration-none text-white" to="/CareerPathway">
+
+          <Link
+            className="text-decoration-none text-white"
+            to="/CareerPathway "
+          >
             <Button className=" carousel-call">Find Out More</Button>
           </Link>
         </Carousel.Caption>

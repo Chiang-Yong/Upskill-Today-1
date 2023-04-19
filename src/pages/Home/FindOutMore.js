@@ -31,6 +31,7 @@ const FindOutMore = () => {
         <Col md={6} className="text-center px-5 pb-5  ">
           <h1 className="fw-bold mb-3">Find Your Match</h1>
           <h3 className="lh-md">Colloborate With Us For Business Solutions</h3>
+
           <Link className="text-decoration-none text-white" to="/Corporate">
             <Button size="lg" className=" mt-3 more-button">
               View Corporate
