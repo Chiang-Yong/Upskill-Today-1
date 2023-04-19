@@ -27,7 +27,7 @@ const FindOutMore = () => {
           </Link>
         </Col>
       </Row>
-      <Row className="px-5 py-3 align-items-center">
+      <Row className="px-5 py-3 align-items-center flex-column-reverse flex-md-row">
         <Col md={6} className="text-center px-5 pb-5  ">
           <h1 className="fw-bold mb-3">Find Your Match</h1>
           <h3 className="lh-md">Colloborate With Us For Business Solutions</h3>

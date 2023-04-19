@@ -1,13 +1,15 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Card } from "react-bootstrap";
 import aboutUs from "../../images/AboutUs.jpg";
 import "./aboutUs.css";
 
 const AboutUs = () => {
   return (
-    <Container className="about-section" fluid='ture'>
-      <Row>
-        <Col>
+    <Container fluid className="about-section">
+      <Row className="text-center py-5">
+        <h1 className="display-1 fw-bold">About Us</h1>
+
+        {/* <Col>
           <h1 className="about-title">
             <span
               data-text-fill="true"
@@ -23,14 +25,24 @@ const AboutUs = () => {
           <p className="about-description">
             An innovative and highly curated ​Hire, Upskill & Deploy Program.
           </p>
-        </Col>
+        </Col> */}
       </Row>
-      <Row>
-        <img
-          src={aboutUs}
-          alt="Geco Company"
-          className="about-section-image"
-        ></img>
+      <Row className="px-5 py-5 justify-content-center align-items-center">
+        <Col lg={10}>
+          <Card className="bg-dark text-white text-center">
+            <Card.Img src={aboutUs} alt="Geco Company" />
+            <Card.ImgOverlay className="px-5">
+              <div className="limit px-5">
+                <h2 className="fw-bold">
+                  “It is not the strongest of species that survives, nor the
+                  most intelligent that survives. It is the one that is the most
+                  adaptable to change.”
+                </h2>
+                <h3> - Charles Darwin</h3>
+              </div>
+            </Card.ImgOverlay>
+          </Card>
+        </Col>
       </Row>
     </Container>
   );

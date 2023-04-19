@@ -36,7 +36,7 @@
 .scroll-element img {
   width: 10%;
   padding-left: 5%;
-  margin-top:1%;
+  margin-top: 1%;
 }
 
 .primary {
@@ -68,8 +68,7 @@
 }
 
 /*On screens that are 1199px or less, set the image to bigger width */
-@media only screen and (max-width:1199px) {
-
+@media only screen and (max-width: 1199px) {
   .scroll-element img {
     width: 15%;
   }
@@ -136,8 +135,7 @@
 }
 
 /*On screens that are 1199px or less, set the image to bigger width */
-@media only screen and (max-width:1199px) {
-
+@media only screen and (max-width: 1199px) {
   .scroll-element img {
     width: 15%;
   }

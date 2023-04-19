@@ -1,9 +1,7 @@
 import React from "react";
 import "./howItWorks.css";
 import { Col, Row, Card, Container } from "react-bootstrap";
-// import HireIcon from "../../images/HireIcon.png";
-// import TrainIcon from "../../images/TrainIcon.png";
-// import DeployIcon from "../../images/DeployIcon.png";
+
 import Competence from "../../images/competence.png";
 import Partner from "../../images/partner.png";
 import Order from "../../images/order.png";
