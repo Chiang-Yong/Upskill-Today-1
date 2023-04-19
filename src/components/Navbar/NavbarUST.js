@@ -19,7 +19,7 @@ const NavbarUST = () => {
   };
 
   return (
-    <Navbar sticky="top" expand="lg" variant="dark" style={{backgroundColor:"rgba(83,123,184,1)",}}>
+    <Navbar sticky="top" expand="lg" className="navbar-main">
       <Container fluid>
         <Navbar.Brand href="/">
           <img
@@ -33,35 +33,35 @@ const NavbarUST = () => {
           <Nav className="ms-auto d-flex fw-bold fs-5 ">
             <Link 
               to="/Home"
-              className="text-white mx-5 hover-navbar border-start"
+              className="text-black mx-5 hover-navbar border-start"
               style={{paddingLeft: "1.0rem", textDecoration: "none", fontWeight: "600" }}
             >
               Home
             </Link>
             <Link
               to="/About"
-              className="text-white mx-5 hover-navbar border-start"
-              style={{ paddingLeft: "1.0rem", textDecoration: "none", fontWeight: "700" }}
+              className="text-black mx-5 hover-navbar border-start"
+              style={{ paddingLeft: "1.0rem", textDecoration: "none", fontWeight: "600" }}
             >
               About Us
             </Link>
             <Link
               to="/CareerPathway"
-              className="text-white mx-5 hover-navbar border-start"
+              className="text-black mx-5 hover-navbar border-start"
               style={{ paddingLeft: "1.0rem", textDecoration: "none", fontWeight: "600", }}
             >
               Career Pathway
             </Link>
             <Link
               to="/Corporate"
-              className="text-white mx-5 hover-navbar border-start"
+              className="text-black mx-5 hover-navbar border-start"
               style={{ paddingLeft: "1.0rem", textDecoration: "none", fontWeight: "600",}}
             >
               Corporate
             </Link>
             <Link
               to="/Contact"
-              className="text-white me-3 border-start navbar-hover"
+              className="text-black me-3 border-start navbar-hover"
               style={{ textDecoration: "none", paddingLeft: "1.5rem"}}
             >
               <Button className="navbar-button navbar-hover"
