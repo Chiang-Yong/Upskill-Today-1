@@ -5,15 +5,18 @@
     margin-top: 7%;
     margin-bottom: 5%;
     display: block;
+    align-items: center;
+    justify-content: center;
 
 }
 
 
 .getintouch .card {
-    width: 70%;
-    margin-left: 10%;
+    width: 65%;
+    margin-left: 20%;
     margin-bottom: 5%;
     display: block;
+    border-color: #ff7b00;
 
 }
 
@@ -21,7 +24,7 @@
     font-size: 30px;
     font-weight: 700;
     display:inline-block;
-    margin-left: 7.5%;
+    
 }
 
 .getintouch .card-text {
@@ -33,8 +36,11 @@
     margin-bottom: 5%;
     padding:1.5%;
     margin-top: 0%;
-    margin-left: 1%;
+    margin-left: 0%;
     position: relative;
+    border-color: #ff7b00;
+    border-width: 10px;
+    border-radius: 5%;
     
 }
 

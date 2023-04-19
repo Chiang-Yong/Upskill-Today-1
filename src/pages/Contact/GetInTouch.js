@@ -4,6 +4,7 @@ import { Icon } from "react-icons-kit";
 import { phone } from "react-icons-kit/icomoon/phone";
 import { mail2 } from "react-icons-kit/icomoon/mail2";
 import { location2 } from "react-icons-kit/icomoon/location2";
+import { Link } from "react-router-dom";
 
 import "./getIntouch.css";
 
@@ -11,44 +12,67 @@ const GetInTouch = () => {
   return (
     <div className="getintouch">
       <Row>
-        <Col>
-          <Card>
+        <Col sm={5}>
+          <Card className="border rounded-4 border-warning">
             <Card.Body>
-              <Icon size={64} icon={phone} style={{ color: "#ff7b00" }} />
-
-              <Card.Title className="text-center">CALL US</Card.Title>
-              <Card.Text className="text-left" style={{ marginLeft: "25%" }}>
-                +65-1234 5678
-                <br />
-                +65-1234 5679
-              </Card.Text>
+              <Row>
+                <Col sm={2}>
+                  <Icon size={64} icon={phone} style={{ color: "#ff7b00" }} />
+                </Col>
+                <Col sm={10}>
+                  <Card.Title className="text-left">CALL US</Card.Title>
+                  <Card.Text className="text-left">
+                    +65-1234 5678
+                    <br />
+                    +65-1234 5679
+                  </Card.Text>
+                </Col>
+              </Row>
             </Card.Body>
           </Card>
-          <Card>
+          <Card className="border rounded-4 border-warning">
             <Card.Body>
-              <Icon size={64} icon={mail2} style={{ color: "#ff7b00" }} />
-              <Card.Title className="text-center">EMAIL US</Card.Title>
-              <Card.Text className="text-left" style={{ marginLeft: "25%" }}>
-                hello@upskilltoday.com
-              </Card.Text>
+              <Row>
+                <Col sm={2}>
+                  <Icon size={64} icon={mail2} style={{ color: "#ff7b00" }} />
+                </Col>
+                <Col sm={10}>
+                  <Card.Title className="text-left">EMAIL US</Card.Title>
+                  <Card.Text className="text-left">
+                    <Link to="hello@upskilltoday.com">
+                      hello@upskilltoday.com
+                    </Link>
+                  </Card.Text>
+                </Col>
+              </Row>
             </Card.Body>
           </Card>
-          <Card>
+          <Card className="border rounded-4 border-warning">
             <Card.Body>
-              <Icon size={64} icon={location2} style={{ color: "#ff7b00" }} />
-              <Card.Title className="text-center">VISIT US</Card.Title>
-              <Card.Text className="text-left" style={{ marginLeft: "25%" }}>
-                2 Venture Drive #10-18
-                <br />
-                Vision Exchange
-                <br />
-                Singapore 608526
-              </Card.Text>
+              <Row>
+                <Col sm={2}>
+                  <Icon
+                    size={64}
+                    icon={location2}
+                    style={{ color: "#ff7b00" }}
+                  />
+                </Col>
+                <Col sm={10}>
+                  <Card.Title className="text-left">VISIT US</Card.Title>
+                  <Card.Text className="text-left">
+                    2 Venture Drive #10-18
+                    <br />
+                    Vision Exchange
+                    <br />
+                    Singapore 608526
+                  </Card.Text>
+                </Col>
+              </Row>
             </Card.Body>
           </Card>
         </Col>
-        <Col>
-          <div className="getintouch-form border rounded-3">
+        <Col sm={6} >
+          <div className="getintouch-form border rounded-4 border-warning" style={{borderColor:"#ff7b00"}}>
             <Form>
               <h1 className="text-center">Get In Touch</h1>
               <Row>

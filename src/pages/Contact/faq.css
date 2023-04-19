@@ -1,14 +1,25 @@
 .faq {
     height: auto;
     width: 100%;
-    background-color: burlywood;
+    background-color: whitesmoke;
+    position:relative;
+    padding-top: 3%;
     padding-bottom: 3%;
     
 }
 
+.faq .container {
+   width: 800px;
+   background-color: rgb(3, 92, 247);
+   margin-top: 2%;
+   color:white;
+   
+
+}
+
 .faq h1 {
     color:#000;
-    font-weight: 800;
+    font-weight: 700;
 
 }
 
@@ -17,16 +28,29 @@
     font-weight:700;
 }
 
+.faq h4 {
+  font-weight: 600;
+}
+
+.faq h5 {
+  font-weight: 600;
+}
+
+.faq h6 {
+  font-weight: 600;
+}
+
 
 .faq p {
     color: black;
-    font-weight:700;
+    font-weight:600;
 }
 
 .faq .accordion {
-    width: 800px;
-    background-color: #fff9eb;   
+    width: 750px;
+    background-color: rgb(3, 92, 247);   
     box-sizing: border-box;
+    border-width: 1px;
 }
 
 .faq .accordion-item {
@@ -37,25 +61,24 @@
     /* border: none; */
   }
   
-.faq  .accordion-button {
+.faq .accordion-button {
     font-weight: 600;
-    font-size: 1.5rem;
-    background-color: rgb(224, 178, 118) ;
+    background-color: rgb(3, 92, 247) ;
+    color: white;
   }
   
-.faq  .accordion-button:not(.collapsed) {
-    color: black;
-    background-color: rgb(224, 178, 118);
+.faq .accordion-button:not(.collapsed) {
+    color: whitesmoke;
+    background-color: rgb(115, 159, 247);
   }
   
-.faq  .accordion-button:not(.collapsed)::after {
+.faq .accordion-button:not(.collapsed)::after {
     filter: brightness(10%) invert(50%);
   }
   
-.faq  .accordion-body:not(.collapsed) {
-    font-size: 1.1rem;
+.faq .accordion-body:not(.collapsed) {
     font-weight: 600;
-    background-color:burlywood;
+    background-color:whitesmoke;
   }
 
 .faq  .accordion-button:focus {
@@ -71,18 +94,10 @@
     border-bottom-right-radius: 1.2rem;
   } */
 
-  .faq .col-sm-1 {
-    background-color: rgba(0, 0, 0, 0.1);
-    }
-
-  .faq .col-sm-11 {
-    border: 1%;
-    
-  }  
-
 .faq .row {
-    border-color: burlywood;
+    border-color: rgb(3, 92, 247);
     padding-bottom: 1%;
-    background-color: burlywood;
+    padding-top: 1%;
+    background-color: rgb(3, 92, 247);
     
 }
