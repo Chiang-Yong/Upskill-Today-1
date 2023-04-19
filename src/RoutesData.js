@@ -11,13 +11,14 @@ import JavascriptCourse from "./pages/JavascriptCourse";
 import DevOpsCourse from "./pages/DevOpsCourse";
 import NavbarUST from "./components/Navbar/NavbarUST";
 import Footer from "./components/Footer/Footer";
+import ScrollToTop from "./ScrollToTop";
 
 const RoutesData = () => {
   return (
     <>
       <BrowserRouter>
         <NavbarUST />
-
+        <ScrollToTop />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/Home" element={<Home />} />
