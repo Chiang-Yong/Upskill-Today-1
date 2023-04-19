@@ -64,14 +64,7 @@ const NavbarUST = () => {
               className="text-black me-3 border-start navbar-hover"
               style={{ textDecoration: "none", paddingLeft: "1.5rem"}}
             >
-              <Button className="navbar-button navbar-hover"
-           /*  style={{ fontSize: '1.0em',
-                fontWeight: 600,
-                backgroundColor: '#ff7b00',
-                border: 'none',
-                borderRadius: '3px',
-                width: '150px',
-                padding: '0.2rem', }} */
+              <Button className="navbar-button"
               >Contact Us</Button>
               
             </Link>
