@@ -3,7 +3,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     height: 60px;
-    width: 200px;
+    width: 300px;
 }
 
 .navbar-button {
@@ -21,4 +21,21 @@
   
 .hover-navbar:hover{
     opacity: 0.5; 
+  }
+
+  .navbar-button {
+    font-size: 1.0em;
+    font-weight: 600;
+    background-color: #ff7b00;
+    border: none;
+    border-radius: 5px;
+    padding: 0.2rem;
+  }
+  
+  .navbar-button:hover {
+    background-color: #a60037;
+    border-color: #a60037;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+      0 17px 50px 0 rgba(0, 0, 0, 0.19);
+      
   }
