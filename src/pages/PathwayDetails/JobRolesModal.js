@@ -11,7 +11,7 @@ const JobRolesModal = ({show1}) => {
     <div
     style={{ display: 'block', position: 'initial' }}
   >
-     <Modal show={show1} onHide={handleClose}>
+     <Modal show1={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Modal heading</Modal.Title>
         </Modal.Header>

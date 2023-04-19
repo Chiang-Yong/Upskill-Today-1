@@ -5,42 +5,37 @@ import "./faq.css";
 
 const FAQ = () => {
   return (
-    <Container className="faq border rounded-3">
-      <h1 className="text-center pt-5 my-5">Most Frequently Ask Questions</h1>
+    <div className="faq">
+      <Container className= "container border rounded-4">
+      <h3 className="text-center pt-4 pb-3">Most Frequently Ask Questions</h3>
       {FAQData.map((faq) => {
         return (
           
-            <Accordion className="mx-auto" flush key={faq.id}>
-              <Accordion.Item eventKey={faq.id}>
-                <Row className="text-center">
-                    <Col className="text-center" sm={1}>
-                        <h2 className="text-center my-2" 
-                        style={{color:'black'}}>
-                            {faq.id}
-                        </h2>
-                    </Col>
-                    <Col sm={11}>
-                        <Accordion.Header className="accodian-collapse">{faq.qtn}</Accordion.Header>
-                    </Col>
-                </Row>
-               
-                <Accordion.Body className="">
-                    {faq.ans1} 
-                    <br />
-                    {faq.ans2}
-                    <br />
-                    {faq.ans3}
-                    <br />
-                    {faq.ans4}
-                </Accordion.Body>
-              </Accordion.Item>
-            </Accordion>
+          <Accordion className="mx-auto" flush key={faq.id}>
+            <Accordion.Item eventKey={faq.id}>
+              <Row className="text-center justify-content-center border-bottom">
+                <Accordion.Header className="accodian-collapse">
+                  <h5>{faq.qtn}</h5>
+                </Accordion.Header>
+              </Row>
+
+              <Accordion.Body className="fs-6">
+                {faq.ans1}
+                <br />
+                {faq.ans2}
+                <br />
+                {faq.ans3}
+                <br />
+                {faq.ans4}
+              </Accordion.Body>
+            </Accordion.Item>
+          </Accordion>
           
-        )
+        );
       })}
-      
-    </Container>
-  )
-}
+      </Container>
+    </div>
+  );
+};
 
 export default FAQ;

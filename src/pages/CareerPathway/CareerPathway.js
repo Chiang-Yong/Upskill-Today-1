@@ -4,6 +4,7 @@ import Placeholder from "../../images/placeholder.jpg";
 import Quiz from "./Quiz";
 import RegisterYourInterest from "./RegisterYourInterest";
 import BackTopButton from "../../components/BackToTopButton";
+import { Link } from 'react-router-dom'
 
 const CPStyle = {
   container: {
@@ -76,34 +77,32 @@ const CareerPathway = () => {
               </Card.Title>
               <Card.Text className="d-flex justify-content-center"></Card.Text>
               <Card.Text className="d-flex justify-content-center">
-                <Button style={CPStyle.button} href="/JavascriptCourse">
+               <Link to="/PathwayDetails/JavascriptCourse"><Button style={CPStyle.button} href="/JavascriptCourse">
                   Find Out More
-                </Button>
+                </Button> </Link> 
               </Card.Text>
             </Card.Body>
           </Card>
 
-          <Card style={CPStyle.card}>
-            <Card.Img
-              variant="top"
-              src={Placeholder}
-              className="rounded mx-0 d-block"
-              style={{
-                display: " block",
-              }}
-            />
-            <Card.Body>
-              <Card.Title className="d-flex justify-content-center">
-                Java Course
-              </Card.Title>
-              <Card.Text className="d-flex justify-content-center"></Card.Text>
-              <Card.Text className="d-flex justify-content-center">
-                <Button style={CPStyle.button} href="/JavaCourse">
-                  Find Out More
-                </Button>
-              </Card.Text>
-            </Card.Body>
-          </Card>
+        <Card style={CPStyle.card}>
+          <Card.Img
+            variant="top"
+            src={Placeholder}
+            className="rounded mx-0 d-block"
+            style={{
+              display: " block",
+            }}
+          />
+          <Card.Body>
+            <Card.Title className="d-flex justify-content-center">
+              Java Course
+            </Card.Title>
+            <Card.Text className="d-flex justify-content-center"></Card.Text>
+            <Card.Text className="d-flex justify-content-center">
+              <Link to="/PathwayDetails/JavaCourse"><Button style={CPStyle.button}>Find Out More</Button></Link>
+            </Card.Text>
+          </Card.Body>
+        </Card>
 
           <Card style={CPStyle.card}>
             <Card.Img
@@ -120,9 +119,9 @@ const CareerPathway = () => {
               </Card.Title>
               <Card.Text className="d-flex justify-content-center"></Card.Text>
               <Card.Text className="d-flex justify-content-center">
-                <Button style={CPStyle.button} href="/DevOpsCourse">
+              <Link to="/PathwayDetails/DevOpsCourse"> <Button style={CPStyle.button} href="/DevOpsCourse">
                   Find Out More
-                </Button>
+                </Button></Link> 
               </Card.Text>
             </Card.Body>
           </Card>

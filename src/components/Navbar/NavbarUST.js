@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
-import Upskill from "../../images/WhiteLogo.png";
+import Upskill from "../../images/UpskillToday Logo.bmp";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -19,7 +19,7 @@ const NavbarUST = () => {
   };
 
   return (
-    <Navbar sticky="top" bg="dark" expand="lg" variant="dark">
+    <Navbar sticky="top" expand="lg" className="navbar-main">
       <Container fluid>
         <Navbar.Brand href="/">
           <img
@@ -33,38 +33,40 @@ const NavbarUST = () => {
           <Nav className="ms-auto d-flex fw-bold fs-5 ">
             <Link 
               to="/Home"
-              className="text-white mx-2 hover-navbar"
-              style={{ textDecoration: "none", fontWeight: "700" }}
+              className="text-black mx-5 hover-navbar border-start"
+              style={{paddingLeft: "1.0rem", textDecoration: "none", fontWeight: "600" }}
             >
               Home
             </Link>
             <Link
               to="/About"
-              className="text-white mx-2 hover-navbar"
-              style={{ textDecoration: "none", fontWeight: "700" }}
+              className="text-black mx-5 hover-navbar border-start"
+              style={{ paddingLeft: "1.0rem", textDecoration: "none", fontWeight: "600" }}
             >
-              About-Us
+              About Us
             </Link>
             <Link
               to="/CareerPathway"
-              className="text-white mx-2 hover-navbar"
-              style={{ textDecoration: "none", fontWeight: "700" }}
+              className="text-black mx-5 hover-navbar border-start"
+              style={{ paddingLeft: "1.0rem", textDecoration: "none", fontWeight: "600", }}
             >
-              Career-Pathway
+              Career Pathway
             </Link>
             <Link
               to="/Corporate"
-              className="text-white mx-2 hover-navbar"
-              style={{ textDecoration: "none", fontWeight: "700" }}
+              className="text-black mx-5 hover-navbar border-start"
+              style={{ paddingLeft: "1.0rem", textDecoration: "none", fontWeight: "600",}}
             >
               Corporate
             </Link>
             <Link
               to="/Contact"
-              className="text-white mx-2 hover-navbar"
-              style={{ textDecoration: "none", fontWeight: "700" }}
+              className="text-black me-3 border-start navbar-hover"
+              style={{ textDecoration: "none", paddingLeft: "1.5rem"}}
             >
-              Contact-Us
+              <Button className="navbar-button"
+              >Contact Us</Button>
+              
             </Link>
           </Nav>
         </Navbar.Collapse>
