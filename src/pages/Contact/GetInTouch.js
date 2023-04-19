@@ -74,7 +74,7 @@ const GetInTouch = () => {
         <Col sm={6} >
           <div className="getintouch-form border rounded-4 border-warning" style={{borderColor:"#ff7b00"}}>
             <Form>
-              <h1 className="text-center">Get In Touch</h1>
+              <h1 className="text-center">GET IN TOUCH</h1>
               <Row>
                 <Form.Group as={Col} className="mb-3" controlId="formBasicName">
                   <Form.Label></Form.Label>
