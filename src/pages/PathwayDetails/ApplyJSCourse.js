@@ -22,7 +22,7 @@ const AJSCstyle = {
     marginTop: "5%",
     color: "#fff",
     fontWeight: 800,
-    fontSize: "3rem",
+    fontSize: "clamp(0.8rem, 2vw,3rem)",
     paddingTop: "55%",
   },
 
