@@ -1,56 +1,82 @@
-import React from 'react'
-import "./benefits.css"
-import { Container, Button, Card, Carousel, Row } from "react-bootstrap";
-import CostSavings from "../../images/CostSavings.jpg";
-import { Icon } from "react-icons-kit";
-import { thumbsOUp } from 'react-icons-kit/fa/thumbsOUp'
-import { chain } from 'react-icons-kit/fa/chain'
-import { dollar } from 'react-icons-kit/fa/dollar'
+import React from "react";
+import "./benefits.css";
+import { Col, Row, Card, Container } from "react-bootstrap";
+
+import CostSavings from "../../images/CostSavings.png";
+import BestMatch from "../../images/BestMatch.png";
+import CompetentReady from "../../images/CompetentReady.png";
 
 const Benefits = () => {
     return (
-        <Container className="benefits" fluid>
-            <Row>
-                <h1 className="benefits-title"> Benefits</h1>
-            </Row>
+        <Container fluid className="benefits">
+            <h1 className="benefits-title"> Benefits</h1>
 
-            <Row xs={1} md={3} className="px-5 py-3 mx-auto justify-content-around">
-
-                <Card>
+            <Row xs={1} md={3} className="mx-auto  justify-content-evenly px-3 py-3">
+                <Card className="border-0 mb-4" style={{ width: "20rem" }}>
+                    <Card.Img
+                        variant="top"
+                        src={CostSavings}
+                        className="img-fluid rounded mx-auto d-block"
+                        style={{
+                            objectFit: "contain",
+                            textAlign: "center",
+                            maxHeight: "7rem",
+                            height: "100%",
+                        }}
+                    />
                     <Card.Body>
-                        <Icon size={64} icon={dollar} style={{ color: "#ff7b00" }} className="d-flex justify-content-center" />
-                        <h1>Cost Savings</h1>
-                        <Card.Text className="d-flex justify-content-center"></Card.Text>
-                        <Card.Text className="d-flex justify-content-center">
+                        <Card.Title className="text-center fw-bold ">
+                            Cost Savings
+                        </Card.Title>
+                        <Card.Text className="text-center">
                             Up to 50% savings on usual rates from recruitment campanies
                         </Card.Text>
                     </Card.Body>
                 </Card>
 
-                <Card>
+                <Card className=" border-0 mb-4" style={{ width: "20rem" }}>
+                    <Card.Img
+                        variant="top"
+                        src={BestMatch}
+                        className="img-fluid rounded mx-auto d-block "
+                        style={{
+                            objectFit: "contain",
+                            textAlign: "center",
+                            maxHeight: "7rem",
+                            height: "100%",
+                        }}
+                    />
                     <Card.Body>
-                        <Icon size={64} icon={chain} style={{ color: "#ff7b00" }} className="d-flex justify-content-center" />
-                        <h1>Best Match</h1>
-                        <Card.Text className="d-flex justify-content-center"></Card.Text>
-                        <Card.Text className="d-flex justify-content-center">
+                        <Card.Title className="text-center fw-bold  ">
+                            Best Match
+                        </Card.Title>
+                        <Card.Text className="text-center">
                             A pool of ready candidates trainable on your custom requirements
                         </Card.Text>
                     </Card.Body>
                 </Card>
 
-                <Card>
+                <Card className=" border-0 mb-4" style={{ width: "20rem" }}>
+                    <Card.Img
+                        variant="top"
+                        src={CompetentReady}
+                        className="rounded mx-auto d-block img-fluid"
+                        style={{
+                            objectFit: "contain",
+                            textAlign: "center",
+                            maxHeight: "7rem",
+                            height: "100%",
+                        }}
+                    />
                     <Card.Body>
-                        <Icon size={64} icon={thumbsOUp} style={{ color: "#ff7b00" }} className="d-flex justify-content-center" />
-
-                        <h1>Competent Ready</h1>
-                        <Card.Text className="d-flex justify-content-center"></Card.Text>
-                        <Card.Text className="d-flex justify-content-center">
+                        <Card.Title className="text-center fw-bold  ">
+                            Competent Ready
+                        </Card.Title>
+                        <Card.Text className="text-center">
                             Readily available competent consultants to support your charter
                         </Card.Text>
                     </Card.Body>
                 </Card>
-
-
             </Row>
         </Container>
     )

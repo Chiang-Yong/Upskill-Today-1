@@ -19,6 +19,10 @@ const Corporate = () => {
 
       <CorporateStatistics />
 
+      <CorprateTestimonials />
+
+      <AccelerateLogos />
+
       <CollaborateWithUsForm />
 
       <BackTopButton />
