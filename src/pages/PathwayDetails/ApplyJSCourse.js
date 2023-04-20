@@ -1,12 +1,13 @@
 import React from "react";
-import { Row, Button, Container, Image, Card } from "react-bootstrap";
-import FullFrontBack from "../../images/FullFrontBack1.jpg";
+import { Row, Button, Container} from "react-bootstrap";
+
 
 const AJSCstyle = {
   main: {
     width: "100%",
     height: "auto",
     display: "block",
+    backgroundColor:"#fff9eb",
   },
   button: {
     marginTop: "3%",
@@ -20,7 +21,7 @@ const AJSCstyle = {
 
   title: {
     marginTop: "5%",
-    color: "#fff",
+    color: "#000",
     fontWeight: 800,
     fontSize: "clamp(0.8rem, 2vw,3rem)",
     marginTop: "-1%",
@@ -53,21 +54,11 @@ const ApplyJSCourse = () => {
     <div style={AJSCstyle.main}>
       <Container style={AJSCstyle.container} className="rounded-4">
         <Row>
-          <Card style={AJSCstyle.card}>
-            <Card.Img
-              src={FullFrontBack}
-              style={AJSCstyle.image}
-              className="d-flex justify-content-center"
-              fluid
-            />
-            <Card.ImgOverlay>
-              <Card.Title>
+          
                 <h1 style={AJSCstyle.title} className="text-center">
                   Apply to Our JavaScript Developer Course
                 </h1>
-              </Card.Title>
-            </Card.ImgOverlay>
-          </Card>
+          
         </Row>
         <Row className="d-flex justify-content-center">
           <Button type="submit" style={AJSCstyle.button}>

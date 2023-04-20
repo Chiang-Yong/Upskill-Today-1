@@ -1,12 +1,12 @@
 import React from "react";
-import { Row, Button, Container, Image, Card } from "react-bootstrap";
-import FullFrontBack from "../../images/FullFrontBack1.jpg";
+import { Row, Button, Container } from "react-bootstrap";
 
 const DOECstyle = {
   main: {
     width: "100%",
     height: "auto",
     display: "block",
+    backgroundColor:"#fff9eb",
   },
   button: {
     marginTop: "3%",
@@ -20,7 +20,7 @@ const DOECstyle = {
 
   title: {
     marginTop: "5%",
-    color: "#fff",
+    color: "#000",
     fontWeight: 800,
     fontSize: "clamp(0.8rem, 2vw,3rem)",
     marginTop: "-1%",
@@ -35,17 +35,15 @@ const DOECstyle = {
     height: "auto",
   },
 
-  container:{
-    marginTop:"1%",
-    paddingTop:"2%",
-    border:"none",
+  container: {
+    marginTop: "1%",
+    paddingTop: "2%",
+    border: "none",
   },
   card: {
-    border:"none",
-    backgroundColor:"#fff9eb",
-  }
-
-
+    border: "none",
+    backgroundColor: "#fff9eb",
+  },
 };
 
 const ApplyDevOpsCourse = () => {
@@ -53,21 +51,9 @@ const ApplyDevOpsCourse = () => {
     <div style={DOECstyle.main}>
       <Container style={DOECstyle.container} className="rounded-4">
         <Row>
-          <Card style={DOECstyle.card}>
-            <Card.Img
-              src={FullFrontBack}
-              style={DOECstyle.image}
-              className="d-flex justify-content-center"
-              fluid
-            />
-            <Card.ImgOverlay>
-              <Card.Title>
-                <h1 style={DOECstyle.title} className="text-center">
-                  Apply to Our DevOps Course
-                </h1>
-              </Card.Title>
-            </Card.ImgOverlay>
-          </Card>
+          <h1 style={DOECstyle.title} className="text-center">
+            Apply to Our DevOps Course
+          </h1>
         </Row>
         <Row className="d-flex justify-content-center">
           <Button type="submit" style={DOECstyle.button}>
