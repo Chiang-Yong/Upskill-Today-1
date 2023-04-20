@@ -4,7 +4,7 @@ import quizplaceholder from "../../images/quizplaceholder.png";
 
 const QuizStyle = {
   main: {
-    backgroundColor: "#fff9eb",
+    backgroundColor: "white",
     height: "auto",
     width: "100%",
   },

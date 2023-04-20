@@ -52,7 +52,7 @@ const NavbarUST = () => {
               style={{ paddingLeft: "1.0rem", textDecoration: "none", fontWeight: "600", }}
             ></Link> */}
               <NavDropdown className="navbar-margintop border-start" title="Career Pathway" id="basic-nav-dropdown">
-              <NavDropdown.Item><NavLink to="/PathwayDetails"></NavLink></NavDropdown.Item>
+              <NavDropdown.Item><NavLink to="/CareerPathway">Career Pathway</NavLink></NavDropdown.Item>
                 <NavDropdown.Item><NavLink to="/PathwayDetails/JavaCourse">Java Course</NavLink></NavDropdown.Item>
                 <NavDropdown.Item><NavLink to="/PathwayDetails/JavascriptCourse">JavaScript Course</NavLink></NavDropdown.Item>
                 <NavDropdown.Item><NavLink to="/PathwayDetails/DevOpsCourse">DevOps Course</NavLink></NavDropdown.Item>
