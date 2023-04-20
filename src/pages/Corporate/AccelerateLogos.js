@@ -25,72 +25,70 @@ const AccelerateLogos = () => {
             </Row>
 
 
-            <Row>
-                <div class="d-flex justify-content-center">
-
-                    <div class="p-2 mx-5">
-                        <Image
-                            src={unilever}
-                            className="img-fluid rounded mx-auto d-block"
-                            style={{
-                                objectFit: "contain",
-                                textAlign: "center",
-                                maxHeight: "7rem",
-                                height: "100%",
-                            }}
-                        />
-                    </div>
-                    <div class="p-2 mx-5">
-                        <Image
-                            src={dole}
-                            className="img-fluid rounded mx-auto d-block"
-                            style={{
-                                objectFit: "contain",
-                                textAlign: "center",
-                                maxHeight: "7rem",
-                                height: "100%",
-                            }}
-                        />
-                    </div>
-                    <div class="p-2 mx-5">
-                        <Image
-                            src={visy}
-                            className="img-fluid rounded mx-auto d-block"
-                            style={{
-                                objectFit: "contain",
-                                textAlign: "center",
-                                maxHeight: "7rem",
-                                height: "100%",
-                            }}
-                        />
-                    </div>
-                    <div class="p-2 mx-5">
-                        <Image
-                            src={utopia}
-                            className="img-fluid rounded mx-auto d-block"
-                            style={{
-                                objectFit: "contain",
-                                textAlign: "center",
-                                maxHeight: "7rem",
-                                height: "100%",
-                            }}
-                        />
-                    </div>
-                    <div class="p-2 mx-5">
-                        <Image
-                            src={oracle}
-                            className="img-fluid rounded mx-auto d-block"
-                            style={{
-                                objectFit: "contain",
-                                textAlign: "center",
-                                maxHeight: "7rem",
-                                height: "100%",
-                            }}
-                        />
-                    </div>
-                </div>
+            <Row className='logo'>
+                <Col class="p-2 mx-5">
+                    <Image
+                        src={unilever}
+                        className="img-fluid rounded mx-auto d-block"
+                        style={{
+                            objectFit: "contain",
+                            textAlign: "center",
+                            maxHeight: "7rem",
+                            height: "100%",
+                        }}
+                    />
+                </Col>
+                <Col class="p-2 mx-5">
+                    <Image
+                        src={dole}
+                        className="img-fluid rounded mx-auto d-block"
+                        style={{
+                            objectFit: "contain",
+                            textAlign: "center",
+                            maxHeight: "7rem",
+                            height: "100%",
+                        }}
+                    />
+                </Col>
+                <Col class="p-2 mx-5">
+                    <Image
+                        src={visy}
+                        className="img-fluid rounded mx-auto d-block"
+                        style={{
+                            objectFit: "contain",
+                            textAlign: "center",
+                            maxHeight: "7rem",
+                            height: "100%",
+                        }}
+                    />
+                </Col>
+                <Col class="p-2 mx-5">
+                    <Image
+                        src={oracle}
+                        className="img-fluid rounded mx-auto d-block"
+                        style={{
+                            objectFit: "contain",
+                            textAlign: "center",
+                            maxHeight: "7rem",
+                            height: "100%",
+                        }}
+                    />
+                </Col>
+                <Col class="p-2 mx-5">
+                    <Image
+                        src={utopia}
+                        className="img-fluid rounded mx-auto d-block"
+                        style={{
+                            objectFit: "contain",
+                            textAlign: "center",
+                            maxHeight: "7rem",
+                            height: "100%",
+                        }}
+                    />
+                </Col>
 
             </Row>
+
 
 
         </Container >
