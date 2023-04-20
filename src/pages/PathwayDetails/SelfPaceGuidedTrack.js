@@ -11,16 +11,19 @@ const SPGTstyle = {
   },
 
   row: {
-    marginTop:"3%",
-    paddingLeft: "10%",
-    paddingRight: "10%",
+    marginTop:"2%",
+    paddingLeft: "20%",
+    paddingRight: "20%",
     marginBottom:"3%",
   },
 
   card: {
-    width: "90%",
-    backgroundColor: "rgba(255,123,0,0.5)",
-    marginTop: "5%",
+    width: "60%",
+    marginTop: "3%",
+    border:"solid",
+    borderWidth:"1px",
+    borderColor:"#ff7b00",
+    borderRadius:"5%",
   },
 
   image: {
@@ -29,16 +32,20 @@ const SPGTstyle = {
     objectFit: 'scale-down'
   },
 
- 
+  cardtitle: {
+    fontWeight:800,
+    fontSize: "1.5rem",
+    color:"black",
+    paddingTop: "5%",
+  },
 
   title: {
     fontWeight:800,
-    fontSize:"35px",
-    color:"black",
-    paddingTop: "5%",
+    fontSize:"3rem",
+    textShadow:"0 4px 6px rgba(0,0,0,0.6)",
+    color:"#ff7b00",
+    paddingTop: "2%",
     marginBottom:"2%",
-    
-
   },
 
   button: {
@@ -57,10 +64,11 @@ const SPGTstyle = {
 const SelfPaceGuidedTrack = () => {
   return (
     <div style={SPGTstyle.main}>
+      <h1 className="text-center" style={SPGTstyle.title}>TWO PATHWAYS</h1>
       <Row style={SPGTstyle.row} className="d-flex text-center justify-content-center">
         <Col className="d-flex text=center justify-content-center">
           <Card style={SPGTstyle.card}>
-            <Card.Title className="text-center" style={SPGTstyle.title}>Self-Paced Pathway</Card.Title>
+            <Card.Title className="text-center" style={SPGTstyle.cardtitle}>Self-Paced Pathway</Card.Title>
             <Card.Img style={SPGTstyle.image} src={SoftUni}></Card.Img>
             <div className="d-flex justify-content-center">
               <Button type="submit" style={SPGTstyle.button}>
@@ -71,7 +79,7 @@ const SelfPaceGuidedTrack = () => {
         </Col>
         <Col className="d-flex text-center justify-content-center">
           <Card style={SPGTstyle.card}>
-            <Card.Title className="text-center" style={SPGTstyle.title}>
+            <Card.Title className="text-center" style={SPGTstyle.cardtitle}>
               Guided Track Pathway
             </Card.Title>
             <Card.Img style={SPGTstyle.image} src={GuidedTrack}></Card.Img>

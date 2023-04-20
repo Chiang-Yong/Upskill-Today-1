@@ -28,7 +28,8 @@ const JSstyle = {
     paddingBottom: "1%",
     color:"#ff7b00",
     fontWeight:800,
-    fontSize:"35px",
+    fontSize:"3rem",
+    textShadow:"0 4px 6px rgba(0,0,0,0.6)",
   },
 
   text:{
@@ -43,11 +44,6 @@ const JavascriptCourse = () => {
   return (
     <div style={JSstyle.main} className="justify-content-center">
        <h1 style={JSstyle.title} className="d-flex justify-content-center">JAVASCRIPT COURSE</h1>
-      <Breadcrumb style={JSstyle.breadcrumb} className="text-decoration-none">
-        <Breadcrumb.Item style={JSstyle.link} className="text-center text-decoration-none d-flex justify-content-center"><Link to="/CareerPathway">Career Pathway</Link></Breadcrumb.Item>
-        <Breadcrumb.Item className="text-center d-flex justify-content-center" active>JavaScript Course</Breadcrumb.Item>
-      </Breadcrumb>
-
       <Row className="border rounded">
         <JavaScriptDeveloper />
       </Row>

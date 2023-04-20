@@ -6,7 +6,7 @@ const JSDstyle = {
   main: {
     width: "100%",
     height: "auto",
-    backgroundColor: "fff9eb",
+    backgroundColor: "white",
   },
 
   row: {
@@ -15,10 +15,10 @@ const JSDstyle = {
   },
 
   frame: {
-    display:"flex",
-    justifyContent:"center",
-    alignItems:"center",
-    },
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
 
   form: {
     width: "80%",
@@ -39,71 +39,38 @@ const JSDstyle = {
     outline: "none",
   },
 
-  video:{
-    display:"flex",
-    justifyContent:"center",
-    alignItems:"center",
-    
+  video: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
 
-  title:{
-    fontSize:"35px",
-    fontWeight:800,
-    color:"#000",
-    paddingBottom:"2%",
+  title: {
+    fontSize: "35px",
+    fontWeight: 800,
+    color: "#000",
+    paddingBottom: "2%",
   },
 };
 const JavaScriptDeveloper = () => {
   return (
     <div style={JSDstyle.main}>
-      
-      <Row className="d-flex justify-content-center text-center border border-1" style={JSDstyle.row}>
-      <h1 className="text-center" style={JSDstyle.title}>READY TO BE NEXT JAVASCRIPT DEVELOPER</h1>
-        <Col style={JSDstyle.video}>
+      <Row
+        className="d-flex justify-content-center text-center border border-1"
+        style={JSDstyle.row}
+      >
+        <h1 className="text-center" style={JSDstyle.title}>
+          READY TO BE NEXT JAVASCRIPT DEVELOPER
+        </h1>
+        <div style={JSDstyle.video}>
           <iframe
             width="560"
             height="315"
             src={src}
             title="Youtube Player"
             frameborder="0"
-            allowFullScreen
-            style={JSDstyle.video}
           />
-        </Col>
-        <Col style={JSDstyle.frame}>
-          <div
-            style={JSDstyle.formCol}
-            className="d-flex justify-content-center border border-1 rounded-3"
-          >
-            <Form style={JSDstyle.form}>
-              <Form.Group className="mb-1" controlId="formBasicName">
-                <Form.Label></Form.Label>
-                <Form.Control type="text" placeholder="First Name" />
-              </Form.Group>
-              <Form.Group className="mb-1" controlId="formBasicName">
-                <Form.Label></Form.Label>
-                <Form.Control type="text" placeholder="Last Name" />
-              </Form.Group>
-              <Form.Group className="mb-1" controlId="formBasicEmail">
-                <Form.Label></Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
-              </Form.Group>
-
-              <Form.Group>
-                <Form.Label></Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Phone number (optional)"
-                />
-              </Form.Group>
-              <div className="d-flex justify-content-center">
-                <Button type="submit" style={JSDstyle.button}>
-                  Submit
-                </Button>
-              </div>
-            </Form>
-          </div>
-        </Col>
+        </div>
       </Row>
     </div>
   );

@@ -42,12 +42,16 @@ const RYIstyle = {
   text: {
     marginTop: "2%",
     fontWeight: 600,
+    paddingTop: "1%",
+    paddingBottom: "1%",
   },
 
   title: {
     marginTop: "2%",
     color: "#ff7b00",
+    fontSize: "3rem",
     fontWeight: 800,
+    textShadow: "0px 4px 6px rgba(0,0,0,0.6)"
   },
 };
 

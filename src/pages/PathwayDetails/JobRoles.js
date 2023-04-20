@@ -3,13 +3,16 @@ import { useState } from 'react';
 import { Card, Col, Row, Button } from 'react-bootstrap'
 import Placeholder from '../../images/placeholder.jpg'
 import JobRolesModal from './JobRolesModal';
+import FullStackIcon from '../../images/fullstack.png'
+import FrontEndIcon from '../../images/frontend.jfif'
+import BackEndIcon from '../../images/backend1.jfif'
 
 const JRStyle = {
     main: {
       width:"100%",
       height:"auto",  
       paddingTop: "5%",
-      backgroundColor: "#fff9eb",
+      backgroundColor: "white",
     },
   
     button: {
@@ -40,14 +43,15 @@ const JRStyle = {
       marginLeft: "1%",
       marginRight: "1%",
       marginBottom: "5%",
-      height:"25rem"
+      height:"25rem",
+      
     },
 
     title: {
-        color: "#000",
-        backgroundColor: "#fff9eb",
+        color: "#ff7b00",
         fontWeight: 800,
-        fontSize: "35px",
+        fontSize: "3rem",
+        textShadow:"0 4px 6px rgba(0,0,0,0.6)",
         marginBottom:"2%",
       },
   };
@@ -62,17 +66,17 @@ const JobRoles = () => {
     <div style={JRStyle.main}>
         <h1 className='text-center' style={JRStyle.title}>JOB ROLES</h1>
         <Row xs={1} md={3} className="g-3 d-flex justify-content-center">
-        <Card style={JRStyle.card}>
+        <Card style={JRStyle.card}className='rounded-4'>
           <Card.Img
             variant="top"
-            src={Placeholder}
+            src={FullStackIcon}
             className="rounded mx-0 d-block"
             style={{
               display: "block",
               objectFit: "scale-down",
             }}
           />
-          <Card.Body style={{backgroundColor:"#dacafb"}}>
+          <Card.Body>
             <Card.Title className="d-flex justify-content-center">
               Full Stack Developer
             </Card.Title>
@@ -84,16 +88,17 @@ const JobRoles = () => {
           </Card.Body>
         </Card>
 
-        <Card style={JRStyle.card}>
+        <Card style={JRStyle.card} className='rounded-4'>
           <Card.Img
             variant="top"
-            src={Placeholder}
+            src={FrontEndIcon}
             className="rounded mx-0 d-block"
             style={{
               display: " block",
+              objectFit:"contain"
             }}
           />
-          <Card.Body style={{backgroundColor:"#c9f1fd"}}>
+          <Card.Body >
             <Card.Title className="d-flex justify-content-center">
               Front-End Developer
             </Card.Title>
@@ -104,16 +109,17 @@ const JobRoles = () => {
           </Card.Body>
         </Card>
 
-        <Card style={JRStyle.card}>
+        <Card style={JRStyle.card} className='rounded-4'>
           <Card.Img
             variant="top"
-            src={Placeholder}
+            src={BackEndIcon}
             className="rounded mx-0 d-block"
             style={{
               display: " block",
+              objectFit:"contain",
             }}
           />
-          <Card.Body style={{backgroundColor:"#dfedd6"}}>
+          <Card.Body>
             <Card.Title className="d-flex justify-content-center">
               Back-End Developer
             </Card.Title>
