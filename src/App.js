@@ -11,21 +11,28 @@ import JavascriptCourse from "./pages/PathwayDetails/JavascriptCourse";
 import DevOpsCourse from "./pages/PathwayDetails/DevOpsCourse";
 import NavbarUST from "./components/Navbar/NavbarUST";
 import Footer from "./components/Footer/Footer";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <NavbarUST />
-
+        <ScrollToTop />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/About" element={<About />} />
           <Route path="/CareerPathway" element={<CareerPathway />} />
           <Route path="/PathwayDetails/JavaCourse" element={<JavaCourse />} />
-          <Route path="/PathwayDetails/JavascriptCourse" element={<JavascriptCourse />} />
-          <Route path="/PathwayDetails/DevOpsCourse" element={<DevOpsCourse />} />
+          <Route
+            path="/PathwayDetails/JavascriptCourse"
+            element={<JavascriptCourse />}
+          />
+          <Route
+            path="/PathwayDetails/DevOpsCourse"
+            element={<DevOpsCourse />}
+          />
           <Route path="/PathwayDetails" element={<PathwayDetails />} />
           <Route path="/Corporate" element={<Corporate />} />
           <Route path="/Contact" element={<Contact />} />

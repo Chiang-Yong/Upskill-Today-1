@@ -1,42 +1,42 @@
-.vision-mission {
+/* .vision-mission {
   height: auto;
   width: 100%;
   display: inline-block;
   background-color: #fff9eb;
-}
+} */
 
-.vision-mission img {
+/* .vision-mission img {
   height: auto;
   width: 75%;
   object-fit: contain;
   filter: brightness(0.8);
   display: block;
   margin-left: 5%;
-}
+} */
 
 .vision-mission h1 {
-  font-size: 35px;
+  /* font-size: 35px; */
   color: #ff7b00;
-  font-weight: 800;
+  /* font-weight: 800;
   justify-content: flex-start;
   align-items: center;
-  margin-left: 10%;
-  text-transform: uppercase;
+  margin-left: 10%; */
+  /* text-transform: uppercase; */
 }
 
-.vision-mission p {
+/* .vision-mission p {
   color: black;
   font-weight: 700;
   font-size: clamp(0.5rem, 2vw, 1.5rem);
   justify-content: flex-start;
   align-items: center;
   margin-left: 10%;
-}
+} */
 
-.vision-mission .row {
+/* .vision-mission .row {
   margin-top: 5%;
-}
+} */
 
-.vision-mission .col {
+/* .vision-mission .col {
   align-items: center;
-}
+} */

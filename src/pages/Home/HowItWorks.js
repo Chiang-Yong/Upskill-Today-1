@@ -1,9 +1,7 @@
 import React from "react";
 import "./howItWorks.css";
 import { Col, Row, Card, Container } from "react-bootstrap";
-// import HireIcon from "../../images/HireIcon.png";
-// import TrainIcon from "../../images/TrainIcon.png";
-// import DeployIcon from "../../images/DeployIcon.png";
+
 import Competence from "../../images/competence.png";
 import Partner from "../../images/partner.png";
 import Order from "../../images/order.png";
@@ -11,7 +9,7 @@ import Order from "../../images/order.png";
 const HowItWorks = () => {
   return (
     <Container fluid>
-      <Row xs={1} md={3} className="mx-auto  justify-content-around px-5 py-5">
+      <Row xs={1} md={3} className="mx-auto  justify-content-evenly px-5 py-5">
         <Card className="border-0 mb-4" style={{ width: "20rem" }}>
           <Card.Img
             variant="top"

@@ -6,7 +6,7 @@ const Footer = () => {
     <>
       <footer
         className="text-center text-lg-start text-white "
-        style={{ backgroundColor: "#be4600" }}
+        style={{ backgroundColor: "#2d2d2d" }}
       >
         <section className="company-info border-bottom ">
           <div className="container text-center text-md-start pt-4">
@@ -136,7 +136,7 @@ const Footer = () => {
 
         <div
           className="text-white text-center p-4"
-          style={{ backgroundColor: "#be4600" }}
+          style={{ backgroundColor: "#2d2d2d" }}
         >
           <span className="text-white " style={{ fontWeight: "500" }}>
             © 2023 Copyright: Upskill Today
