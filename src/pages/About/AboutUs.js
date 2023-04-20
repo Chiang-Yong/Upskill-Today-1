@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import aboutUs from "../../images/AboutUs.jpg";
+import aboutUs from "../../images/AboutUsNew.jpg";
 import "./aboutUs.css";
 
 const AboutUs = () => {
@@ -31,14 +31,14 @@ const AboutUs = () => {
         <Col lg={10}>
           <Card className="bg-dark text-white text-center">
             <Card.Img src={aboutUs} alt="Geco Company" />
-            <Card.ImgOverlay className="px-5">
-              <div className="limit px-5">
-                <h2 className="fw-bold">
+            <Card.ImgOverlay className="px-1">
+              <div className="limit">
+                <h3 className="fw-bold">
                   “It is not the strongest of species that survives, nor the
                   most intelligent that survives. It is the one that is the most
                   adaptable to change.”
-                </h2>
-                <h3> - Charles Darwin</h3>
+                </h3>
+                <h6> - Charles Darwin</h6>
               </div>
             </Card.ImgOverlay>
           </Card>

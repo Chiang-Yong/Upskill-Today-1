@@ -22,6 +22,8 @@
 
 .about-section .card-img-overlay {
   top: 30%;
+
+  bottom: inital;
 }
 
 /* .about-title {
