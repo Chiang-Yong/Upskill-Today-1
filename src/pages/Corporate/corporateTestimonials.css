@@ -1,0 +1,30 @@
+.corporateTestimonials {
+    height: auto;
+    padding-top: 2%;
+    background-color: #fff9eb;
+}
+
+
+
+.corporateTestimonials-title {
+    font-size: 35px;
+    color: #ff7b00;
+    font-weight: 800;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+.corporateTestimonials .card {
+    background-color: #fff;
+    width: 30rem;
+    margin-top: 3%;
+    padding-top: 3%;
+    padding-bottom: 2%;
+
+    border: solid;
+    border-width: 1px;
+    border-color: #ff7b00;
+    border-radius: 5%;
+}

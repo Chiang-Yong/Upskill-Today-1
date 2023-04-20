@@ -9,11 +9,11 @@ import daimler from "../../images/daimler.png";
 
 const CorporateTestimonials = () => {
     return (
-        <Container fluid className="benefits">
-            <h1 className="benefits-title"> Testimonials</h1>
+        <Container fluid className="corporateTestimonials">
+            <h1 className="corporateTestimonials-title"> Testimonials</h1>
 
             <Row xs={1} md={3} className="mx-auto  justify-content-evenly px-3 py-3">
-                <Card className="border-0 mb-4" style={{ width: "20rem" }}>
+                <Card className=" mb-4" style={{ paddingTop: "2%" }} >
                     <Card.Img
                         variant="top"
                         src={accenture}
@@ -33,7 +33,7 @@ const CorporateTestimonials = () => {
                     </Card.Body>
                 </Card>
 
-                <Card className=" border-0 mb-4" style={{ width: "20rem" }}>
+                <Card className=" mb-4" >
                     <Card.Img
                         variant="top"
                         src={Infosys}
@@ -53,7 +53,7 @@ const CorporateTestimonials = () => {
                     </Card.Body>
                 </Card>
 
-                <Card className=" border-0 mb-4" style={{ width: "20rem" }}>
+                <Card className=" mb-4" >
                     <Card.Img
                         variant="top"
                         src={daimler}
