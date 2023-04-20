@@ -2,7 +2,7 @@ import React from "react";
 import CorporateHeader from "./CorporateHeader";
 import PartnerWithUs from "./PartnerWithUs";
 import Benefits from "./Benefits";
-import CorprateTestimonials from "./CorprateTestimonials";
+import CorporateTestimonials from "./CorporateTestimonials";
 import AccelerateLogos from "./AccelerateLogos";
 import CorporateStatistics from "./CorporateStatistics";
 import CollaborateWithUsForm from "./CollaborateWithUsForm";
@@ -18,6 +18,10 @@ const Corporate = () => {
       <Benefits />
 
       <CorporateStatistics />
+
+      <AccelerateLogos />
+
+      <CorporateTestimonials />
 
       <CollaborateWithUsForm />
 
