@@ -27,7 +27,7 @@ const CPStyle = {
     backgroundColor: "#fff9eb",
     fontWeight: 800,
     fontSize: "3rem",
-    textShadow: "0px 4px 6px rgba(0,0,0,0.6)",
+    
   },
 
   card_text: {

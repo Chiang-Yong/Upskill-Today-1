@@ -1,10 +1,10 @@
 import React from 'react'
-import JavaTopSection from "./JavaTopSection"
+import JavaDeveloper from './JavaDeveloper'
 
 
 const JavaCourse = () => {
     return (
-        <JavaTopSection />
+        <JavaDeveloper />
     )
 }
 

@@ -1,7 +1,9 @@
 import React from "react";
-import { Row, Card, Button, Popover, OverlayTrigger } from "react-bootstrap";
+import { Row, Card } from "react-bootstrap";
 import SoftUni from "../../images/SoftUni.png";
 import GuidedTrack from "../../images/GuildedTrack.png";
+import SelfPacedModal from "./SelfPacedModal";
+import SPGuidedTrackModal from "./SPGuidedTrackModal";
 
 const SPGTstyle = {
   main: {
@@ -58,30 +60,6 @@ const SPGTstyle = {
   },
 };
 
-const popoverSP = (
-  <Popover id="popover-basic">
-    <Popover.Header as="h3">SELF-PACED PATHWAY</Popover.Header>
-    <Popover.Body>
-      For Self-paced Track*, the subscription fee is SGD99 per month. On
-      average, it takes 4-6 months to complete if study full-time and 8-9 months
-      if study part-time. The total fee is roughly 30% of your first month
-      salary. 97% of 200,000 students have found IT jobs post training. *
-      Currently, Self-paced Track is available under Java Developer and
-      Javascript Developer Tracks.
-    </Popover.Body>
-  </Popover>
-);
-
-const popoverGT = (
-  <Popover id="popover-basic">
-    <Popover.Header as="h3">GUIDED TRACK PATHWAY</Popover.Header>
-    <Popover.Body>
-      For Guided Track*, there will be trainer and mentor to guide you during
-      the training. You will be given assignment and capstone project. Once you
-      pass the technical test and you are ready for deploy.
-    </Popover.Body>
-  </Popover>
-);
 
 const SelfPaceGuidedTrack = () => {
   return (
@@ -96,15 +74,7 @@ const SelfPaceGuidedTrack = () => {
           </Card.Title>
           <Card.Img style={SPGTstyle.image} src={SoftUni}></Card.Img>
           <div className="d-flex justify-content-center">
-          <OverlayTrigger
-                trigger="click"
-                placement="right"
-                overlay={popoverSP}
-              >
-            <Button type="submit" style={SPGTstyle.button}>
-              Click For More Info
-            </Button>
-            </OverlayTrigger>
+          <SelfPacedModal />
           </div>
         </Card>
 
@@ -114,15 +84,7 @@ const SelfPaceGuidedTrack = () => {
           </Card.Title>
           <Card.Img style={SPGTstyle.image} src={GuidedTrack}></Card.Img>
           <div className="d-flex justify-content-center">
-          <OverlayTrigger
-                trigger="click"
-                placement="right"
-                overlay={popoverGT}
-              >
-            <Button type="submit" style={SPGTstyle.button}>
-              Click For More Info
-            </Button>
-            </OverlayTrigger>
+          <SPGuidedTrackModal />
           </div>
         </Card>
       </Row>

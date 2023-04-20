@@ -1,8 +1,11 @@
 import React from "react";
-import { Card, Row, Button, Popover, OverlayTrigger } from "react-bootstrap";
+import { Card, Row } from "react-bootstrap";
 import FullStackIcon from "../../images/fullstack.png";
 import FrontEndIcon from "../../images/frontend.jfif";
 import BackEndIcon from "../../images/backend1.jfif";
+import JobRoleFSModal from "./JobRoleFSModal";
+import JobRoleFEModal from "./JobRoleFEModal";
+import JobRoleBEModal from "./JobRoleBEModal";
 
 const JRStyle = {
   main: {
@@ -52,58 +55,6 @@ const JRStyle = {
   },
 };
 
-const popoverFS = (
-  <Popover id="popover-basic">
-    <Popover.Header as="h3">Full Stack Developer</Popover.Header>
-    <Popover.Body>
-      A <strong>full stack developer</strong> is a software engineer who is
-      skilled in developing applications for both the front-end and back-end. In
-      other words, they have knowledge and expertise in all the layers of the
-      software stack, including the user interface, application logic, and
-      database. The responsibilities of a full stack developer may include
-      designing and implementing the user interface using HTML, CSS, and
-      JavaScript, writing the application logic in languages such as Java,
-      Python, or Ruby, and managing the database using SQL or NoSQL
-      technologies.
-    </Popover.Body>
-  </Popover>
-);
-
-const popoverFE = (
-  <Popover id="popover-basic">
-    <Popover.Header as="h3">Front-End Developer</Popover.Header>
-    <Popover.Body>
-      A <strong>front-end developer</strong> is a software engineer who focuses
-      on the development of the user interface of a software application. They
-      are responsible for designing and building the part of the software that
-      the user interacts with directly, such as web pages, forms, buttons, and
-      other elements of the user interface. Front-end developers use a variety
-      of technologies to create user interfaces, including HTML, CSS, and
-      JavaScript. They must have a strong understanding of user experience (UX)
-      design principles and be able to create visually appealing, easy-to-use
-      interfaces that are optimized for speed and performance.
-    </Popover.Body>
-  </Popover>
-);
-
-const popoverBE = (
-  <Popover id="popover-basic">
-    <Popover.Header as="h3">Back-End Developer</Popover.Header>
-    <Popover.Body>
-      A <strong>back-end developer</strong> is a software engineer who focuses
-      on the development of the server-side components of a software
-      application. They are responsible for designing and building the part of
-      the software that runs on the server and is responsible for processing
-      data and serving it to the front-end components of the application.
-      Back-end developers use a variety of technologies to build server-side
-      components, including programming languages such as Java, Python, or Ruby,
-      and database technologies such as SQL or NoSQL. They must have a strong
-      understanding of data structures, algorithms, and system architecture, as
-      well as good problem-solving skills.
-    </Popover.Body>
-  </Popover>
-);
-
 const JobRoles = () => {
   return (
     <div style={JRStyle.main}>
@@ -127,15 +78,7 @@ const JobRoles = () => {
             </Card.Title>
             <Card.Text className="d-flex justify-content-center"></Card.Text>
             <Card.Text className="d-flex justify-content-center">
-              <OverlayTrigger
-                trigger="click"
-                placement="right"
-                overlay={popoverFS}
-              >
-                <Button style={JRStyle.button}>
-                  Find Out More
-                </Button>
-              </OverlayTrigger>
+            <JobRoleFSModal />
             </Card.Text>
           </Card.Body>
         </Card>
@@ -156,15 +99,8 @@ const JobRoles = () => {
             </Card.Title>
             <Card.Text className="d-flex justify-content-center"></Card.Text>
             <Card.Text className="d-flex justify-content-center">
-            <OverlayTrigger
-                trigger="click"
-                placement="right"
-                overlay={popoverFE}
-              >
-              <Button style={JRStyle.button}>
-                Find Out More
-              </Button>
-              </OverlayTrigger>
+            <JobRoleFEModal />
+              
             </Card.Text>
           </Card.Body>
         </Card>
@@ -185,19 +121,12 @@ const JobRoles = () => {
             </Card.Title>
             <Card.Text className="d-flex justify-content-center"></Card.Text>
             <Card.Text className="d-flex justify-content-center">
-            <OverlayTrigger
-                trigger="click"
-                placement="right"
-                overlay={popoverBE}
-              >
-              <Button style={JRStyle.button}>
-                Find Out More
-              </Button>
-              </OverlayTrigger>
+            <JobRoleBEModal />
             </Card.Text>
           </Card.Body>
         </Card>
       </Row>
+      
     </div>
   );
 };
