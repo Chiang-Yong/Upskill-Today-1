@@ -29,8 +29,7 @@ const JSstyle = {
     color:"#ff7b00",
     fontWeight:800,
     fontSize:"3rem",
-    textShadow:"0 4px 6px rgba(0,0,0,0.6)",
-  },
+   },
 
   text:{
     fontWeight:600,

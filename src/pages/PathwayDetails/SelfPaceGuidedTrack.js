@@ -40,7 +40,7 @@ const SPGTstyle = {
   title: {
     fontWeight: 800,
     fontSize: "3rem",
-    textShadow: "0 4px 6px rgba(0,0,0,0.6)",
+   
     color: "#ff7b00",
     paddingTop: "2%",
     marginBottom: "2%",
