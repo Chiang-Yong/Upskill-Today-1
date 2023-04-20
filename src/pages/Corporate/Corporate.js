@@ -20,6 +20,7 @@ const Corporate = () => {
       <CorporateStatistics />
 
       <CollaborateWithUsForm />
+
       <BackTopButton />
     </>
   );
