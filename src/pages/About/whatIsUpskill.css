@@ -1,21 +1,6 @@
 .what-upskill {
-  /* height: auto;
-    width:100%;
-    display: block; */
   background-color: #fff9eb;
 }
-
-/* .what-upskill img {
-  height: auto;
-  width: 80%;
-  object-fit: contain;
-  filter: brightness(0.8);
-  display: inline-block;
-  margin-top: 12%;
-  margin-left: 15%;
-  padding-left: 5%;
-  position: relative;
-} */
 
 .what-upskill h1 {
   /* font-size: 35px; */
@@ -28,13 +13,17 @@
   position: relative; */
 }
 
-/* .what-upskill p {
-  color: black;
-  font-weight: 700;
-  font-size: clamp(0.5rem, 2vw, 1.5rem);
-  justify-content: flex-start;
-  align-items: center;
-  margin-right: 5%;
-
-  position: relative;
-} */
+.what-upskill button {
+  font-size: 1.2em;
+  font-weight: 600;
+  background-color: #ff7b00;
+  border: none;
+  border-radius: 20px;
+  padding: 0.8rem;
+}
+.what-upskill button:hover {
+  background-color: #a60037;
+  border-color: #a60037;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}

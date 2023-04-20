@@ -7,52 +7,52 @@ import ApplyJSCourse from "./ApplyJSCourse";
 import { Link } from "react-router-dom";
 
 const JSstyle = {
-  main:{
+  main: {
     width: "100%",
     height: "auto",
     backgroundColor: "#fff9eb",
   },
 
-  breadcrumb:{
-    marginLeft:"40%",
+  breadcrumb: {
+    marginLeft: "40%",
   },
 
-  link:{
-    textDecoration:"none",
-    color:"red",
-
+  link: {
+    textDecoration: "none",
+    color: "red",
   },
 
-  title:{
-    paddingTop:"5%",
+  title: {
+    paddingTop: "5%",
     paddingBottom: "1%",
-    color:"#ff7b00",
-    fontWeight:800,
-    fontSize:"3rem",
-   },
+    color: "#ff7b00",
+    fontWeight: 800,
+    fontSize: "3rem",
+  },
 
-  text:{
-    fontWeight:600,
-    paddingTop:"2%",
-    paddingBottom:"2%",
-
-  }
-}
+  text: {
+    fontWeight: 600,
+    paddingTop: "2%",
+    paddingBottom: "2%",
+  },
+};
 
 const JavascriptCourse = () => {
   return (
-    <div style={JSstyle.main} className="justify-content-center">
-       <h1 style={JSstyle.title} className="d-flex justify-content-center">JAVASCRIPT COURSE</h1>
+    <div className="justify-content-center">
+      <h1 style={JSstyle.title} className="d-flex justify-content-center">
+        JAVASCRIPT COURSE
+      </h1>
       <Row className="border rounded">
         <JavaScriptDeveloper />
       </Row>
-      <Row className="border rounded">  
+      <Row className="border rounded">
         <SelfPaceGuildedTrack />
       </Row>
-      <Row className="border rounded">  
+      <Row className="border rounded">
         <JobRoles />
       </Row>
-      <Row className="border rounded">  
+      <Row className="border rounded">
         <ApplyJSCourse />
       </Row>
     </div>

@@ -4,7 +4,7 @@ import AboutUs from "./AboutUs";
 import VisionMission from "./VisionMission";
 import WhatIsUpSkill from "./WhatIsUpSkill";
 import WhyUpskill from "./WhyUpskill";
-import AboutTestimontials from "./AboutTestimontials";
+// import AboutTestimontials from "./AboutTestimontials";
 import BackTopButton from "../../components/BackToTopButton";
 
 const About = () => {
@@ -18,7 +18,7 @@ const About = () => {
 
       <WhyUpskill />
 
-      <AboutTestimontials />
+      {/* <AboutTestimontials /> */}
 
       <BackTopButton />
     </>

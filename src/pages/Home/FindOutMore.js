@@ -13,7 +13,7 @@ const FindOutMore = () => {
           <img
             src={pathwayhome}
             alt="why"
-            style={{ width: "80%", height: "auto" }}
+            style={{ height: "auto", width: "90%" }}
           />
         </Col>
         <Col md={5} className="px-5 py-5 ">
@@ -49,7 +49,7 @@ const FindOutMore = () => {
           <img
             src={corporatehome}
             alt="corporatehome"
-            style={{ width: "80%", height: "auto" }}
+            style={{ height: "auto", width: "90%" }}
           />
         </Col>
       </Row>

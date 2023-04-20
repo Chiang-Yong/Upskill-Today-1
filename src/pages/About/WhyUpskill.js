@@ -1,26 +1,40 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import "./whyupskill.css";
 import whyUpskill from "../../images/Why Upskill Today.png";
+import { Link } from "react-router-dom";
 
 const WhyUpskill = () => {
   return (
-    <Container className="why-upskill d-inline-block" fluid='true'>
-      <Row>
-        <Col>
-        <h1 className="text-center" style={{ color: "#ff7b00" }}>
-          Why Upskill Today?
-        </h1>
-        <p className="text-left">
-          Whether you’re a fresh graduates or mid-career switchers looking for a
-          breakthrough in your career, Upskilling not only speeds up your
-          learning in programming language capabilities but also allows you to
-          chart, navigate and grow your career, thus making a complete
-          transformation in the shortest possible time.
-        </p>
+    <Container fluid className="why-upskill py-5 ">
+      <Row className="px-5 py-5 align-items-center flex-column-reverse flex-md-row ">
+        <Col md={{ span: 5, offset: 1 }} className="pe-5">
+          <h1 className="fw-bold mb-3" style={{ color: "#ff7b00" }}>
+            We're on a mission to empower people
+          </h1>
+          <h4 className="lh-md">
+            Are you a fresh graduates or mid-career switchers looking for a
+            breakthrough in your career?
+          </h4>
+          <h4 className="lh-md">
+            Upskilling not only speeds up your learning in programming language
+            capabilities but also allows you to chart, navigate and grow your
+            career, thus making a complete transformation in the shortest
+            possible time.
+          </h4>
+
+          <Link className="text-decoration-none text-white" to="/CareerPathway">
+            <Button size="lg" className=" mt-3 ">
+              Browse our Pathways
+            </Button>
+          </Link>
         </Col>
-        <Col>
-         <img src={whyUpskill} alt="why up<skill?" />
+        <Col md={5}>
+          <img
+            src={whyUpskill}
+            alt="why-upskill"
+            style={{ width: "100%", height: "auto" }}
+          />
         </Col>
       </Row>
     </Container>

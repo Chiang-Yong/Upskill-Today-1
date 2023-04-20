@@ -1,13 +1,30 @@
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import aboutUs from "../../images/AboutUsNew.jpg";
+// import aboutUs from "../../images/AboutUsNew.jpg";
+import aboutstart from "../../images/about-start-new.png";
 import "./aboutUs.css";
 
 const AboutUs = () => {
   return (
-    <Container fluid className="about-section">
-      <Row className="text-center py-5">
-        <h1 className="about-title">About Us</h1>
+    <Container fluid className="about-section py-4">
+      <Row className="px-5 py-5 align-items-center flex-column-reverse flex-md-row">
+        <Col md={{ span: 3, offset: 1 }} className="pe-1">
+          <h1 className="fw-bold" style={{ color: "#ff7b00" }}>
+            About Upskill Today
+          </h1>
+          <h4>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit amet nulla
+            nulla pellentesque tincidunt augue .
+          </h4>
+        </Col>
+        <Col md={7}>
+          <img
+            fluid
+            src={aboutstart}
+            alt="about-start"
+            style={{ height: "auto", width: "100%" }}
+          />
+        </Col>
 
         {/* <Col>
           <h1 className="about-title">
@@ -27,23 +44,11 @@ const AboutUs = () => {
           </p>
         </Col> */}
       </Row>
-      <Row className="px-5 py-5 justify-content-center align-items-center">
+      {/* <Row className="px-5 py-5  text-center justify-content-center align-items-center">
         <Col lg={10}>
-          <Card className="bg-dark text-white text-center">
-            <Card.Img src={aboutUs} alt="Geco Company" />
-            {/* <Card.ImgOverlay className="px-5">
-              <div className="limit px-5">
-                <h2 className="fw-bold">
-                  “It is not the strongest of species that survives, nor the
-                  most intelligent that survives. It is the one that is the most
-                  adaptable to change.”
-                </h3>
-                <h6> - Charles Darwin</h6>
-              </div>
-            </Card.ImgOverlay> */}
-          </Card>
+          <img src={aboutUs} alt="Geco Company" />
         </Col>
-      </Row>
+      </Row> */}
     </Container>
   );
 };
