@@ -5,7 +5,8 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import "./navbar.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { NavDropdown } from "react-bootstrap";
 
 const NavbarUST = () => {
   const [isHovering, setIsHovering] = useState(false);
@@ -25,12 +26,12 @@ const NavbarUST = () => {
           <img
             src={Upskill}
             alt="logo"
-            className="d-inline-block align-top navbar-image "
+            className="d-inline-block navbar-image"
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto d-flex fw-bold fs-5 ">
+          <Nav className="ms-auto fw-bold fs-6">
             <Link 
               to="/Home"
               className="text-black mx-5 hover-navbar border-start"
@@ -45,13 +46,18 @@ const NavbarUST = () => {
             >
               About Us
             </Link>
-            <Link
+          {/*  <Link
               to="/CareerPathway"
               className="text-black mx-5 hover-navbar border-start"
               style={{ paddingLeft: "1.0rem", textDecoration: "none", fontWeight: "600", }}
-            >
-              Career Pathway
-            </Link>
+            ></Link> */}
+              <NavDropdown className="navbar-margintop border-start" title="Career Pathway" id="basic-nav-dropdown">
+              <NavDropdown.Item><NavLink to="/CareerPathway">Career Pathway</NavLink></NavDropdown.Item>
+                <NavDropdown.Item><NavLink to="/PathwayDetails/JavaCourse">Java Course</NavLink></NavDropdown.Item>
+                <NavDropdown.Item><NavLink to="/PathwayDetails/JavascriptCourse">JavaScript Course</NavLink></NavDropdown.Item>
+                <NavDropdown.Item><NavLink to="/PathwayDetails/DevOpsCourse">DevOps Course</NavLink></NavDropdown.Item>
+              </NavDropdown>
+            
             <Link
               to="/Corporate"
               className="text-black mx-5 hover-navbar border-start"
@@ -61,10 +67,10 @@ const NavbarUST = () => {
             </Link>
             <Link
               to="/Contact"
-              className="text-black me-3 border-start navbar-hover"
-              style={{ textDecoration: "none", paddingLeft: "1.5rem"}}
+              className="text-black me-2 border-start navbar-hover"
+              style={{marginRight:"1%", textDecoration: "none", paddingLeft: "1.0rem"}}
             >
-              <Button className="navbar-button"
+              <Button className="navbar-button me-5" style={{marginRight:"1%",backgroundColor:"#ff7b00", border:"none"}}
               >Contact Us</Button>
               
             </Link>

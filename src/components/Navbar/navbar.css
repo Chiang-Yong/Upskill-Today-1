@@ -6,20 +6,12 @@
     width: 300px;
 }
 
-.navbar-main{
+.navbar-main {
   color: black;
   background-color: white;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
       0 17px 50px 0 rgba(0, 0, 0, 0.19);
 
-}
-
-.navbar-button {
-    border: none;
-    outline: none;
-    align-items: center;
-    justify-content: center;
-    white-space: nowrap;
 }
 
 .hover-effect:hover{
@@ -32,6 +24,11 @@
   }
 
   .navbar-button {
+    border: none;
+    outline: none;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
     font-size: 1.0em;
     font-weight: 600;
     background-color: #ff7b00;
@@ -47,3 +44,36 @@
       0 17px 50px 0 rgba(0, 0, 0, 0.19);
       
   }
+
+  .navbar-margintop{
+    margin-top: -0.35rem;
+    padding-left: 1.0rem;
+    text-decoration: none;
+    color:black;
+  }
+
+  .navbar-margintop a {
+
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+
+  }
+
+  .navbar-main .navbar-nav {
+    --bs-nav-link-padding-x: 0;
+    --bs-nav-link-padding-y: 0.5rem;
+    --bs-nav-link-font-weight: ;
+    --bs-nav-link-color: var(--bs-navbar-color);
+    --bs-nav-link-hover-color: #ff7b00;
+    --bs-nav-link-disabled-color: var(--bs-navbar-disabled-color);
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.navbar-nav {
+  --bs-nav-link-hover-color: #ff7b00;
+}

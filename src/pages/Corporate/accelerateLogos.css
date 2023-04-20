@@ -1,0 +1,25 @@
+.AccelerateLogos {
+    height: auto;
+    background-color: #fff;
+    margin-bottom: 3%;
+    margin-top: 3%;
+}
+
+.AccelerateLogos h1 {
+    font-size: 35px;
+    color: #ff7b00;
+    font-weight: 800;
+    text-align: center;
+}
+
+
+.AccelerateLogos p {
+    font-weight: 600;
+    text-align: center;
+}
+
+.AccelerateLogos .logo {
+    padding-left: 200px;
+    padding-right: 200px;
+
+}

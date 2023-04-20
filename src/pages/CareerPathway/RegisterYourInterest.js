@@ -14,6 +14,9 @@ const RYIstyle = {
     width: "60%",
     paddingBottom: "1%",
     backgroundColor: "rgba(224,178,118,0.1)",
+    border:"solid",
+    borderColor: "#ff7b00",
+    borderWidth: "0.5px",
   },
 
   group: {
@@ -39,12 +42,16 @@ const RYIstyle = {
   text: {
     marginTop: "2%",
     fontWeight: 600,
+    paddingTop: "1%",
+    paddingBottom: "1%",
   },
 
   title: {
     marginTop: "2%",
     color: "#ff7b00",
+    fontSize: "3rem",
     fontWeight: 800,
+    textShadow: "0px 4px 6px rgba(0,0,0,0.6)"
   },
 };
 
@@ -54,7 +61,7 @@ const RegisterYourInterest = () => {
       className="d-flex justify-content-center border rounded-3"
       style={RYIstyle.main}
     >
-      <Form className="rounded-3" style={RYIstyle.form}>
+      <Form className="rounded-4" style={RYIstyle.form}>
         <h6 className="text-center" style={RYIstyle.text}>
           TAKE YOUR FIRST STEP
         </h6>
@@ -99,7 +106,7 @@ const RegisterYourInterest = () => {
           <Form.Select aria-label="Default select example">
             <option>Country</option>
             <option value="1">Singapore</option>
-            <option value="2">Philippine</option>
+            <option value="2">Philippines</option>
             <option value="3">Malaysia</option>
           </Form.Select>
         </Form.Group>

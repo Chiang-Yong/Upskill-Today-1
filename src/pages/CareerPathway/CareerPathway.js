@@ -1,6 +1,9 @@
 import React from "react";
 import { Container, Button, Card, Carousel, Row } from "react-bootstrap";
 import Placeholder from "../../images/placeholder.jpg";
+import JavaIcon from "../../images/Java.png";
+import JavaScriptIcon from "../../images/Javascript.jfif";
+import DevOpsIcon from "../../images/devops.png"
 import Quiz from "./Quiz";
 import RegisterYourInterest from "./RegisterYourInterest";
 import BackTopButton from "../../components/BackToTopButton";
@@ -23,13 +26,14 @@ const CPStyle = {
     color: "#ff7b00",
     backgroundColor: "#fff9eb",
     fontWeight: 800,
-    fontSize: "35px",
+    fontSize: "3rem",
+    textShadow: "0px 4px 6px rgba(0,0,0,0.6)",
   },
 
   card_text: {
     color: "black",
-    fontWeight: 600,
-    fontSize: "25px",
+    fontWeight: 700,
+    fontSize: "1.8rem",
     paddingTop: "1%",
     paddingBottom: "1%",
   },
@@ -39,8 +43,13 @@ const CPStyle = {
     padding: "1%",
     marginLeft: "1%",
     marginRight: "1%",
-    marginBottom: "5%",
+    marginBottom: "3%",
   },
+
+  Image: {
+    objectFit: "contain",
+    
+  }
 };
 
 const CareerPathway = () => {
@@ -62,13 +71,16 @@ const CareerPathway = () => {
           </p>
         </Row>
         <Row xs={1} md={3} className="g-3 d-flex justify-content-center">
-          <Card style={CPStyle.card}>
+          <Card style={CPStyle.card} className="rounded-4">
             <Card.Img
               variant="top"
-              src={Placeholder}
+              src={JavaScriptIcon}
               className="rounded mx-0 d-block"
               style={{
                 display: " block",
+                objectFit:"contain",
+                width: "255px",
+                height: "255px",
               }}
             />
             <Card.Body>
@@ -84,10 +96,10 @@ const CareerPathway = () => {
             </Card.Body>
           </Card>
 
-        <Card style={CPStyle.card}>
+        <Card style={CPStyle.card} className="rounded-4">
           <Card.Img
             variant="top"
-            src={Placeholder}
+            src={JavaIcon}
             className="rounded mx-0 d-block"
             style={{
               display: " block",
@@ -104,10 +116,10 @@ const CareerPathway = () => {
           </Card.Body>
         </Card>
 
-          <Card style={CPStyle.card}>
+          <Card style={CPStyle.card} className="rounded-4">
             <Card.Img
               variant="top"
-              src={Placeholder}
+              src={DevOpsIcon}
               className="rounded mx-0 d-block"
               style={{
                 display: " block",

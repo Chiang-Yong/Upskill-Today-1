@@ -1,24 +1,24 @@
 .benefits {
-    height: 100%;
-    padding-top: 0%;
-    background-color: #fff9eb;
+    height: auto;
+    padding-top: 2%;
+    background-color: #fff;
 }
 
 .benefits-title {
     font-size: 35px;
     color: #ff7b00;
     font-weight: 800;
-
     align-items: center;
-
+    text-align: center;
     text-transform: uppercase;
+
 }
 
 .benefits .card {
-    background-color: #fff9eb;
+    background-color: #fff;
     padding-bottom: 10px;
     padding-right: 15px;
-    margin-top: 5%;
+    padding-top: 5%;
     margin-bottom: 5%;
     width: 35rem;
 }

@@ -10,8 +10,8 @@ const FAQ = () => {
       <h3 className="text-center pt-4 pb-3">Most Frequently Ask Questions</h3>
       {FAQData.map((faq) => {
         return (
-          
-          <Accordion className="mx-auto" flush key={faq.id}>
+          <Row>
+          <Accordion className="mx-auto" key={faq.id}>
             <Accordion.Item eventKey={faq.id}>
               <Row className="text-center justify-content-center border-bottom">
                 <Accordion.Header className="accodian-collapse">
@@ -30,7 +30,7 @@ const FAQ = () => {
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
-          
+          </Row>
         );
       })}
       </Container>

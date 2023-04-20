@@ -7,7 +7,7 @@ const AboutUs = () => {
   return (
     <Container fluid className="about-section">
       <Row className="text-center py-5">
-        <h1 className="display-1 fw-bold">About Us</h1>
+        <h1 className="about-title">About Us</h1>
 
         {/* <Col>
           <h1 className="about-title">
@@ -31,16 +31,16 @@ const AboutUs = () => {
         <Col lg={10}>
           <Card className="bg-dark text-white text-center">
             <Card.Img src={aboutUs} alt="Geco Company" />
-            <Card.ImgOverlay className="px-1">
-              <div className="limit">
-                <h3 className="fw-bold">
+            {/* <Card.ImgOverlay className="px-5">
+              <div className="limit px-5">
+                <h2 className="fw-bold">
                   “It is not the strongest of species that survives, nor the
                   most intelligent that survives. It is the one that is the most
                   adaptable to change.”
                 </h3>
                 <h6> - Charles Darwin</h6>
               </div>
-            </Card.ImgOverlay>
+            </Card.ImgOverlay> */}
           </Card>
         </Col>
       </Row>
