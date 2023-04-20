@@ -1,8 +1,11 @@
 import React from "react";
-import { Col, Row, Form, Button } from "react-bootstrap";
-const src = "https://www.youtube.com/embed/upDLs1sn7g4";
+import { Row } from "react-bootstrap";
+import SelfPaceGuidedTrack from "./SelfPaceGuidedTrack";
+import JobRoles from "./JobRoles";
+import ApplyJavaCourse from "./ApplyJavaCourse";
+const src = "https://www.youtube.com/embed/9yzMKaKcoC0";
 
-const JSDstyle = {
+const JDstyle = {
   main: {
     width: "100%",
     height: "auto",
@@ -45,6 +48,14 @@ const JSDstyle = {
     alignItems: "center",
   },
 
+  maintitle: {
+    fontSize: "3.0rem",
+    fontWeight: 800,
+    color: "#ff7b00",
+    paddingBottom: "2%",
+    paddingTop:"2%",
+  },
+
   title: {
     fontSize: "2.5rem",
     fontWeight: 800,
@@ -52,23 +63,25 @@ const JSDstyle = {
     paddingBottom: "2%",
   },
 
-  text:{
+  text: {
     fontSize:"1.2rem",
     fontWeight:700,
+
   }
 };
-const JavaScriptDeveloper = () => {
+const JavaDeveloper = () => {
   return (
-    <div style={JSDstyle.main}>
+    <div style={JDstyle.main}>
+        <h1 style={JDstyle.maintitle} className="text-center">JAVA COURSE</h1>
       <Row
         className="d-flex justify-content-center text-center border border-1"
-        style={JSDstyle.row}
+        style={JDstyle.row}
       >
-        <h1 className="text-center" style={JSDstyle.title}>
-          READY TO BE NEXT JAVASCRIPT DEVELOPER
+        <h1 className="text-center" style={JDstyle.title}>
+          READY TO BE NEXT JAVA DEVELOPER
         </h1>
-        <p style={JSDstyle.text}>Wtach the video below</p>
-        <div style={JSDstyle.video}>
+        <p className="text-center" style={JDstyle.text}>Watch the video below</p>
+        <div style={JDstyle.video}>
           <iframe
             width="560"
             height="315"
@@ -78,8 +91,17 @@ const JavaScriptDeveloper = () => {
           />
         </div>
       </Row>
+      <Row>
+        <SelfPaceGuidedTrack />
+      </Row>
+      <Row>
+        <JobRoles />
+      </Row>
+      <Row>
+        <ApplyJavaCourse />
+      </Row>
     </div>
   );
 };
 
-export default JavaScriptDeveloper;
+export default JavaDeveloper;
