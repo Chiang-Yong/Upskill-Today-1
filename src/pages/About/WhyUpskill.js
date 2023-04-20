@@ -25,7 +25,7 @@ const WhyUpskill = () => {
 
           <Link className="text-decoration-none text-white" to="/CareerPathway">
             <Button size="lg" className=" mt-3 ">
-              Browse our Pathways
+              Browse Our Pathways
             </Button>
           </Link>
         </Col>

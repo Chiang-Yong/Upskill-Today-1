@@ -24,7 +24,7 @@ const FindOutMore = () => {
           <h3 className="lh-md">Explore Our Various Career IT Pathways </h3>
           <Link className="text-decoration-none text-white" to="/CareerPathway">
             <Button size="lg" className=" mt-3 more-button">
-              Visit Pathways
+              Browse Our Pathways
             </Button>
           </Link>
         </Col>
@@ -41,7 +41,7 @@ const FindOutMore = () => {
 
           <Link className="text-decoration-none text-white" to="/Corporate">
             <Button size="lg" className=" mt-3 more-button">
-              View Corporate
+              Explore Our Solutions
             </Button>
           </Link>
         </Col>
