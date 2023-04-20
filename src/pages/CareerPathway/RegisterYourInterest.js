@@ -16,7 +16,7 @@ const RYIstyle = {
     backgroundColor: "rgba(224,178,118,0.1)",
     border:"solid",
     borderColor: "#ff7b00",
-    borderWidth: "0.05px",
+    borderWidth: "0.5px",
   },
 
   group: {

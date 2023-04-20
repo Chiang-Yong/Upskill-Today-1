@@ -70,7 +70,7 @@ const NavbarUST = () => {
               className="text-black me-2 border-start navbar-hover"
               style={{marginRight:"1%", textDecoration: "none", paddingLeft: "1.0rem"}}
             >
-              <Button className="navbar-button me-5" style={{marginRight:"1%"}}
+              <Button className="navbar-button me-5" style={{marginRight:"1%",backgroundColor:"#ff7b00", border:"none"}}
               >Contact Us</Button>
               
             </Link>
