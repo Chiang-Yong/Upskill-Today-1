@@ -7,7 +7,7 @@ const AboutUs = () => {
   return (
     <Container fluid className="about-section">
       <Row className="text-center py-5">
-        <h1 className="display-1 fw-bold">About Us</h1>
+        <h1 className="about-title">About Us</h1>
 
         {/* <Col>
           <h1 className="about-title">
