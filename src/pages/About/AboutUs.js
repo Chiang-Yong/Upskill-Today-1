@@ -31,7 +31,7 @@ const AboutUs = () => {
         <Col lg={10}>
           <Card className="bg-dark text-white text-center">
             <Card.Img src={aboutUs} alt="Geco Company" />
-            <Card.ImgOverlay className="px-5">
+            {/* <Card.ImgOverlay className="px-5">
               <div className="limit px-5">
                 <h2 className="fw-bold">
                   “It is not the strongest of species that survives, nor the
@@ -40,7 +40,7 @@ const AboutUs = () => {
                 </h2>
                 <h3> - Charles Darwin</h3>
               </div>
-            </Card.ImgOverlay>
+            </Card.ImgOverlay> */}
           </Card>
         </Col>
       </Row>

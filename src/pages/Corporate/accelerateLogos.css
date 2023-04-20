@@ -1,8 +1,8 @@
 .AccelerateLogos {
     height: auto;
     background-color: #fff;
-    margin-bottom: 1%;
-    margin-top: 1%;
+    margin-bottom: 3%;
+    margin-top: 3%;
 }
 
 .AccelerateLogos h1 {
@@ -18,11 +18,8 @@
     text-align: center;
 }
 
-.AccelerateLogos logo {
-    /* display: inline-flex; */
-    width: 1200;
-    align-items: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.AccelerateLogos .logo {
+    padding-left: 200px;
+    padding-right: 200px;
+
 }
