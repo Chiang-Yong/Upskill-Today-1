@@ -11,23 +11,26 @@ function SPGuidedTrackModal() {
   return (
     <>
       <Button
-        style={{ backgroundColor: "#ff7b00", border: "none" }}
+        style={{ backgroundColor: "#ff7b00", border: "none", fontWeight:"600" }}
         onClick={handleShow}
       >
-        Click For More Info
+        CLICK FOR MORE INFO
       </Button>
 
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Guided Track Pathway</Modal.Title>
+        <Modal.Header closeButton style={{backgroundColor:"rgba(225,123,123,0.5)"}}>
+          <Modal.Title className="fw-bold">Guided Track</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           For Guided Track*, there will be trainer and mentor to guide you
-          during the training. You will be given assignment and capstone
-          project. Once you pass the technical test and you are ready for
-          deploy.
+          during the training. You will be given assignments and capstone
+          projects. 
+          <br />
+          <br />
+          <strong>Once you pass the technical test and you are ready for
+          deploy.</strong>
         </Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer style={{backgroundColor:"rgba(225,123,123,0.5)"}}>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>

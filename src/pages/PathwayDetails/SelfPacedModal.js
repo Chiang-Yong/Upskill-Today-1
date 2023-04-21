@@ -11,15 +11,15 @@ function SelfPacedModal() {
   return (
     <>
       <Button
-        style={{ backgroundColor: "#ff7b00", border: "none" }}
+        style={{ backgroundColor: "#ff7b00", border: "none", fontWeight:"600" }}
         onClick={handleShow}
       >
-        Click For More Info
+        ClLICK FOR MORE INFO
       </Button>
 
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Self-Paced Pathway</Modal.Title>
+        <Modal.Header closeButton style={{backgroundColor:"rgba(225,123,123,0.5)"}}>
+          <Modal.Title className="fw-bold">Self-Paced Track</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           For Self-paced Track*, the subscription fee is SGD99 per month. On
@@ -27,11 +27,12 @@ function SelfPacedModal() {
           months if study part-time. The total fee is roughly 30% of your first
           month salary. 97% of 200,000 students have found IT jobs post
           training. 
-          
-          * Currently, Self-paced Track is available under Java
-          Developer and Javascript Developer Tracks.
+          <br />
+          <br />
+          <strong>* Currently, Self-paced Track is available under Java
+          Developer and Javascript Developer Tracks.</strong>
         </Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer style={{backgroundColor:"rgba(225,123,123,0.5)"}}>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>

@@ -11,29 +11,35 @@ function JobRoleBEModal() {
   return (
     <>
       <Button
-        style={{ backgroundColor: "#ff7b00", border: "none" }}
+        style={{ backgroundColor: "#ff7b00", border: "none", fontWeight:"600" }}
         onClick={handleShow}
       >
-        Find Out More
+        FIND OUT MORE
       </Button>
 
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Back-End Developer</Modal.Title>
+        <Modal.Header closeButton style={{ background: "linear-gradient(to right, rgba(48, 65, 252,0.7), rgba(93, 107, 252,0.5))" }}>
+          <Modal.Title className="fw-bold">Back-End Developer</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           A <strong>back-end developer</strong> is a software engineer who
           focuses on the development of the server-side components of a software
-          application. They are responsible for designing and building the part
+          application. 
+          <br />
+          <br />
+          They are responsible for designing and building the part
           of the software that runs on the server and is responsible for
           processing data and serving it to the front-end components of the
-          application. Back-end developers use a variety of technologies to
+          application. 
+          <br />
+          <br />
+          Back-end developers use a variety of technologies to
           build server-side components, including programming languages such as
           Java, Python, or Ruby, and database technologies such as SQL or NoSQL.
           They must have a strong understanding of data structures, algorithms,
           and system architecture, as well as good problem-solving skills.
         </Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer style={{ background: "linear-gradient(to left, rgba(48, 65, 252,0.8), rgba(93, 107, 252,0.5))" }}>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
