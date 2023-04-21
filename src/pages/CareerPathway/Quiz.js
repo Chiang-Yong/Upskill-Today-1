@@ -13,14 +13,14 @@ const QuizStyle = {
     color: "#fff",
     border: "none",
     outline: "none",
-    fontWeight:600,
+    fontWeight: 600,
   },
 
   image: {
     display: "block",
     width: "100%",
     height: "auto",
-    justifyContent:"center",
+    justifyContent: "center",
     alignItems: "center",
     marginLeft: "25%",
 
@@ -31,10 +31,10 @@ const QuizStyle = {
     fontSize: "3rem",
     textShadow: "0px 4px 6px rgba(0,0,0,0.6)",
     color: "#ff7b00",
-    marginTop:"5%",
+    marginTop: "5%",
   },
 
-  text:{
+  text: {
     fontWeight: 700,
     fontSize: "1.8rem",
     paddingTop: "1%",
@@ -44,11 +44,11 @@ const QuizStyle = {
   card: {
     width: "50%",
     height: "auto",
-    backgroundColor:"#fff9eb",
+    backgroundColor: "#fff9eb",
     justifyContent: "center",
   },
-  
-  row:{
+
+  row: {
     paddingBottom: "5%",
   }
 };
@@ -57,8 +57,8 @@ const Quiz = () => {
   return (
     <div className="text-center justify-content-center border border-1" style={QuizStyle.main}>
       <Row style={QuizStyle.row}>
-      <h1 style={QuizStyle.title}>QUIZ</h1>
-      <p style={QuizStyle.text}>Take the quiz to help you to decide the course path</p>
+        <h1 style={QuizStyle.title}>QUIZ</h1>
+        <p style={QuizStyle.text}>Take the quiz to help you to decide the course path</p>
       </Row>
       <Row className="text-center justify-content-center" style={QuizStyle.row}>
         <Card style={QuizStyle.card}>
@@ -70,7 +70,7 @@ const Quiz = () => {
           />
           <Card.Body>
             <Card.Text>
-                <Button style={QuizStyle.button}>Submit</Button>
+              <Button style={QuizStyle.button}>Submit</Button>
             </Card.Text>
           </Card.Body>
         </Card>
