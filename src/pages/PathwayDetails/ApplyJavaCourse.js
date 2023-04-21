@@ -58,7 +58,7 @@ const ApplyJavaCourse = () => {
         </Row>
         <Row className="d-flex justify-content-center">
           <Button type="submit" style={AJCstyle.button}>
-            APPLY
+            Apply
           </Button>
         </Row>
       </Container>

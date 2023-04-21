@@ -2,11 +2,11 @@ import React from "react";
 import { Container, Button, Card, Row } from "react-bootstrap";
 import JavaIcon from "../../images/Java.png";
 import JavaScriptIcon from "../../images/Javascript.jfif";
-import DevOpsIcon from "../../images/devops.png"
+import DevOpsIcon from "../../images/devops.png";
 import Quiz from "./Quiz";
 import RegisterYourInterest from "./RegisterYourInterest";
 import BackTopButton from "../../components/BackToTopButton";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 const CPStyle = {
   container: {
@@ -19,6 +19,7 @@ const CPStyle = {
     color: "#fff",
     border: "none",
     outline: "none",
+    fontWeight: 600,
   },
 
   card_title: {
@@ -26,7 +27,6 @@ const CPStyle = {
     backgroundColor: "#fff9eb",
     fontWeight: 800,
     fontSize: "3rem",
-    
   },
 
   card_text: {
@@ -47,8 +47,7 @@ const CPStyle = {
 
   Image: {
     objectFit: "contain",
-    
-  }
+  },
 };
 
 const CareerPathway = () => {
@@ -77,7 +76,7 @@ const CareerPathway = () => {
               className="rounded mx-0 d-block"
               style={{
                 display: " block",
-                objectFit:"contain",
+                objectFit: "contain",
                 width: "255px",
                 height: "255px",
               }}
@@ -88,32 +87,36 @@ const CareerPathway = () => {
               </Card.Title>
               <Card.Text className="d-flex justify-content-center"></Card.Text>
               <Card.Text className="d-flex justify-content-center">
-               <Link to="/PathwayDetails/JavascriptCourse"><Button style={CPStyle.button} href="/JavascriptCourse">
-                  FIND OUT MORE
-                </Button> </Link> 
+                <Link to="/PathwayDetails/JavascriptCourse">
+                  <Button style={CPStyle.button} href="/JavascriptCourse">
+                    Find Out More
+                  </Button>{" "}
+                </Link>
               </Card.Text>
             </Card.Body>
           </Card>
 
-        <Card style={CPStyle.card} className="rounded-4">
-          <Card.Img
-            variant="top"
-            src={JavaIcon}
-            className="rounded mx-0 d-block"
-            style={{
-              display: " block",
-            }}
-          />
-          <Card.Body>
-            <Card.Title className="d-flex justify-content-center">
-              Java
-            </Card.Title>
-            <Card.Text className="d-flex justify-content-center"></Card.Text>
-            <Card.Text className="d-flex justify-content-center">
-              <Link to="/PathwayDetails/JavaCourse"><Button style={CPStyle.button}>FIND OUT MORE</Button></Link>
-            </Card.Text>
-          </Card.Body>
-        </Card>
+          <Card style={CPStyle.card} className="rounded-4">
+            <Card.Img
+              variant="top"
+              src={JavaIcon}
+              className="rounded mx-0 d-block"
+              style={{
+                display: " block",
+              }}
+            />
+            <Card.Body>
+              <Card.Title className="d-flex justify-content-center">
+                Java
+              </Card.Title>
+              <Card.Text className="d-flex justify-content-center"></Card.Text>
+              <Card.Text className="d-flex justify-content-center">
+                <Link to="/PathwayDetails/JavaCourse">
+                  <Button style={CPStyle.button}>Find Out More</Button>
+                </Link>
+              </Card.Text>
+            </Card.Body>
+          </Card>
 
           <Card style={CPStyle.card} className="rounded-4">
             <Card.Img
@@ -130,9 +133,12 @@ const CareerPathway = () => {
               </Card.Title>
               <Card.Text className="d-flex justify-content-center"></Card.Text>
               <Card.Text className="d-flex justify-content-center">
-              <Link to="/PathwayDetails/DevOpsCourse"> <Button style={CPStyle.button} href="/DevOpsCourse">
-                  FIND OUT MORE
-                </Button></Link> 
+                <Link to="/PathwayDetails/DevOpsCourse">
+                  {" "}
+                  <Button style={CPStyle.button} href="/DevOpsCourse">
+                    Find Out More
+                  </Button>
+                </Link>
               </Card.Text>
             </Card.Body>
           </Card>

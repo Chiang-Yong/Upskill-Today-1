@@ -14,7 +14,7 @@ function SelfPacedModal() {
         style={{ backgroundColor: "#ff7b00", border: "none", fontWeight:"600" }}
         onClick={handleShow}
       >
-        ClLICK FOR MORE INFO
+        Click For More Info
       </Button>
 
       <Modal show={show} onHide={handleClose}>

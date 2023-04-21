@@ -14,7 +14,7 @@ function JobRoleFEModal() {
         style={{ backgroundColor: "#ff7b00", border: "none",fontWeight:"600" }}
         onClick={handleShow}
       >
-        FIND OUT MORE
+        Find Out More
       </Button>
 
       <Modal show={show} onHide={handleClose}>

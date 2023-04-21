@@ -14,7 +14,7 @@ function SPGuidedTrackModal() {
         style={{ backgroundColor: "#ff7b00", border: "none", outline:"none", fontWeight:"600" }}
         onClick={handleShow}
       >
-        CLICK FOR MORE INFO
+        Click For More Info
       </Button>
 
       <Modal show={show} onHide={handleClose}>

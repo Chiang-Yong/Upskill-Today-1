@@ -52,12 +52,12 @@ const ApplyDevOpsCourse = () => {
       <Container style={DOECstyle.container} className="rounded-4">
         <Row>
           <h1 style={DOECstyle.title} className="text-center">
-            Apply to Our DevOps Track
+            Apply to Our DevOps Track 
           </h1>
         </Row>
         <Row className="d-flex justify-content-center">
           <Button type="submit" style={DOECstyle.button}>
-            APPLY
+            Apply
           </Button>
         </Row>
       </Container>
