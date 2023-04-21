@@ -72,7 +72,7 @@ const JDstyle = {
 const JavaDeveloper = () => {
   return (
     <div style={JDstyle.main}>
-        <h1 style={JDstyle.maintitle} className="text-center">JAVA COURSE</h1>
+        <h1 style={JDstyle.maintitle} className="text-center">JAVA</h1>
       <Row
         className="d-flex justify-content-center text-center border border-1"
         style={JDstyle.row}

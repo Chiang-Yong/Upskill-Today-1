@@ -72,7 +72,7 @@ const DevOpsEngineer = () => {
   return (
     <div style={DOEstyle.main}>
       <h1 style={DOEstyle.maintitle} className="text-center">
-        DevOps COURSE
+        DEVOPS
       </h1>
       <Row
         className="d-flex justify-content-center text-center border border-1"

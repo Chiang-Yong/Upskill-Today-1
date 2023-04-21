@@ -1,13 +1,12 @@
 import React from "react";
-import { Row, Button, Container} from "react-bootstrap";
-
+import { Row, Button, Container } from "react-bootstrap";
 
 const AJSCstyle = {
   main: {
     width: "100%",
     height: "auto",
     display: "block",
-    backgroundColor:"#fff9eb",
+    backgroundColor: "#fff9eb",
   },
   button: {
     marginTop: "3%",
@@ -36,17 +35,15 @@ const AJSCstyle = {
     height: "auto",
   },
 
-  container:{
-    marginTop:"1%",
-    paddingTop:"2%",
-    border:"none",
+  container: {
+    marginTop: "1%",
+    paddingTop: "2%",
+    border: "none",
   },
   card: {
-    border:"none",
-    backgroundColor:"#fff9eb",
-  }
-
-
+    border: "none",
+    backgroundColor: "#fff9eb",
+  },
 };
 
 const ApplyJSCourse = () => {
@@ -54,11 +51,9 @@ const ApplyJSCourse = () => {
     <div style={AJSCstyle.main}>
       <Container style={AJSCstyle.container} className="rounded-4">
         <Row>
-          
-                <h1 style={AJSCstyle.title} className="text-center">
-                  Apply to Our JavaScript Developer Course
-                </h1>
-          
+          <h1 style={AJSCstyle.title} className="text-center">
+            Apply to Our JavaScript Developer Track
+          </h1>
         </Row>
         <Row className="d-flex justify-content-center">
           <Button type="submit" style={AJSCstyle.button}>

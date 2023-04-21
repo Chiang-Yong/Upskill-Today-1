@@ -11,7 +11,7 @@ function SPGuidedTrackModal() {
   return (
     <>
       <Button
-        style={{ backgroundColor: "#ff7b00", border: "none", fontWeight:"600" }}
+        style={{ backgroundColor: "#ff7b00", border: "none", outline:"none", fontWeight:"600" }}
         onClick={handleShow}
       >
         CLICK FOR MORE INFO

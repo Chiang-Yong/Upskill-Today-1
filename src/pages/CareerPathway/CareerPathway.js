@@ -1,6 +1,5 @@
 import React from "react";
-import { Container, Button, Card, Carousel, Row } from "react-bootstrap";
-import Placeholder from "../../images/placeholder.jpg";
+import { Container, Button, Card, Row } from "react-bootstrap";
 import JavaIcon from "../../images/Java.png";
 import JavaScriptIcon from "../../images/Javascript.jfif";
 import DevOpsIcon from "../../images/devops.png"
@@ -85,12 +84,12 @@ const CareerPathway = () => {
             />
             <Card.Body>
               <Card.Title className="d-flex justify-content-center">
-                Javascript Course
+                Javascript
               </Card.Title>
               <Card.Text className="d-flex justify-content-center"></Card.Text>
               <Card.Text className="d-flex justify-content-center">
                <Link to="/PathwayDetails/JavascriptCourse"><Button style={CPStyle.button} href="/JavascriptCourse">
-                  Find Out More
+                  FIND OUT MORE
                 </Button> </Link> 
               </Card.Text>
             </Card.Body>
@@ -107,11 +106,11 @@ const CareerPathway = () => {
           />
           <Card.Body>
             <Card.Title className="d-flex justify-content-center">
-              Java Course
+              Java
             </Card.Title>
             <Card.Text className="d-flex justify-content-center"></Card.Text>
             <Card.Text className="d-flex justify-content-center">
-              <Link to="/PathwayDetails/JavaCourse"><Button style={CPStyle.button}>Find Out More</Button></Link>
+              <Link to="/PathwayDetails/JavaCourse"><Button style={CPStyle.button}>FIND OUT MORE</Button></Link>
             </Card.Text>
           </Card.Body>
         </Card>
@@ -127,12 +126,12 @@ const CareerPathway = () => {
             />
             <Card.Body>
               <Card.Title className="d-flex justify-content-center">
-                DevOps Course
+                DevOps
               </Card.Title>
               <Card.Text className="d-flex justify-content-center"></Card.Text>
               <Card.Text className="d-flex justify-content-center">
               <Link to="/PathwayDetails/DevOpsCourse"> <Button style={CPStyle.button} href="/DevOpsCourse">
-                  Find Out More
+                  FIND OUT MORE
                 </Button></Link> 
               </Card.Text>
             </Card.Body>

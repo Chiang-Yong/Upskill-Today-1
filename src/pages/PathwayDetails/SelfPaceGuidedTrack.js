@@ -13,8 +13,8 @@ const SPGTstyle = {
   },
 
   card: {
-    width: "22rem",
-    height: "28rem",
+    width: "20rem",
+    height: "26rem",
     padding: "1%",
     marginTop: "3%",
     marginBottom: "2%",

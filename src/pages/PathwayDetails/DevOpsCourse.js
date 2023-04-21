@@ -1,14 +1,12 @@
-import React from 'react'
-import DevOpsEngineer from './DevOpsEngineer'
-
+import React from "react";
+import DevOpsEngineer from "./DevOpsEngineer";
 
 const DevOpsCourse = () => {
   return (
     <div>
-      
-     <DevOpsEngineer />
-      </div>
-  )
-}
+      <DevOpsEngineer />
+    </div>
+  );
+};
 
-export default DevOpsCourse
+export default DevOpsCourse;

@@ -53,7 +53,7 @@ const ApplyJavaCourse = () => {
       <Container style={AJCstyle.container} className="rounded-4">
         <Row>
           <h1 style={AJCstyle.title} className="text-center">
-            Apply to Our Java Developer Course
+            Apply to Our Java Developer Track
           </h1>
         </Row>
         <Row className="d-flex justify-content-center">
