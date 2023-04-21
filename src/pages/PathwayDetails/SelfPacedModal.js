@@ -18,8 +18,8 @@ function SelfPacedModal() {
       </Button>
 
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton style={{backgroundColor:"rgba(225,123,123,0.5)"}}>
-          <Modal.Title className="fw-bold">Self-Paced Track</Modal.Title>
+        <Modal.Header closeButton style={{backgroundColor:"rgba(255,123,0,1)"}}>
+          <Modal.Title className="fw-bold" style={{color:"white"}}>Self-Paced Track</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           For Self-paced Track*, the subscription fee is SGD99 per month. On
@@ -32,7 +32,7 @@ function SelfPacedModal() {
           <strong>* Currently, Self-paced Track is available under Java
           Developer and Javascript Developer Tracks.</strong>
         </Modal.Body>
-        <Modal.Footer style={{backgroundColor:"rgba(225,123,123,0.5)"}}>
+        <Modal.Footer style={{backgroundColor:"rgba(255,123,0,1)"}}>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>

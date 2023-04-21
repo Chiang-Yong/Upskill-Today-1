@@ -20,9 +20,9 @@ function JobRoleFSModal() {
       <Modal show={show} onHide={handleClose}>
         <Modal.Header
           closeButton
-          style={{background: "linear-gradient(to right, rgba(255, 123, 0,0.9), rgba(252, 147, 48,0.5))"}}
+          style={{background: "linear-gradient(to right, rgba(255, 123, 0,0.9), rgba(252, 147, 48,0.7))"}}
         >
-          <Modal.Title className="fw-bold">Full Stack Developer</Modal.Title>
+          <Modal.Title className="fw-bold" style={{color:"white"}}>Full Stack Developer</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           A <strong>full stack developer</strong> is a software engineer who is
@@ -37,7 +37,7 @@ function JobRoleFSModal() {
           writing the application logic in languages such as Java, Python, or
           Ruby, and managing the database using SQL or NoSQL technologies.
         </Modal.Body>
-        <Modal.Footer style={{background: "linear-gradient(to left, rgba(255, 123, 0,0.9), rgba(252, 147, 48,0.5))"}}>
+        <Modal.Footer style={{background: "linear-gradient(to left, rgba(255, 123, 0,0.9), rgba(252, 147, 48,0.7))"}}>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>

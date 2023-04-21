@@ -18,8 +18,8 @@ function JobRoleBEModal() {
       </Button>
 
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton style={{ background: "linear-gradient(to right, rgba(48, 65, 252,0.7), rgba(93, 107, 252,0.5))" }}>
-          <Modal.Title className="fw-bold">Back-End Developer</Modal.Title>
+        <Modal.Header closeButton style={{background: "linear-gradient(to right, rgba(48, 65, 252,0.8), rgba(93, 107, 252,0.5))" }}>
+          <Modal.Title className="fw-bold" style={{color:"white"}}>Back-End Developer</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           A <strong>back-end developer</strong> is a software engineer who

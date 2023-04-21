@@ -20,9 +20,9 @@ function JobRoleFEModal() {
       <Modal show={show} onHide={handleClose}>
         <Modal.Header
           closeButton
-          style={{ background: "linear-gradient(to right, rgba(156, 0, 252,0.75), rgba(227, 187, 252,0.8))" }}
+          style={{ background: "linear-gradient(to right, rgba(156, 0, 252,0.8), rgba(227, 187, 252,0.8))" }}
         >
-          <Modal.Title className="fw-bold">Front-End Developer</Modal.Title>
+          <Modal.Title className="fw-bold" style={{color:"white"}}>Front-End Developer</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           A <strong>front-end developer</strong> is a software engineer who
@@ -41,7 +41,7 @@ function JobRoleFEModal() {
           principles and be able to create visually appealing, easy-to-use
           interfaces that are optimized for speed and performance.
         </Modal.Body>
-        <Modal.Footer style={{background: "linear-gradient(to left, rgba(156, 0, 252,0.75), rgba(227, 187, 252,0.8))"}}>
+        <Modal.Footer style={{background: "linear-gradient(to left, rgba(156, 0, 252,0.8), rgba(227, 187, 252,0.8))"}}>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
