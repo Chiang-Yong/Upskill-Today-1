@@ -4,7 +4,6 @@ import JavaIcon from "../../images/Java.png";
 import JavaScriptIcon from "../../images/Javascript.jfif";
 import DevOpsIcon from "../../images/devops.png";
 import Quiz from "./Quiz";
-import Quiz2 from "./Quiz2";
 import RegisterYourInterest from "./RegisterYourInterest";
 import BackTopButton from "../../components/BackToTopButton";
 import { Link } from "react-router-dom";
@@ -55,9 +54,6 @@ const CareerPathway = () => {
   return (
     <>
       <Container style={CPStyle.container} fluid>
-
-
-
         <Row>
           <h1
             className="d-flex justify-content-center"
@@ -153,9 +149,6 @@ const CareerPathway = () => {
         <Row>
           <Quiz />
         </Row>
-
-
-
         <Row>
           <RegisterYourInterest />
         </Row>
