@@ -37,14 +37,14 @@ const NavbarUST = () => {
               className="text-black mx-5 hover-navbar border-start"
               style={{paddingLeft: "1.0rem", textDecoration: "none", fontWeight: "600" }}
             >
-              Home
+              <span className="hover-effect">Home</span>
             </Link>
             <Link
               to="/About"
               className="text-black mx-5 hover-navbar border-start"
               style={{ paddingLeft: "1.0rem", textDecoration: "none", fontWeight: "600" }}
             >
-              About Us
+             <span className="hover-effect"> About Us</span>
             </Link>
           {/*  <Link
               to="/CareerPathway"
@@ -63,7 +63,7 @@ const NavbarUST = () => {
               className="text-black mx-5 hover-navbar border-start"
               style={{ paddingLeft: "1.0rem", textDecoration: "none", fontWeight: "600",}}
             >
-              Corporate
+              <span className="hover-effect">Corporate</span>
             </Link>
             <Link
               to="/Contact"
