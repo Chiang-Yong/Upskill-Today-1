@@ -1,5 +1,6 @@
 import React from "react";
 import { Row, Button, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const AJSCstyle = {
   main: {
@@ -56,9 +57,11 @@ const ApplyJSCourse = () => {
           </h1>
         </Row>
         <Row className="d-flex justify-content-center">
-          <Button type="submit" style={AJSCstyle.button}>
-            Apply
-          </Button>
+          <Link to="/CareerPathway#register" className="d-flex justify-content-center">
+            <Button type="submit" style={AJSCstyle.button}>
+              Apply
+            </Button>
+          </Link>
         </Row>
       </Container>
     </div>

@@ -9,6 +9,8 @@ import CompaniesAutoScroll from "./CompaniesAutoScroll";
 import HomeDescription from "./HomeDescription";
 import FindOutMore from "./FindOutMore";
 import BackTopButton from "../../components/BackToTopButton";
+import CompaniesMarquee from "./CompaniesMarquee";
+
 
 const Home = () => {
   return (
@@ -23,7 +25,7 @@ const Home = () => {
 
       <FindOutMore />
 
-      <CompaniesAutoScroll />
+      <CompaniesMarquee />
 
       <Testimontials />
 
