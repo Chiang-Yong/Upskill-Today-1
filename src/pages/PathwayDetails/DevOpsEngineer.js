@@ -1,8 +1,9 @@
 import React from "react";
 import { Row } from "react-bootstrap";
 import SelfPaceGuidedTrack from "./SelfPaceGuidedTrack";
-import JobRoles from "./JobRoles";
+
 import ApplyDevOpsCourse from "./ApplyDevOPsCourse";
+import JobRoleDevOps from "./JobRoleDevOps";
 const src = "https://www.youtube.com/embed/8_ju_D_GoQQ";
 
 const DOEstyle = {
@@ -98,7 +99,7 @@ const DevOpsEngineer = () => {
         <SelfPaceGuidedTrack />
       </Row>
       <Row>
-        <JobRoles />
+       <JobRoleDevOps />
       </Row>
       <Row>
         <ApplyDevOpsCourse />

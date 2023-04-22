@@ -58,7 +58,7 @@ const Quiz = () => {
     <div className="text-center justify-content-center border border-1" style={QuizStyle.main}>
       <Row style={QuizStyle.row}>
       <h1 style={QuizStyle.title}>QUIZ</h1>
-      <p style={QuizStyle.text}>Take the quiz to help you to decide the course path</p>
+      <p style={QuizStyle.text}>Take the quiz to help you to decide the program track</p>
       </Row>
       <Row className="text-center justify-content-center" style={QuizStyle.row}>
         <Card style={QuizStyle.card}>
