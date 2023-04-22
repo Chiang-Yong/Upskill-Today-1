@@ -1,13 +1,13 @@
 import React from "react";
 import { Row, Button, Container } from "react-bootstrap";
-
+import { HashLink } from "react-router-hash-link";
 
 const AJCstyle = {
   main: {
     width: "100%",
     height: "auto",
     display: "block",
-    backgroundColor:"#fff9eb",
+    backgroundColor: "#fff9eb",
   },
   button: {
     marginTop: "3%",
@@ -57,9 +57,15 @@ const ApplyJavaCourse = () => {
           </h1>
         </Row>
         <Row className="d-flex justify-content-center">
-          <Button type="submit" style={AJCstyle.button}>
-            Apply
-          </Button>
+          <HashLink
+            to="/CareerPathway#register"
+            smooth
+            className="d-flex justify-content-center"
+          >
+            <Button type="submit" style={AJCstyle.button}>
+              Apply
+            </Button>
+          </HashLink>
         </Row>
       </Container>
     </div>

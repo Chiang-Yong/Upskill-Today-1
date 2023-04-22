@@ -149,8 +149,8 @@ const CareerPathway = () => {
         <Row>
           <Quiz />
         </Row>
-        <Row>
-          <RegisterYourInterest id="register"/>
+        <Row id="register">
+          <RegisterYourInterest />
         </Row>
       </Container>
       <BackTopButton />

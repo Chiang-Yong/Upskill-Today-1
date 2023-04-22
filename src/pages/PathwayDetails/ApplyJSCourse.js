@@ -1,6 +1,7 @@
 import React from "react";
+import { useEffect } from "react";
 import { Row, Button, Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const AJSCstyle = {
   main: {
@@ -57,11 +58,15 @@ const ApplyJSCourse = () => {
           </h1>
         </Row>
         <Row className="d-flex justify-content-center">
-          <Link to="/CareerPathway#register" className="d-flex justify-content-center">
+          <HashLink
+            to="/CareerPathway#register"
+            className="d-flex justify-content-center"
+            smooth
+          >
             <Button type="submit" style={AJSCstyle.button}>
               Apply
             </Button>
-          </Link>
+          </HashLink>
         </Row>
       </Container>
     </div>

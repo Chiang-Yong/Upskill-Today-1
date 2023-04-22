@@ -1,5 +1,6 @@
 import React from "react";
 import { Row, Button, Container } from "react-bootstrap";
+import { HashLink } from "react-router-hash-link";
 
 const DOECstyle = {
   main: {
@@ -56,9 +57,11 @@ const ApplyDevOpsCourse = () => {
           </h1>
         </Row>
         <Row className="d-flex justify-content-center">
+          <HashLink to="/CareerPathway#register" smooth  className="d-flex justify-content-center">
           <Button type="submit" style={DOECstyle.button}>
             Apply
           </Button>
+          </HashLink>
         </Row>
       </Container>
     </div>
