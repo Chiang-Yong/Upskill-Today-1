@@ -62,6 +62,7 @@ const ApplyJSCourse = () => {
             to="/CareerPathway#register"
             className="d-flex justify-content-center"
             smooth
+            style={{ textDecoration: "none" }}
           >
             <Button type="submit" style={AJSCstyle.button}>
               Apply

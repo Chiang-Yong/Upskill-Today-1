@@ -7,7 +7,7 @@ const DOECstyle = {
     width: "100%",
     height: "auto",
     display: "block",
-    backgroundColor:"#fff9eb",
+    backgroundColor: "#fff9eb",
   },
   button: {
     marginTop: "3%",
@@ -17,6 +17,7 @@ const DOECstyle = {
     border: "none",
     outline: "none",
     width: "150px",
+    textDecoration: "none",
   },
 
   title: {
@@ -53,14 +54,19 @@ const ApplyDevOpsCourse = () => {
       <Container style={DOECstyle.container} className="rounded-4">
         <Row>
           <h1 style={DOECstyle.title} className="text-center">
-            Apply to Our DevOps Track 
+            Apply to Our DevOps Track
           </h1>
         </Row>
         <Row className="d-flex justify-content-center">
-          <HashLink to="/CareerPathway#register" smooth  className="d-flex justify-content-center">
-          <Button type="submit" style={DOECstyle.button}>
-            Apply
-          </Button>
+          <HashLink
+            to="/CareerPathway#register"
+            smooth
+            className="d-flex justify-content-center"
+            style={{ textDecoration: "none" }}
+          >
+            <Button style={DOECstyle.button}>
+              Apply
+            </Button>
           </HashLink>
         </Row>
       </Container>

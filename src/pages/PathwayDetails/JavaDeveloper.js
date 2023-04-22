@@ -3,7 +3,8 @@ import { Row } from "react-bootstrap";
 import SelfPaceGuidedTrack from "./SelfPaceGuidedTrack";
 import JobRoles from "./JobRoles";
 import ApplyJavaCourse from "./ApplyJavaCourse";
-const src = "https://www.youtube.com/embed/9yzMKaKcoC0";
+//const src = "https://www.youtube.com/embed/9yzMKaKcoC0";
+const src = "https://www.youtube.com/embed/2UX8bxVhkqw";
 
 const JDstyle = {
   main: {

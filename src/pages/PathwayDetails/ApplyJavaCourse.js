@@ -61,6 +61,7 @@ const ApplyJavaCourse = () => {
             to="/CareerPathway#register"
             smooth
             className="d-flex justify-content-center"
+            style={{ textDecoration: "none" }}
           >
             <Button type="submit" style={AJCstyle.button}>
               Apply
