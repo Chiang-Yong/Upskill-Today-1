@@ -6,8 +6,8 @@ import BackTopButton from "../../components/BackToTopButton";
 const Contact = () => {
   return (
     <div>
-      <FAQ />
       <GetInTouch />
+      <FAQ />
       <BackTopButton />
     </div>
   );
