@@ -14,7 +14,7 @@ const RYIstyle = {
     width: "60%",
     paddingBottom: "1%",
     backgroundColor: "rgba(224,178,118,0.1)",
-    border:"solid",
+    border: "solid",
     borderColor: "#ff7b00",
     borderWidth: "0.5px",
   },
@@ -24,10 +24,10 @@ const RYIstyle = {
     paddingRight: "2%",
   },
 
-  select:{
+  select: {
     paddingLeft: "2%",
     paddingRight: "2%",
-    paddingTop:"1%",
+    paddingTop: "1%",
   },
 
   button: {
@@ -51,7 +51,7 @@ const RYIstyle = {
     color: "#ff7b00",
     fontSize: "3rem",
     fontWeight: 800,
-    textShadow: "0px 4px 6px rgba(0,0,0,0.6)"
+    textShadow: "0px 4px 6px rgba(0,0,0,0.6)",
   },
 };
 
@@ -61,39 +61,51 @@ const RegisterYourInterest = () => {
       className="d-flex justify-content-center border rounded-3"
       style={RYIstyle.main}
     >
-      <Form className="rounded-4" style={RYIstyle.form}>
-        <h6 className="text-center" style={RYIstyle.text}>
+      <Form className="rounded-4 px-5 py-5" style={RYIstyle.form}>
+      <h6 className="text-center" style={RYIstyle.text}>
           TAKE YOUR FIRST STEP
         </h6>
-        <h1 className="text-center" style={RYIstyle.title}>
+        <h1 className="text-center mb-3" style={RYIstyle.title}>
           Register Your Interest Here
         </h1>
-        <Row style={RYIstyle.group}>
-          <Form.Group as={Col} className="mb-3" controlId="formBasicName">
-            <Form.Label></Form.Label>
+        <Row className="mt-5">
+          <Form.Group
+            as={Col}
+            md={6}
+            className="mb-3"
+            controlId="formBasicName"
+          >
+            <Form.Label>First Name</Form.Label>
             <Form.Control type="text" placeholder="First Name" />
           </Form.Group>
-          <Form.Group as={Col} className="mb-3" controlId="formBasicName">
-            <Form.Label></Form.Label>
+          <Form.Group
+            as={Col}
+            md={6}
+            className="mb-3"
+            controlId="formBasicName"
+          >
+            <Form.Label>Last Name</Form.Label>
             <Form.Control type="text" placeholder="Last Name" />
           </Form.Group>
         </Row>
-        <Form.Group
-          style={RYIstyle.group}
-          className="mb-3"
-          controlId="formBasicEmail"
-        >
-          <Form.Label></Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
-        </Form.Group>
+        <Row>
+          <Form.Group
+            as={Col}
+            md={6}
+            className="mb-3"
+            controlId="formBasicEmail"
+          >
+            <Form.Label>Email</Form.Label>
+            <Form.Control type="email" placeholder="Enter email" />
+          </Form.Group>
 
-        <Form.Group style={RYIstyle.group}>
-          <Form.Label></Form.Label>
-          <Form.Control type="text" placeholder="Phone" />
-        </Form.Group>
-
-        <Form.Group style={RYIstyle.select}>
-          <Form.Label></Form.Label>
+          <Form.Group as={Col} md={6} className="mb-3" controlId="formContact">
+            <Form.Label>Phone</Form.Label>
+            <Form.Control type="text" placeholder="Phone" />
+          </Form.Group>
+        </Row>
+        <Form.Group className="mb-3">
+          <Form.Label>Upskill Program</Form.Label>
           <Form.Select aria-label="Default select example">
             <option>Select Your Upskill Program</option>
             <option value="1">Java</option>
@@ -101,8 +113,8 @@ const RegisterYourInterest = () => {
             <option value="3">DevOps</option>
           </Form.Select>
         </Form.Group>
-        <Form.Group style={RYIstyle.select}>
-          <Form.Label></Form.Label>
+        <Form.Group className="mb-3">
+          <Form.Label>Country</Form.Label>
           <Form.Select aria-label="Default select example">
             <option>Country</option>
             <option value="1">Singapore</option>

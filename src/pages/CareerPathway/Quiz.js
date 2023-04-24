@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Row, Card, Button, ListGroup, ListGroupItem } from "react-bootstrap";
 import { quiz } from "../CareerPathway/QuizData";
 import "./quiz.css";
-import CardHeader from "react-bootstrap/esm/CardHeader";
+
 
 const QuizStyle = {
   main: {
@@ -56,6 +56,10 @@ const QuizStyle = {
     background: "#ffd6ff",
     border: "1px solid #800080",
   },
+
+  listGroup:{
+    backgroundColor:"#fff9eb",
+  }
 };
 
 const Quiz = () => {
@@ -129,26 +133,24 @@ const Quiz = () => {
               JavaScript MCQ
             </Card.Header>
             <Card.Body>
-              <Card.Title className="text-left my-2">
+              <Card.Title className="text-left py-3">
                 {id}.&nbsp;&nbsp; {question}
               </Card.Title>
-              <Card.Text className="text-left justify-content-left">
-                <ListGroup className="list-group-flush py-2" variant="flush">
+         
+                <ListGroup className="quiz-main list-group-flush py-3" variant="flush" style={QuizStyle.listGroup}>
                   {choices.map((answer, index) => (
-                    <ListGroupItem
-                      onClick={() => onAnswerSelected(answer)}
+                    <ListGroup.Item
+                      onClick={() => onAnswerSelected(answer, index)}
                       key={answer}
-                      className={
-                        selectedAnswerIndex === index ? "selected-answer" : null
-                      }
-                      variant={selectedAnswerIndex === index ? "Dark" : null}
-                      style={{ textAlign: "left" }}
+                      style={{ backgroundColor: "#fff9eb", textAlign: "left" }}
                     >
-                      {index + 1}.&nbsp;&nbsp; {answer}
-                    </ListGroupItem>
+                     <span className={
+                        selectedAnswerIndex === index ? "selected-answer w-500" : null
+                      }> {index + 1}.&nbsp;&nbsp; {answer}</span>
+                    </ListGroup.Item>
                   ))}
                 </ListGroup>
-              </Card.Text>
+              
 
               <Card.Text className="text-end">
                 <Button
@@ -166,9 +168,9 @@ const Quiz = () => {
         <div style={QuizStyle.main} className="justify-content-center result">
           <Row className="justify-content-center" style={QuizStyle.row}>
             <Card style={QuizStyle.card}>
-              <CardHeader className="fs-1 fw-bold text-center">
+              <Card.Header className="fs-1 fw-bold text-center">
                 Result
-              </CardHeader>
+              </Card.Header>
               <Card.Body>
                 <Card.Text style={QuizStyle.text}>
                   Total Question:&nbsp;&nbsp; <span>{questions.length}</span>
@@ -183,10 +185,10 @@ const Quiz = () => {
                 <Card.Text style={QuizStyle.text}>
                   Wrong Answers:&nbsp;&nbsp;<span> {result.wrongAnswers}</span>
                 </Card.Text>
-                <Card.Text style={QuizStyle.text}>
+                <Card.Text style={QuizStyle.text}> Recommended: &nbsp; &nbsp;
                   {result.score > 10
-                    ? "You can select Guided Track"
-                    : "You can go for Self-paced Track"}
+                    ? "Guided Track"
+                    : "Self-paced Track"}
                 </Card.Text>
                 <Card.Text className="text-end">
                   <Button style={QuizStyle.button} onClick={onClickTryAgain}>
