@@ -1,8 +1,14 @@
 import React, { useState } from "react";
-import { Row, Card, Button, ListGroup, ListGroupItem } from "react-bootstrap";
+import {
+  Row,
+  Card,
+  Button,
+  ListGroup,
+  ListGroupItem,
+  ProgressBar,
+} from "react-bootstrap";
 import { quiz } from "../CareerPathway/QuizData";
 import "./quiz.css";
-
 
 const QuizStyle = {
   main: {
@@ -57,9 +63,9 @@ const QuizStyle = {
     border: "1px solid #800080",
   },
 
-  listGroup:{
-    backgroundColor:"#fff9eb",
-  }
+  listGroup: {
+    backgroundColor: "#fff9eb",
+  },
 };
 
 const Quiz = () => {
@@ -71,6 +77,8 @@ const Quiz = () => {
     score: 0,
     correctAnswers: 0,
     wrongAnswers: 0,
+    javatype: 0,
+    javascripttype: 0,
   });
 
   const onClickTryAgain = () => {
@@ -79,6 +87,8 @@ const Quiz = () => {
       score: 0,
       correctAnswers: 0,
       wrongAnswers: 0,
+      javaType: 0,
+      jsType: 0,
     });
   };
 
@@ -94,6 +104,7 @@ const Quiz = () => {
           }
         : { ...prev, wrongAnswers: prev.wrongAnswers + 1 }
     );
+
     if (activeQuestion !== questions.length - 1) {
       setActiveQuestion((prev) => prev + 1);
     } else {
@@ -113,7 +124,8 @@ const Quiz = () => {
     }
   };
   const { questions } = quiz;
-  const { id, question, choices, correctAnswer } = questions[activeQuestion];
+  const { id, question, choices, type, correctAnswer } =
+    questions[activeQuestion];
   const addLeadingZero = (number) => (number > 9 ? number : `0${number}`);
 
   return (
@@ -128,29 +140,45 @@ const Quiz = () => {
       </Row>
       {!showResult ? (
         <Row className="justify-content-center" style={QuizStyle.row}>
-          <Card style={QuizStyle.card}>
-            <Card.Header className="fs-3 fw-bold text-center">
-              JavaScript MCQ
-            </Card.Header>
+          <Card style={QuizStyle.card} className="shadow-lg rounded-4">
+            <Card.Header className="fs-3 fw-bold text-center">MCQ</Card.Header>
             <Card.Body>
-              <Card.Title className="text-left py-3">
+              <p>
+                Question {id} of {quiz.totalQuestions}
+              </p>
+
+              <ProgressBar
+                now={(id / quiz.totalQuestions) * 100}
+                label={`${(id / quiz.totalQuestions) * 100}%`}
+                variant="success"
+                className="h-22"
+              />
+              <Card.Title className="fs-5 text-left pt-4 pb-3">
                 {id}.&nbsp;&nbsp; {question}
               </Card.Title>
-         
-                <ListGroup className="quiz-main list-group-flush py-3" variant="flush" style={QuizStyle.listGroup}>
-                  {choices.map((answer, index) => (
-                    <ListGroup.Item
-                      onClick={() => onAnswerSelected(answer, index)}
-                      key={answer}
-                      style={{ backgroundColor: "#fff9eb", textAlign: "left" }}
+
+              <ListGroup
+                className="quiz-main list-group-flush py-3"
+                variant="flush"
+                style={QuizStyle.listGroup}
+              >
+                {choices.map((answer, index) => (
+                  <ListGroup.Item
+                    onClick={() => onAnswerSelected(answer, index)}
+                    key={answer}
+                    style={{ backgroundColor: "#fff9eb", textAlign: "left" }}
+                  >
+                    <span
+                      className={
+                        selectedAnswerIndex === index ? "selected-answer" : null
+                      }
                     >
-                     <span className={
-                        selectedAnswerIndex === index ? "selected-answer w-500" : null
-                      }> {index + 1}.&nbsp;&nbsp; {answer}</span>
-                    </ListGroup.Item>
-                  ))}
-                </ListGroup>
-              
+                      {" "}
+                      {index + 1}.&nbsp;&nbsp; {answer}
+                    </span>
+                  </ListGroup.Item>
+                ))}
+              </ListGroup>
 
               <Card.Text className="text-end">
                 <Button
@@ -167,7 +195,7 @@ const Quiz = () => {
       ) : (
         <div style={QuizStyle.main} className="justify-content-center result">
           <Row className="justify-content-center" style={QuizStyle.row}>
-            <Card style={QuizStyle.card}>
+            <Card style={QuizStyle.card} className="shadow-lg">
               <Card.Header className="fs-1 fw-bold text-center">
                 Result
               </Card.Header>
@@ -185,10 +213,18 @@ const Quiz = () => {
                 <Card.Text style={QuizStyle.text}>
                   Wrong Answers:&nbsp;&nbsp;<span> {result.wrongAnswers}</span>
                 </Card.Text>
-                <Card.Text style={QuizStyle.text}> Recommended: &nbsp; &nbsp;
-                  {result.score > 10
-                    ? "Guided Track"
-                    : "Self-paced Track"}
+                <Card.Text style={QuizStyle.text}>
+                  {" "}
+                  Recommended: &nbsp; &nbsp;
+                  {result.javaType > result.jsType
+                    ? "Java Developer"
+                    : "Javascript Developer"}
+                  &nbsp; &nbsp;
+                  {result.score > 25 ? (
+                    <strong>Guided Track</strong>
+                  ) : (
+                    <strong>Self-paced Track</strong>
+                  )}
                 </Card.Text>
                 <Card.Text className="text-end">
                   <Button style={QuizStyle.button} onClick={onClickTryAgain}>
