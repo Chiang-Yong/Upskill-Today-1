@@ -1,40 +1,42 @@
 import React from "react";
 import FAQData from "./FAQData";
-import { Accordion, Container, Row, Col } from "react-bootstrap";
+import { Accordion, Container, Row, Col, Card } from "react-bootstrap";
 import "./faq.css";
 
 const FAQ = () => {
   return (
-    <div className="faq">
-      <Container className= "container border rounded-4">
-      <h3 className="text-center pt-4 pb-3">Most Frequently Ask Questions</h3>
-      {FAQData.map((faq) => {
-        return (
-          <Row>
-          <Accordion className="mx-auto" key={faq.id}>
-            <Accordion.Item eventKey={faq.id}>
-              <Row className="text-center justify-content-center border-bottom">
-                <Accordion.Header className="accodian-collapse">
-                  <h5>{faq.qtn}</h5>
-                </Accordion.Header>
-              </Row>
+    <>
+      <Container fluid className="faq-section px-5 py-5">
+        <h1 className="text-center pt-5 pb-3 fw-bold">
+          Frequently Ask Questions
+        </h1>
+        <Row className="faq-list justify-content-center align-items-center py-5">
+          <Col md={6}>
+            <Accordion className="">
+              {FAQData.map((faq) => {
+                return (
+                  <Accordion.Item eventKey={faq.id}>
+                    <Accordion.Header className="accordian-collapse">
+                      <h5>{faq.qtn}</h5>
+                    </Accordion.Header>
 
-              <Accordion.Body className="fs-6">
-                {faq.ans1}
-                <br />
-                {faq.ans2}
-                <br />
-                {faq.ans3}
-                <br />
-                {faq.ans4}
-              </Accordion.Body>
-            </Accordion.Item>
-          </Accordion>
-          </Row>
-        );
-      })}
+                    <Accordion.Body className="fs-6 ">
+                      {faq.ans1}
+                      <br />
+                      {faq.ans2}
+                      <br />
+                      {faq.ans3}
+                      <br />
+                      {faq.ans4}
+                    </Accordion.Body>
+                  </Accordion.Item>
+                );
+              })}
+            </Accordion>
+          </Col>
+        </Row>
       </Container>
-    </div>
+    </>
   );
 };
 

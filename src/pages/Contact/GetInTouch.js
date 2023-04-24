@@ -1,117 +1,92 @@
 import React from "react";
-import { Card, Form, Button, Row, Col, FloatingLabel } from "react-bootstrap";
-import { Icon } from "react-icons-kit";
-import { phone } from "react-icons-kit/icomoon/phone";
-import { mail2 } from "react-icons-kit/icomoon/mail2";
-import { location2 } from "react-icons-kit/icomoon/location2";
-import { Link } from "react-router-dom";
-
+import {
+  Card,
+  Form,
+  Button,
+  Row,
+  Col,
+  FloatingLabel,
+  Container,
+} from "react-bootstrap";
 import "./getIntouch.css";
+import ContactCards from "./ContactCards";
 
 const GetInTouch = () => {
   return (
-    <div className="getintouch">
-      <Row>
-        <Col sm={5}>
-          <Card className="border rounded-4 border-warning">
-            <Card.Body>
-              <Row>
-                <Col sm={2}>
-                  <Icon size={64} icon={phone} style={{ color: "#ff7b00" }} />
-                </Col>
-                <Col sm={10}>
-                  <Card.Title className="text-left">CALL US</Card.Title>
-                  <Card.Text className="text-left">
-                    +65-1234 5678
-                    <br />
-                    +65-1234 5679
-                  </Card.Text>
-                </Col>
-              </Row>
-            </Card.Body>
-          </Card>
-          <Card className="border rounded-4 border-warning">
-            <Card.Body>
-              <Row>
-                <Col sm={2}>
-                  <Icon size={64} icon={mail2} style={{ color: "#ff7b00" }} />
-                </Col>
-                <Col sm={10}>
-                  <Card.Title className="text-left">EMAIL US</Card.Title>
-                  <Card.Text className="text-left">
-                    <Link to="hello@upskilltoday.com">
-                      hello@upskilltoday.com
-                    </Link>
-                  </Card.Text>
-                </Col>
-              </Row>
-            </Card.Body>
-          </Card>
-          <Card className="border rounded-4 border-warning">
-            <Card.Body>
-              <Row>
-                <Col sm={2}>
-                  <Icon
-                    size={64}
-                    icon={location2}
-                    style={{ color: "#ff7b00" }}
-                  />
-                </Col>
-                <Col sm={10}>
-                  <Card.Title className="text-left">VISIT US</Card.Title>
-                  <Card.Text className="text-left">
-                    2 Venture Drive #10-18
-                    <br />
-                    Vision Exchange
-                    <br />
-                    Singapore 608526
-                  </Card.Text>
-                </Col>
-              </Row>
-            </Card.Body>
-          </Card>
+    <Container fluid className="getintouch py-5">
+      <Row className="px-5 py-5">
+        <Col md={{ span: 5, offset: 1 }} className="px-5">
+          <h1 className="fw-bold mb-3">Get In Touch</h1>
+          <p className="mb-3">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit facilisis a
+            leo nisi, dignissim interdum pharetra tellus malesuada tellus sem.
+          </p>
+          <ContactCards />
         </Col>
-        <Col sm={6} >
-          <div className="getintouch-form border rounded-4 border-warning" style={{borderColor:"#ff7b00"}}>
-            <Form>
-              <h1 className="text-center">GET IN TOUCH</h1>
+        <Col md={5}>
+          <div
+            className="getintouch-form border rounded-4 border-warning"
+            style={{ borderColor: "#ff7b00" }}
+          >
+            <Form className="px-5 py-5">
               <Row>
-                <Form.Group as={Col} className="mb-3" controlId="formBasicName">
-                  <Form.Label></Form.Label>
-                  <Form.Control type="text" placeholder="First Name" />
+                <Form.Group
+                  as={Col}
+                  md={6}
+                  className="mb-3"
+                  controlId="formBasicName"
+                >
+                  <Form.Label>First Name</Form.Label>
+                  <Form.Control type="text" placeholder="Enter First Name" />
                 </Form.Group>
-                <Form.Group as={Col} className="mb-3" controlId="formBasicName">
-                  <Form.Label></Form.Label>
-                  <Form.Control type="text" placeholder="Last Name" />
+                <Form.Group
+                  as={Col}
+                  md={6}
+                  className="mb-3"
+                  controlId="formBasicName"
+                >
+                  <Form.Label>Last Name</Form.Label>
+                  <Form.Control type="text" placeholder="Enter Last Name" />
                 </Form.Group>
               </Row>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label></Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
-              </Form.Group>
-
-              <Form.Group>
-                <Form.Label></Form.Label>
+              <Row>
+                <Form.Group
+                  as={Col}
+                  className="mb-3"
+                  md={6}
+                  controlId="formBasicEmail"
+                >
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control type="email" placeholder="Enter email" />
+                </Form.Group>
+                <Form.Group
+                  as={Col}
+                  md={6}
+                  className="mb-3"
+                  controlId="formContact"
+                >
+                  <Form.Label>Contact Number</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter Contact Number"
+                  />
+                </Form.Group>
+              </Row>
+              <Form.Group className="mb-3">
+                <Form.Label>Subject</Form.Label>
                 <Form.Control type="text" placeholder="Subject" />
               </Form.Group>
 
-              <FloatingLabel controlId="floatingTextarea2" label="Message">
+              <Form.Group className="mb-3">
+                <Form.Label>Message</Form.Label>
                 <Form.Control
                   as="textarea"
                   placeholder="Leave a message here"
-                  style={{ height: "150px" }}
+                  rows={4}
                 />
-              </FloatingLabel>
+              </Form.Group>
               <div className="text-center">
-                <Button
-                  type="submit"
-                  style={{
-                    backgroundColor: "#ff7b00",
-                    fontWeight: "600",
-                    border: "none",
-                    outline: "none",
-                  }}
-                >
+                <Button type="submit" size="lg" className="form-button">
                   Submit
                 </Button>
               </div>
@@ -119,7 +94,7 @@ const GetInTouch = () => {
           </div>
         </Col>
       </Row>
-    </div>
+    </Container>
   );
 };
 
