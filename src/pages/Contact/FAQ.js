@@ -11,7 +11,7 @@ const FAQ = () => {
           Frequently Ask Questions
         </h1>
         <Row className="faq-list justify-content-center align-items-center py-5">
-          <Col md={6}>
+          <Col md={8}>
             <Accordion className="">
               {FAQData.map((faq) => {
                 return (
