@@ -9,9 +9,9 @@ import { Card, Col, Row } from "react-bootstrap";
 const ContactCards = () => {
   return (
     <>
-      <Card className="border-0 rounded-4  mb-3" style={{ maxWidth: "600px" }}>
+      <Card className="border-0 rounded-4 mb-3" style={{ maxWidth: "650px" }}>
         <Row className="g-0 align-items-center">
-          <Col md={3}>
+          <Col md={3} className="me-3">
             <Icon
               fluid
               size={60}
@@ -27,9 +27,9 @@ const ContactCards = () => {
           </Col>
         </Row>
       </Card>
-      <Card className="border-0 rounded-4 mb-3">
+      <Card className="border-0 rounded-4 mb-3" style={{ maxWidth: "650px" }}>
         <Row className="g-0 align-items-center">
-          <Col md={3} className="">
+          <Col md={3} className="me-3">
             <Icon
               fluid
               size={60}
@@ -47,9 +47,9 @@ const ContactCards = () => {
           </Col>
         </Row>
       </Card>
-      <Card className="border-0 rounded-4 mb-3">
+      <Card className="border-0 rounded-4 mb-3" style={{ maxWidth: "650px" }}>
         <Row className="g-0 align-items-center">
-          <Col md={3} className="">
+          <Col md={3} className="me-3">
             <Icon
               size={60}
               icon={pinMap}
