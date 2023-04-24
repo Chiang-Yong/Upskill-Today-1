@@ -12,13 +12,10 @@ import "./collaborateWithUsForm.css";
 
 const CollaborateWithUsForm = () => {
   return (
-    <Container fluid className="py-5 px-5">
+    <Container fluid className="py-5 px-5 ">
       <Row className="py-3 justify-content-center align-items-center">
         <Col md={6}>
-          <h1
-            className="fw-bold text-center  pb-2"
-            style={{ color: "#ff7b00" }}
-          >
+          <h1 className="fw-bold text-center" style={{ color: "#ff7b00" }}>
             Collaborate With Us
           </h1>
           <p className="text-center pb-4">
@@ -33,7 +30,7 @@ const CollaborateWithUsForm = () => {
                 <Form.Group
                   as={Col}
                   md="6"
-                  controlId="formBasicName"
+                  controlId="formFirstName"
                   className="mb-3"
                 >
                   <Form.Label>First Name</Form.Label>
@@ -42,7 +39,7 @@ const CollaborateWithUsForm = () => {
                 <Form.Group
                   as={Col}
                   md="6"
-                  controlId="formBasicName"
+                  controlId="formLastName"
                   className="mb-3"
                 >
                   <Form.Label>Last Name</Form.Label>
