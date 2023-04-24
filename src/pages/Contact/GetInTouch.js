@@ -65,7 +65,7 @@ const GetInTouch = () => {
                   className="mb-3"
                   controlId="formContact"
                 >
-                  <Form.Label>Contact Number</Form.Label>
+                  <Form.Label>Contact</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder="Enter Contact Number"
