@@ -183,7 +183,7 @@ const Quiz = () => {
                 variant="success"
               />
               <Card.Title className="fs-5 text-left pt-4 pb-3">
-                {id}.&nbsp;&nbsp; {question}
+               {/* {id}.&nbsp;&nbsp;*/} {question}
               </Card.Title>
 
               <ListGroup
