@@ -77,9 +77,16 @@ const Quiz = () => {
     score: 0,
     correctAnswers: 0,
     wrongAnswers: 0,
-    javatype: 0,
-    javascripttype: 0,
+    javaType: 0,
+    jsType: 0,
+    devopsType: 0,
+    type: "",
   });
+
+  const { questions } = quiz;
+  const { id, question, choices, type, correctAnswer } =
+    questions[activeQuestion];
+  const addLeadingZero = (number) => (number > 9 ? number : `0${number}`);
 
   const onClickTryAgain = () => {
     setShowResult(false);
@@ -89,6 +96,8 @@ const Quiz = () => {
       wrongAnswers: 0,
       javaType: 0,
       jsType: 0,
+      devopsType: 0,
+      type: "",
     });
   };
 
@@ -108,6 +117,18 @@ const Quiz = () => {
     if (activeQuestion !== questions.length - 1) {
       setActiveQuestion((prev) => prev + 1);
     } else {
+
+      if(result.javaType >= result.jsType && result.javaType>=result.devopsType){
+        result.type="Java Developer"
+      }
+
+      if(result.jsType>= result.javaType && result.jsType >= result.devopsType){
+        result.type="Javascript Developer"
+      }
+
+      if(result.devopsType>=result.javaType && result.devopsType>=result.jsType){
+        result.type="DevOps Engineer"
+      }
       setActiveQuestion(0);
       setShowResult(true);
     }
@@ -115,34 +136,43 @@ const Quiz = () => {
 
   const onAnswerSelected = (answer, index) => {
     setSelectedAnswerIndex(index);
+
+    if(index===0){
+      result.javaType += 1;
+    }else if(index===1){
+      result.jsType += 1;
+
+    }else{
+      result.devopsType += 1;
+    }
+
+
     if (answer === correctAnswer) {
       setSelectedAnswer(true);
+      console.log("Index = " + index);
+
       console.log("right");
     } else {
       setSelectedAnswer(false);
       console.log("wrong");
     }
   };
-  const { questions } = quiz;
-  const { id, question, choices, type, correctAnswer } =
-    questions[activeQuestion];
-  const addLeadingZero = (number) => (number > 9 ? number : `0${number}`);
 
+  
   return (
     <div className="justify-content-center" style={QuizStyle.main}>
       <Row>
         <h1 className="text-center" style={QuizStyle.title}>
-          QUIZ
+          PERSONALITY QUIZ
         </h1>
         <p className="text-center" style={QuizStyle.text}>
-          Take the quiz to help you to decide the program track
+          Take the personality quiz to help you to decide the program track
         </p>
       </Row>
       {!showResult ? (
         <Row className="justify-content-center" style={QuizStyle.row}>
           <Card style={QuizStyle.card} className="shadow-lg rounded-4">
-            <Card.Header className="fs-3 fw-bold text-center">MCQ</Card.Header>
-            <Card.Body>
+             <Card.Body>
               <p>
                 Question {id} of {quiz.totalQuestions}
               </p>
@@ -151,7 +181,6 @@ const Quiz = () => {
                 now={(id / quiz.totalQuestions) * 100}
                 label={`${(id / quiz.totalQuestions) * 100}%`}
                 variant="success"
-                className="h-22"
               />
               <Card.Title className="fs-5 text-left pt-4 pb-3">
                 {id}.&nbsp;&nbsp; {question}
@@ -197,10 +226,10 @@ const Quiz = () => {
           <Row className="justify-content-center" style={QuizStyle.row}>
             <Card style={QuizStyle.card} className="shadow-lg">
               <Card.Header className="fs-1 fw-bold text-center">
-                Result
+                Recommendation
               </Card.Header>
               <Card.Body>
-                <Card.Text style={QuizStyle.text}>
+             {/*   <Card.Text style={QuizStyle.text}>
                   Total Question:&nbsp;&nbsp; <span>{questions.length}</span>
                 </Card.Text>
                 <Card.Text style={QuizStyle.text}>
@@ -212,19 +241,14 @@ const Quiz = () => {
                 </Card.Text>
                 <Card.Text style={QuizStyle.text}>
                   Wrong Answers:&nbsp;&nbsp;<span> {result.wrongAnswers}</span>
-                </Card.Text>
-                <Card.Text style={QuizStyle.text}>
-                  {" "}
-                  Recommended: &nbsp; &nbsp;
-                  {result.javaType > result.jsType
+                </Card.Text>*/} 
+                <Card.Text style={QuizStyle.text} className="text-center"> 
+                  {result.type}
+                 {/* </Card.Body> {result.javaType > result.jsType
                     ? "Java Developer"
-                    : "Javascript Developer"}
-                  &nbsp; &nbsp;
-                  {result.score > 25 ? (
-                    <strong>Guided Track</strong>
-                  ) : (
-                    <strong>Self-paced Track</strong>
-                  )}
+                 : "Javascript Developer"} 
+                  &nbsp; &nbsp; */}
+                  
                 </Card.Text>
                 <Card.Text className="text-end">
                   <Button style={QuizStyle.button} onClick={onClickTryAgain}>
