@@ -1,6 +1,8 @@
-import React from "react";
-import { Row, Card, Button } from "react-bootstrap";
-import quizplaceholder from "../../images/quizplaceholder.png";
+import React, { useState } from "react";
+import { Row, Card, Button, ListGroup, ListGroupItem } from "react-bootstrap";
+import { quiz } from "../CareerPathway/QuizData";
+import "./quiz.css";
+import CardHeader from "react-bootstrap/esm/CardHeader";
 
 const QuizStyle = {
   main: {
@@ -13,17 +15,16 @@ const QuizStyle = {
     color: "#fff",
     border: "none",
     outline: "none",
-    fontWeight:600,
+    fontWeight: 600,
   },
 
   image: {
     display: "block",
     width: "100%",
     height: "auto",
-    justifyContent:"center",
+    justifyContent: "center",
     alignItems: "center",
     marginLeft: "25%",
-
   },
 
   title: {
@@ -31,12 +32,12 @@ const QuizStyle = {
     fontSize: "3rem",
     textShadow: "0px 4px 6px rgba(0,0,0,0.6)",
     color: "#ff7b00",
-    marginTop:"5%",
+    marginTop: "5%",
   },
 
-  text:{
-    fontWeight: 700,
-    fontSize: "1.8rem",
+  text: {
+    fontWeight: 600,
+    fontSize: "1.3rem",
     paddingTop: "1%",
     paddingBottom: "1%",
   },
@@ -44,37 +45,159 @@ const QuizStyle = {
   card: {
     width: "50%",
     height: "auto",
-    backgroundColor:"#fff9eb",
-    justifyContent: "center",
+    backgroundColor: "#fff9eb",
   },
-  
-  row:{
+
+  row: {
     paddingBottom: "5%",
-  }
+  },
+
+  selectedAnswer: {
+    background: "#ffd6ff",
+    border: "1px solid #800080",
+  },
 };
 
 const Quiz = () => {
+  const [activeQuestion, setActiveQuestion] = useState(0);
+  const [selectedAnswer, setSelectedAnswer] = useState("");
+  const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(null);
+  const [showResult, setShowResult] = useState(false);
+  const [result, setResult] = useState({
+    score: 0,
+    correctAnswers: 0,
+    wrongAnswers: 0,
+  });
+
+  const onClickTryAgain = () => {
+    setShowResult(false);
+    setResult({
+      score: 0,
+      correctAnswers: 0,
+      wrongAnswers: 0,
+    });
+  };
+
+  const onClickNext = () => {
+    setSelectedAnswerIndex(null);
+
+    setResult((prev) =>
+      selectedAnswer
+        ? {
+            ...prev,
+            score: prev.score + 5,
+            correctAnswers: prev.correctAnswers + 1,
+          }
+        : { ...prev, wrongAnswers: prev.wrongAnswers + 1 }
+    );
+    if (activeQuestion !== questions.length - 1) {
+      setActiveQuestion((prev) => prev + 1);
+    } else {
+      setActiveQuestion(0);
+      setShowResult(true);
+    }
+  };
+
+  const onAnswerSelected = (answer, index) => {
+    setSelectedAnswerIndex(index);
+    if (answer === correctAnswer) {
+      setSelectedAnswer(true);
+      console.log("right");
+    } else {
+      setSelectedAnswer(false);
+      console.log("wrong");
+    }
+  };
+  const { questions } = quiz;
+  const { id, question, choices, correctAnswer } = questions[activeQuestion];
+  const addLeadingZero = (number) => (number > 9 ? number : `0${number}`);
+
   return (
-    <div className="text-center justify-content-center border border-1" style={QuizStyle.main}>
-      <Row style={QuizStyle.row}>
-      <h1 style={QuizStyle.title}>QUIZ</h1>
-      <p style={QuizStyle.text}>Take the quiz to help you to decide the program track</p>
+    <div className="justify-content-center" style={QuizStyle.main}>
+      <Row>
+        <h1 className="text-center" style={QuizStyle.title}>
+          QUIZ
+        </h1>
+        <p className="text-center" style={QuizStyle.text}>
+          Take the quiz to help you to decide the program track
+        </p>
       </Row>
-      <Row className="text-center justify-content-center" style={QuizStyle.row}>
-        <Card style={QuizStyle.card}>
-          <Card.Img
-            variant="top"
-            src={quizplaceholder}
-            className="text-center justify-content-center rounded mx-0 d-block"
-            style={QuizStyle.image}
-          />
-          <Card.Body>
-            <Card.Text>
-                <Button style={QuizStyle.button}>Submit</Button>
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      </Row>
+      {!showResult ? (
+        <Row className="justify-content-center" style={QuizStyle.row}>
+          <Card style={QuizStyle.card}>
+            <Card.Header className="fs-3 fw-bold text-center">
+              JavaScript MCQ
+            </Card.Header>
+            <Card.Body>
+              <Card.Title className="text-left my-2">
+                {id}.&nbsp;&nbsp; {question}
+              </Card.Title>
+              <Card.Text className="text-left justify-content-left">
+                <ListGroup className="list-group-flush py-2" variant="flush">
+                  {choices.map((answer, index) => (
+                    <ListGroupItem
+                      onClick={() => onAnswerSelected(answer)}
+                      key={answer}
+                      className={
+                        selectedAnswerIndex === index ? "selected-answer" : null
+                      }
+                      variant={selectedAnswerIndex === index ? "Dark" : null}
+                      style={{ textAlign: "left" }}
+                    >
+                      {index + 1}.&nbsp;&nbsp; {answer}
+                    </ListGroupItem>
+                  ))}
+                </ListGroup>
+              </Card.Text>
+
+              <Card.Text className="text-end">
+                <Button
+                  style={QuizStyle.button}
+                  onClick={onClickNext}
+                  disabled={selectedAnswerIndex === null}
+                >
+                  {activeQuestion === questions.length - 1 ? "Finish" : "Next"}
+                </Button>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Row>
+      ) : (
+        <div style={QuizStyle.main} className="justify-content-center result">
+          <Row className="justify-content-center" style={QuizStyle.row}>
+            <Card style={QuizStyle.card}>
+              <CardHeader className="fs-1 fw-bold text-center">
+                Result
+              </CardHeader>
+              <Card.Body>
+                <Card.Text style={QuizStyle.text}>
+                  Total Question:&nbsp;&nbsp; <span>{questions.length}</span>
+                </Card.Text>
+                <Card.Text style={QuizStyle.text}>
+                  Total Score:&nbsp;&nbsp;<span> {result.score}</span>
+                </Card.Text>
+                <Card.Text style={QuizStyle.text}>
+                  Correct Answers:&nbsp;&nbsp;
+                  <span> {result.correctAnswers}</span>
+                </Card.Text>
+                <Card.Text style={QuizStyle.text}>
+                  Wrong Answers:&nbsp;&nbsp;<span> {result.wrongAnswers}</span>
+                </Card.Text>
+                <Card.Text style={QuizStyle.text}>
+                  {result.score > 10
+                    ? "You can select Guided Track"
+                    : "You can go for Self-paced Track"}
+                </Card.Text>
+                <Card.Text className="text-end">
+                  <Button style={QuizStyle.button} onClick={onClickTryAgain}>
+                    Try Again
+                  </Button>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Row>
+        </div>
+      )}
     </div>
   );
 };
