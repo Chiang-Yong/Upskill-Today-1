@@ -1,4 +1,9 @@
 .selected-answer {
-    background: #ffd6ff;
+    background: #ff7b00;
     border: 1px solid #800080;
+    color: white;
+  }
+
+  .quiz-main{
+    cursor: pointer;
   }

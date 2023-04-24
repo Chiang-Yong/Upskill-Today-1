@@ -1,8 +1,14 @@
 import React, { useState } from "react";
-import { Row, Card, Button, ListGroup, ListGroupItem } from "react-bootstrap";
+import {
+  Row,
+  Card,
+  Button,
+  ListGroup,
+  ListGroupItem,
+  ProgressBar,
+} from "react-bootstrap";
 import { quiz } from "../CareerPathway/QuizData";
 import "./quiz.css";
-import CardHeader from "react-bootstrap/esm/CardHeader";
 
 const QuizStyle = {
   main: {
@@ -56,6 +62,10 @@ const QuizStyle = {
     background: "#ffd6ff",
     border: "1px solid #800080",
   },
+
+  listGroup: {
+    backgroundColor: "#fff9eb",
+  },
 };
 
 const Quiz = () => {
@@ -67,7 +77,16 @@ const Quiz = () => {
     score: 0,
     correctAnswers: 0,
     wrongAnswers: 0,
+    javaType: 0,
+    jsType: 0,
+    devopsType: 0,
+    type: "",
   });
+
+  const { questions } = quiz;
+  const { id, question, choices, type, correctAnswer } =
+    questions[activeQuestion];
+  const addLeadingZero = (number) => (number > 9 ? number : `0${number}`);
 
   const onClickTryAgain = () => {
     setShowResult(false);
@@ -75,6 +94,10 @@ const Quiz = () => {
       score: 0,
       correctAnswers: 0,
       wrongAnswers: 0,
+      javaType: 0,
+      jsType: 0,
+      devopsType: 0,
+      type: "",
     });
   };
 
@@ -90,9 +113,22 @@ const Quiz = () => {
           }
         : { ...prev, wrongAnswers: prev.wrongAnswers + 1 }
     );
+
     if (activeQuestion !== questions.length - 1) {
       setActiveQuestion((prev) => prev + 1);
     } else {
+
+      if(result.javaType >= result.jsType && result.javaType>=result.devopsType){
+        result.type="Java Developer"
+      }
+
+      if(result.jsType>= result.javaType && result.jsType >= result.devopsType){
+        result.type="Javascript Developer"
+      }
+
+      if(result.devopsType>=result.javaType && result.devopsType>=result.jsType){
+        result.type="DevOps Engineer"
+      }
       setActiveQuestion(0);
       setShowResult(true);
     }
@@ -100,55 +136,78 @@ const Quiz = () => {
 
   const onAnswerSelected = (answer, index) => {
     setSelectedAnswerIndex(index);
+
+    if(index===0){
+      result.javaType += 1;
+    }else if(index===1){
+      result.jsType += 1;
+
+    }else{
+      result.devopsType += 1;
+    }
+
+
     if (answer === correctAnswer) {
       setSelectedAnswer(true);
+      console.log("Index = " + index);
+
       console.log("right");
     } else {
       setSelectedAnswer(false);
       console.log("wrong");
     }
   };
-  const { questions } = quiz;
-  const { id, question, choices, correctAnswer } = questions[activeQuestion];
-  const addLeadingZero = (number) => (number > 9 ? number : `0${number}`);
 
+  
   return (
     <div className="justify-content-center" style={QuizStyle.main}>
       <Row>
         <h1 className="text-center" style={QuizStyle.title}>
-          QUIZ
+          PERSONALITY QUIZ
         </h1>
         <p className="text-center" style={QuizStyle.text}>
-          Take the quiz to help you to decide the program track
+          Take the personality quiz to help you to decide the program track
         </p>
       </Row>
       {!showResult ? (
         <Row className="justify-content-center" style={QuizStyle.row}>
-          <Card style={QuizStyle.card}>
-            <Card.Header className="fs-3 fw-bold text-center">
-              JavaScript MCQ
-            </Card.Header>
-            <Card.Body>
-              <Card.Title className="text-left my-2">
+          <Card style={QuizStyle.card} className="shadow-lg rounded-4">
+             <Card.Body>
+              <p>
+                Question {id} of {quiz.totalQuestions}
+              </p>
+
+              <ProgressBar
+                now={(id / quiz.totalQuestions) * 100}
+                label={`${(id / quiz.totalQuestions) * 100}%`}
+                variant="success"
+              />
+              <Card.Title className="fs-5 text-left pt-4 pb-3">
                 {id}.&nbsp;&nbsp; {question}
               </Card.Title>
-              <Card.Text className="text-left justify-content-left">
-                <ListGroup className="list-group-flush py-2" variant="flush">
-                  {choices.map((answer, index) => (
-                    <ListGroupItem
-                      onClick={() => onAnswerSelected(answer)}
-                      key={answer}
+
+              <ListGroup
+                className="quiz-main list-group-flush py-3"
+                variant="flush"
+                style={QuizStyle.listGroup}
+              >
+                {choices.map((answer, index) => (
+                  <ListGroup.Item
+                    onClick={() => onAnswerSelected(answer, index)}
+                    key={answer}
+                    style={{ backgroundColor: "#fff9eb", textAlign: "left" }}
+                  >
+                    <span
                       className={
                         selectedAnswerIndex === index ? "selected-answer" : null
                       }
-                      variant={selectedAnswerIndex === index ? "Dark" : null}
-                      style={{ textAlign: "left" }}
                     >
+                      {" "}
                       {index + 1}.&nbsp;&nbsp; {answer}
-                    </ListGroupItem>
-                  ))}
-                </ListGroup>
-              </Card.Text>
+                    </span>
+                  </ListGroup.Item>
+                ))}
+              </ListGroup>
 
               <Card.Text className="text-end">
                 <Button
@@ -165,12 +224,12 @@ const Quiz = () => {
       ) : (
         <div style={QuizStyle.main} className="justify-content-center result">
           <Row className="justify-content-center" style={QuizStyle.row}>
-            <Card style={QuizStyle.card}>
-              <CardHeader className="fs-1 fw-bold text-center">
-                Result
-              </CardHeader>
+            <Card style={QuizStyle.card} className="shadow-lg">
+              <Card.Header className="fs-1 fw-bold text-center">
+                Recommendation
+              </Card.Header>
               <Card.Body>
-                <Card.Text style={QuizStyle.text}>
+             {/*   <Card.Text style={QuizStyle.text}>
                   Total Question:&nbsp;&nbsp; <span>{questions.length}</span>
                 </Card.Text>
                 <Card.Text style={QuizStyle.text}>
@@ -182,11 +241,14 @@ const Quiz = () => {
                 </Card.Text>
                 <Card.Text style={QuizStyle.text}>
                   Wrong Answers:&nbsp;&nbsp;<span> {result.wrongAnswers}</span>
-                </Card.Text>
-                <Card.Text style={QuizStyle.text}>
-                  {result.score > 10
-                    ? "You can select Guided Track"
-                    : "You can go for Self-paced Track"}
+                </Card.Text>*/} 
+                <Card.Text style={QuizStyle.text} className="text-center"> 
+                  {result.type}
+                 {/* </Card.Body> {result.javaType > result.jsType
+                    ? "Java Developer"
+                 : "Javascript Developer"} 
+                  &nbsp; &nbsp; */}
+                  
                 </Card.Text>
                 <Card.Text className="text-end">
                   <Button style={QuizStyle.button} onClick={onClickTryAgain}>
