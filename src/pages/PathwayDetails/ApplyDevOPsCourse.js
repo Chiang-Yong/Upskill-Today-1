@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Button, Container } from "react-bootstrap";
 import { HashLink } from "react-router-hash-link";
-
+import "./pathwaydetails.css"
 const DOECstyle = {
   main: {
     width: "100%",
@@ -57,14 +57,18 @@ const ApplyDevOpsCourse = () => {
             Apply to Our DevOps Track
           </h1>
         </Row>
-        <Row className="d-flex justify-content-center">
+        <Row className="d-flex justify-content-center pathway">
           <HashLink
             to="/CareerPathway#register"
             smooth
             className="d-flex justify-content-center"
             style={{ textDecoration: "none" }}
           >
-            <Button style={DOECstyle.button}>
+            <Button 
+            //style={DOECstyle.button}
+            className="pathway-button"
+            style={{marginTop:"2%", marginBottom:"5%"}}
+            >
               Apply
             </Button>
           </HashLink>

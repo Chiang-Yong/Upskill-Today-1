@@ -7,6 +7,7 @@ import Quiz from "./Quiz";
 import RegisterYourInterest from "./RegisterYourInterest";
 import BackTopButton from "../../components/BackToTopButton";
 import { Link } from "react-router-dom";
+import "./careerpathway.css";
 
 const CPStyle = {
   container: {
@@ -86,9 +87,13 @@ const CareerPathway = () => {
                 Javascript
               </Card.Title>
               <Card.Text className="d-flex justify-content-center"></Card.Text>
-              <Card.Text className="d-flex justify-content-center">
+              <Card.Text className="d-flex justify-content-center careerpathway">
                 <Link to="/PathwayDetails/JavascriptCourse">
-                  <Button style={CPStyle.button} href="/JavascriptCourse">
+                  <Button 
+                  //style={CPStyle.button} 
+                  className="careerpathway-button"
+                  //href="/JavascriptCourse"
+                  >
                     Find Out More
                   </Button>{" "}
                 </Link>
@@ -110,9 +115,12 @@ const CareerPathway = () => {
                 Java
               </Card.Title>
               <Card.Text className="d-flex justify-content-center"></Card.Text>
-              <Card.Text className="d-flex justify-content-center">
+              <Card.Text className="d-flex justify-content-center careerpathway">
                 <Link to="/PathwayDetails/JavaCourse">
-                  <Button style={CPStyle.button}>Find Out More</Button>
+                  <Button 
+                 // style={CPStyle.button}
+                 className="careerpathway-button"
+                  >Find Out More</Button>
                 </Link>
               </Card.Text>
             </Card.Body>
@@ -132,10 +140,14 @@ const CareerPathway = () => {
                 DevOps
               </Card.Title>
               <Card.Text className="d-flex justify-content-center"></Card.Text>
-              <Card.Text className="d-flex justify-content-center">
+              <Card.Text className="d-flex justify-content-center careerpathway">
                 <Link to="/PathwayDetails/DevOpsCourse">
                   {" "}
-                  <Button style={CPStyle.button} href="/DevOpsCourse">
+                  <Button 
+                  //style={CPStyle.button} 
+                  //href="/DevOpsCourse"
+                  className="careerpathway-button"
+                  >
                     Find Out More
                   </Button>
                 </Link>

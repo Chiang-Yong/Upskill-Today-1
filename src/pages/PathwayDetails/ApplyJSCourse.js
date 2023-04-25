@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { Row, Button, Container } from "react-bootstrap";
 import { HashLink } from "react-router-hash-link";
+import "./pathwaydetails.css";
 
 const AJSCstyle = {
   main: {
@@ -57,14 +58,18 @@ const ApplyJSCourse = () => {
             Apply to Our JavaScript Developer Track
           </h1>
         </Row>
-        <Row className="d-flex justify-content-center">
+        <Row className="d-flex justify-content-center pathway">
           <HashLink
             to="/CareerPathway#register"
             className="d-flex justify-content-center"
             smooth
             style={{ textDecoration: "none" }}
           >
-            <Button type="submit" style={AJSCstyle.button}>
+            <Button type="submit" 
+            //style={AJSCstyle.button}
+            className="pathway-button"
+            style={{marginTop:"2%", marginBottom:"5%"}}
+            >
               Apply
             </Button>
           </HashLink>

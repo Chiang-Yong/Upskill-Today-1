@@ -1,18 +1,19 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import "./pathwaydetails.css";
 
 function SPGuidedTrackModal() {
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   return (
-    <>
+    <div className="pathway">
       <Button
-        style={{ backgroundColor: "#ff7b00", border: "none", outline:"none", fontWeight:"600" }}
+       // style={{ backgroundColor: "#ff7b00", border: "none", outline:"none", fontWeight:"600" }}
         onClick={handleShow}
+        className="pathway-button"
       >
         Click For More Info
       </Button>
@@ -36,7 +37,7 @@ function SPGuidedTrackModal() {
           </Button>
         </Modal.Footer>
       </Modal>
-    </>
+    </div>
   );
 }
 

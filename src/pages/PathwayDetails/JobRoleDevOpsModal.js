@@ -1,21 +1,18 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import "./pathwaydetails.css";
 
 function JobRoleDevOpsModal() {
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   return (
-    <>
+    <div className="pathway">
       <Button
-        style={{
-          backgroundColor: "#ff7b00",
-          border: "none",
-          fontWeight: "600",
-        }}
+        //style={{backgroundColor: "#ff7b00",border: "none",fontWeight: "600",}}
+        className="pathway-button"
         onClick={handleShow}
       >
         Find Out More
@@ -69,7 +66,7 @@ function JobRoleDevOpsModal() {
           </Button>
         </Modal.Footer>
       </Modal>
-    </>
+    </div>
   );
 }
 

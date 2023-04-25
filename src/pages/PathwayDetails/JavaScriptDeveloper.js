@@ -67,7 +67,7 @@ const JavaScriptDeveloper = () => {
         <h1 className="text-center" style={JSDstyle.title}>
           READY TO BE NEXT JAVASCRIPT DEVELOPER
         </h1>
-        <p style={JSDstyle.text}>Wtach the video below</p>
+        <p style={JSDstyle.text}>Watch the video below</p>
         <div style={JSDstyle.video}>
           <iframe
             width="560"
