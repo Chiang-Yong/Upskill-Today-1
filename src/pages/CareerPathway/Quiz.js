@@ -4,11 +4,20 @@ import {
   Card,
   Button,
   ListGroup,
-  ListGroupItem,
+  Popover,
   ProgressBar,
+  OverlayTrigger,
 } from "react-bootstrap";
 import { quiz } from "../CareerPathway/QuizData";
 import "./quiz.css";
+
+const popover = (
+  <Popover id="popover-basic">
+    <Popover.Body>
+      Select your <strong>answer</strong> before you can click NEXT.
+    </Popover.Body>
+  </Popover>
+);
 
 const QuizStyle = {
   main: {
@@ -17,12 +26,19 @@ const QuizStyle = {
     width: "100%",
   },
   button: {
-    backgroundColor: "#ff7b00",
+    backgroundColor:"#ff7b00",
     color: "#fff",
     border: "none",
     outline: "none",
     fontWeight: 600,
+    
+    width:"150px",
+    "&:disabled": {
+      backgroundColor: 'blue' || 'red'
+    },
   },
+
+ 
 
   image: {
     display: "block",
@@ -210,13 +226,19 @@ const Quiz = () => {
               </ListGroup>
 
               <Card.Text className="text-end">
+               
                 <Button
-                  style={QuizStyle.button}
+                  type="button"
                   onClick={onClickNext}
                   disabled={selectedAnswerIndex === null}
+                  backgroundColor={...disabled ? "#fff9eba": "#ff7b00"}
+                  className="button"
+                  style={QuizStyle.button}
+                  
                 >
                   {activeQuestion === questions.length - 1 ? "Finish" : "Next"}
                 </Button>
+              
               </Card.Text>
             </Card.Body>
           </Card>
