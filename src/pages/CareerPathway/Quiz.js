@@ -231,7 +231,6 @@ const Quiz = () => {
                   type="button"
                   onClick={onClickNext}
                   disabled={selectedAnswerIndex === null}
-                  backgroundColor={...disabled ? "#fff9eba": "#ff7b00"}
                   className="button"
                   style={QuizStyle.button}
                   
