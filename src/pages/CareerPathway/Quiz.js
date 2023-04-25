@@ -225,14 +225,14 @@ const Quiz = () => {
                 ))}
               </ListGroup>
 
-              <Card.Text className="text-end">
+              <Card.Text className="text-end quiz-main">
                
                 <Button
                   type="button"
                   onClick={onClickNext}
                   disabled={selectedAnswerIndex === null}
-                  className="button"
-                  style={QuizStyle.button}
+                  className="quiz-button"
+                  //style={QuizStyle.button}
                   
                 >
                   {activeQuestion === questions.length - 1 ? "Finish" : "Next"}
@@ -271,8 +271,12 @@ const Quiz = () => {
                   &nbsp; &nbsp; */}
                   
                 </Card.Text>
-                <Card.Text className="text-end">
-                  <Button style={QuizStyle.button} onClick={onClickTryAgain}>
+                <Card.Text className="text-end quiz-main">
+                  <Button 
+                  //style={QuizStyle.button} 
+                  onClick={onClickTryAgain}
+                  className="quiz-button"
+                  >
                     Try Again
                   </Button>
                 </Card.Text>

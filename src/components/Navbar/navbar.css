@@ -24,7 +24,7 @@
     opacity: 1; 
   }
 
-  .navbar-button {
+.navbar-main .navbar-button {
     border: none;
     outline: none;
     align-items: center;
@@ -33,12 +33,12 @@
     font-size: 1.0em;
     font-weight: 600;
     background-color: #ff7b00;
-    border: none;
     border-radius: 5px;
     padding: 0.2rem;
+    width:150px;
   }
   
-  .navbar-button:hover {
+ .navbar-main .navbar-button:hover {
     background-color: #a60037;
     border-color: #a60037;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),

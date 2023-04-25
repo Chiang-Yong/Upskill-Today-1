@@ -8,7 +8,7 @@
     cursor: pointer;
   }
 
-  .button {
+ .quiz-main .quiz-button {
     background-color: #ff7b00;
     color: #fff;
     border: none;
@@ -17,20 +17,14 @@
     width: 150px;
   }
 
-  .button:hover{
+  .quiz-main .quiz-button:hover{
     background-color: #a60037;
     border-color: #a60037;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
   }
 
-  .button[type="button"]:disabled{
-    background-color: rgb(124, 211, 30);
+  .quiz-main .quiz-button[type="button"]:disabled{
+    background-color: rgb(249, 205, 205);
     cursor: no-drop;
-
-  }
-
-  .btn-flat{
-    background-color: purple;
-    color: white;
   }
