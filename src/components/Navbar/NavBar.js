@@ -22,6 +22,7 @@ const linkStyling=css`
 
   &:hover {
     transform: translateY(-3px);
+    color:#ff7b00;
   }
 `;
 
@@ -79,7 +80,7 @@ const GroupLinks = styled.div`
     z-index: 2;
     overflow: hidden;
     opacity: 1;
-    max-height: ${(props) => (props.activeSubNav ? "8em" : "0")};
+    max-height: ${(props) => (props.activeSubNav ? "9em" : "0")};
     transition-property: max-height;
     transition-duration: 200ms;
     transition-timing-function: ease-out;
@@ -87,7 +88,7 @@ const GroupLinks = styled.div`
     a {
       display: block;
       position: relative;
-      width: 12rem;
+      width: 13rem;
       background-color: transparent;
       text-decoration: none;
       color: black;
@@ -117,7 +118,7 @@ const NavBar = ({ toggle }) => {
           About Us
         </Link>
         <SubMenu title="Career Pathway">
-          <Link className='link' to='/CareerPathway'>Pathway</Link>  
+          <Link className='link' to='/CareerPathway'>Career Pathway</Link>  
           <Link className='link' to='/PathwayDetails/JavaCourse'>Java</Link>
           <Link className='link' to='/PathwayDetails/JavascriptCourse'>JavaScript</Link>
           <Link className='link' to='/PathwayDetails/DevOpsCourse'>DevOps</Link>
