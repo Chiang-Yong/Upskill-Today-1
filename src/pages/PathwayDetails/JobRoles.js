@@ -49,7 +49,7 @@ const JRStyle = {
   title: {
     color: "#ff7b00",
     fontWeight: 800,
-    fontSize: "3rem",
+    fontSize: "2.5rem",
 
     marginBottom: "2%",
   },

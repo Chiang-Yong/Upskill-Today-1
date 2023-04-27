@@ -9,7 +9,7 @@ import BackTopButton from "../../components/BackToTopButton";
 
 const About = () => {
   return (
-    <>
+    <div style={{marginTop:"5%"}}>
       <AboutUs />
 
       <VisionMission />
@@ -21,7 +21,7 @@ const About = () => {
       {/* <AboutTestimontials /> */}
 
       <BackTopButton />
-    </>
+    </div>
   );
 };
 

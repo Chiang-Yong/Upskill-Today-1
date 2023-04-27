@@ -35,7 +35,7 @@ const GetInTouch = () => {
                   controlId="formBasicName"
                 >
                   <Form.Label>First Name</Form.Label>
-                  <Form.Control type="text" placeholder="Enter First Name" />
+                  <Form.Control type="text" placeholder="" />
                 </Form.Group>
                 <Form.Group
                   as={Col}
@@ -44,7 +44,7 @@ const GetInTouch = () => {
                   controlId="formBasicName"
                 >
                   <Form.Label>Last Name</Form.Label>
-                  <Form.Control type="text" placeholder="Enter Last Name" />
+                  <Form.Control type="text" placeholder="" />
                 </Form.Group>
               </Row>
               <Row>
@@ -55,7 +55,7 @@ const GetInTouch = () => {
                   controlId="formBasicEmail"
                 >
                   <Form.Label>Email</Form.Label>
-                  <Form.Control type="email" placeholder="Enter email" />
+                  <Form.Control type="email" placeholder="" />
                 </Form.Group>
                 <Form.Group
                   as={Col}
@@ -66,20 +66,20 @@ const GetInTouch = () => {
                   <Form.Label>Contact</Form.Label>
                   <Form.Control
                     type="text"
-                    placeholder="Enter Contact Number"
+                    placeholder=""
                   />
                 </Form.Group>
               </Row>
               <Form.Group className="mb-3">
                 <Form.Label>Subject</Form.Label>
-                <Form.Control type="text" placeholder="Subject" />
+                <Form.Control type="text" placeholder="" />
               </Form.Group>
 
               <Form.Group className="mb-3">
                 <Form.Label>Message</Form.Label>
                 <Form.Control
                   as="textarea"
-                  placeholder="Leave a message here"
+                  placeholder=""
                   rows={4}
                 />
               </Form.Group>

@@ -25,7 +25,7 @@ const AJSCstyle = {
     marginTop: "5%",
     color: "#000",
     fontWeight: 800,
-    fontSize: "clamp(0.8rem, 2vw,3rem)",
+    fontSize: "clamp(0.8rem, 2vw,2.5rem)",
     marginTop: "-1%",
   },
 

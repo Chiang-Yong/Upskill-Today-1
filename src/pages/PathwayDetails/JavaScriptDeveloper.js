@@ -73,8 +73,7 @@ const JavaScriptDeveloper = () => {
             width="560"
             height="315"
             src={src}
-            title="Youtube Player"
-            frameborder="0"
+            title="Youtube Player" 
           />
         </div>
       </Row>

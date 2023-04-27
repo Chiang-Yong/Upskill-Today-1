@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
@@ -12,12 +12,20 @@ import DevOpsCourse from "./pages/PathwayDetails/DevOpsCourse";
 import NavbarUST from "./components/Navbar/NavbarUST";
 import Footer from "./components/Footer/Footer";
 import ScrollToTop from "./ScrollToTop";
+import Dropdown from "./components/Navbar/Dropdown";
+import NavBar from "./components/Navbar/NavBar";
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => {
+    setIsOpen(!isOpen)
+  }
   return (
     <>
       <BrowserRouter>
-        <NavbarUST />
+       {/*  <NavbarUST toggle={toggle} /> */}
+        <NavBar toggle={toggle} />
+        <Dropdown isOpen={isOpen} toggle={toggle} />
         <ScrollToTop />
         <Routes>
           <Route exact path="/" element={<Home />} />

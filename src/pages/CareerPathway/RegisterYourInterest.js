@@ -81,7 +81,7 @@ const RegisterYourInterest = () => {
                   className="mb-3"
                 >
                   <Form.Label>First Name</Form.Label>
-                  <Form.Control type="text" placeholder="First Name" />
+                  <Form.Control type="text" />
                 </Form.Group>
 
                 <Form.Group
@@ -91,7 +91,7 @@ const RegisterYourInterest = () => {
                   className="mb-3"
                 >
                   <Form.Label>Last Name</Form.Label>
-                  <Form.Control type="text" placeholder="Last Name" />
+                  <Form.Control type="text"/>
                 </Form.Group>
               </Row>
               <Row>
@@ -103,7 +103,7 @@ const RegisterYourInterest = () => {
                   controlId="formBasicEmail"
                 >
                   <Form.Label>Email</Form.Label>
-                  <Form.Control type="email" placeholder="Enter email" />
+                  <Form.Control type="email" />
                 </Form.Group>
 
                 <Form.Group
@@ -114,7 +114,7 @@ const RegisterYourInterest = () => {
                   style={RYIstyle.group}
                 >
                   <Form.Label>Contact</Form.Label>
-                  <Form.Control type="text" placeholder="Contact" />
+                  <Form.Control type="text" />
                 </Form.Group>
               </Row>
 
@@ -126,7 +126,8 @@ const RegisterYourInterest = () => {
               >
                 <Form.Label>Select Program</Form.Label>
                 <Form.Select aria-label="Default select example">
-                  <option>Select Your Upskill Program</option>
+                 {/* <option>Select Your Upskill Program</option> */} 
+                 <option></option>
                   <option value="1">Java</option>
                   <option value="2">Javscript</option>
                   <option value="3">DevOps</option>
@@ -140,7 +141,8 @@ const RegisterYourInterest = () => {
               >
                 <Form.Label>Country</Form.Label>
                 <Form.Select aria-label="Default select example">
-                  <option>Select Country</option>
+                 {/*} <option>Select Country</option> */} 
+                  <option></option>
                   <option value="1">Singapore</option>
                   <option value="2">Philippines</option>
                   <option value="3">Malaysia</option>

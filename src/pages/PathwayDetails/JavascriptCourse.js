@@ -27,7 +27,7 @@ const JSstyle = {
     paddingBottom: "1%",
     color: "#ff7b00",
     fontWeight: 800,
-    fontSize: "3rem",
+    fontSize: "2.5rem",
   },
 
   text: {
@@ -39,7 +39,7 @@ const JSstyle = {
 
 const JavascriptCourse = () => {
   return (
-    <div className="justify-content-center">
+    <div className="justify-content-center mt-5">
       <h1 style={JSstyle.title} className="d-flex justify-content-center">
         JAVASCRIPT
       </h1>

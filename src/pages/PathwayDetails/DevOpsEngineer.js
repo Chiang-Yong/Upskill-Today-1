@@ -50,7 +50,7 @@ const DOEstyle = {
   },
 
   maintitle: {
-    fontSize: "3.0rem",
+    fontSize: "2.5rem",
     fontWeight: 800,
     color: "#ff7b00",
     paddingBottom: "2%",
@@ -58,7 +58,7 @@ const DOEstyle = {
   },
 
   title: {
-    fontSize: "2.5rem",
+    fontSize: "2.0rem",
     fontWeight: 800,
     color: "#000",
     paddingBottom: "2%",
@@ -91,7 +91,7 @@ const DevOpsEngineer = () => {
             height="315"
             src={src}
             title="Youtube Player"
-            frameborder="0"
+            
           />
         </div>
       </Row>

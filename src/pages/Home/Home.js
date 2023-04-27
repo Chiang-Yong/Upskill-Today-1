@@ -14,7 +14,7 @@ import CompaniesMarquee from "./CompaniesMarquee";
 
 const Home = () => {
   return (
-    <>
+    <div className="mt-5">
       <HomeCarousel />
 
       <HomeDescription />
@@ -30,7 +30,7 @@ const Home = () => {
       <Testimontials />
 
       <BackTopButton />
-    </>
+    </div>
   );
 };
 

@@ -11,6 +11,7 @@ const JDstyle = {
     width: "100%",
     height: "auto",
     backgroundColor: "white",
+    paddingTop:"3%",
   },
 
   row: {
@@ -72,7 +73,7 @@ const JDstyle = {
 };
 const JavaDeveloper = () => {
   return (
-    <div style={JDstyle.main}>
+    <div style={JDstyle.main} className="mt-5">
         <h1 style={JDstyle.maintitle} className="text-center">JAVA</h1>
       <Row
         className="d-flex justify-content-center text-center border border-1"
@@ -88,7 +89,7 @@ const JavaDeveloper = () => {
             height="315"
             src={src}
             title="Youtube Player"
-            frameborder="0"
+            
           />
         </div>
       </Row>

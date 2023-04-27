@@ -27,7 +27,7 @@ const CPStyle = {
     color: "#ff7b00",
     backgroundColor: "#fff9eb",
     fontWeight: 800,
-    fontSize: "3rem",
+    fontSize: "2.5rem",
   },
 
   card_text: {
@@ -54,13 +54,13 @@ const CPStyle = {
 const CareerPathway = () => {
   return (
     <>
-      <Container style={CPStyle.container} fluid>
+      <Container className="mt-5" style={CPStyle.container} fluid>
         <Row>
           <h1
             className="d-flex justify-content-center"
             style={CPStyle.card_title}
           >
-            Career Pathway
+            CAREER PATHWAY
           </h1>
           <p
             className="d-flex justify-content-center"

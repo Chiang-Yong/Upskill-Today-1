@@ -41,10 +41,10 @@ const SPGTstyle = {
 
   title: {
     fontWeight: 800,
-    fontSize: "3rem",
+    fontSize: "2.5rem",
     color: "#ff7b00",
     paddingTop: "2%",
-    marginBottom: "2%",
+    marginBottom: "1%",
   },
 
   button: {

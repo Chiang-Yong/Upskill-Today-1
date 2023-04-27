@@ -34,7 +34,7 @@ const CollaborateWithUsForm = () => {
                   className="mb-3"
                 >
                   <Form.Label>First Name</Form.Label>
-                  <Form.Control type="text" placeholder="First Name" />
+                  <Form.Control type="text" placeholder="" />
                 </Form.Group>
                 <Form.Group
                   as={Col}
@@ -43,7 +43,7 @@ const CollaborateWithUsForm = () => {
                   className="mb-3"
                 >
                   <Form.Label>Last Name</Form.Label>
-                  <Form.Control type="text" placeholder="Last Name" />
+                  <Form.Control type="text" placeholder="" />
                 </Form.Group>
               </Row>
 
@@ -55,7 +55,7 @@ const CollaborateWithUsForm = () => {
                   className="mb-3"
                 >
                   <Form.Label>Email</Form.Label>
-                  <Form.Control type="email" placeholder="Enter email" />
+                  <Form.Control type="email" placeholder="" />
                 </Form.Group>
                 <Form.Group
                   as={Col}
@@ -64,19 +64,19 @@ const CollaborateWithUsForm = () => {
                   className="mb-3"
                 >
                   <Form.Label>Contact</Form.Label>
-                  <Form.Control type="text" placeholder="Contact" />
+                  <Form.Control type="text" placeholder="" />
                 </Form.Group>
               </Row>
 
               <Form.Group as={Col} controlId="formCompany" className="mb-3">
                 <Form.Label>Company Name</Form.Label>
-                <Form.Control type="text" placeholder="Company" />
+                <Form.Control type="text" placeholder="" />
               </Form.Group>
 
               <Form.Group as={Col} controlId="formCountry" className="mb-3">
                 <Form.Label>Select Country</Form.Label>
                 <Form.Select>
-                  <option>Select Country</option>
+                  <option></option>
                   <option value="Afghanistan">Afghanistan</option>
                   <option value="Åland Islands">Åland Islands</option>
                   <option value="Albania">Albania</option>

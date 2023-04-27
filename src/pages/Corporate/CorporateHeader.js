@@ -4,10 +4,10 @@ import "./corporateHeader.css"
 
 const CorporateHeader = () => {
     return (
-        <Container className="corporateHeader" fluid>
+        <Container className="corporateHeader mt-5" fluid>
             <Row>
 
-                <h1 className="corporateHeader-title">
+                <h1 className="corporateHeader-title mt-3">
                     Corporate
                 </h1>
 
