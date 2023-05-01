@@ -27,13 +27,13 @@ const CPStyle = {
     color: "#ff7b00",
     backgroundColor: "#fff9eb",
     fontWeight: 800,
-    fontSize: "2.5rem",
+    fontSize: "clamp(1.0rem, 3vw, 2.5rem)",
   },
 
   card_text: {
     color: "black",
     fontWeight: 700,
-    fontSize: "1.8rem",
+    fontSize: "clamp(1.0rem, 2vw, 1.8rem)",
     paddingTop: "1%",
     paddingBottom: "1%",
   },

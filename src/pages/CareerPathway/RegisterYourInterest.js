@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form, Col, Row, Button, Container } from "react-bootstrap";
 import "./register.css";
 
@@ -57,8 +57,22 @@ const RYIstyle = {
   },
 };
 
+
+
 const RegisterYourInterest = () => {
+  const [validated, setValidated] = useState(false);
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    setValidated(true);
+  };
   return (
+   
     <Container fluid className="py-5 px-5">
       <Row className="py-3 justify-content-center align-items-center">
         <Col md={6}>
@@ -72,7 +86,7 @@ const RegisterYourInterest = () => {
           </p>
 
           <div className="career-form">
-            <Form className="py-3" style={RYIstyle.form}>
+            <Form noValidate validated={validated} onSubmit={handleSubmit} className="py-3" style={RYIstyle.form}>
               <Row>
                 <Form.Group
                   as={Col}
@@ -81,7 +95,12 @@ const RegisterYourInterest = () => {
                   className="mb-3"
                 >
                   <Form.Label>First Name</Form.Label>
-                  <Form.Control type="text" />
+                  <Form.Control 
+                  required
+                  type="text" 
+                  name="firstname" 
+                  />
+                 <Form.Control.Feedback type="invalid">Please provide your First Name</Form.Control.Feedback>
                 </Form.Group>
 
                 <Form.Group
@@ -91,7 +110,12 @@ const RegisterYourInterest = () => {
                   className="mb-3"
                 >
                   <Form.Label>Last Name</Form.Label>
-                  <Form.Control type="text"/>
+                  <Form.Control 
+                  type="text"
+                  required
+                  name="lastname" 
+                  />
+                  <Form.Control.Feedback type="invalid">Please provide your Last Name</Form.Control.Feedback>
                 </Form.Group>
               </Row>
               <Row>
@@ -103,7 +127,13 @@ const RegisterYourInterest = () => {
                   controlId="formBasicEmail"
                 >
                   <Form.Label>Email</Form.Label>
-                  <Form.Control type="email" />
+                  <Form.Control
+                    required
+                    type="email"
+                  />
+                  <Form.Control.Feedback type="invalid">
+                   Please provide a valid email
+                  </Form.Control.Feedback>
                 </Form.Group>
 
                 <Form.Group
@@ -114,7 +144,11 @@ const RegisterYourInterest = () => {
                   style={RYIstyle.group}
                 >
                   <Form.Label>Contact</Form.Label>
-                  <Form.Control type="text" />
+                  <Form.Control 
+                  required
+                  type="text" 
+                  />
+                  <Form.Control.Feedback type="invalid">Please provide your contact number</Form.Control.Feedback>
                 </Form.Group>
               </Row>
 
@@ -125,13 +159,14 @@ const RegisterYourInterest = () => {
                 style={RYIstyle.select}
               >
                 <Form.Label>Select Program</Form.Label>
-                <Form.Select aria-label="Default select example">
-                 {/* <option>Select Your Upskill Program</option> */} 
-                 <option></option>
+                <Form.Select required aria-label="Default select example">
+                  {/* <option>Select Your Upskill Program</option> */}
+                  <option></option>
                   <option value="1">Java</option>
                   <option value="2">Javscript</option>
                   <option value="3">DevOps</option>
                 </Form.Select>
+                <Form.Control.Feedback type="invalid">Please select your program </Form.Control.Feedback>
               </Form.Group>
               <Form.Group
                 as={Col}
@@ -140,13 +175,13 @@ const RegisterYourInterest = () => {
                 style={RYIstyle.select}
               >
                 <Form.Label>Country</Form.Label>
-                <Form.Select aria-label="Default select example">
-                 {/*} <option>Select Country</option> */} 
+                <Form.Select required aria-label="Default select example">
+                  {/*} <option>Select Country</option> */}
                   <option></option>
                   <option value="1">Singapore</option>
                   <option value="2">Philippines</option>
-                  <option value="3">Malaysia</option>
                 </Form.Select>
+                <Form.Control.Feedback type="invalid">Please select your country. Currently, the program is for Singapore and Philippines only.</Form.Control.Feedback>
               </Form.Group>
               <div className="d-grid mt-4">
                 <Button

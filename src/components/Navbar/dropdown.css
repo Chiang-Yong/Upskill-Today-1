@@ -1,12 +1,12 @@
 .dropdown {
-    position: fixed;
-    z-index: 999;
+  /*  position: fixed;
+    z-index: 199;
     width: 100%;
     height: 100%;
     background:#fff9eb;
     color:black;
-    display: grid;
-    align-items: center; 
+    display: grid;*/
+   /* align-items: center; */
     top: 0;
     left: 0;
     transition: 0.3s ease-in-out;
@@ -41,9 +41,10 @@
 }
 
 .dropdown .menu{
-  display: grid;
+  display: flex;
+  flex-direction: column;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(5, 80px);
+  grid-template-rows: repeat(8, 80px);
   text-align: center;
   margin-bottom: 4rem; 
 
@@ -52,7 +53,7 @@
 
 @media screen and (max-width: 480px){
     .dropdown .menu{
-    grid-template-rows: repeat(5, 60px);
+    grid-template-rows: repeat(8, 60px);
     }
 }
 

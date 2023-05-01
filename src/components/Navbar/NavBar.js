@@ -54,8 +54,8 @@ const GroupParentWrapper = styled.a`
   &::after {
     content: "";
     position: absolute;
-    border-bottom: 3px solid black;
-    border-right: 3px solid black;
+  /*  border-bottom: 3px solid black; */
+  /*  border-right: 3px solid black; */
     display: block;
     height: 1rem;
     width: 1rem;
@@ -117,7 +117,7 @@ const NavBar = ({ toggle }) => {
         <Link className="link" to="/About">
           About Us
         </Link>
-        <SubMenu title="Career Pathway">
+        <SubMenu title="Career Pathway" style={{borderBottom:"solid", borderWidth:"1px", borderColor:"black"}}>
           <Link className='link' to='/CareerPathway'>Career Pathway</Link>  
           <Link className='link' to='/PathwayDetails/JavaCourse'>Java</Link>
           <Link className='link' to='/PathwayDetails/JavascriptCourse'>JavaScript</Link>

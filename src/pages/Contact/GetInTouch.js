@@ -1,9 +1,21 @@
-import React from "react";
-import { Card, Form, Button, Row, Col, Container } from "react-bootstrap";
+import React, { useState } from "react";
+import { Form, Button, Row, Col, Container } from "react-bootstrap";
 import "./getIntouch.css";
 import ContactCards from "./ContactCards";
 
 const GetInTouch = () => {
+  const [validated, setValidated] = useState(false);
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    setValidated(true);
+  };
+  
   return (
     <Container fluid className="getintouch py-5">
       <Row className="px-5 py-5">
@@ -21,6 +33,9 @@ const GetInTouch = () => {
         <Col md={5}>
           <div className="contact-form">
             <Form
+              noValidate
+              validated={validated}
+              onSubmit={handleSubmit}
               className="  px-4 py-5"
               style={{
                 borderColor: "#ff7b00",
@@ -35,7 +50,11 @@ const GetInTouch = () => {
                   controlId="formBasicName"
                 >
                   <Form.Label>First Name</Form.Label>
-                  <Form.Control type="text" placeholder="" />
+                  <Form.Control 
+                  required
+                  type="text" 
+                  placeholder="" />
+                  <Form.Control.Feedback type="invalid">Please provide your First Name</Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group
                   as={Col}
@@ -44,7 +63,11 @@ const GetInTouch = () => {
                   controlId="formBasicName"
                 >
                   <Form.Label>Last Name</Form.Label>
-                  <Form.Control type="text" placeholder="" />
+                  <Form.Control 
+                  required
+                  type="text" 
+                  placeholder="" />
+                   <Form.Control.Feedback type="invalid">Please provide your Last Name</Form.Control.Feedback>
                 </Form.Group>
               </Row>
               <Row>
@@ -55,7 +78,12 @@ const GetInTouch = () => {
                   controlId="formBasicEmail"
                 >
                   <Form.Label>Email</Form.Label>
-                  <Form.Control type="email" placeholder="" />
+                  <Form.Control 
+                  required
+                  type="email" 
+                  name="email"
+                  placeholder="" />
+                   <Form.Control.Feedback type="invalid">Please provide a valid email</Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group
                   as={Col}
@@ -65,23 +93,30 @@ const GetInTouch = () => {
                 >
                   <Form.Label>Contact</Form.Label>
                   <Form.Control
+                  required
                     type="text"
                     placeholder=""
                   />
+                   <Form.Control.Feedback type="invalid">Please provide your contact number</Form.Control.Feedback>
                 </Form.Group>
               </Row>
               <Form.Group className="mb-3">
                 <Form.Label>Subject</Form.Label>
-                <Form.Control type="text" placeholder="" />
+                <Form.Control 
+                required
+                type="text" placeholder="" />
+                 <Form.Control.Feedback type="invalid">Please enter your subject</Form.Control.Feedback>
               </Form.Group>
 
               <Form.Group className="mb-3">
                 <Form.Label>Message</Form.Label>
                 <Form.Control
+                  required
                   as="textarea"
                   placeholder=""
                   rows={4}
                 />
+                 <Form.Control.Feedback type="invalid">Please write your message here</Form.Control.Feedback>
               </Form.Group>
               <div className="d-grid mt-3">
                 <Button type="submit" size="lg" className="form-button">
