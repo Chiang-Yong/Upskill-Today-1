@@ -68,7 +68,7 @@ const CareerPathway = () => {
           </p>
         </Row>
         <Row xs={1} md={3} className="g-3 d-flex justify-content-center">
-          <Card style={CPStyle.card} className="rounded-4">
+          <Card style={CPStyle.card} className="rounded-4 card-container">
             <Card.Img
               variant="top"
               src={JavaIcon}
@@ -95,16 +95,13 @@ const CareerPathway = () => {
             </Card.Body>
           </Card>
 
-          <Card style={CPStyle.card} className="rounded-4">
+          <Card style={CPStyle.card} className="rounded-4 card-container">
             <Card.Img
               variant="top"
               src={JavaScriptIcon}
               className="rounded mx-0 d-block"
               style={{
                 display: " block",
-                objectFit: "contain",
-                width: "255px",
-                height: "255px",
               }}
             />
             <Card.Body>
@@ -126,7 +123,7 @@ const CareerPathway = () => {
             </Card.Body>
           </Card>
 
-          <Card style={CPStyle.card} className="rounded-4">
+          <Card style={CPStyle.card} className="rounded-4 card-container">
             <Card.Img
               variant="top"
               src={DevOpsIcon}

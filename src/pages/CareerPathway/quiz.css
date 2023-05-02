@@ -1,3 +1,15 @@
+@media (max-width: 991.98px) {
+  .quiz-body {
+    width: 75vw !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .quiz-body {
+    width: 85vw !important;
+  }
+}
+
 .selected-answer {
   margin: 0;
   padding: 0.2rem 1rem;

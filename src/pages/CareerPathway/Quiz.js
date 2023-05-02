@@ -26,16 +26,16 @@ const QuizStyle = {
   },
 
   button: {
-    backgroundColor:"#ff7b00",
+    backgroundColor: "#ff7b00",
     color: "#fff",
     border: "none",
     outline: "none",
     fontWeight: 600,
     borderRadius: "25px",
-    
-    width:"150px",
+
+    width: "150px",
     "&:disabled": {
-      backgroundColor: 'blue' || 'red'
+      backgroundColor: "blue" || "red",
     },
   },
 
@@ -132,17 +132,25 @@ const Quiz = () => {
     if (activeQuestion !== questions.length - 1) {
       setActiveQuestion((prev) => prev + 1);
     } else {
-
-      if(result.javaType >= result.jsType && result.javaType>=result.devopsType){
-        result.type="Java Developer"
+      if (
+        result.javaType >= result.jsType &&
+        result.javaType >= result.devopsType
+      ) {
+        result.type = "Java Developer";
       }
 
-      if(result.jsType>= result.javaType && result.jsType >= result.devopsType){
-        result.type="Javascript Developer"
+      if (
+        result.jsType >= result.javaType &&
+        result.jsType >= result.devopsType
+      ) {
+        result.type = "Javascript Developer";
       }
 
-      if(result.devopsType>=result.javaType && result.devopsType>=result.jsType){
-        result.type="DevOps Engineer"
+      if (
+        result.devopsType >= result.javaType &&
+        result.devopsType >= result.jsType
+      ) {
+        result.type = "DevOps Engineer";
       }
       setActiveQuestion(0);
       setShowResult(true);
@@ -152,15 +160,13 @@ const Quiz = () => {
   const onAnswerSelected = (answer, index) => {
     setSelectedAnswerIndex(index);
 
-    if(index===0){
+    if (index === 0) {
       result.javaType += 1;
-    }else if(index===1){
+    } else if (index === 1) {
       result.jsType += 1;
-
-    }else{
+    } else {
       result.devopsType += 1;
     }
-
 
     if (answer === correctAnswer) {
       setSelectedAnswer(true);
@@ -173,7 +179,6 @@ const Quiz = () => {
     }
   };
 
-  
   return (
     <div className="justify-content-center" style={QuizStyle.main}>
       <Row>
@@ -186,8 +191,11 @@ const Quiz = () => {
       </Row>
       {!showResult ? (
         <Row className="justify-content-center" style={QuizStyle.row}>
-          <Card style={QuizStyle.card} className="shadow-lg rounded-4">
-             <Card.Body>
+          <Card
+            style={QuizStyle.card}
+            className="shadow-lg rounded-4 quiz-body"
+          >
+            <Card.Body>
               <p>
                 Question {id} of {quiz.totalQuestions}
               </p>
@@ -198,7 +206,7 @@ const Quiz = () => {
                 variant="success"
               />
               <Card.Title className="fs-5 text-left pt-4 pb-3">
-               {/* {id}.&nbsp;&nbsp;*/} {question}
+                {/* {id}.&nbsp;&nbsp;*/} {question}
               </Card.Title>
 
               <ListGroup
@@ -225,16 +233,14 @@ const Quiz = () => {
               </ListGroup>
 
               <Card.Text className="text-end quiz-main">
-               
                 <Button
                   type="button"
                   onClick={onClickNext}
                   disabled={selectedAnswerIndex === null}
-                  className="quiz-button"                 
+                  className="quiz-button"
                 >
                   {activeQuestion === questions.length - 1 ? "Finish" : "Next"}
                 </Button>
-              
               </Card.Text>
             </Card.Body>
           </Card>
@@ -247,14 +253,11 @@ const Quiz = () => {
                 Recommendation
               </Card.Header>
               <Card.Body>
-                <Card.Text style={QuizStyle.text} className="text-center"> 
+                <Card.Text style={QuizStyle.text} className="text-center">
                   {result.type}
                 </Card.Text>
                 <Card.Text className="text-end quiz-main">
-                  <Button 
-                  onClick={onClickTryAgain}
-                  className="quiz-button"
-                  >
+                  <Button onClick={onClickTryAgain} className="quiz-button">
                     Try Again
                   </Button>
                 </Card.Text>
