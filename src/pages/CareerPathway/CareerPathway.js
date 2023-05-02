@@ -59,8 +59,7 @@ const CareerPathway = () => {
           <h1
             className="d-flex justify-content-center"
             style={CPStyle.card_title}
-          >      
-          </h1>
+          ></h1>
           <p
             className="d-flex justify-content-center mt-5"
             style={CPStyle.card_text}
@@ -69,6 +68,33 @@ const CareerPathway = () => {
           </p>
         </Row>
         <Row xs={1} md={3} className="g-3 d-flex justify-content-center">
+          <Card style={CPStyle.card} className="rounded-4">
+            <Card.Img
+              variant="top"
+              src={JavaIcon}
+              className="rounded mx-0 d-block"
+              style={{
+                display: " block",
+              }}
+            />
+            <Card.Body>
+              <Card.Title className="d-flex justify-content-center">
+                Java
+              </Card.Title>
+              <Card.Text className="d-flex justify-content-center"></Card.Text>
+              <Card.Text className="d-flex justify-content-center careerpathway">
+                <Link to="/PathwayDetails/JavaCourse">
+                  <Button
+                    // style={CPStyle.button}
+                    className="careerpathway-button"
+                  >
+                    Find Out More
+                  </Button>
+                </Link>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+
           <Card style={CPStyle.card} className="rounded-4">
             <Card.Img
               variant="top"
@@ -88,38 +114,13 @@ const CareerPathway = () => {
               <Card.Text className="d-flex justify-content-center"></Card.Text>
               <Card.Text className="d-flex justify-content-center careerpathway">
                 <Link to="/PathwayDetails/JavascriptCourse">
-                  <Button 
-                  //style={CPStyle.button} 
-                  className="careerpathway-button"
-                  //href="/JavascriptCourse"
+                  <Button
+                    //style={CPStyle.button}
+                    className="careerpathway-button"
+                    //href="/JavascriptCourse"
                   >
                     Find Out More
                   </Button>{" "}
-                </Link>
-              </Card.Text>
-            </Card.Body>
-          </Card>
-
-          <Card style={CPStyle.card} className="rounded-4">
-            <Card.Img
-              variant="top"
-              src={JavaIcon}
-              className="rounded mx-0 d-block"
-              style={{
-                display: " block",
-              }}
-            />
-            <Card.Body>
-              <Card.Title className="d-flex justify-content-center">
-                Java
-              </Card.Title>
-              <Card.Text className="d-flex justify-content-center"></Card.Text>
-              <Card.Text className="d-flex justify-content-center careerpathway">
-                <Link to="/PathwayDetails/JavaCourse">
-                  <Button 
-                 // style={CPStyle.button}
-                 className="careerpathway-button"
-                  >Find Out More</Button>
                 </Link>
               </Card.Text>
             </Card.Body>
@@ -142,10 +143,10 @@ const CareerPathway = () => {
               <Card.Text className="d-flex justify-content-center careerpathway">
                 <Link to="/PathwayDetails/DevOpsCourse">
                   {" "}
-                  <Button 
-                  //style={CPStyle.button} 
-                  //href="/DevOpsCourse"
-                  className="careerpathway-button"
+                  <Button
+                    //style={CPStyle.button}
+                    //href="/DevOpsCourse"
+                    className="careerpathway-button"
                   >
                     Find Out More
                   </Button>
