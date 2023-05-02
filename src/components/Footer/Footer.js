@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <>
       <footer
-        className="text-center text-lg-start text-white "
+        className="text-center text-lg-start text-white"
         style={{ backgroundColor: "#2d2d2d" }}
       >
         <section className="company-info border-bottom ">
@@ -26,8 +26,7 @@ const Footer = () => {
                   className="pe-1 text-nowrap text-white hover-effect"
                   target='_blank' 
                   rel='noreferrer'
-                  hover
-                  
+                                    
                   style={{
                     textDecoration: "none",
                     fontWeight: "500",
@@ -43,8 +42,7 @@ const Footer = () => {
                   className="ps-1 text-nowrap text-white hover-effect"
                   target='_blank' 
                   rel='noreferrer'
-                  hover
-                 
+                                 
                   style={{
                     textDecoration: "none",
                     fontWeight: "500",
@@ -56,10 +54,10 @@ const Footer = () => {
                 <div className="pt-3 justify-content-evenly align-items-center">
                   <a
                     href="https://www.facebook.com/helloupskilltoday"
-                    className=" btn btn-floating text-white"
+                    className="text-white btn-floating btn"
                     target='_blank' 
                     rel='noreferrer'
-                    hover
+                  
                   >
                     <i
                       className="bi bi-facebook hover-effect"
@@ -69,10 +67,10 @@ const Footer = () => {
 
                   <a
                     href="https://www.linkedin.com/company/upskilltoday"
-                    className="btn btn-floating text-white"
+                    className="btn-floating text-white btn"
                     target='_blank' 
                     rel='noreferrer'
-                    hover
+                    
                   >
                     <i
                       className="bi bi-linkedin hover-effect"
@@ -82,10 +80,10 @@ const Footer = () => {
 
                   <a
                     href="https://www.youtube.com/channel/UCEN2ltg-7TQTE1zRDWBzAOw"
-                    className=" btn btn-floating text-white"
+                    className="btn-floating text-white btn"
                     target='_blank' 
                     rel='noreferrer'
-                    hover
+                    
                   >
                     <i
                       className="bi bi-youtube hover-effect"

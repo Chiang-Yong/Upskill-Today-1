@@ -14,6 +14,7 @@ const HowItWorks = () => {
           <Card.Img
             variant="top"
             src={Order}
+            alt="order"
             className="img-fluid rounded mx-auto d-block"
             style={{
               objectFit: "contain",
@@ -37,6 +38,7 @@ const HowItWorks = () => {
           <Card.Img
             variant="top"
             src={Competence}
+            alt="competence"
             className="img-fluid rounded mx-auto d-block "
             style={{
               objectFit: "contain",
@@ -60,6 +62,7 @@ const HowItWorks = () => {
           <Card.Img
             variant="top"
             src={Partner}
+            alt="partner"
             className="rounded mx-auto d-block img-fluid"
             style={{
               objectFit: "contain",

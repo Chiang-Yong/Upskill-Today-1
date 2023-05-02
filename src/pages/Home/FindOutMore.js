@@ -48,7 +48,7 @@ const FindOutMore = () => {
         <Col md={5} className=" text-center ">
           <img
             src={corporatehome}
-            alt="corporatehome"
+            alt="corporate home"
             style={{ height: "auto", width: "90%" }}
           />
         </Col>

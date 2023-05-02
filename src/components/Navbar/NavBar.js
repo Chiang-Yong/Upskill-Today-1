@@ -46,7 +46,7 @@ const SubMenu = ({ children, title, ...props }) => {
   );
 };
 
-const GroupParentWrapper = styled.a`
+const GroupParentWrapper = styled.div`
   position: relative;
   cursor: pointer;
   ${linkStyling}
@@ -102,7 +102,7 @@ const NavBar = ({ toggle }) => {
       style={{ position: "fixed", backgroundColor: "white", zIndex: 100 }}
     >
       <Link className="link" to="/">
-        <img src={Upskill} alt="logo" class="navbar-logo" />
+        <img src={Upskill} alt="logo" className="navbar-logo" />
       </Link>
       <div>
         <i className="icon" onClick={toggle} style={{ fontSize: "2.0rem" }}>

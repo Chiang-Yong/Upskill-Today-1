@@ -40,9 +40,7 @@ const Dropdown = ({ isOpen, toggle }) => {
           <Link to="/About" className="link" onClick={toggle}>
             About Us
           </Link>
-        {/* <Link to="/CareerPathway" className="link">
-            Career Pathway
-          </Link>*/}  
+        
           <SubMenu title="Career Pathway">
             <Link className="link" to="/CareerPathway" onClick={toggle}>
               Career Pathway

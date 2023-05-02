@@ -1,6 +1,6 @@
 .slide-img {
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   filter: brightness(0.6);
 }
 
@@ -8,6 +8,19 @@
   top: 70%;
   transform: translateY(-50%);
   bottom: inital;
+
+}
+
+@media screen and (max-width:"1100px") {
+  .home-caption{  
+  top:50%;
+  transform: translateY(-25%);
+ }
+
+ .homecarousel-item {
+  height: 50%;
+ }
+
 }
 
 .homecarousel-item {

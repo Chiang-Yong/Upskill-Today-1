@@ -49,6 +49,15 @@ const DOEstyle = {
     alignItems: "center",
   },
 
+   // Adding media query..
+   '@media (max-width: 768px)': {
+    video: {
+      width:"320px",
+      height:"218px",
+
+    }
+    
+  },
   maintitle: {
     fontSize: "clamp(2.0rem, 2vw, 2.8rem",
     fontWeight: 800,
@@ -87,8 +96,8 @@ const DevOpsEngineer = () => {
         </p>
         <div style={DOEstyle.video}>
           <iframe
-            width="560"
-            height="315"
+            width="560px"
+            height="315px"
             src={src}
             title="Youtube Player"
             

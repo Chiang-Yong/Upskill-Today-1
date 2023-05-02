@@ -62,7 +62,7 @@ const CareerPathway = () => {
           >      
           </h1>
           <p
-            className="d-flex justify-content-center"
+            className="d-flex justify-content-center mt-5"
             style={CPStyle.card_text}
           >
             Choose the right career through upskill program
