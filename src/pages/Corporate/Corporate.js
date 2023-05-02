@@ -11,7 +11,7 @@ import BackTopButton from "../../components/BackToTopButton";
 const Corporate = () => {
   return (
     <>
-      <CorporateHeader />
+      {/* <CorporateHeader /> */}
 
       <PartnerWithUs />
 
