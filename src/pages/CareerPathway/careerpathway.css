@@ -1,13 +1,15 @@
 
 
 .careerpathway .careerpathway-button{
-  font-size: 1.2em;
+  font-size: clamp(1.0em, 2vw, 1.2em);
   font-weight: 600;
   background-color: #ff7b00;
   border: none;
-  /* border-radius: 20px; */
-  padding-left: 2rem;
-  padding-right: 2rem;
+  border-radius: 25px; 
+  padding-left: 0.8em;
+  padding-right: 0.8em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 .careerpathway .careerpathway-button:hover{

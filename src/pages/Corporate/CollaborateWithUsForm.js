@@ -1,16 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import {
-  Card,
   Form,
   Button,
   Row,
   Col,
-  FloatingLabel,
   Container,
 } from "react-bootstrap";
 import "./collaborateWithUsForm.css";
 
 const CollaborateWithUsForm = () => {
+  const [validated, setValidated] = useState(false);
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    setValidated(true);
+  };
+
   return (
     <Container fluid className="py-5 px-5 ">
       <Row className="py-3 justify-content-center align-items-center">
@@ -25,7 +35,11 @@ const CollaborateWithUsForm = () => {
           </p>
 
           <div className="corpform">
-            <Form className="py-3 ">
+            <Form 
+             noValidate
+             validated={validated}
+             onSubmit={handleSubmit}
+             className="py-3 ">
               <Row>
                 <Form.Group
                   as={Col}
@@ -34,7 +48,8 @@ const CollaborateWithUsForm = () => {
                   className="mb-3"
                 >
                   <Form.Label>First Name</Form.Label>
-                  <Form.Control type="text" placeholder="" />
+                  <Form.Control required type="text" placeholder="" />
+                  <Form.Control.Feedback type="invalid">Please provide your First Name</Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group
                   as={Col}
@@ -43,7 +58,8 @@ const CollaborateWithUsForm = () => {
                   className="mb-3"
                 >
                   <Form.Label>Last Name</Form.Label>
-                  <Form.Control type="text" placeholder="" />
+                  <Form.Control required type="text" placeholder="" />
+                  <Form.Control.Feedback type="invalid">Please provide your Last Name</Form.Control.Feedback>
                 </Form.Group>
               </Row>
 
@@ -55,7 +71,8 @@ const CollaborateWithUsForm = () => {
                   className="mb-3"
                 >
                   <Form.Label>Email</Form.Label>
-                  <Form.Control type="email" placeholder="" />
+                  <Form.Control required type="email" placeholder="" />
+                  <Form.Control.Feedback type="invalid">Please enter a valid email</Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group
                   as={Col}
@@ -64,18 +81,20 @@ const CollaborateWithUsForm = () => {
                   className="mb-3"
                 >
                   <Form.Label>Contact</Form.Label>
-                  <Form.Control type="text" placeholder="" />
+                  <Form.Control required type="text" placeholder="" />
+                  <Form.Control.Feedback type="invalid">Please provide your contact number</Form.Control.Feedback>
                 </Form.Group>
               </Row>
 
               <Form.Group as={Col} controlId="formCompany" className="mb-3">
                 <Form.Label>Company Name</Form.Label>
-                <Form.Control type="text" placeholder="" />
+                <Form.Control required type="text" placeholder="" />
+                <Form.Control.Feedback type="invalid">Please enter your company name</Form.Control.Feedback>
               </Form.Group>
 
               <Form.Group as={Col} controlId="formCountry" className="mb-3">
                 <Form.Label>Select Country</Form.Label>
-                <Form.Select>
+                <Form.Select required>
                   <option></option>
                   <option value="Afghanistan">Afghanistan</option>
                   <option value="Åland Islands">Åland Islands</option>
@@ -390,6 +409,7 @@ const CollaborateWithUsForm = () => {
                   <option value="Zambia">Zambia</option>
                   <option value="Zimbabwe">Zimbabwe</option>
                 </Form.Select>
+                <Form.Control.Feedback type="invalid">Please select your country</Form.Control.Feedback>
               </Form.Group>
 
               <div className="d-grid mt-4">

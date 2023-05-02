@@ -1,11 +1,10 @@
 .pathway .pathway-button{
-    font-size: 1.2em;
+  font-size: clamp(1.0em, 2vw, 1.2em);
   font-weight: 600;
   background-color: #ff7b00;
   border: none;
-  /* border-radius: 20px; */
-  padding-left: 2rem;
-  padding-right: 2rem;
+  border-radius: 25px;
+  padding: 0.6rem;
 }
 
 .pathway .pathway-button:hover{

@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import homemain from "../../../images/upskill-main.jpeg";
+import homemain_1980 from "../../../images/upskill-main-1980.jpeg";
+import homemain_960 from "../../../images/upskill-main-960.jpeg"
+import homemain_680 from "../../../images/upskill-main-680.jpeg";
+import homemain_320 from "../../../images/upskill-main-320.jpeg";
+
 import homebc from "../../../images/home-b2c.png";
 import homebb from "../../../images/home-tgt.jpeg";
 import "./homecarousel.css";
@@ -23,7 +28,8 @@ const HomeCarousel = () => {
       <Carousel.Item className="homecarousel-item">
         <img
           className="d-block w-100 slide-img img-fluid"
-          src={homemain}
+          srcSet={`${homemain_320} 320w, ${homemain_680} 680w, ${homemain_960}   960w, ${homemain_1980} 1980w`}
+          src={homemain_1980}
           alt="First slide"
         />
         <Carousel.Caption className="home-caption">

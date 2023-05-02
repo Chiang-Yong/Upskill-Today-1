@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import "./pathwaydetails.css";
 
+
 function JobRoleFSModal() {
   const [show, setShow] = useState(false);
 
@@ -12,7 +13,6 @@ function JobRoleFSModal() {
   return (
     <div className="pathway">
       <Button
-        //style={{ backgroundColor: "#ff7b00", border: "none", fontWeight:"600" }}
         onClick={handleShow}
         className="pathway-button"
       >

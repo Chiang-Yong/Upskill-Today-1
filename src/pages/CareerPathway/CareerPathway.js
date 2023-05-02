@@ -27,7 +27,7 @@ const CPStyle = {
     color: "#ff7b00",
     backgroundColor: "#fff9eb",
     fontWeight: 800,
-    fontSize: "clamp(1.0rem, 3vw, 2.5rem)",
+    fontSize: "clamp(1.0rem, 2vw, 2.5rem)",
   },
 
   card_text: {
@@ -59,8 +59,7 @@ const CareerPathway = () => {
           <h1
             className="d-flex justify-content-center"
             style={CPStyle.card_title}
-          >
-            CAREER PATHWAY
+          >      
           </h1>
           <p
             className="d-flex justify-content-center"

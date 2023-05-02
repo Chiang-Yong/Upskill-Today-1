@@ -51,7 +51,7 @@ const JDstyle = {
   },
 
   maintitle: {
-    fontSize: "3.0rem",
+    fontSize: "clamp(2.5rem, 2vw, 2.8rem",
     fontWeight: 800,
     color: "#ff7b00",
     paddingBottom: "2%",
@@ -59,24 +59,24 @@ const JDstyle = {
   },
 
   title: {
-    fontSize: "2.5rem",
-    fontWeight: 800,
+    fontSize: "clamp(1.5rem, 2vw, 2.5rem)",
+    fontWeight: 700,
     color: "#000",
     paddingBottom: "2%",
   },
 
   text: {
-    fontSize:"1.2rem",
-    fontWeight:700,
+    fontSize:"clamp(1.0rem, 2vw, 1.2rem)",
+    fontWeight:600,
 
   }
 };
 const JavaDeveloper = () => {
   return (
     <div style={JDstyle.main} className="mt-5">
-        <h1 style={JDstyle.maintitle} className="text-center">JAVA</h1>
+        <h1 style={JDstyle.maintitle} className="text-center"></h1>
       <Row
-        className="d-flex justify-content-center text-center border border-1"
+        className="d-flex justify-content-center text-center"
         style={JDstyle.row}
       >
         <h1 className="text-center" style={JDstyle.title}>

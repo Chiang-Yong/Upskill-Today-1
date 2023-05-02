@@ -21,7 +21,7 @@ const linkStyling=css`
   z-index: 3;
 
   &:hover {
-    transform: translateY(-3px);
+   /* transform: translateY(-3px); */
     color:#ff7b00;
   }
 `;
@@ -60,9 +60,9 @@ const GroupParentWrapper = styled.a`
     height: 1rem;
     width: 1rem;
     z-index: 5;
-    transition-property: top, transform;
-    transition-duration: 1200ms;
-    transition-timing-function: ease-out;
+    transition-property: top, transform; 
+    transition-duration: 1200ms;         
+    transition-timing-function: ease-out; 
     transform: ${(props) =>
       props.activeSubNav
         ? "rotate(" + String(-135 + -360 * 2) + "deg)"
@@ -117,7 +117,7 @@ const NavBar = ({ toggle }) => {
         <Link className="link" to="/About">
           About Us
         </Link>
-        <SubMenu title="Career Pathway" style={{borderBottom:"solid", borderWidth:"1px", borderColor:"black"}}>
+        <SubMenu title="Career Pathway" style={{borderBottom:"", borderWidth:"1px", borderColor:"white"}}>
           <Link className='link' to='/CareerPathway'>Career Pathway</Link>  
           <Link className='link' to='/PathwayDetails/JavaCourse'>Java</Link>
           <Link className='link' to='/PathwayDetails/JavascriptCourse'>JavaScript</Link>

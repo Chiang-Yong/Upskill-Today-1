@@ -5,7 +5,7 @@ import About from "./pages/About/About";
 import CareerPathway from "./pages/CareerPathway/CareerPathway";
 import Corporate from "./pages/Corporate/Corporate";
 import Contact from "./pages/Contact/Contact";
-import PathwayDetails from "./pages/PathwayDetails/PathwayDetails";
+
 import JavaCourse from "./pages/PathwayDetails/JavaCourse";
 import JavascriptCourse from "./pages/PathwayDetails/JavascriptCourse";
 import DevOpsCourse from "./pages/PathwayDetails/DevOpsCourse";
@@ -41,7 +41,7 @@ function App() {
             path="/PathwayDetails/DevOpsCourse"
             element={<DevOpsCourse />}
           />
-          <Route path="/PathwayDetails" element={<PathwayDetails />} />
+         
           <Route path="/Corporate" element={<Corporate />} />
           <Route path="/Contact" element={<Contact />} />
         </Routes>

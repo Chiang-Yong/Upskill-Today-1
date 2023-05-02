@@ -41,18 +41,18 @@ const JavascriptCourse = () => {
   return (
     <div className="justify-content-center mt-5">
       <h1 style={JSstyle.title} className="d-flex justify-content-center">
-        JAVASCRIPT
+        
       </h1>
-      <Row className="border rounded">
+      <Row className="">
         <JavaScriptDeveloper />
       </Row>
-      <Row className="border rounded">
+      <Row className="">
         <SelfPaceGuildedTrack />
       </Row>
-      <Row className="border rounded">
+      <Row className="">
         <JobRoles />
       </Row>
-      <Row className="border rounded">
+      <Row className="">
         <ApplyJSCourse />
       </Row>
     </div>

@@ -31,10 +31,10 @@
   background-color: #ff7b00;
   color: white;
   border-color: #ff7b00;
-  font-size: 1.2em;
+  font-size: clamp(1.0em,2vw,1.2em);
   font-weight: 600;
-  border-radius: 20px;
-  padding: 0.8rem;
+  border-radius: 25px;
+  padding: 0.6rem;
 }
 
 .carousel-home .carousel-call:hover {

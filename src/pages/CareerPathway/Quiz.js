@@ -6,7 +6,6 @@ import {
   ListGroup,
   Popover,
   ProgressBar,
-  OverlayTrigger,
 } from "react-bootstrap";
 import { quiz } from "../CareerPathway/QuizData";
 import "./quiz.css";
@@ -25,20 +24,20 @@ const QuizStyle = {
     height: "auto",
     width: "100%",
   },
+
   button: {
     backgroundColor:"#ff7b00",
     color: "#fff",
     border: "none",
     outline: "none",
     fontWeight: 600,
+    borderRadius: "25px",
     
     width:"150px",
     "&:disabled": {
       backgroundColor: 'blue' || 'red'
     },
   },
-
- 
 
   image: {
     display: "block",
@@ -51,7 +50,7 @@ const QuizStyle = {
 
   title: {
     fontWeight: 800,
-    fontSize: "3rem",
+    fontSize: "clamp(2.0rem, 2vw, 2.8rem)",
     textShadow: "0px 4px 6px rgba(0,0,0,0.6)",
     color: "#ff7b00",
     marginTop: "5%",
@@ -59,7 +58,7 @@ const QuizStyle = {
 
   text: {
     fontWeight: 600,
-    fontSize: "1.3rem",
+    fontSize: "clamp(1.0rem, 2vw, 1.2rem)",
     paddingTop: "1%",
     paddingBottom: "1%",
   },
@@ -231,9 +230,7 @@ const Quiz = () => {
                   type="button"
                   onClick={onClickNext}
                   disabled={selectedAnswerIndex === null}
-                  className="quiz-button"
-                  //style={QuizStyle.button}
-                  
+                  className="quiz-button"                 
                 >
                   {activeQuestion === questions.length - 1 ? "Finish" : "Next"}
                 </Button>
@@ -250,30 +247,11 @@ const Quiz = () => {
                 Recommendation
               </Card.Header>
               <Card.Body>
-             {/*   <Card.Text style={QuizStyle.text}>
-                  Total Question:&nbsp;&nbsp; <span>{questions.length}</span>
-                </Card.Text>
-                <Card.Text style={QuizStyle.text}>
-                  Total Score:&nbsp;&nbsp;<span> {result.score}</span>
-                </Card.Text>
-                <Card.Text style={QuizStyle.text}>
-                  Correct Answers:&nbsp;&nbsp;
-                  <span> {result.correctAnswers}</span>
-                </Card.Text>
-                <Card.Text style={QuizStyle.text}>
-                  Wrong Answers:&nbsp;&nbsp;<span> {result.wrongAnswers}</span>
-                </Card.Text>*/} 
                 <Card.Text style={QuizStyle.text} className="text-center"> 
                   {result.type}
-                 {/* </Card.Body> {result.javaType > result.jsType
-                    ? "Java Developer"
-                 : "Javascript Developer"} 
-                  &nbsp; &nbsp; */}
-                  
                 </Card.Text>
                 <Card.Text className="text-end quiz-main">
                   <Button 
-                  //style={QuizStyle.button} 
                   onClick={onClickTryAgain}
                   className="quiz-button"
                   >

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Row, Button, Container } from "react-bootstrap";
 import { HashLink } from "react-router-hash-link";
-import "./pathwaydetails.css"
+import "./pathwaydetails.css";
+
 const DOECstyle = {
   main: {
     width: "100%",
@@ -12,19 +13,27 @@ const DOECstyle = {
   button: {
     marginTop: "3%",
     marginBottom: "5%",
-    backgroundColor: "#ff7b00",
+  //  backgroundColor: isHover ? "#a60037" : "#ff7b00",
+   // borderColor: isHover ? "#a60037" : "",
+  //  boxShadow: isHover
+   //   ? "0 12px 16px 0 rgba(0, 0, 0, 0.24) 0 17px 50px 0 rgba(0, 0, 0, 0.19)"
+   //   : "",
     fontWeight: "600",
+    fontSize: "clamp(1.0em, 2vw, 1.2em)",
     border: "none",
+    borderRadius: "25px",
     outline: "none",
     width: "150px",
     textDecoration: "none",
+    paddingTop: "0.5em",
+    paddingBottom: "0.5em",
   },
 
   title: {
     marginTop: "5%",
     color: "#000",
     fontWeight: 800,
-    fontSize: "clamp(0.8rem, 2vw,2.5rem)",
+    fontSize: "clamp(1.5rem, 2vw, 2.5rem)",
     marginTop: "-1%",
   },
 
@@ -49,6 +58,36 @@ const DOECstyle = {
 };
 
 const ApplyDevOpsCourse = () => {
+  const [isHover, setIsHover] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHover(true);
+  };
+  const handleMouseLeave = () => {
+    setIsHover(false);
+  };
+
+  const DevOPsButton = {
+    button: {
+      marginTop: "3%",
+      marginBottom: "5%",
+      backgroundColor: isHover ? "#a60037" : "#ff7b00",
+      borderColor: isHover ? "#a60037" : "",
+      boxShadow: isHover
+        ? "0 12px 16px 0 rgba(0, 0, 0, 0.24) 0 17px 50px 0 rgba(0, 0, 0, 0.19)"
+        : "",
+      fontWeight: "600",
+      fontSize: "clamp(1.0em, 2vw, 1.2em)",
+      border: "none",
+      borderRadius: "25px",
+      outline: "none",
+      width: "150px",
+      textDecoration: "none",
+      paddingTop: "0.5em",
+      paddingBottom: "0.5em",
+    },
+  }
+
   return (
     <div style={DOECstyle.main}>
       <Container style={DOECstyle.container} className="rounded-4">
@@ -64,10 +103,12 @@ const ApplyDevOpsCourse = () => {
             className="d-flex justify-content-center"
             style={{ textDecoration: "none" }}
           >
-            <Button 
-            //style={DOECstyle.button}
-            className="pathway-button"
-            style={{marginTop:"2%", marginBottom:"5%"}}
+            <Button
+              style={DevOPsButton.button}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              // className="pathway-button"
+              // style={{marginTop:"2%", marginBottom:"5%"}}
             >
               Apply
             </Button>

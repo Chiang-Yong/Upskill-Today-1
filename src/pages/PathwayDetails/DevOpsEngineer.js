@@ -50,7 +50,7 @@ const DOEstyle = {
   },
 
   maintitle: {
-    fontSize: "2.5rem",
+    fontSize: "clamp(2.0rem, 2vw, 2.8rem",
     fontWeight: 800,
     color: "#ff7b00",
     paddingBottom: "2%",
@@ -58,25 +58,25 @@ const DOEstyle = {
   },
 
   title: {
-    fontSize: "2.0rem",
-    fontWeight: 800,
+    fontSize: "clamp(1.8rem, 2vw, 2.8rem)",
+    fontWeight: 700,
     color: "#000",
     paddingBottom: "2%",
   },
 
   text: {
-    fontSize: "1.2rem",
-    fontWeight: 700,
+    fontSize: "clampl(1.0rem, 2vw, 1.2rem)",
+    fontWeight: 600,
   },
 };
 const DevOpsEngineer = () => {
   return (
     <div style={DOEstyle.main}>
       <h1 style={DOEstyle.maintitle} className="text-center">
-        DEVOPS
+        
       </h1>
       <Row
-        className="d-flex justify-content-center text-center border border-1"
+        className="d-flex justify-content-center text-center"
         style={DOEstyle.row}
       >
         <h1 className="text-center" style={DOEstyle.title}>

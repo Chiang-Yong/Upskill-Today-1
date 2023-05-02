@@ -46,14 +46,14 @@ const JSDstyle = {
   },
 
   title: {
-    fontSize: "2.5rem",
+    fontSize: "clamp(1.5rem, 2vw, 2.5rem)",
     fontWeight: 800,
     color: "#000",
     paddingBottom: "2%",
   },
 
   text:{
-    fontSize:"1.2rem",
+    fontSize:"clamp(1.0rem, 2vw, 1.2rem)",
     fontWeight:700,
   }
 };
@@ -61,7 +61,7 @@ const JavaScriptDeveloper = () => {
   return (
     <div style={JSDstyle.main}>
       <Row
-        className="d-flex justify-content-center text-center border border-1"
+        className="d-flex justify-content-center text-center"
         style={JSDstyle.row}
       >
         <h1 className="text-center" style={JSDstyle.title}>

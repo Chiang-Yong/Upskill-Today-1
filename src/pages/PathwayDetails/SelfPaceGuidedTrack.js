@@ -33,16 +33,16 @@ const SPGTstyle = {
   },
 
   cardtitle: {
-    fontWeight: 800,
-    fontSize: "1.5rem",
+    fontWeight: 700,
+    fontSize: "clamp(1.5rem,2vw,2.0rem)",
     color: "black",
-    paddingTop: "5%",
+    paddingTop: "2%",
   },
 
   title: {
-    fontWeight: 800,
-    fontSize: "2.5rem",
-    color: "#ff7b00",
+    fontWeight: 700,
+    fontSize: "clamp(1.8em, 2vw, 2.5rem)",
+    color: "black",
     paddingTop: "2%",
     marginBottom: "1%",
   },
@@ -73,7 +73,7 @@ const SelfPaceGuidedTrack = () => {
             Self-Paced Track
           </Card.Title>
           <Card.Img style={SPGTstyle.image} src={SoftUni}></Card.Img>
-          <div className="d-flex justify-content-center">
+          <div className="d-flex justify-content-center" style={{marginBottom:"5%"}}>
           <SelfPacedModal />
           </div>
         </Card>
@@ -86,6 +86,7 @@ const SelfPaceGuidedTrack = () => {
           <div className="d-flex justify-content-center">
           <SPGuidedTrackModal />
           </div>
+          
         </Card>
       </Row>
     </div>
