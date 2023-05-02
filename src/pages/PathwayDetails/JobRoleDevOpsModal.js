@@ -22,8 +22,9 @@ function JobRoleDevOpsModal() {
         <Modal.Header
           closeButton
           style={{
-            background:
-              "linear-gradient(to right, rgba(255, 123, 0,0.9), rgba(252, 147, 48,0.7))",
+            // background:
+            //   "linear-gradient(to right, rgba(255, 123, 0,0.9), rgba(252, 147, 48,0.7))",
+            backgroundColor: "rgba(255,123,0,1)",
           }}
         >
           <Modal.Title className="fw-bold" style={{ color: "white" }}>
@@ -57,8 +58,9 @@ function JobRoleDevOpsModal() {
         </Modal.Body>
         <Modal.Footer
           style={{
-            background:
-              "linear-gradient(to left, rgba(255, 123, 0,0.9), rgba(252, 147, 48,0.7))",
+            // background:
+            //   "linear-gradient(to left, rgba(255, 123, 0,0.9), rgba(252, 147, 48,0.7))",
+            backgroundColor: "rgba(255,123,0,1)",
           }}
         >
           <Button variant="secondary" onClick={handleClose}>
