@@ -1,13 +1,21 @@
 import React from "react";
 import { Container, Button, Card, Row } from "react-bootstrap";
 import JavaIcon from "../../images/Java.png";
-import JavaScriptIcon from "../../images/Javascript.jfif";
+import JavaScriptIcon from "../../images/Javascript.png";
 import DevOpsIcon from "../../images/devops.png";
+import Pega from "../../images/pega.png";
+import BusinessAnalyst from "../../images/business-analyst.png";
+import DataAnalyst from "../../images/data-analytics.png";
+
 import Quiz from "./Quiz";
 import RegisterYourInterest from "./RegisterYourInterest";
 import BackTopButton from "../../components/BackToTopButton";
 import { Link } from "react-router-dom";
 import "./careerpathway.css";
+import Slider from "react-slick";
+import "./slick.css"; 
+import "./slick-theme.css";
+
 
 const CPStyle = {
   container: {
@@ -27,23 +35,23 @@ const CPStyle = {
     color: "#ff7b00",
     backgroundColor: "#fff9eb",
     fontWeight: 800,
-    fontSize: "clamp(1.0rem, 2vw, 2.5rem)",
+    fontSize: "clamp(1.5rem, 2vw, 2.5rem)",
   },
 
   card_text: {
     color: "black",
-    fontWeight: 700,
-    fontSize: "clamp(1.0rem, 2vw, 1.8rem)",
+    fontWeight: 600,
+    fontSize: "clamp(1.2rem, 2vw, 1.8rem)",
     paddingTop: "1%",
     paddingBottom: "1%",
   },
 
   card: {
     width: "18rem",
-    padding: "1%",
-    marginLeft: "1%",
-    marginRight: "1%",
-    marginBottom: "3%",
+   // padding: "0.1rem",
+   // marginLeft: "1%",
+   // marginRight: "1%",
+   //marginBottom: "3%",
   },
 
   Image: {
@@ -52,15 +60,35 @@ const CPStyle = {
 };
 
 const CareerPathway = () => {
+  
+    const settings = {
+      //className: "slider variable-width center",
+      //variableWidth: true,
+      //centerMode: true,
+      dots: true,
+      infinite: true,
+     // centerPadding: "60px",
+      speed: 500,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+          }
+        }
+      ]
+
+    }
+    
   return (
     <>
       <Container className="mt-5" style={CPStyle.container} fluid>
         <Row>
-          <h1
-            className="d-flex justify-content-center"
-            style={CPStyle.card_title}
-          >      
-          </h1>
           <p
             className="d-flex justify-content-center mt-5"
             style={CPStyle.card_text}
@@ -68,18 +96,18 @@ const CareerPathway = () => {
             Choose the right career through upskill program
           </p>
         </Row>
-        <Row xs={1} md={3} className="g-3 d-flex justify-content-center">
-          <Card style={CPStyle.card} className="rounded-4">
+      <Row xs={1} md={2} className="g-3 d-flex justify-content-center mb-5">  
+          <Slider {...settings}>
+          <Card style={CPStyle.card} className="rounded-4 me-auto">
             <Card.Img
               variant="top"
               src={JavaScriptIcon}
-              className="rounded mx-0 d-block"
+              className="rounded d-block"
               style={{
-                display: " block",
+                display: "block",
                 objectFit: "contain",
-                width: "255px",
-                height: "255px",
-              }}
+                paddingTop: "5%",
+                }}
             />
             <Card.Body>
               <Card.Title className="d-flex justify-content-center">
@@ -89,9 +117,7 @@ const CareerPathway = () => {
               <Card.Text className="d-flex justify-content-center careerpathway">
                 <Link to="/PathwayDetails/JavascriptCourse">
                   <Button 
-                  //style={CPStyle.button} 
                   className="careerpathway-button"
-                  //href="/JavascriptCourse"
                   >
                     Find Out More
                   </Button>{" "}
@@ -104,9 +130,12 @@ const CareerPathway = () => {
             <Card.Img
               variant="top"
               src={JavaIcon}
-              className="rounded mx-0 d-block"
+              className="rounded d-block"
               style={{
-                display: " block",
+                display: "block",
+                objectFit: "contain",
+                paddingTop: "5%",
+
               }}
             />
             <Card.Body>
@@ -117,8 +146,7 @@ const CareerPathway = () => {
               <Card.Text className="d-flex justify-content-center careerpathway">
                 <Link to="/PathwayDetails/JavaCourse">
                   <Button 
-                 // style={CPStyle.button}
-                 className="careerpathway-button"
+                  className="careerpathway-button"
                   >Find Out More</Button>
                 </Link>
               </Card.Text>
@@ -129,9 +157,11 @@ const CareerPathway = () => {
             <Card.Img
               variant="top"
               src={DevOpsIcon}
-              className="rounded mx-0 d-block"
+              className="rounded d-block"
               style={{
-                display: " block",
+                display: "block",
+                objectFit: "contain",
+                paddingTop: "5%",
               }}
             />
             <Card.Body>
@@ -143,8 +173,34 @@ const CareerPathway = () => {
                 <Link to="/PathwayDetails/DevOpsCourse">
                   {" "}
                   <Button 
-                  //style={CPStyle.button} 
-                  //href="/DevOpsCourse"
+                    className="careerpathway-button"
+                  >
+                    Find Out More
+                  </Button>
+                </Link>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          <Card style={CPStyle.card} className="rounded-4">
+            <Card.Img
+              variant="top"
+              src={Pega}
+              className="rounded d-block"
+              style={{
+                display: "block",
+                objectFit: "contain",
+                paddingTop: "5%",
+              }}
+            />
+            <Card.Body>
+              <Card.Title className="d-flex justify-content-center">
+                PEGA
+              </Card.Title>
+              <Card.Text className="d-flex justify-content-center"></Card.Text>
+              <Card.Text className="d-flex justify-content-center careerpathway">
+                <Link to="/PathwayDetails/PegaCourse">
+                  {" "}
+                  <Button 
                   className="careerpathway-button"
                   >
                     Find Out More
@@ -153,10 +209,66 @@ const CareerPathway = () => {
               </Card.Text>
             </Card.Body>
           </Card>
-        </Row>
-        {/*} <Button className='me-auto mt-3 mb-3' size="md" href="/pathwaydetails" style={CPStyle.button}>
-        Pathway Details
-              </Button> */}
+          <Card style={CPStyle.card} className="rounded-4">
+            <Card.Img
+              variant="top"
+              src={BusinessAnalyst}
+              className="rounded d-block"
+              style={{
+                display: "block",
+                objectFit: "contain",
+                paddingTop: "5%",
+              }}
+            />
+            <Card.Body>
+              <Card.Title className="d-flex justify-content-center">
+                Business Analyst 
+              </Card.Title>
+              <Card.Text className="d-flex justify-content-center"></Card.Text>
+              <Card.Text className="d-flex justify-content-center careerpathway">
+                <Link to="/PathwayDetails/BusinessAnalystCourse">
+                  {" "}
+                  <Button 
+                   className="careerpathway-button"
+                  >
+                    Find Out More
+                  </Button>
+                </Link>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          <Card style={CPStyle.card} className="rounded-4">
+            <Card.Img
+              variant="top"
+              src={DataAnalyst}
+              className="rounded mx-0 d-block"
+              style={{
+                display: "block",
+                objectFit: "contain",
+                paddingTop: "5%",
+              }}
+            />
+            <Card.Body>
+              <Card.Title className="d-flex justify-content-center">
+                Data Analyst
+              </Card.Title>
+              <Card.Text className="d-flex justify-content-center"></Card.Text>
+              <Card.Text className="d-flex justify-content-center careerpathway">
+                <Link to="/PathwayDetails/DataAnalystCourse">
+                  {" "}
+                  <Button 
+                  className="careerpathway-button"
+                  >
+                    Find Out More
+                  </Button>
+                </Link>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+          
+        </Slider> 
+     </Row> 
+       
         <Row>
           <Quiz />
         </Row>

@@ -30,7 +30,7 @@ const HomeCarousel = () => {
         />
         <Carousel.Caption className="home-caption">
           <h1 className="carousel-title">UPSKILL TODAY</h1>
-          <h3 className="carousel-text pb-4 d-none d-md-block">
+          <h3 className="carousel-text pb-2 d-md-block">
             Begin Your IT Journey With Us
           </h3>
           <Button className="carousel-call">
@@ -51,7 +51,7 @@ const HomeCarousel = () => {
         />
         <Carousel.Caption className="home-caption">
           <h1 className="carousel-title">UPSKILL TODAY</h1>
-          <h3 className="carousel-text pb-4  d-none d-md-block">
+          <h3 className="carousel-text pb-2 d-md-block">
             Begin Your IT Journey With Us
           </h3>
           <Button className="carousel-call">
@@ -72,7 +72,7 @@ const HomeCarousel = () => {
         />
         <Carousel.Caption className="home-caption">
           <h1 className="carousel-title">UPSKILL TODAY</h1>
-          <h3 className=" carousel-text pb-4 d-none d-md-block">
+          <h3 className=" carousel-text pb-2 d-md-block">
             Begin Your IT Journey With Us
           </h3>
 

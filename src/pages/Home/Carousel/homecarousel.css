@@ -7,35 +7,48 @@
 .home-caption {
   top: 70%;
   transform: translateY(-50%);
-  bottom: inital;
+  bottom: initial;
 
 }
 
-@media screen and (max-width:"1100px") {
-  .home-caption{  
-  top:50%;
-  transform: translateY(-25%);
+@media screen and (max-width:768px) {
+  .home-caption {  
+  position:relative;  
+  top:40%;
+  transform: translateY(-50%);
+  bottom: initial;
  }
 
- .homecarousel-item {
-  height: 50%;
+ .carousel-control-next-icon,
+ .carousel-control-prev-icon
+ {
+  position: relative; 
+  top: 10%;
+  transform: translateY(-50%);
  }
+
+ .carousel-indicators button {
+  position:relative;
+  top:50%;
+  transform: translateY(-10%);
+ }
+
 
 }
 
 .homecarousel-item {
-  height: 89vh;
+  height: auto;
 }
 
 .carousel-title {
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: clamp(1.0rem, 2vw, 1.5rem);
   text-shadow: 1px 0px 13px black;
   color: #ff7b00;
 }
 
 .carousel-text {
-  font-size: 3rem;
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
   font-weight: 800;
   text-shadow: 0 0 20px black;
 }

@@ -6,7 +6,7 @@ import "./homedescription.css";
 const HomeDescription = () => {
   return (
     <>
-      <Container fluid className="pt-5 home-description">
+      <Container fluid className="pt-3 home-description">
         <Row className="px-5 py-5">
           <Col md={{ span: 5, offset: 1 }} className="px-5 py-3">
             <h1 className="fw-bold" style={{ color: "#ff7b00" }}>

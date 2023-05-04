@@ -9,7 +9,6 @@ import Contact from "./pages/Contact/Contact";
 import JavaCourse from "./pages/PathwayDetails/JavaCourse";
 import JavascriptCourse from "./pages/PathwayDetails/JavascriptCourse";
 import DevOpsCourse from "./pages/PathwayDetails/DevOpsCourse";
-import NavbarUST from "./components/Navbar/NavbarUST";
 import Footer from "./components/Footer/Footer";
 import ScrollToTop from "./ScrollToTop";
 import Dropdown from "./components/Navbar/Dropdown";
@@ -23,7 +22,6 @@ function App() {
   return (
     <>
       <BrowserRouter>
-       {/*  <NavbarUST toggle={toggle} /> */}
         <NavBar toggle={toggle} />
         <Dropdown isOpen={isOpen} toggle={toggle} />
         <ScrollToTop />
