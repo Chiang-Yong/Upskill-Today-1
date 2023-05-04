@@ -90,7 +90,7 @@ const JobRoles = () => {
             className="rounded mx-0 d-block"
             style={{
               display: " block",
-              objectFit: "contain",
+              objectFit: "scale-down",
             }}
           />
           <Card.Body>
@@ -112,7 +112,7 @@ const JobRoles = () => {
             className="rounded mx-0 d-block"
             style={{
               display: " block",
-              objectFit: "contain",
+              objectFit: "scale-down",
             }}
           />
           <Card.Body>

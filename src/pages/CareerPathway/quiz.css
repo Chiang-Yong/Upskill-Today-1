@@ -1,7 +1,9 @@
 .selected-answer {
     background: #ff7b00;
     border: 1px solid #800080;
+    border-radius: 20px;
     color: white;
+    padding: 5px;
   }
 
   .quiz-main{
@@ -27,6 +29,6 @@
   }
 
   .quiz-main .quiz-button[type="button"]:disabled{
-    background-color: rgb(249, 205, 205);
+    background-color: rgba(143, 138, 138, 0.6);
     cursor: no-drop;
   }
