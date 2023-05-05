@@ -1,5 +1,5 @@
 import React from "react";
-import CorporateHeader from "./CorporateHeader";
+//import CorporateHeader from "./CorporateHeader";
 import PartnerWithUs from "./PartnerWithUs";
 import Benefits from "./Benefits";
 import CorporateTestimonials from "./CorporateTestimonials";

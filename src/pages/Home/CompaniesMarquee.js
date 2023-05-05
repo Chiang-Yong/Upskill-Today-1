@@ -17,7 +17,7 @@ import Image14 from "../../images/tcs.jfif";
 import Image15 from "../../images/tm.jfif";
 import Image16 from "../../images/triumph.jfif";
 import Image17 from "../../images/unilever.jfif";
-import Image18 from "../../images/utopia.jfif";
+import Image18 from "../../images/utopia.jpeg";
 import Image19 from "../../images/visy.jfif";
 
 const MarqueeStyle = {

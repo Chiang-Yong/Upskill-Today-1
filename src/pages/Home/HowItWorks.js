@@ -1,6 +1,6 @@
 import React from "react";
 import "./howItWorks.css";
-import { Col, Row, Card, Container } from "react-bootstrap";
+import { Row, Card, Container } from "react-bootstrap";
 
 import Competence from "../../images/competence.png";
 import Partner from "../../images/partner.png";

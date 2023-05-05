@@ -3,8 +3,7 @@ import { Row } from "react-bootstrap";
 import SelfPaceGuidedTrack from "./SelfPaceGuidedTrack";
 import JobRoles from "./JobRoles";
 import ApplyJavaCourse from "./ApplyJavaCourse";
-import JavaCourseDetails from "./JavaCourseDetails";
-//const src = "https://www.youtube.com/embed/9yzMKaKcoC0";
+//import JavaCourseDetails from "./JavaCourseDetails";
 const src = "https://www.youtube.com/embed/2UX8bxVhkqw";
 
 const JDstyle = {
@@ -75,8 +74,7 @@ const JDstyle = {
 const JavaDeveloper = () => {
   return (
     <div style={JDstyle.main} className="mt-5">
-        <h1 style={JDstyle.maintitle} className="text-center"></h1>
-      <Row
+     <Row
         className="d-flex justify-content-center text-center"
         style={JDstyle.row}
       >

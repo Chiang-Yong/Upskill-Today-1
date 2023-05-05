@@ -4,7 +4,7 @@ import JavaScriptDeveloper from "./JavaScriptDeveloper";
 import SelfPaceGuildedTrack from "./SelfPaceGuidedTrack";
 import JobRoles from "./JobRoles";
 import ApplyJSCourse from "./ApplyJSCourse";
-import { Link } from "react-router-dom";
+
 
 const JSstyle = {
   main: {

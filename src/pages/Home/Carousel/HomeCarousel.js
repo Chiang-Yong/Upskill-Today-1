@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import homemain_1980 from "../../../images/upskill-main-1980.jpeg";
+import homemain from "../../../images/upskill-main.jpeg";
 import homebc from "../../../images/home-b2c-1980.png";
 import homebb from "../../../images/home-tgt-1980.jpeg";
 import "./homecarousel.css";
@@ -24,9 +24,15 @@ const HomeCarousel = () => {
       <Carousel.Item className="homecarousel-item">
         <img
           className="d-block w-100 slide-img img-fluid"
-          
-          src={homemain_1980}
+          src={homemain}
+          width='100%'
+          height='auto'
+          sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
           alt="First slide"
+          as='image'
+          priority='true'
         />
         <Carousel.Caption className="home-caption">
           <h1 className="carousel-title">UPSKILL TODAY</h1>
@@ -48,6 +54,8 @@ const HomeCarousel = () => {
           className="d-block w-100 slide-img img-fluid"
           src={homebc}
           alt="Second slide"
+          as='image'
+          priority='true'
         />
         <Carousel.Caption className="home-caption">
           <h1 className="carousel-title">UPSKILL TODAY</h1>
@@ -69,6 +77,8 @@ const HomeCarousel = () => {
           className="d-block w-100 slide-img img-fluid"
           src={homebb}
           alt="Third slide"
+          as='image'
+          priority='true'
         />
         <Carousel.Caption className="home-caption">
           <h1 className="carousel-title">UPSKILL TODAY</h1>

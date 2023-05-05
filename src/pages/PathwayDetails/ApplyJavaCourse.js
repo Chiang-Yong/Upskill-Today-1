@@ -21,7 +21,6 @@ const AJCstyle = {
   },
 
   title: {
-    marginTop: "5%",
     color: "#000",
     fontWeight: 800,
     fontSize: "clamp(1.5rem, 2vw,2.5rem)",

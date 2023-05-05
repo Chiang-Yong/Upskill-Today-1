@@ -15,7 +15,7 @@ import "./careerpathway.css";
 import Slider from "react-slick";
 import "./slick.css"; 
 import "./slick-theme.css";
-import Pathways from "./Pathways";
+//import Pathways from "./Pathways";
 
 
 const CPStyle = {

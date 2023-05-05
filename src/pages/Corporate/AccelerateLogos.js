@@ -1,12 +1,12 @@
 import React from 'react'
 import "./accelerateLogos.css"
-import { Col, Row, Card, Container } from "react-bootstrap";
+import { Col, Row, Container } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 import unilever from "../../images/unilever.jfif";
 import dole from "../../images/dole.png";
 import visy from "../../images/visy.jfif";
 import oracle from "../../images/oracle.jfif";
-import utopia from "../../images/utopia.jfif";
+import utopia from "../../images/utopia.jpeg";
 
 
 

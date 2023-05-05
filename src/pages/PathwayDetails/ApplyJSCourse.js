@@ -1,5 +1,4 @@
-import React, {useState} from "react";
-import { useEffect } from "react";
+import React, { useState } from "react";
 import { Row, Button, Container } from "react-bootstrap";
 import { HashLink } from "react-router-hash-link";
 import "./pathwaydetails.css";
@@ -22,7 +21,6 @@ const AJSCstyle = {
   },
 
   title: {
-    marginTop: "5%",
     color: "#000",
     fontWeight: 800,
     fontSize: "clamp(1.5rem, 2vw,2.5rem)",
@@ -78,7 +76,7 @@ const ApplyJSCourse = () => {
       paddingTop: "0.5em",
       paddingBottom: "0.5em",
     },
-  }
+  };
   return (
     <div style={AJSCstyle.main}>
       <Container style={AJSCstyle.container} className="rounded-4">
@@ -94,12 +92,11 @@ const ApplyJSCourse = () => {
             smooth
             style={{ textDecoration: "none" }}
           >
-            <Button type="submit" 
-            style={JSButton.button}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-           // className="pathway-button"
-            //style={{marginTop:"2%", marginBottom:"5%"}}
+            <Button
+              type="submit"
+              style={JSButton.button}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
               Apply Now
             </Button>

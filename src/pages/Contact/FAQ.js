@@ -1,6 +1,6 @@
 import React from "react";
 import FAQData from "./FAQData";
-import { Accordion, Container, Row, Col, Card } from "react-bootstrap";
+import { Accordion, Container, Row, Col } from "react-bootstrap";
 import "./faq.css";
 
 const FAQ = () => {

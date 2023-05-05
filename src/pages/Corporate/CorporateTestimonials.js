@@ -1,6 +1,6 @@
 import React from 'react'
 import "./corporateTestimonials.css"
-import { Col, Row, Card, Container } from "react-bootstrap";
+import { Row, Card, Container } from "react-bootstrap";
 
 import accenture from "../../images/accenture.png";
 import Infosys from "../../images/Infosys.png";

@@ -4,19 +4,10 @@ import {
   Card,
   Button,
   ListGroup,
-  Popover,
   ProgressBar,
 } from "react-bootstrap";
 import { quiz } from "../CareerPathway/QuizData";
 import "./quiz.css";
-
-const popover = (
-  <Popover id="popover-basic">
-    <Popover.Body>
-      Select your <strong>answer</strong> before you can click NEXT.
-    </Popover.Body>
-  </Popover>
-);
 
 const QuizStyle = {
   main: {
@@ -99,9 +90,9 @@ const Quiz = () => {
   });
 
   const { questions } = quiz;
-  const { id, question, choices, type, correctAnswer } =
+  const { id, question, choices, correctAnswer } =
     questions[activeQuestion];
-  const addLeadingZero = (number) => (number > 9 ? number : `0${number}`);
+ // const addLeadingZero = (number) => (number > 9 ? number : `0${number}`);
 
   const onClickTryAgain = () => {
     setShowResult(false);

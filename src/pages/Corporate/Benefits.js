@@ -1,6 +1,6 @@
 import React from "react";
 import "./benefits.css";
-import { Col, Row, Card, Container } from "react-bootstrap";
+import { Row, Card, Container } from "react-bootstrap";
 
 import CostSavings from "../../images/CostSavings.png";
 import BestMatch from "../../images/BestMatch.png";

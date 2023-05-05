@@ -15,12 +15,3 @@ body {
   overflow-x: hidden;
 } */
 
-.hover-effect:hover {
-  opacity: 0.8;
-  fill: rebeccapurple;
-}
-
-.hover-navbar:hover {
-  opacity: 0.5;
-  fill: royalblue;
-}
