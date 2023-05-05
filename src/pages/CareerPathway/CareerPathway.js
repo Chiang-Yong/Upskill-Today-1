@@ -48,7 +48,7 @@ const CPStyle = {
   },
 
   slider:{
-    width: "65%",
+    width: "60%",
     padding: "1%",
     marginBottom: "3%",
   },
@@ -85,7 +85,9 @@ const CareerPathway = () => {
           settings: {
             slidesToShow: 1,
             slidesToScroll: 1,
-            arrows: false,
+            arrows: true,
+            dots: false,
+            
           }
         }
       ]
@@ -103,9 +105,9 @@ const CareerPathway = () => {
             Choose the right career through upskill program
           </p>
         </Row>
-      <Row className="d-flex justify-content-center mb-5">  
+      <Row sx={1} md={2} className="g-4 d-flex justify-content-center mb-5">  
           <Slider {...settings} style={CPStyle.slider}>
-          <Card style={CPStyle.card} className="rounded-4">
+          <Card style={CPStyle.card} className="me-3 rounded-4">
             <Card.Img
               variant="top"
               src={JavaScriptIcon}
@@ -132,7 +134,7 @@ const CareerPathway = () => {
             </Card.Body>
           </Card>
 
-          <Card style={CPStyle.card} className="rounded-4">
+          <Card style={CPStyle.card} className="me-3 rounded-4">
             <Card.Img
               variant="top"
               src={JavaIcon}
@@ -159,7 +161,7 @@ const CareerPathway = () => {
             </Card.Body>
           </Card>
 
-          <Card style={CPStyle.card} className="rounded-4">
+          <Card style={CPStyle.card} className="me-3 rounded-4">
             <Card.Img
               variant="top"
               src={DevOpsIcon}
@@ -187,7 +189,7 @@ const CareerPathway = () => {
               </Card.Text>
             </Card.Body>
           </Card>
-          <Card style={CPStyle.card} className="rounded-4">
+          <Card style={CPStyle.card} className="me-3 rounded-4">
             <Card.Img
               variant="top"
               src={Pega}
@@ -204,7 +206,7 @@ const CareerPathway = () => {
               </Card.Title>
               <Card.Text className="d-flex justify-content-center"></Card.Text>
               <Card.Text className="d-flex justify-content-center careerpathway">
-                <Link to="/PathwayDetails/PegaCourse">
+                <Link to="/PathwayDetails/ComingSoonCourse">
                   {" "}
                   <Button 
                   className="careerpathway-button"
@@ -215,7 +217,7 @@ const CareerPathway = () => {
               </Card.Text>
             </Card.Body>
           </Card>
-          <Card style={CPStyle.card} className="rounded-4">
+          <Card style={CPStyle.card} className="me-3 rounded-4">
             <Card.Img
               variant="top"
               src={BusinessAnalyst}
@@ -243,7 +245,7 @@ const CareerPathway = () => {
               </Card.Text>
             </Card.Body>
           </Card>
-          <Card style={CPStyle.card} className="rounded-4">
+          <Card style={CPStyle.card} className="me-3 rounded-4">
             <Card.Img
               variant="top"
               src={DataAnalyst}
@@ -260,7 +262,7 @@ const CareerPathway = () => {
               </Card.Title>
               <Card.Text className="d-flex justify-content-center"></Card.Text>
               <Card.Text className="d-flex justify-content-center careerpathway">
-                <Link to="/PathwayDetails/DataAnalystCourse">
+                <Link to="/PathwayDetails/ComingSoonCourse">
                   {" "}
                   <Button 
                   className="careerpathway-button"
@@ -271,7 +273,7 @@ const CareerPathway = () => {
               </Card.Text>
             </Card.Body>
           </Card>
-          <Card style={CPStyle.card} className="rounded-4">
+          <Card style={CPStyle.card} className="me-3 rounded-4">
             <Card.Img
               variant="top"
               src={SiteCore}
@@ -288,7 +290,7 @@ const CareerPathway = () => {
               </Card.Title>
               <Card.Text className="d-flex justify-content-center"></Card.Text>
               <Card.Text className="d-flex justify-content-center careerpathway">
-                <Link to="/PathwayDetails/DataAnalystCourse">
+                <Link to="/PathwayDetails/ComingSoonCourse">
                   {" "}
                   <Button 
                   className="careerpathway-button"

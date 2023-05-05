@@ -3,6 +3,7 @@ import { Row } from "react-bootstrap";
 import SelfPaceGuidedTrack from "./SelfPaceGuidedTrack";
 import JobRoles from "./JobRoles";
 import ApplyJavaCourse from "./ApplyJavaCourse";
+import JavaCourseDetails from "./JavaCourseDetails";
 //const src = "https://www.youtube.com/embed/9yzMKaKcoC0";
 const src = "https://www.youtube.com/embed/2UX8bxVhkqw";
 
@@ -85,8 +86,8 @@ const JavaDeveloper = () => {
         <p className="text-center" style={JDstyle.text}>Watch the video below</p>
         <div style={JDstyle.video}>
           <iframe
-            width="560"
-            height="315"
+            width="480"
+            height="270"
             src={src}
             title="Youtube Player"
             
@@ -99,6 +100,7 @@ const JavaDeveloper = () => {
       <Row>
         <JobRoles />
       </Row>
+    {/*  <JavaCourseDetails /> */}
       <Row>
         <ApplyJavaCourse />
       </Row>

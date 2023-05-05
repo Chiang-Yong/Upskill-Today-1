@@ -70,8 +70,8 @@ const JavaScriptDeveloper = () => {
         <p style={JSDstyle.text}>Watch the video below</p>
         <div style={JSDstyle.video}>
           <iframe
-            width="560"
-            height="315"
+            width="480"
+            height="270"
             src={src}
             title="Youtube Player" 
           />

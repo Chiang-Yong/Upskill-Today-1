@@ -102,7 +102,7 @@ const ApplyJavaCourse = () => {
             //style={{marginTop:"2%", marginBottom:"5%"}}
 
             >
-              Apply
+              Apply Now
             </Button>
           </HashLink>
         </Row>

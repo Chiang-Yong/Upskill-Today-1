@@ -96,8 +96,8 @@ const DevOpsEngineer = () => {
         </p>
         <div style={DOEstyle.video}>
           <iframe
-            width="560px"
-            height="315px"
+            width="480px"
+            height="270px"
             src={src}
             title="Youtube Player"
             
