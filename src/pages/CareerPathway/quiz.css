@@ -5,28 +5,43 @@
     color: white;
     padding: 5px;
   }
+}
 
-  .quiz-main{
-    cursor: pointer;
+@media (max-width: 575.98px) {
+  .quiz-body {
+    width: 85vw !important;
   }
+}
 
- .quiz-main .quiz-button {
-    background-color: #ff7b00;
-    color: #fff;
-    border: none;
-    outline: none;
-    font-weight: 600;
-    font-size: clamp(1.0em, 2vw, 1.2em);
-    border-radius: 25px;
-    width: 150px;
-  }
+.selected-answer {
+  margin: 0;
+  padding: 0.2rem 1rem;
+  background: #ff7b00;
+  border-radius: 10px;
+  color: white;
+}
 
-  .quiz-main .quiz-button:hover{
-    background-color: #a60037;
-    border-color: #a60037;
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+/* .quiz-main {
+  cursor: pointer;
+} */
+
+.quiz-main .quiz-button {
+  background-color: #ff7b00;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-weight: 600;
+  font-size: clamp(1em, 2vw, 1.2em);
+  border-radius: 25px;
+  width: 150px;
+}
+
+.quiz-main .quiz-button:hover {
+  background-color: #a60037;
+  border-color: #a60037;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
-  }
+}
 
   .quiz-main .quiz-button[type="button"]:disabled{
     background-color: rgba(143, 138, 138, 0.6);

@@ -1,11 +1,22 @@
+@media (max-width: 991.98px) {
+  .card-container {
+    width: 50vw !important;
+  }
+}
 
+@media (max-width: 575.98px) {
+  .card-container {
+    margin: 1rem !important;
+    width: 40vw !important;
+  }
+}
 
-.careerpathway .careerpathway-button{
-  font-size: clamp(1.0em, 2vw, 1.2em);
+.careerpathway .careerpathway-button {
+  font-size: clamp(1em, 2vw, 1.2em);
   font-weight: 600;
   background-color: #ff7b00;
   border: none;
-  border-radius: 25px; 
+  border-radius: 25px;
   padding-left: 0.8em;
   padding-right: 0.8em;
   padding-top: 0.5em;
@@ -13,8 +24,8 @@
   
 }
 
-.careerpathway .careerpathway-button:hover{
-    background-color: #a60037;
+.careerpathway .careerpathway-button:hover {
+  background-color: #a60037;
   border-color: #a60037;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);

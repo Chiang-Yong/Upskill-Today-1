@@ -119,7 +119,7 @@ const CareerPathway = () => {
             />
             <Card.Body>
               <Card.Title className="d-flex justify-content-center">
-                Javascript
+                Java
               </Card.Title>
               <Card.Text className="d-flex justify-content-center"></Card.Text>
               <Card.Text className="d-flex justify-content-center careerpathway">
@@ -128,7 +128,7 @@ const CareerPathway = () => {
                   className="careerpathway-button"
                   >
                     Find Out More
-                  </Button>{" "}
+                  </Button>
                 </Link>
               </Card.Text>
             </Card.Body>
@@ -148,7 +148,7 @@ const CareerPathway = () => {
             />
             <Card.Body>
               <Card.Title className="d-flex justify-content-center">
-                Java
+                Javascript
               </Card.Title>
               <Card.Text className="d-flex justify-content-center"></Card.Text>
               <Card.Text className="d-flex justify-content-center careerpathway">

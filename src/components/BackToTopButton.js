@@ -31,8 +31,8 @@ function BackTopButton() {
           onClick={scrollUp}
           style={{
             position: "fixed",
-            bottom: "50px",
-            right: "50px",
+            bottom: "30px",
+            right: "15px",
             height: "50px",
             width: "50px",
             cursor: "pointer",
