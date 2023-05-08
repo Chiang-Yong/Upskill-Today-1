@@ -1,0 +1,49 @@
+@media (max-width: 991.98px) {
+}
+
+@media (max-width: 575.98px) {
+  .pathwayTitle {
+    text-align: center !important;
+  }
+
+  .sliderCard {
+    width: 95% !important;
+    margin-left: 0.5rem;
+  }
+
+  .pageTitle {
+    font-size: 2rem !important;
+  }
+
+  .tptCard {
+    margin: 1rem 1% !important;
+    width: 47% !important;
+    height: 18rem !important;
+  }
+
+  .card-title {
+    font-size: 1.15rem !important;
+  }
+
+  .card-img {
+    height: 50%;
+  }
+
+  .jobRoleRow {
+    margin-bottom: 0.5rem;
+  }
+
+  .tptButton {
+    margin-top: 1rem !important;
+    font-size: 0.97rem !important;
+  }
+
+  .jobRoleCard {
+    width: 45% !important;
+    height: 21rem !important;
+  }
+
+  .slick-dots li {
+    margin: 0 !important;
+  }
+}

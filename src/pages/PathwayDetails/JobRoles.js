@@ -61,8 +61,12 @@ const JobRoles = () => {
       <h1 className="text-center" style={JRStyle.card_title}>
         JOB ROLES
       </h1>
-      <Row xs={1} md={3} className="g-3 d-flex justify-content-center">
-        <Card style={JRStyle.card} className="rounded-4">
+      <Row
+        xs={1}
+        md={3}
+        className="g-3 d-flex justify-content-center jobRoleRow"
+      >
+        <Card style={JRStyle.card} className="rounded-4 jobRoleCard">
           <Card.Img
             variant="top"
             src={FullStackIcon}
@@ -72,18 +76,21 @@ const JobRoles = () => {
               objectFit: "scale-down",
             }}
           />
-          <Card.Body >
-            <Card.Title style={JRStyle.text} className="d-flex justify-content-center">
+          <Card.Body>
+            <Card.Title
+              style={JRStyle.text}
+              className="d-flex justify-content-center"
+            >
               Full Stack Developer
             </Card.Title>
             <Card.Text></Card.Text>
             <Card.Text className="d-flex justify-content-center">
-            <JobRoleFSModal />
+              <JobRoleFSModal />
             </Card.Text>
           </Card.Body>
         </Card>
 
-        <Card style={JRStyle.card} className="rounded-4">
+        <Card style={JRStyle.card} className="rounded-4 jobRoleCard">
           <Card.Img
             variant="top"
             src={FrontEndIcon}
@@ -94,18 +101,20 @@ const JobRoles = () => {
             }}
           />
           <Card.Body>
-            <Card.Title style={JRStyle.text} className="d-flex justify-content-center">
+            <Card.Title
+              style={JRStyle.text}
+              className="d-flex justify-content-center"
+            >
               Front-End Developer
             </Card.Title>
             <Card.Text className="d-flex justify-content-center"></Card.Text>
             <Card.Text className="d-flex justify-content-center">
-            <JobRoleFEModal />
-              
+              <JobRoleFEModal />
             </Card.Text>
           </Card.Body>
         </Card>
 
-        <Card style={JRStyle.card} className="rounded-4">
+        <Card style={JRStyle.card} className="rounded-4 jobRoleCard">
           <Card.Img
             variant="top"
             src={BackEndIcon}
@@ -116,17 +125,19 @@ const JobRoles = () => {
             }}
           />
           <Card.Body>
-            <Card.Title style={JRStyle.text} className="d-flex justify-content-center">
+            <Card.Title
+              style={JRStyle.text}
+              className="d-flex justify-content-center"
+            >
               Back-End Developer
             </Card.Title>
             <Card.Text className="d-flex justify-content-center"></Card.Text>
             <Card.Text className="d-flex justify-content-center">
-            <JobRoleBEModal />
+              <JobRoleBEModal />
             </Card.Text>
           </Card.Body>
         </Card>
       </Row>
-      
     </div>
   );
 };

@@ -1,10 +1,9 @@
 .selected-answer {
-    background: #ff7b00;
-    border: 1px solid #800080;
-    border-radius: 20px;
-    color: white;
-    padding: 5px;
-  }
+  background: #ff7b00;
+  border: 1px solid #800080;
+  border-radius: 20px;
+  color: white;
+  padding: 5px;
 }
 
 @media (max-width: 575.98px) {
@@ -43,7 +42,7 @@
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-  .quiz-main .quiz-button[type="button"]:disabled{
-    background-color: rgba(143, 138, 138, 0.6);
-    cursor: no-drop;
-  }
+.quiz-main .quiz-button[type="button"]:disabled {
+  background-color: rgba(143, 138, 138, 0.6);
+  cursor: no-drop;
+}

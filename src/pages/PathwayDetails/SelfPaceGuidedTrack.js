@@ -4,6 +4,7 @@ import SoftUni from "../../images/SoftUni.png";
 import GuidedTrack from "../../images/GuildedTrack.png";
 import SelfPacedModal from "./SelfPacedModal";
 import SPGuidedTrackModal from "./SPGuidedTrackModal";
+import "./CareerPathways.css";
 
 const SPGTstyle = {
   main: {
@@ -60,33 +61,34 @@ const SPGTstyle = {
   },
 };
 
-
 const SelfPaceGuidedTrack = () => {
   return (
     <div style={SPGTstyle.main}>
-      <h1 className="text-center" style={SPGTstyle.title}>
+      <h1 className="text-center pageTitle" style={SPGTstyle.title}>
         TWO PROGRAM TRACKS
       </h1>
       <Row xs={1} md={2} className="g-2 d-flex justify-content-center">
-        <Card style={SPGTstyle.card}>
+        <Card className="tptCard" style={SPGTstyle.card}>
           <Card.Title className="text-center" style={SPGTstyle.cardtitle}>
             Self-Paced Track
           </Card.Title>
           <Card.Img style={SPGTstyle.image} src={SoftUni}></Card.Img>
-          <div className="d-flex justify-content-center" style={{marginBottom:"5%"}}>
-          <SelfPacedModal />
+          <div
+            className="d-flex justify-content-center"
+            style={{ marginBottom: "5%" }}
+          >
+            <SelfPacedModal />
           </div>
         </Card>
 
-        <Card style={SPGTstyle.card}>
+        <Card className="tptCard" style={SPGTstyle.card}>
           <Card.Title className="text-center" style={SPGTstyle.cardtitle}>
             Guided Track
           </Card.Title>
           <Card.Img style={SPGTstyle.image} src={GuidedTrack}></Card.Img>
           <div className="d-flex justify-content-center">
-          <SPGuidedTrackModal />
+            <SPGuidedTrackModal />
           </div>
-          
         </Card>
       </Row>
     </div>
