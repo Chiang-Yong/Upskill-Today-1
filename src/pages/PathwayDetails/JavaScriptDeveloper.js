@@ -46,14 +46,14 @@ const JSDstyle = {
   },
 
   title: {
-    fontSize: "clamp(1.5rem, 2vw, 2.5rem)",
+    fontSize: "clamp(1.5rem, 2.0vw, 2.5rem)",
     fontWeight: 800,
-    color: "#000",
+    color: "#ff7b00",
     paddingBottom: "2%",
   },
 
   text:{
-    fontSize:"clamp(1.0rem, 2vw, 1.2rem)",
+    fontSize:"clamp(1.0rem, 1.15vw, 1.3rem)",
     fontWeight:700,
   }
 };

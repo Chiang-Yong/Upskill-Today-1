@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
-import Upskill from "../../images/UpskillToday Logo.bmp";
+import Upskill from "../../images/UpskillToday Logo-modified.jpg";
 import "./navbar.css";
 
 const NavBar = ({ toggle }) => {

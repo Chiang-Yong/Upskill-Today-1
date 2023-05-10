@@ -17,7 +17,7 @@
 }
 
 .partnerus h1 {
-    font-size: 35px;
+    font-size: clamp(1.5rem, 2.0vw, 2.5rem);
     color: #ff7b00;
     font-weight: 800;
     justify-content: flex-start;
@@ -29,7 +29,7 @@
 .partnerus p {
     color: black;
     font-weight: 700;
-    font-size: clamp(0.5rem, 2.0vw, 1.5rem);
+    font-size: clamp(1.0rem, 1.2vw, 1.25rem);
     justify-content: flex-start;
     align-items: center;
     margin-left: 10%;

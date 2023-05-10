@@ -2,7 +2,7 @@ import React from 'react'
 import "./accelerateLogos.css"
 import { Col, Row, Container } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
-import unilever from "../../images/unilever.jfif";
+import accenture from "../../images/accenture.png";
 import dole from "../../images/dole.png";
 import visy from "../../images/visy.jfif";
 import oracle from "../../images/oracle.jfif";
@@ -28,7 +28,7 @@ const AccelerateLogos = () => {
             <Row className='logo'>
                 <Col class="p-2 mx-5">
                     <Image
-                        src={unilever}
+                        src={accenture}
                         className="img-fluid rounded mx-auto d-block"
                         style={{
                             objectFit: "contain",

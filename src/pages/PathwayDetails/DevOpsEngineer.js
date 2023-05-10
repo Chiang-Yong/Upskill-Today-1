@@ -1,7 +1,7 @@
 import React from "react";
 import { Row } from "react-bootstrap";
 import SelfPaceGuidedTrack from "./SelfPaceGuidedTrack";
-
+import BackTopButton from "../../components/BackToTopButton";
 import ApplyDevOpsCourse from "./ApplyDevOPsCourse";
 import JobRoleDevOps from "./JobRoleDevOps";
 const src = "https://www.youtube.com/embed/8_ju_D_GoQQ";
@@ -59,7 +59,7 @@ const DOEstyle = {
     
   },
   maintitle: {
-    fontSize: "clamp(2.0rem, 2vw, 2.8rem",
+    fontSize: "clamp(1.5rem, 2.0vw, 2.5rem",
     fontWeight: 800,
     color: "#ff7b00",
     paddingBottom: "2%",
@@ -67,14 +67,14 @@ const DOEstyle = {
   },
 
   title: {
-    fontSize: "clamp(1.8rem, 2vw, 2.8rem)",
-    fontWeight: 700,
-    color: "#000",
+    fontSize: "clamp(1.5rem, 2.0vw, 2.5rem)",
+    fontWeight: 800,
+    color: "#ff7b00",
     paddingBottom: "2%",
   },
 
   text: {
-    fontSize: "clampl(1.0rem, 2vw, 1.2rem)",
+    fontSize: "clampl(1.0rem, 1.15vw, 1.3rem)",
     fontWeight: 600,
   },
 };
@@ -113,6 +113,7 @@ const DevOpsEngineer = () => {
       <Row>
         <ApplyDevOpsCourse />
       </Row>
+      <BackTopButton />
     </div>
   );
 };

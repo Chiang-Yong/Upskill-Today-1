@@ -19,7 +19,7 @@ const DOECstyle = {
    //   ? "0 12px 16px 0 rgba(0, 0, 0, 0.24) 0 17px 50px 0 rgba(0, 0, 0, 0.19)"
    //   : "",
     fontWeight: "600",
-    fontSize: "clamp(1.0em, 2vw, 1.2em)",
+    fontSize: "clamp(1.0em, 1.15vw, 1.25em)",
     border: "none",
     borderRadius: "25px",
     outline: "none",
@@ -30,9 +30,9 @@ const DOECstyle = {
   },
 
   title: {
-    color: "#000",
+    color: "#ff7b00",
     fontWeight: 800,
-    fontSize: "clamp(1.5rem, 2vw, 2.5rem)",
+    fontSize: "clamp(1.5rem, 2.0vw, 2.5rem)",
     marginTop: "-1%",
   },
 
@@ -76,7 +76,7 @@ const ApplyDevOpsCourse = () => {
         ? "0 12px 16px 0 rgba(0, 0, 0, 0.24) 0 17px 50px 0 rgba(0, 0, 0, 0.19)"
         : "",
       fontWeight: "600",
-      fontSize: "clamp(1.0em, 2vw, 1.2em)",
+      fontSize: "clamp(1.0em, 1.15vw, 1.25em)",
       border: "none",
       borderRadius: "25px",
       outline: "none",

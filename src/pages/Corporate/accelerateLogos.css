@@ -6,7 +6,7 @@
 }
 
 .AccelerateLogos h1 {
-    font-size: 35px;
+    font-size: clamp(1.5rem,2.0vw,2.5rem);
     color: #ff7b00;
     font-weight: 800;
     text-align: center;
@@ -19,7 +19,15 @@
 }
 
 .AccelerateLogos .logo {
-    padding-left: 200px;
-    padding-right: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
 
+}
+
+@media screen and (max-width:768px) 
+{
+  .AccelerateLogos .logo{
+    padding-left: 10px;
+    padding-right: 10px;
+  }    
 }

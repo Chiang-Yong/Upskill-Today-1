@@ -23,13 +23,13 @@ const JRDevOpsStyle = {
       color: "black",
       backgroundColor: "#fff9eb",
       fontWeight: 700,
-      fontSize: "clamp(1.8rem, 2vw, 2.8rem)",
+      fontSize: "clamp(1.5rem, 2.0vw, 2.5rem)",
     },
   
     card_text: {
       color: "black",
       fontWeight: 600,
-      fontSize: "clamp(1.0em, 2vw, 1.2em)",
+      fontSize: "clamp(1.0em, 1.15vw, 1.3em)",
       paddingTop: "1%",
       paddingBottom: "1%",
     },
@@ -47,9 +47,9 @@ const JRDevOpsStyle = {
     },
   
     title: {
-      color: "black",
+      color: "#ff7b00",
       fontWeight: 800,
-      fontSize: "clamp(1.8rem, 2vw, 2.8rem)",
+      fontSize: "clamp(1.5rem, 2.0vw, 2.5rem)",
   
       marginBottom: "2%",
     },

@@ -41,7 +41,7 @@ const CorporateTestimonials = () => {
                         style={{
                             objectFit: "contain",
                             textAlign: "center",
-                            maxHeight: "2rem",
+                            maxHeight: "2.5rem",
                             height: "100%",
                         }}
                     />
@@ -61,7 +61,7 @@ const CorporateTestimonials = () => {
                         style={{
                             objectFit: "contain",
                             textAlign: "center",
-                            maxHeight: "2rem",
+                            maxHeight: "1.5rem",
                             height: "100%",
                         }}
                     />

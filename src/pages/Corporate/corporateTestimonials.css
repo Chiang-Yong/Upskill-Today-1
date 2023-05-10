@@ -7,7 +7,7 @@
 
 
 .corporateTestimonials-title {
-    font-size: 35px;
+    font-size: clamp(1.5rem,2.0vw, 2.5rem);
     color: #ff7b00;
     font-weight: 800;
     align-items: center;

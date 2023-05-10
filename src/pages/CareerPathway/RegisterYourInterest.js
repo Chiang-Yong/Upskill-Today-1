@@ -51,7 +51,7 @@ const RYIstyle = {
   title: {
     // marginTop: "2%",
     color: "#ff7b00",
-    // fontSize: "3rem",
+    fontSize: "clamp(1.5rem, 2.0vw, 2.5rem)",
     fontWeight: 800,
     // textShadow: "0px 4px 6px rgba(0,0,0,0.6)",
   },

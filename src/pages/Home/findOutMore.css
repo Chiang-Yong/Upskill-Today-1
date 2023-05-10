@@ -1,10 +1,10 @@
 .find-out .more-button {
-  font-size: clamp(1.0em,2vw,1.2em);
+  font-size: clamp(1.0em,1.15vw,1.25em);
   font-weight: 600;
   background-color: #ff7b00;
   border: none;
   border-radius: 25px;
-  padding: 0.6rem;
+  padding: 0.3rem  0.8rem;
 }
 .find-out .more-button:hover {
   background-color: #a60037;

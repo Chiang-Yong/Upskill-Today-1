@@ -40,15 +40,30 @@
   height: auto;
 }
 
+@media screen and (max-width:768px){
+  .homecarousel-item{
+    height: 100%;
+    margin-top: 5%;
+
+  }
+
+  .homecarousel-item .slide-img{
+    object-fit: 'cover';
+    width: 150%;
+    height: auto;
+  }
+  
+}
+
 .carousel-title {
   font-weight: 700;
-  font-size: clamp(1.0rem, 2vw, 1.5rem);
+  font-size: clamp(1.0rem, 1.5vw, 1.6rem);
   text-shadow: 1px 0px 13px black;
   color: #ff7b00;
 }
 
 .carousel-text {
-  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+  font-size: clamp(1.5rem, 2.0vw, 2.5rem);
   font-weight: 800;
   text-shadow: 0 0 20px black;
 }
@@ -57,10 +72,10 @@
   background-color: #ff7b00;
   color: white;
   border-color: #ff7b00;
-  font-size: clamp(1.0em,2vw,1.2em);
+  font-size: clamp(1.0em,1.15vw,1.25em);
   font-weight: 600;
   border-radius: 25px;
-  padding: 0.6rem;
+  padding: 0.3rem 0.7rem;
 }
 
 .carousel-home .carousel-call:hover {

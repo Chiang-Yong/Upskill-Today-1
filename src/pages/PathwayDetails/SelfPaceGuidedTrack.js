@@ -33,16 +33,16 @@ const SPGTstyle = {
   },
 
   cardtitle: {
-    fontWeight: 700,
-    fontSize: "clamp(1.5rem,2vw,2.0rem)",
+    fontWeight: 800,
+    fontSize: "clamp(1.2rem,1.5vw,1.8rem)",
     color: "black",
     paddingTop: "2%",
   },
 
   title: {
-    fontWeight: 700,
-    fontSize: "clamp(1.8em, 2vw, 2.5rem)",
-    color: "black",
+    fontWeight: 800,
+    fontSize: "clamp(1.5rem, 2.0vw, 2.5rem)",
+    color: "#ff7b00",
     paddingTop: "2%",
     marginBottom: "1%",
   },

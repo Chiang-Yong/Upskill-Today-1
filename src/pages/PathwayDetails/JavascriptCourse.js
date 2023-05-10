@@ -4,7 +4,7 @@ import JavaScriptDeveloper from "./JavaScriptDeveloper";
 import SelfPaceGuildedTrack from "./SelfPaceGuidedTrack";
 import JobRoles from "./JobRoles";
 import ApplyJSCourse from "./ApplyJSCourse";
-
+import BackTopButton from "../../components/BackToTopButton";
 
 const JSstyle = {
   main: {
@@ -55,6 +55,7 @@ const JavascriptCourse = () => {
       <Row className="">
         <ApplyJSCourse />
       </Row>
+      <BackTopButton />
     </div>
   );
 };

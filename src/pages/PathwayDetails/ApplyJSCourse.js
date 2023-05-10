@@ -21,9 +21,9 @@ const AJSCstyle = {
   },
 
   title: {
-    color: "#000",
+    color: "#ff7b00",
     fontWeight: 800,
-    fontSize: "clamp(1.5rem, 2vw,2.5rem)",
+    fontSize: "clamp(1.5rem, 2.0vw,2.5rem)",
     marginTop: "-1%",
   },
 

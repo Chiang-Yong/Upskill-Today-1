@@ -3,6 +3,7 @@ import { Row } from "react-bootstrap";
 import SelfPaceGuidedTrack from "./SelfPaceGuidedTrack";
 import JobRoles from "./JobRoles";
 import ApplyJavaCourse from "./ApplyJavaCourse";
+import BackTopButton from "../../components/BackToTopButton";
 //import JavaCourseDetails from "./JavaCourseDetails";
 const src = "https://www.youtube.com/embed/2UX8bxVhkqw";
 
@@ -51,7 +52,7 @@ const JDstyle = {
   },
 
   maintitle: {
-    fontSize: "clamp(2.5rem, 2vw, 2.8rem",
+    fontSize: "clamp(1.5rem, 2.0vw, 2.5rem",
     fontWeight: 800,
     color: "#ff7b00",
     paddingBottom: "2%",
@@ -59,14 +60,14 @@ const JDstyle = {
   },
 
   title: {
-    fontSize: "clamp(1.5rem, 2vw, 2.5rem)",
+    fontSize: "clamp(1.5rem, 2.0vw, 2.5rem)",
     fontWeight: 700,
-    color: "#000",
+    color: "#ff7b00",
     paddingBottom: "2%",
   },
 
   text: {
-    fontSize:"clamp(1.0rem, 2vw, 1.2rem)",
+    fontSize:"clamp(1.0rem, 1.15vw, 1.3rem)",
     fontWeight:600,
 
   }
@@ -102,6 +103,7 @@ const JavaDeveloper = () => {
       <Row>
         <ApplyJavaCourse />
       </Row>
+      <BackTopButton />
     </div>
   );
 };

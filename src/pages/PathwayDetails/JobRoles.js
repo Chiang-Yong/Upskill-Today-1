@@ -23,16 +23,16 @@ const JRStyle = {
   },
 
   card_title: {
-    color: "black",
+    color: "#ff7b00",
     fontWeight: 800,
-    fontSize: "clamp(1.8em, 2vw, 2.5em)",
+    fontSize: "clamp(1.5em, 2.0vw, 2.5em)",
     paddingBottom: "2%",
   },
 
   card_text: {
     color: "black",
     fontWeight: 600,
-    fontSize: "clamp(1.0em, 2vw, 1.3em)",
+    fontSize: "clamp(1.0em, 1.2vw, 1.3em)",
     paddingTop: "1%",
     paddingBottom: "1%",
   },
@@ -47,10 +47,9 @@ const JRStyle = {
   },
 
   title: {
-    color: "black",
-    fontWeight: 700,
-    fontSize: "clamp(1.5em, 2vw, 2.0rem)",
-
+    color: "#ff7b00",
+    fontWeight: 800,
+    fontSize: "clamp(1.5em, 2.0vw, 2.5rem)",
     marginBottom: "2%",
   },
 };
