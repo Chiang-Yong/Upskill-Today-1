@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Axios from 'axios';
 import { Form, Col, Row, Button, Container } from "react-bootstrap";
 import "./register.css";
 
@@ -57,10 +58,26 @@ const RYIstyle = {
   },
 };
 
-
-
 const RegisterYourInterest = () => {
   const [validated, setValidated] = useState(false);
+
+  const port = 5000;
+
+  const [formData, setFormData]=useState({
+    firstname: "",
+    lastname: "",
+    email:"",
+    contact: "",
+    program: "",
+    country:"",
+  });
+
+  const handleChange = (event)=>{
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value
+    });
+  }
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -70,7 +87,19 @@ const RegisterYourInterest = () => {
     }
 
     setValidated(true);
+  //  Axios.post('https://ap-southeast-1.aws.data.mongodb-api.com/app/data-quyej/endpoint/data/v1', formData)
+    Axios.post(`http://localhost:${port}/`, formData)
+   // Axios.post(`${process.env.REACT_APP_API_ENDPOINT}`, formData)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
+    
   };
+
   return (
    
     <Container fluid className="py-5 px-5">
@@ -99,6 +128,7 @@ const RegisterYourInterest = () => {
                   required
                   type="text" 
                   name="firstname" 
+                  onChange={handleChange}
                   />
                  <Form.Control.Feedback type="invalid">Please provide your First Name</Form.Control.Feedback>
                 </Form.Group>
@@ -114,6 +144,7 @@ const RegisterYourInterest = () => {
                   type="text"
                   required
                   name="lastname" 
+                  onChange={handleChange}
                   />
                   <Form.Control.Feedback type="invalid">Please provide your Last Name</Form.Control.Feedback>
                 </Form.Group>
@@ -130,6 +161,8 @@ const RegisterYourInterest = () => {
                   <Form.Control
                     required
                     type="email"
+                    name="email"
+                    onChange={handleChange}
                   />
                   <Form.Control.Feedback type="invalid">
                    Please provide a valid email
@@ -147,6 +180,8 @@ const RegisterYourInterest = () => {
                   <Form.Control 
                   required
                   type="text" 
+                  name="contact"
+                  onChange={handleChange}
                   />
                   <Form.Control.Feedback type="invalid">Please provide your contact number</Form.Control.Feedback>
                 </Form.Group>
@@ -159,12 +194,13 @@ const RegisterYourInterest = () => {
                 style={RYIstyle.select}
               >
                 <Form.Label>Select Program</Form.Label>
-                <Form.Select required aria-label="Default select example">
+                <Form.Select required aria-label="Default select example" name="program" onChange={handleChange}>
                   {/* <option>Select Your Upskill Program</option> */}
-                  <option></option>
-                  <option value="1">Java</option>
-                  <option value="2">Javscript</option>
-                  <option value="3">DevOps</option>
+                  <option value="blank"></option>
+                  <option value="Java Developer">Java Developer</option>
+                  <option value="JavaScript Developer">Javscript Developer</option>
+                  <option value="DevOps Engineer">DevOps Engineer</option>
+                  <option value="Business Analyst (JAVA)">Business Analyst (JAVA)</option>
                 </Form.Select>
                 <Form.Control.Feedback type="invalid">Please select your program </Form.Control.Feedback>
               </Form.Group>
@@ -175,11 +211,11 @@ const RegisterYourInterest = () => {
                 style={RYIstyle.select}
               >
                 <Form.Label>Country</Form.Label>
-                <Form.Select required aria-label="Default select example">
+                <Form.Select required aria-label="Default select example" name="country" onChange={handleChange}>
                   {/*} <option>Select Country</option> */}
-                  <option></option>
-                  <option value="1">Singapore</option>
-                  <option value="2">Philippines</option>
+                  <option valule="blank"></option>
+                  <option value="Singapore">Singapore</option>
+                  <option value="Philippines">Philippines</option>
                 </Form.Select>
                 <Form.Control.Feedback type="invalid">Please select your country. Currently, the program is for Singapore and Philippines only.</Form.Control.Feedback>
               </Form.Group>
