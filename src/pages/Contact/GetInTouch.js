@@ -1,10 +1,30 @@
 import React, { useState } from "react";
 import { Form, Button, Row, Col, Container } from "react-bootstrap";
+import Axios from 'axios';
 import "./getIntouch.css";
 import ContactCards from "./ContactCards";
 
 const GetInTouch = () => {
+  //backend server port
+  const port = 5000;
+
   const [validated, setValidated] = useState(false);
+
+  const [intouchData, setIntouchData]=useState({
+    firstname: "",
+    lastname: "",
+    email:"",
+    contact: "",
+    subject: "",
+    message:"",
+  });
+
+  const handleChange = (event)=>{
+    setIntouchData({
+      ...intouchData,
+      [event.target.name]: event.target.value
+    });
+  }
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -14,6 +34,14 @@ const GetInTouch = () => {
     }
 
     setValidated(true);
+    Axios.post(`http://localhost:${port}/api/intouch`, intouchData)
+      .then((response) => {
+        console.log(response.data);
+        alert("Your message has been received. Thanks for your interest!");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
   
   return (
@@ -53,6 +81,8 @@ const GetInTouch = () => {
                   <Form.Control 
                   required
                   type="text" 
+                  name='firstname'
+                  onChange={handleChange}
                   placeholder="" />
                   <Form.Control.Feedback type="invalid">Please provide your First Name</Form.Control.Feedback>
                 </Form.Group>
@@ -66,6 +96,8 @@ const GetInTouch = () => {
                   <Form.Control 
                   required
                   type="text" 
+                  name='lastname'
+                  onChange={handleChange}
                   placeholder="" />
                    <Form.Control.Feedback type="invalid">Please provide your Last Name</Form.Control.Feedback>
                 </Form.Group>
@@ -82,6 +114,7 @@ const GetInTouch = () => {
                   required
                   type="email" 
                   name="email"
+                  onChange={handleChange}
                   placeholder="" />
                    <Form.Control.Feedback type="invalid">Please provide a valid email</Form.Control.Feedback>
                 </Form.Group>
@@ -95,6 +128,8 @@ const GetInTouch = () => {
                   <Form.Control
                   required
                     type="text"
+                    name='contact'
+                    onChange={handleChange}
                     placeholder=""
                   />
                    <Form.Control.Feedback type="invalid">Please provide your contact number</Form.Control.Feedback>
@@ -104,7 +139,10 @@ const GetInTouch = () => {
                 <Form.Label>Subject</Form.Label>
                 <Form.Control 
                 required
-                type="text" placeholder="" />
+                type="text"
+                name='subject'
+                onChange={handleChange}
+                placeholder="" />
                  <Form.Control.Feedback type="invalid">Please enter your subject</Form.Control.Feedback>
               </Form.Group>
 
@@ -113,6 +151,8 @@ const GetInTouch = () => {
                 <Form.Control
                   required
                   as="textarea"
+                  name='message'
+                  onChange={handleChange}
                   placeholder=""
                   rows={4}
                 />

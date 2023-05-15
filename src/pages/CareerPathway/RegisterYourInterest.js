@@ -60,7 +60,7 @@ const RYIstyle = {
 
 const RegisterYourInterest = () => {
   const [validated, setValidated] = useState(false);
-
+  //backend server port
   const port = 5000;
 
   const [formData, setFormData]=useState({
@@ -85,19 +85,16 @@ const RegisterYourInterest = () => {
       event.preventDefault();
       event.stopPropagation();
     }
-
     setValidated(true);
-  //  Axios.post('https://ap-southeast-1.aws.data.mongodb-api.com/app/data-quyej/endpoint/data/v1', formData)
-    Axios.post(`http://localhost:${port}/`, formData)
-   // Axios.post(`${process.env.REACT_APP_API_ENDPOINT}`, formData)
+   // backend server api endpoint (localhost:5000/api/registration)
+   Axios.post(`http://localhost:${port}/api/registration`, formData)
       .then((response) => {
         console.log(response.data);
+        alert("Your registration has been received.");
       })
       .catch((error) => {
         console.error(error);
       });
-
-    
   };
 
   return (

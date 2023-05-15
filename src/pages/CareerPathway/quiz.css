@@ -16,7 +16,7 @@
     border: none;
     outline: none;
     font-weight: 600;
-    font-size: clamp(1.0em, 2vw, 1.2em);
+    font-size: clamp(1.0em, 1.15vw, 1.2em);
     border-radius: 25px;
     width: 150px;
   }

@@ -41,7 +41,7 @@ const QuizStyle = {
 
   title: {
     fontWeight: 800,
-    fontSize: "clamp(2.0rem, 2vw, 2.8rem)",
+    fontSize: "clamp(1.5rem, 2vw, 2.5rem)",
     textShadow: "0px 4px 6px rgba(0,0,0,0.6)",
     color: "#ff7b00",
     marginTop: "5%",
@@ -49,7 +49,7 @@ const QuizStyle = {
 
   text: {
     fontWeight: 600,
-    fontSize: "clamp(1.0rem, 2vw, 1.2rem)",
+    fontSize: "clamp(1.0rem, 1.15vw, 1.3rem)",
     paddingTop: "1%",
     paddingBottom: "1%",
   },

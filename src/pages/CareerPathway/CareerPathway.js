@@ -38,41 +38,41 @@ const CPStyle = {
   card_text: {
     color: "black",
     fontWeight: 600,
-    fontSize: "clamp(1.0rem, 1.25vw, 1.5rem)",
-    paddingTop: "1%",
-    paddingBottom: "1%",
+    fontSize: "clamp(1.0rem, 1.15vw, 1.3rem)",
+   // paddingTop: "1%",
+   // paddingBottom: "1%",
   },
 
   slider: {
-    width: "60%",
-    padding: "1%",
-    marginBottom: "3%",
+    width: "75%",
+   // padding: "1%",
+   // marginBottom: "1%",
+   margin: "auto"
   },
 
   card: {
-    width: "50%",
-    padding: "1.0rem",
-    marginLeft: "1%",
-    marginRight: "1%",
-    marginBottom: "3%",
+    width: "70%",
+    padding: "10px",
+    marginLeft: "5px",
+    marginRight: "5px",
+    marginBottom: "10px",
   },
 
-  Image: {
-    objectFit: "scale-down",
-  },
 };
 
 const CareerPathway = () => {
   const settings = {
     //className: "slider variable-width center",
     //variableWidth: true,
+    
     //centerMode: true,
     dots: true,
-    infinite: true,
-    centerPadding: "60px",
+    infinite: false,
+    lazyload: true,
+    centerPadding: 0,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 3,
+    //slidesToScroll: 3,
 
     responsive: [
       {
@@ -98,39 +98,28 @@ const CareerPathway = () => {
             Choose the right career through upskill program
           </p>
         </Row>
-        <Row sx={1} md={2} className="g-4 d-flex justify-content-center mb-5">
+        <Row sx={1} md={2} className="d-flex justify-content-center mb-5">
           <Slider {...settings} style={CPStyle.slider}>
             {careerPathData.map((cpData, index) => (
-              <Card
-                key={index}
-                style={CPStyle.card}
-                className="careerpathway-image me-3 rounded-4"
-              >
+              <div className="careerpathway">
+              <Card key={index} className="me-2">
                 <Card.Img
                   variant="top"
                   src={cpData.image}
-                  className="rounded d-block"
-                  style={{
-                    objectFit: "scale-down",
-                    paddingTop: "5%",
-                    borderRadius: "50%",
-                    border: "3px solid #fff",
-                  }}
+                  className="d-block"
                 />
                 <Card.Body>
-                  <Card.Title
-                    style={CPStyle.card_text}
+                  <Card.Title style={CPStyle.card_text}
                     className="d-flex justify-content-center"
                   >
                     {cpData.title}
                   </Card.Title>
-                  <Card.Text
-                    style={CPStyle.card_text}
+                  <Card.Text style={CPStyle.card_text}
                     className="d-flex justify-content-center"
                   >
                     {cpData.text}
                   </Card.Text>
-                  <Card.Text className="d-flex justify-content-center careerpathway">
+                  <Card.Text className="d-flex justify-content-center">
                     <Link to={cpData.path}>
                       <Button className="careerpathway-button">
                         Find Out More
@@ -139,6 +128,7 @@ const CareerPathway = () => {
                   </Card.Text>
                 </Card.Body>
               </Card>
+              </div>
             ))}
           </Slider>
         </Row>
