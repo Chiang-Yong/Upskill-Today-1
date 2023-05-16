@@ -31,14 +31,15 @@ connection.on('error', (error) => {
 });
 
 //Create a data schema
-const registrationSchema = {
+const registrationSchema = new mongoose.Schema({
     firstname: String,
     lastname: String,
     email: String,
     contact: String,
     program: String,
-    country: String
-}
+    country: String},
+    {timestamps:true}
+)
 
 //Create a intouch data schema
 const intouchSchema = {
@@ -82,6 +83,9 @@ app.post('/api/registration', (req, res) => {
 
 // Create a new FormData object with the request body data
   const formData = new FormData(req.body);
+ // const current_date = new Date();
+  formData.createdAt = new Date();
+  formData.updatedAt = new Date();
 
   // Save the form data to the database
   formData.save()
