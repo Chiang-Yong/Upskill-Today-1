@@ -64,10 +64,10 @@ const corporateSchema = {
 //Create a Mongoose model for corporate data
 const CorporateData = mongoose.model('coporate', corporateSchema);
 
-// Create a Mongoose model for the data
+// Create a Mongoose model for Get In Touch data
 const IntouchData = mongoose.model('intouch', intouchSchema);
 
-// Create a Mongoose model for the data
+// Create a Mongoose model for Registration data
 const FormData = mongoose.model('registration', registrationSchema);
 
 app.get("/", function(req, res){
@@ -83,6 +83,7 @@ app.post('/api/registration', (req, res) => {
 
 // Create a new FormData object with the request body data
   const formData = new FormData(req.body);
+  
  // const current_date = new Date();
   formData.createdAt = new Date();
   formData.updatedAt = new Date();
@@ -103,7 +104,11 @@ app.post('/api/intouch', (req, res) => {
 
   // Create a new intouchData object with the request body data
     const intouchData = new IntouchData(req.body);
-  
+    
+    //Timestamp for input data
+    intouchData.createdAt = new Date();
+    intouchData.updatedAt = new Date();
+
     // Save the form data to the database
     intouchData.save()
       .then(() => {
@@ -121,6 +126,9 @@ app.post('/api/intouch', (req, res) => {
     // Create a new intouchData object with the request body data
       const corporateData = new CorporateData(req.body);
     
+      //Timestamp for input data
+      corporateData.createdAt = new Date();
+      corporateData.updatedAt = new Date();
       // Save the form data to the database
       corporateData.save()
         .then(() => {

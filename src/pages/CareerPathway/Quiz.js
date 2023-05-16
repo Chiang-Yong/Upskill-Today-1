@@ -55,7 +55,7 @@ const QuizStyle = {
   },
 
   card: {
-    width: "50%",
+    width: "75%",
     height: "auto",
     backgroundColor: "#fff9eb",
   },
