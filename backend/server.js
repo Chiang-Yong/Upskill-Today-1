@@ -50,6 +50,19 @@ const intouchSchema = {
   message: String,
 }
 
+//Create a corporate data schema
+const corporateSchema = {
+  firstname: String,
+  lastname: String,
+  email: String,
+  contact: String,
+  company: String,
+  country: String,
+}
+
+//Create a Mongoose model for corporate data
+const CorporateData = mongoose.model('coporate', corporateSchema);
+
 // Create a Mongoose model for the data
 const IntouchData = mongoose.model('intouch', intouchSchema);
 
@@ -98,6 +111,22 @@ app.post('/api/intouch', (req, res) => {
       });
   });
 
+
+  app.post('/api/corporate', (req, res) => {
+
+    // Create a new intouchData object with the request body data
+      const corporateData = new CorporateData(req.body);
+    
+      // Save the form data to the database
+      corporateData.save()
+        .then(() => {
+          res.send('Successfully saved form data to the database');
+        })
+        .catch((error) => {
+          console.error(error);
+          res.send('Error saving form data to the database');
+        });
+    });
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });

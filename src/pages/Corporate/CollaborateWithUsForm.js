@@ -1,15 +1,29 @@
 import React, { useState } from "react";
-import {
-  Form,
-  Button,
-  Row,
-  Col,
-  Container,
-} from "react-bootstrap";
+import Axios from 'axios';
+import { Form, Button, Row, Col, Container } from "react-bootstrap";
 import "./collaborateWithUsForm.css";
 
 const CollaborateWithUsForm = () => {
   const [validated, setValidated] = useState(false);
+
+  //backend server port
+  const port = 5000;
+
+  const [corporateData, setCorporateData] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    contact: "",
+    company: "",
+    country: "",
+  });
+
+  const handleChange = (event) => {
+    setCorporateData({
+      ...corporateData,
+      [event.target.name]: event.target.value,
+    });
+  };
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -19,6 +33,15 @@ const CollaborateWithUsForm = () => {
     }
 
     setValidated(true);
+    // backend server api endpoint (http://localhost:5000/api/corporate)
+    Axios.post(`http://localhost:${port}/api/corporate`, corporateData)
+      .then((response) => {
+        console.log(response.data);
+        alert("Your contact information has been received. We will contact you shortly");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (
@@ -35,11 +58,12 @@ const CollaborateWithUsForm = () => {
           </p>
 
           <div className="corpform">
-            <Form 
-             noValidate
-             validated={validated}
-             onSubmit={handleSubmit}
-             className="py-3 ">
+            <Form
+              noValidate
+              validated={validated}
+              onSubmit={handleSubmit}
+              className="py-3 "
+            >
               <Row>
                 <Form.Group
                   as={Col}
@@ -48,8 +72,16 @@ const CollaborateWithUsForm = () => {
                   className="mb-3"
                 >
                   <Form.Label>First Name</Form.Label>
-                  <Form.Control required type="text" placeholder="" />
-                  <Form.Control.Feedback type="invalid">Please provide your First Name</Form.Control.Feedback>
+                  <Form.Control
+                    required
+                    type="text"
+                    name="firstname"
+                    onChange={handleChange}
+                    placeholder=""
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    Please provide your First Name
+                  </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group
                   as={Col}
@@ -58,8 +90,16 @@ const CollaborateWithUsForm = () => {
                   className="mb-3"
                 >
                   <Form.Label>Last Name</Form.Label>
-                  <Form.Control required type="text" placeholder="" />
-                  <Form.Control.Feedback type="invalid">Please provide your Last Name</Form.Control.Feedback>
+                  <Form.Control
+                    required
+                    type="text"
+                    name="lastname"
+                    onChange={handleChange}
+                    placeholder=""
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    Please provide your Last Name
+                  </Form.Control.Feedback>
                 </Form.Group>
               </Row>
 
@@ -71,8 +111,16 @@ const CollaborateWithUsForm = () => {
                   className="mb-3"
                 >
                   <Form.Label>Email</Form.Label>
-                  <Form.Control required type="email" placeholder="" />
-                  <Form.Control.Feedback type="invalid">Please enter a valid email</Form.Control.Feedback>
+                  <Form.Control
+                    required
+                    type="email"
+                    name="email"
+                    onChange={handleChange}
+                    placeholder=""
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    Please enter a valid email
+                  </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group
                   as={Col}
@@ -81,21 +129,37 @@ const CollaborateWithUsForm = () => {
                   className="mb-3"
                 >
                   <Form.Label>Contact</Form.Label>
-                  <Form.Control required type="text" placeholder="" />
-                  <Form.Control.Feedback type="invalid">Please provide your contact number</Form.Control.Feedback>
+                  <Form.Control
+                    required
+                    type="text"
+                    name="contact"
+                    onChange={handleChange}
+                    placeholder=""
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    Please provide your contact number
+                  </Form.Control.Feedback>
                 </Form.Group>
               </Row>
 
               <Form.Group as={Col} controlId="formCompany" className="mb-3">
                 <Form.Label>Company Name</Form.Label>
-                <Form.Control required type="text" placeholder="" />
-                <Form.Control.Feedback type="invalid">Please enter your company name</Form.Control.Feedback>
+                <Form.Control
+                  required
+                  type="text"
+                  name="company"
+                  onChange={handleChange}
+                  placeholder=""
+                />
+                <Form.Control.Feedback type="invalid">
+                  Please enter your company name
+                </Form.Control.Feedback>
               </Form.Group>
 
               <Form.Group as={Col} controlId="formCountry" className="mb-3">
                 <Form.Label>Select Country</Form.Label>
-                <Form.Select required>
-                  <option></option>
+                <Form.Select required name="country"  onChange={handleChange}>
+                  <option value="blank"></option>
                   <option value="Afghanistan">Afghanistan</option>
                   <option value="Åland Islands">Åland Islands</option>
                   <option value="Albania">Albania</option>
@@ -409,7 +473,9 @@ const CollaborateWithUsForm = () => {
                   <option value="Zambia">Zambia</option>
                   <option value="Zimbabwe">Zimbabwe</option>
                 </Form.Select>
-                <Form.Control.Feedback type="invalid">Please select your country</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">
+                  Please select your country
+                </Form.Control.Feedback>
               </Form.Group>
 
               <div className="d-grid mt-4">
