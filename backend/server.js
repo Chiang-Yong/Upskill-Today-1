@@ -42,24 +42,26 @@ const registrationSchema = new mongoose.Schema({
 )
 
 //Create a intouch data schema
-const intouchSchema = {
+const intouchSchema = new mongoose.Schema({
   firstname: String,
   lastname: String,
   email: String,
   contact: String,
   subject: String,
-  message: String,
-}
+  message: String,},
+  {timestamps:true}
+)
 
 //Create a corporate data schema
-const corporateSchema = {
+const corporateSchema = new mongoose.Schema({
   firstname: String,
   lastname: String,
   email: String,
   contact: String,
   company: String,
-  country: String,
-}
+  country: String,},
+  {timestamps:true}
+)
 
 //Create a Mongoose model for corporate data
 const CorporateData = mongoose.model('coporate', corporateSchema);
@@ -83,7 +85,7 @@ app.post('/api/registration', (req, res) => {
 
 // Create a new FormData object with the request body data
   const formData = new FormData(req.body);
-  
+
  // const current_date = new Date();
   formData.createdAt = new Date();
   formData.updatedAt = new Date();
