@@ -85,9 +85,11 @@ const RegisterYourInterest = () => {
       event.preventDefault();
       event.stopPropagation();
     }
+    
     setValidated(true);
    // backend server api endpoint (localhost:5000/api/registration)
-   Axios.post(`http://localhost:${port}/api/registration`, formData)
+   //Axios.post(`http://localhost:${port}/api/registration`, formData)
+   Axios.post(`https://backend-server-theta.vercel.app/api/registration`, formData)
       .then((response) => {
         console.log(response.data);
         alert("Your registration has been received.");
@@ -95,6 +97,7 @@ const RegisterYourInterest = () => {
       .catch((error) => {
         console.error(error);
       });
+    
   };
 
   return (
@@ -193,11 +196,10 @@ const RegisterYourInterest = () => {
                 <Form.Label>Select Program</Form.Label>
                 <Form.Select required aria-label="Default select example" name="program" onChange={handleChange}>
                   {/* <option>Select Your Upskill Program</option> */}
-                  <option value="blank"></option>
                   <option value="Java Developer">Java Developer</option>
                   <option value="JavaScript Developer">Javscript Developer</option>
                   <option value="DevOps Engineer">DevOps Engineer</option>
-                  <option value="Business Analyst (JAVA)">Business Analyst (JAVA)</option>
+                  <option value="Self-Paced (JAVA)">Self-Paced (JAVA)</option>
                 </Form.Select>
                 <Form.Control.Feedback type="invalid">Please select your program </Form.Control.Feedback>
               </Form.Group>

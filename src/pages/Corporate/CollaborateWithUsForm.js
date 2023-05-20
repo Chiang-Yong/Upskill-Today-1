@@ -34,7 +34,8 @@ const CollaborateWithUsForm = () => {
 
     setValidated(true);
     // backend server api endpoint (http://localhost:5000/api/corporate)
-    Axios.post(`http://localhost:${port}/api/corporate`, corporateData)
+   // Axios.post(`http://localhost:${port}/api/corporate`, corporateData)
+   Axios.post(`https://backend-server-theta.vercel.app/api/corporate`, corporateData)
       .then((response) => {
         console.log(response.data);
         alert("Your contact information has been received. We will contact you shortly");

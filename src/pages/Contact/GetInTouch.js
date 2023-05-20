@@ -34,7 +34,8 @@ const GetInTouch = () => {
     }
 
     setValidated(true);
-    Axios.post(`http://localhost:${port}/api/intouch`, intouchData)
+    //Axios.post(`http://localhost:${port}/api/intouch`, intouchData)
+    Axios.post(`https://backend-server-theta.vercel.app/api/intouch`, intouchData)
       .then((response) => {
         console.log(response.data);
         alert("Your message has been received. Thanks for your interest!");
