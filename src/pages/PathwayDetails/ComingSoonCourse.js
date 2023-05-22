@@ -38,7 +38,7 @@ const ComingSoonCourse = () => {
       <Row
         sx={1}
         md={2}
-        className="g-4 d-flex justify-content-center mt-5 mb-5"
+        className="g-3 d-flex justify-content-center mt-5 mb-5"
       >
         {comingSoonData.map((csData, index) => (
           <Card key={index} style={CSCstyle.card} className="me-4">

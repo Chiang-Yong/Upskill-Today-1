@@ -15,11 +15,7 @@ const HomeDescription = () => {
           </Col>
           <Col md={5} className="px-5 py-3">
             <p className="lh-sm">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-              euismod vel tellus et placerat. Quisque justo enim, tincidunt non
-              tristique quis, volutpat vulputate elit. Nullam id enim luctus,
-              pellentesque sem eget, maximus quam. Vestibulum hendrerit, ante
-              quis dapibus
+              
             </p>
             {/* <Link className="text-decoration-none text-white" to="/About">
               <Button size="lg" className=" mt-3 home-button">

@@ -53,9 +53,7 @@ const CollaborateWithUsForm = () => {
             Collaborate With Us
           </h1>
           <p className="text-center pb-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            varius enim in eros elementum tristique. Duis cursus, mi quis
-            viverra ornare.
+            
           </p>
 
           <div className="corpform">

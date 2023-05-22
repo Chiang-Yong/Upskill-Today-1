@@ -1,7 +1,10 @@
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import pathwayhome from "../../images/pathway-home.png";
-import corporatehome from "../../images/corporate-home.png";
+//import pathwayhome from "../../images/pathway-home.png";
+//import corporatehome from "../../images/corporate-home.png";
+import followyourpassion from "../../images/FOLLOW YOUR PASSION.jpg"
+import findyourmatch from "../../images/FIND YOUR MATCH.png"
+
 import { Link } from "react-router-dom";
 import "./findOutMore.css";
 
@@ -11,8 +14,8 @@ const FindOutMore = () => {
       <Row className="px-5 py-5  align-items-center">
         <Col md={{ span: 5, offset: 1 }} className=" text-center ">
           <img
-            src={pathwayhome}
-            alt="why"
+            src={followyourpassion}
+            alt="Follow Your Passion"
             style={{ height: "auto", width: "90%" }}
           />
         </Col>
@@ -47,8 +50,8 @@ const FindOutMore = () => {
         </Col>
         <Col md={5} className=" text-center ">
           <img
-            src={corporatehome}
-            alt="corporate home"
+            src={findyourmatch}
+            alt="FIND YOUR MATCH"
             style={{ height: "auto", width: "90%" }}
           />
         </Col>

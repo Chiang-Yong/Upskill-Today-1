@@ -14,7 +14,8 @@ export const quiz = {
         choices: [
           'Complex algorithms and data structures', 
           'User interface and interactivity', 
-          'System performance and scalability'],
+          'System performance and scalability',
+          'Not sure' ],
         type: 'Javascript',
         correctAnswer: ' ',
       },
@@ -25,7 +26,8 @@ export const quiz = {
         choices: [
           'Backend systems and applications', 
           'Frontend web development', 
-          'Infrastructure management and automation'],
+          'Infrastructure management and automation',
+          'No idea'],
         type: 'Javascript',
         correctAnswer: '',
       },
@@ -36,17 +38,18 @@ export const quiz = {
         choices: [
           'Java',
           'Javascript',
-          'Bash or Python'
+          'Bash or Python',
+          'No programming experience'
         ],
         type: 'Javascript',
-        correctAnswer: 'All of the above',
+        correctAnswer: '',
       },
       {
         id: 4,
         question: 'What is your preferred development environment?',
-        choices: ['IntelliJ IDEA', 'Visual Studio Code', 'Vim or Emacs'],
+        choices: ['IntelliJ IDEA', 'Visual Studio Code', 'Vim or Emacs','No idea'],
         type: 'Javascript',
-        correctAnswer: 'const',
+        correctAnswer: '',
       },
       {
         id: 5,
@@ -54,17 +57,18 @@ export const quiz = {
         choices: [
           'Using a debugger and stepping through the code', 
           'Using console.log statements', 
-          'Using log analysis and monitoring tools' 
+          'Using log analysis and monitoring tools',
+          'Not using any debugging tools' 
           ],
         type: 'Javascript',
-        correctAnswer: 'Web browser',
+        correctAnswer: '',
       },
       {
         id: 6,
         question: 'How important is security in your development process?',
-        choices: ['Very important', 'Somewhat important', 'Not very important'],
+        choices: ['Very important', 'Somewhat important', 'Not very important','Not sure'],
         type: 'Java',
-        correctAnswer: 'Compilation',
+        correctAnswer: '',
       },
       {
         id: 7,
@@ -72,17 +76,18 @@ export const quiz = {
         choices: [
           'Using a continuous integration and deployment (CI/CD) pipeline', 
           'Manually deploying the code', 
-          'Using containerization and orchestration tools'
+          'Using containerization and orchestration tools',
+          'No idea'
           ],
         type: 'Java',
-        correctAnswer: '.java',
+        correctAnswer: '',
       },
       {
         id: 8,
         question: 'How comfortable are you with Linux command line tools?',
-        choices: ['Very comfortable', 'Somewhat comfortable', 'Not comfortable'],
+        choices: ['Very comfortable', 'Somewhat comfortable', 'Not comfortable','No idea'],
         type: 'Java',
-        correctAnswer: 'Use of pointers',
+        correctAnswer: '',
       },
       {
         id: 9,
@@ -90,10 +95,11 @@ export const quiz = {
         choices: [
           'Reading technical books and articles', 
           'Attending conferences and meetups', 
-          'Experimenting with new tools and technologies' 
+          'Experimenting with new tools and technologies',
+          'No idea' 
           ],
         type: 'Java',
-        correctAnswer: 'JDK',
+        correctAnswer: '',
       },
       {
         id: 10,
@@ -102,9 +108,10 @@ export const quiz = {
           'Solving challenging technical problems', 
           'Building great user experiences', 
           'Improving system reliability and performance', 
+          'Incentives'
           ],
         type: 'Java',
-        correctAnswer: '.class',
+        correctAnswer: '',
       },
     ],
   }

@@ -3,7 +3,7 @@ import FullStackIcon from "../../images/fullstack-dev.png";
 import MS365Consultant from "../../images/ms-365-consultant.png";
 import DataAnalyst from "../../images/data-analytics.png";
 import SiteCore from "../../images/sitecore.png";
-import DevOps from "../../images/devops.png";
+import BusinessAnalyst from "../../images/business-analyst.png";
 
 export const comingSoonData = [
   {
@@ -38,10 +38,10 @@ export const comingSoonData = [
       " Become job-ready for Site Core Developer career opportunities. Learn while you earn!",
   },
   {
-    image: DevOps,
-    title: "DevOps Engineer",
+    image: BusinessAnalyst,
+    title: "Business Analyst",
     text:
-      " Become job-ready for DevOps Engineer career opportunities. Learn while you earn!",
+      " Become job-ready for Business Analyst career opportunities. Learn while you earn!",
   },
 ];
 export default comingSoonData;

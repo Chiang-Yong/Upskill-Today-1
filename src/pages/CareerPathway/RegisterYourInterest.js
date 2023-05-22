@@ -109,9 +109,7 @@ const RegisterYourInterest = () => {
             Register Your Interest Here
           </h1>
           <p className="text-center pb-4" style={RYIstyle.text}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            varius enim in eros elementum tristique. Duis cursus, mi quis
-            viverra ornare.
+           
           </p>
 
           <div className="career-form">

@@ -2,24 +2,24 @@ import React from "react";
 import "./howItWorks.css";
 import { Row, Card, Container } from "react-bootstrap";
 
-import Competence from "../../images/competence.png";
-import Partner from "../../images/partner.png";
-import Order from "../../images/order.png";
+import custom from '../../images/Customized IT Training Programs.svg'
+import ojt from '../../images/On-The-Job Upskill Training.svg'
+import coach from '../../images/Coaching & Mentorship Programs.svg'
 
 const HowItWorks = () => {
   return (
     <Container fluid>
       <Row xs={1} md={3} className="mx-auto  justify-content-evenly px-5 py-5">
         <Card className="border-0 mb-4" style={{ width: "20rem" }}>
-          <Card.Img
+          <object
             variant="top"
-            src={Order}
-            alt="order"
+            data={custom}
+            aria-label="Customized IT Training Program"
             className="img-fluid rounded mx-auto d-block"
             style={{
               objectFit: "contain",
               textAlign: "center",
-              maxHeight: "7rem",
+              maxHeight: "10rem",
               height: "100%",
             }}
           />
@@ -35,15 +35,15 @@ const HowItWorks = () => {
         </Card>
 
         <Card className=" border-0 mb-4" style={{ width: "20rem" }}>
-          <Card.Img
+          <object
             variant="top"
-            src={Competence}
-            alt="competence"
+            data={ojt}
+            aria-label="On the Job Training Program"
             className="img-fluid rounded mx-auto d-block "
             style={{
               objectFit: "contain",
               textAlign: "center",
-              maxHeight: "7rem",
+              maxHeight: "10rem",
               height: "100%",
             }}
           />
@@ -59,15 +59,15 @@ const HowItWorks = () => {
         </Card>
 
         <Card className=" border-0 mb-4" style={{ width: "20rem" }}>
-          <Card.Img
+          <object
             variant="top"
-            src={Partner}
-            alt="partner"
+            data={coach}
+            aria-label="Coaching & Mentorship Program"
             className="rounded mx-auto d-block img-fluid"
             style={{
               objectFit: "contain",
               textAlign: "center",
-              maxHeight: "7rem",
+              maxHeight: "10rem",
               height: "100%",
             }}
           />
@@ -81,7 +81,9 @@ const HowItWorks = () => {
             </Card.Text>
           </Card.Body>
         </Card>
+        
       </Row>
+     
     </Container>
   );
 };

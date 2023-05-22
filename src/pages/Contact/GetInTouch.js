@@ -53,8 +53,7 @@ const GetInTouch = () => {
             Get In Touch
           </h1>
           <p className="mb-3">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit facilisis a
-            leo nisi, dignissim interdum pharetra tellus malesuada tellus sem.
+            
           </p>
           <ContactCards />
         </Col>
