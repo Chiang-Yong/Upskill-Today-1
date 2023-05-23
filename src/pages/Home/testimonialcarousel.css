@@ -10,14 +10,3 @@
   border-radius: 50%;
 }
 
-@media screen and (max-width:768px) {
-
- .testimonial-home .carousel-control-next,
- .testimonial-home .carousel-control-prev
- {
-  position: relative; 
-  top: 10%;
-  transform: translateY(-50%);
- }
-
-}
