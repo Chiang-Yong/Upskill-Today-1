@@ -75,7 +75,7 @@ const TestimonialCarousel = () => {
         <div className="d-flex justify-content-center">
           <Col lg={8}>
             <h5 className="mb-3">Kevin Chan</h5>
-            <p>Fashion Industry</p>
+            <p>Senior Business Analyst</p>
             <p className="text-muted text-start">
               Joining upskilling program has allowed me to learn Java and
               fast-track my career progression from Fashion to IT with no coding
