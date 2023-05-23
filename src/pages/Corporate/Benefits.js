@@ -2,9 +2,9 @@ import React from "react";
 import "./benefits.css";
 import { Row, Card, Container } from "react-bootstrap";
 
-import CostSavings from "../../images/CostSavings.png";
-import BestMatch from "../../images/BestMatch.png";
-import CompetentReady from "../../images/CompetentReady.png";
+import CostSavings from "../../images/COST SAVINGS.png";
+import BestMatch from "../../images/BEST MATCH.png";
+import CompetentReady from "../../images/COMPETENT.png";
 
 const Benefits = () => {
     return (

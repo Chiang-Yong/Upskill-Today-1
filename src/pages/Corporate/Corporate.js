@@ -8,6 +8,7 @@ import CorporateStatistics from "./CorporateStatistics";
 import CollaborateWithUsForm from "./CollaborateWithUsForm";
 import BackTopButton from "../../components/BackToTopButton";
 import CompaniesMarquee from "../Home/CompaniesMarquee";
+import AccelerateLogos from "./AccelerateLogos";
 
 const Corporate = () => {
   return (
@@ -20,7 +21,7 @@ const Corporate = () => {
 
       <CorporateStatistics />
 
-      <CompaniesMarquee />
+      <AccelerateLogos />
 
       <CorporateTestimonials />
 

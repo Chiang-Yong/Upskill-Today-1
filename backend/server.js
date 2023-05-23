@@ -1,11 +1,12 @@
+require("dotenv").config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const app = express();
-const contactus = require('.api/intouch');
-const registration = require('.api/registration');
+const intouch = require('./api/intouch');
+const registration = require('./api/registration');
 const corporate = require('./api/corporate');
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -18,11 +19,12 @@ const port = 5000;
 mongoose.set('strictQuery', false);
 
 // Connect to the MongoDB database
-mongoose.connect('mongodb+srv://vercel-admin-user:vercel-admin-user@clusterheng.uam6uok.mongodb.net/UpskillToday',
-//mongoose.connect(url, 
+//mongoose.connect('mongodb+srv://mongo:mongo@clusterheng.uam6uok.mongodb.net/UpskillToday',
+mongoose.connect(process.env.MONGO_DATA_API_URL, 
   {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useCreateIndex: true,
 });
 
 const connection = mongoose.connection;
@@ -106,7 +108,7 @@ app.post('/api/registration', (req, res) => {
     });
 });
 
-app.use("/api/intouch", contactus);
+app.use("/api/intouch", intouch);
 // POST request handler for the API endpoint
 app.post('/api/intouch', (req, res) => {
 

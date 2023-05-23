@@ -18,7 +18,8 @@
 
 .corporateTestimonials .card {
     background-color: #fff;
-    width: 30rem;
+    width: 25rem;
+    height: auto;
     margin-top: 3%;
     padding-top: 3%;
     padding-bottom: 2%;
@@ -26,5 +27,5 @@
     border: solid;
     border-width: 1px;
     border-color: #ff7b00;
-    border-radius: 5%;
+    border-radius: 25px;
 }

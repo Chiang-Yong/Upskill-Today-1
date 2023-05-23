@@ -16,7 +16,9 @@
     "mongoose": "^7.1.1"
   },
   "devDependencies": {
-    "@types/cors": "^2.8.13"
+    "@types/cors": "^2.8.13",
+    "dotenv": "^16.0.3",
+    "nodemon": "^2.0.22"
   },
   "description": "Deploy Backend Server.js to Vercel"
 }

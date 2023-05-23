@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Axios from 'axios';
+import Axios from "axios";
 import { Form, Button, Row, Col, Container } from "react-bootstrap";
 import "./collaborateWithUsForm.css";
 
@@ -34,11 +34,16 @@ const CollaborateWithUsForm = () => {
 
     setValidated(true);
     // backend server api endpoint (http://localhost:5000/api/corporate)
-   // Axios.post(`http://localhost:${port}/api/corporate`, corporateData)
-   Axios.post(`https://backend-server-theta.vercel.app/api/corporate`, corporateData)
+    // Axios.post(`http://localhost:${port}/api/corporate`, corporateData)
+    Axios.post(
+      `https://backend-server-theta.vercel.app/api/corporate`,
+      corporateData
+    )
       .then((response) => {
         console.log(response.data);
-        alert("Your contact information has been received. We will contact you shortly");
+        alert(
+          "Your contact information has been received. We will contact you shortly"
+        );
       })
       .catch((error) => {
         console.error(error);
@@ -53,7 +58,9 @@ const CollaborateWithUsForm = () => {
             Collaborate With Us
           </h1>
           <p className="text-center pb-4">
-            
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           </p>
 
           <div className="corpform">
@@ -157,7 +164,7 @@ const CollaborateWithUsForm = () => {
 
               <Form.Group as={Col} controlId="formCountry" className="mb-3">
                 <Form.Label>Select Country</Form.Label>
-                <Form.Select required name="country"  onChange={handleChange}>
+                <Form.Select required name="country" onChange={handleChange}>
                   <option value="blank"></option>
                   <option value="Afghanistan">Afghanistan</option>
                   <option value="Åland Islands">Åland Islands</option>

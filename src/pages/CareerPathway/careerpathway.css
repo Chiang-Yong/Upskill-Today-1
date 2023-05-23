@@ -1,8 +1,6 @@
 .careerpathway{
-  width: 75%;
-  margin: 10rem auto;
+  margin: 2rem auto;
   height: auto;
-  /*padding-top: 2%;*/
 }
 
 .careerpathway .careerpathway-button{
@@ -55,23 +53,32 @@
   opacity:1.0;
 }
 
-.careerpathway .slick-slide{
-   height: 50%;
-   width: 75%;
+.slick-slide{
+ /*  height: 50%;
+   width: 75%; */
    justify-content: center;
+   margin: auto;
+}
+
+.slick-active{
+  margin: 0 auto;
+}
+
+.slick-current{
+  margin: 0 auto;
 }
 
 .careerpathway .slick-track{
   height: 100%;
 }
 
-.careerpathway .slick-list{
+.slick-list{
   height: 100%;
+  margin: auto;
 }
 
-.careerpathway .slick-dots{
+.slick-dots{
   margin-top: 0%;
-  margin-bottom: 10%;
   display: relative;
 }
 .careerpathway .card{

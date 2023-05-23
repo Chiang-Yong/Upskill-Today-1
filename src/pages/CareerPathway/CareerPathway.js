@@ -39,32 +39,32 @@ const CPStyle = {
     color: "black",
     fontWeight: 600,
     fontSize: "clamp(1.0rem, 1.15vw, 1.3rem)",
-   // paddingTop: "1%",
-   // paddingBottom: "1%",
+    // paddingTop: "1%",
+    // paddingBottom: "1%",
   },
 
   slider: {
     width: "75%",
-   // padding: "1%",
-   // marginBottom: "1%",
-   margin: "auto"
+    justifyContent: "center",
+    margin: "auto",
+    display: "inline-flex",
   },
 
   card: {
     width: "70%",
+    height: "80%",
     padding: "10px",
     marginLeft: "5px",
     marginRight: "5px",
-    marginBottom: "10px",
+    marginBottom: "5px",
   },
-
 };
 
 const CareerPathway = () => {
   const settings = {
     //className: "slider variable-width center",
     //variableWidth: true,
-    
+
     //centerMode: true,
     dots: true,
     infinite: false,
@@ -81,7 +81,7 @@ const CareerPathway = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: true,
-          dots: false,
+          dots: true,
         },
       },
     ],
@@ -102,32 +102,34 @@ const CareerPathway = () => {
           <Slider {...settings} style={CPStyle.slider}>
             {careerPathData.map((cpData, index) => (
               <div className="careerpathway">
-              <Card key={index} className="me-2">
-                <Card.Img
-                  variant="top"
-                  src={cpData.image}
-                  className="d-block"
-                />
-                <Card.Body>
-                  <Card.Title style={CPStyle.card_text}
-                    className="d-flex justify-content-center"
-                  >
-                    {cpData.title}
-                  </Card.Title>
-                  <Card.Text style={CPStyle.card_text}
-                    className="d-flex justify-content-center"
-                  >
-                    {cpData.text}
-                  </Card.Text>
-                  <Card.Text className="d-flex justify-content-center">
-                    <Link to={cpData.path}>
-                      <Button className="careerpathway-button">
-                        Find Out More
-                      </Button>{" "}
-                    </Link>
-                  </Card.Text>
-                </Card.Body>
-              </Card>
+                <Card key={index} className="" style={CPStyle.card}>
+                  <Card.Img
+                    variant="top"
+                    src={cpData.image}
+                    className="d-block"
+                  />
+                  <Card.Body>
+                    <Card.Title
+                      style={CPStyle.card_text}
+                      className="d-flex justify-content-center"
+                    >
+                      {cpData.title}
+                    </Card.Title>
+                    <Card.Text
+                      style={CPStyle.card_text}
+                      className="d-flex justify-content-center"
+                    >
+                      {cpData.text}
+                    </Card.Text>
+                    <Card.Text className="d-flex justify-content-center">
+                      <Link to={cpData.path}>
+                        <Button className="careerpathway-button">
+                          Find Out More
+                        </Button>{" "}
+                      </Link>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
               </div>
             ))}
           </Slider>

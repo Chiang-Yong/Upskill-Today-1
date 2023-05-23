@@ -36,9 +36,7 @@ const MarqueeStyle = {
 const CompaniesMarquee = () => {
   return (
     <div style={MarqueeStyle.main} className="ms-auto">
-        <h2 className="text-center fw-bold py-5">
-        Come Aboard With Top Tech Companies
-      </h2>
+        
       <Marquee>
         <img src={Image1} alt="accenture" style={MarqueeStyle.image} height={50}/>
         <img src={Image2} alt="cemex" style={MarqueeStyle.image}height={22} />
