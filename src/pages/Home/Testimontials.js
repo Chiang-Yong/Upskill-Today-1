@@ -12,7 +12,7 @@ const Testimontials = () => {
           <h3>View the success stories of our graduates</h3>
         </Col>
         {/* <Col md={{ span: 5, offset: 1 }}> */}
-        <Col md={5} className="px-5 text-center">
+        <Col md={5} className="px-2 text-center">
           <TestimonialCarousel />
         </Col>
       </Row>
