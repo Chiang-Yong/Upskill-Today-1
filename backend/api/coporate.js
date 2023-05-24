@@ -1,18 +1,8 @@
-const express = require("express");
-const router = express.Router();
-
-router.get("/", async(req,res)=>{
-  try{
+exports.corporate = (req,res)=>{
     res.json({
       status: 200,
       message:"Get your data successfully",
+      coportateList:[]
 
     });
   }
-  catch(error){
-    console.error(error);
-    return res.status(500).send("server error");
-  }
-})
-
-modules.exports = router;

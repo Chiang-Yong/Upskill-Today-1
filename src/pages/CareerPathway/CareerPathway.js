@@ -71,7 +71,7 @@ const CareerPathway = () => {
     lazyload: true,
     centerPadding: 0,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 3.5,
     //slidesToScroll: 3,
 
     responsive: [
@@ -98,7 +98,7 @@ const CareerPathway = () => {
             Choose the right career through upskill program
           </p>
         </Row>
-        <Row sx={1} md={2} className="d-flex justify-content-center mb-5">
+        <Row sx={1} md={2} className="d-flex mx-auto mb-5">
           <Slider {...settings} style={CPStyle.slider}>
             {careerPathData.map((cpData, index) => (
               <div className="careerpathway">

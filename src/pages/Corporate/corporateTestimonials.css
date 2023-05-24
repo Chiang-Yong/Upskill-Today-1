@@ -1,10 +1,13 @@
 .corporateTestimonials {
+    margin: 2rem auto;
     height: auto;
     padding-top: 2%;
     background-color: #fff9eb;
 }
 
-
+.corporateTestimonials .cust-style{
+    margin:auto;
+}
 
 .corporateTestimonials-title {
     font-size: clamp(1.5rem,2.0vw, 2.5rem);
@@ -15,17 +18,40 @@
     text-transform: uppercase;
 }
 
+.corporateTestimonials .cust-text{
+    font-size: clamp(1.0rem, 1.0vw, 1.1rem);
+    font-weight: 600;
+}
+
 
 .corporateTestimonials .card {
     background-color: #fff;
-    width: 25rem;
-    height: auto;
-    margin-top: 3%;
-    padding-top: 3%;
-    padding-bottom: 2%;
+    width: 80%;
+    height: 25rem;
+    padding: 10px;
+    margin:10px;
 
     border: solid;
     border-width: 1px;
     border-color: #ff7b00;
     border-radius: 25px;
+}
+
+@media screen and (max-width:1500px) {
+
+    .corporateTestimonials .card {
+        width: 35rem;
+    }
+    
+}
+
+.corporateTestimonials .slider {
+    width: 100%;
+    margin: auto;
+    display: inline-flex;
+}
+
+.corporateTestimonials .slick-dots{
+    display: relative;
+    margin-top: 0;
 }

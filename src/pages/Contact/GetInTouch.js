@@ -8,6 +8,12 @@ const GetInTouch = () => {
   //backend server port
   const port = 5000;
 
+  const [status, setStatus] = useState({
+    submitted: false,
+    submitting: false,
+    info:{ error: false, msg: null},
+  })
+
   const [validated, setValidated] = useState(false);
 
   const [intouchData, setIntouchData] = useState({
@@ -19,11 +25,31 @@ const GetInTouch = () => {
     message: "",
   });
 
+  const handleServerResponse = (ok, msg)=>{
+    if(ok) {
+      setStatus({
+        submitted: true,
+        submitting: false,
+        info:{ error: false, msg: msg},
+      })
+    } else {
+      setStatus({
+        info: {error:true, msg:msg}
+      })
+    }
+  }
+
   const handleChange = (event) => {
     setIntouchData({
       ...intouchData,
       [event.target.name]: event.target.value,
     });
+
+    setStatus({
+      submitted: false,
+      submitting: false,
+      info:{error: false, msg: null},
+    })
   };
 
   const handleSubmit = (event) => {
@@ -34,17 +60,22 @@ const GetInTouch = () => {
     }
 
     setValidated(true);
-    //Axios.post(`http://localhost:${port}/api/intouch`, intouchData)
-    Axios.post(
-      `https://backend-server-theta.vercel.app/api/intouch`,
-      intouchData
-    )
+    Axios.post(`http://localhost:${port}/api/intouch`, intouchData)
+  //  Axios.post(
+   //   `https://backend-server-theta.vercel.app/api/intouch`,
+   //   intouchData
+   // )
       .then((response) => {
         console.log(response.data);
-        alert("Your message has been received. Thanks for your interest!");
+        handleServerResponse(
+          true,
+          'Thank you, your message has been submitted'
+        );
+       // alert("Your message has been submitted. Thanks for your interest!");
       })
       .catch((error) => {
         console.error(error);
+        handleServerResponse(false, error.response.data.error);
       });
   };
 
@@ -185,6 +216,10 @@ const GetInTouch = () => {
                 </Button>
               </div>
             </Form>
+            {status.info.error && (
+              <div className="error">Error: {status.info.msg}</div>
+            )}
+            {!status.info.error && status.info.msg && <p>{status.info.msg}</p>}
           </div>
         </Col>
       </Row>
