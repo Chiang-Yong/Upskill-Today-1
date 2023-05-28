@@ -1,30 +1,26 @@
-require("dotenv").config();
+const dotenv = require("dotenv");
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const app = express();
-//const intouch = require('./api/intouch');
-////const registration = require('./api/registration');
-//const corporate = require('./api/corporate');
+dotenv.config();
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json({ extended: false }));
 
 //backend server port
 const port = 5000;
-//const uri = 'mongodb+srv://mongo:mongo@clusterheng.uam6uok.mongodb.net/UpskillToday';
 
 mongoose.set('strictQuery', false);
 
 // Connect to the MongoDB database
-mongoose.connect('mongodb+srv://mongo:mongo@clusterheng.uam6uok.mongodb.net/UpskillToday',
-//mongoose.connect(process.env.MONGO_PROD_URI, 
+//mongoose.connect('mongodb+srv://mongo:mongo@clusterheng.uam6uok.mongodb.net/UpskillToday',
+mongoose.connect(`${process.env.MONGO_PROD_URI}`, 
   {
   useNewUrlParser: true,
   useUnifiedTopology: true,
- // useCreateIndex: true,
 });
 
 const connection = mongoose.connection;
@@ -71,7 +67,7 @@ const corporateSchema = new mongoose.Schema({
 )
 
 //Create a Mongoose model for corporate data
-const CorporateData = mongoose.model('coporate', corporateSchema);
+const CorporateData = mongoose.model('corporate', corporateSchema);
 
 // Create a Mongoose model for Get In Touch data
 const IntouchData = mongoose.model('intouch', intouchSchema);
@@ -81,12 +77,21 @@ const FormData = mongoose.model('registration', registrationSchema);
 
 app.get("/", function(req, res){
     res.send("express is working")
+   
+})
+
+app.get("/api",(req, res)=>{
+  res.send("Express is up at " + Date.now())
+})
+
+app.get("/api/registration", (req,res)=>{
+  res.send("registration page");
 })
 
 app.use(cors());
 app.use(bodyParser.json());
 
-//app.use("/api/registration", registration);
+
 // POST request handler for the API endpoint
 app.post('/api/registration', (req, res) => {
 
@@ -108,7 +113,7 @@ app.post('/api/registration', (req, res) => {
     });
 });
 
-//app.use("/api/intouch", intouch);
+
 // POST request handler for the API endpoint
 app.post('/api/intouch', (req, res) => {
 
@@ -130,7 +135,6 @@ app.post('/api/intouch', (req, res) => {
       });
   });
 
-  //app.use("/api/corporate", corporate);
   app.post('/api/corporate', (req, res) => {
 
     // Create a new intouchData object with the request body data
@@ -150,10 +154,12 @@ app.post('/api/intouch', (req, res) => {
         });
     });
 
-  //  app.use("/corporate", require("./routes/corporateRoute"));
 
+
+  console.log("Process Env port:   " + process.env.API_PORT);
 app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
+  //console.log(`Server listening on port ${port}`);
+  console.log(`Server listening on port `+ process.env.API_PORT);
 });
 
 //Export the Express API

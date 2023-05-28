@@ -1,20 +1,19 @@
 import React, { useState } from "react";
-import { Form, Button, Row, Col, Container } from "react-bootstrap";
+import { Card, Form, Button, Row, Col, Container } from "react-bootstrap";
 import Axios from "axios";
 import "./getIntouch.css";
 import ContactCards from "./ContactCards";
 
 const GetInTouch = () => {
   //backend server port
-  const port = 5000;
-
+  // const port = 5000;
+  const [validated, setValidated] = useState(false);
+  const [submitResult, setSubmitResult] = useState(false);
   const [status, setStatus] = useState({
     submitted: false,
     submitting: false,
-    info:{ error: false, msg: null},
-  })
-
-  const [validated, setValidated] = useState(false);
+    info: { error: false, msg: null },
+  });
 
   const [intouchData, setIntouchData] = useState({
     firstname: "",
@@ -25,19 +24,19 @@ const GetInTouch = () => {
     message: "",
   });
 
-  const handleServerResponse = (ok, msg)=>{
-    if(ok) {
+  const handleServerResponse = (ok, msg) => {
+    if (ok) {
       setStatus({
         submitted: true,
         submitting: false,
-        info:{ error: false, msg: msg},
-      })
+        info: { error: false, msg: msg },
+      });
     } else {
       setStatus({
-        info: {error:true, msg:msg}
-      })
+        info: { error: true, msg: msg },
+      });
     }
-  }
+  };
 
   const handleChange = (event) => {
     setIntouchData({
@@ -48,8 +47,8 @@ const GetInTouch = () => {
     setStatus({
       submitted: false,
       submitting: false,
-      info:{error: false, msg: null},
-    })
+      info: { error: false, msg: null },
+    });
   };
 
   const handleSubmit = (event) => {
@@ -57,27 +56,32 @@ const GetInTouch = () => {
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
+    } else {
+      setSubmitResult(true);
+      setValidated(true);
+      //Axios.post(`http://localhost:${port}/api/intouch`, intouchData)
+          Axios.post(
+           `https://backend-server-theta.vercel.app/api/intouch`,
+           intouchData
+         )
+        .then((response) => {
+          console.log(response.data);
+          handleServerResponse(
+            true,
+            "Your message has been successfully submitted. Thank you!"
+          );
+        })
+        .catch((error) => {
+          console.error(error);
+          handleServerResponse(false, error.response.data.error);
+        });
     }
-
-    setValidated(true);
-    Axios.post(`http://localhost:${port}/api/intouch`, intouchData)
-  //  Axios.post(
-   //   `https://backend-server-theta.vercel.app/api/intouch`,
-   //   intouchData
-   // )
-      .then((response) => {
-        console.log(response.data);
-        handleServerResponse(
-          true,
-          'Thank you, your message has been submitted'
-        );
-       // alert("Your message has been submitted. Thanks for your interest!");
-      })
-      .catch((error) => {
-        console.error(error);
-        handleServerResponse(false, error.response.data.error);
-      });
   };
+
+  function submitInfo() {
+    //console.log(process.env.REACT_APP_API_URL);
+    setSubmitResult(false);
+  }
 
   return (
     <Container fluid className="getintouch py-5">
@@ -93,8 +97,9 @@ const GetInTouch = () => {
           </p>
           <ContactCards />
         </Col>
-
+        
         <Col md={5}>
+        {!submitResult ? (
           <div className="contact-form">
             <Form
               noValidate
@@ -216,11 +221,32 @@ const GetInTouch = () => {
                 </Button>
               </div>
             </Form>
-            {status.info.error && (
-              <div className="error">Error: {status.info.msg}</div>
-            )}
-            {!status.info.error && status.info.msg && <p>{status.info.msg}</p>}
           </div>
+          ) : (
+            <Card>
+              <Card.Body>
+                <Card.Text className="fw-bold">
+                  {status.info.error && (
+                    <div className="error">
+                      Error: {status.info.msg}
+                      
+                      <div style={{marginTop:'5px'}}>
+                        <Button onClick={submitInfo}>
+                          Back to Registration
+                        </Button>
+                        </div>
+                     
+                    </div>
+                  )}
+                  {!status.info.error && status.info.msg && (
+                    <div >
+                      <div> {status.info.msg}</div>
+                    </div>
+                  )}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          )}
         </Col>
       </Row>
     </Container>

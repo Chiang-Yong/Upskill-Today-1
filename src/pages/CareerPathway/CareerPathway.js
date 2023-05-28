@@ -101,8 +101,8 @@ const CareerPathway = () => {
         <Row sx={1} md={2} className="d-flex mx-auto mb-5">
           <Slider {...settings} style={CPStyle.slider}>
             {careerPathData.map((cpData, index) => (
-              <div className="careerpathway">
-                <Card key={index} className="" style={CPStyle.card}>
+              <div key={cpData.id} className="careerpathway">
+                <Card className="" style={CPStyle.card}>
                   <Card.Img
                     variant="top"
                     src={cpData.image}

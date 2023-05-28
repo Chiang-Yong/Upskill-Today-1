@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import Axios from "axios";
-import { Form, Col, Row, Button, Container } from "react-bootstrap";
+import { Form, Col, Row, Button, Container, Card } from "react-bootstrap";
 import "./register.css";
+
+
 
 const RYIstyle = {
   main: {
@@ -42,8 +44,8 @@ const RYIstyle = {
   },
 
   text: {
-    // marginTop: "2%",
-    // fontWeight: 600,
+    fontSize: "clamp(1.0rem, 1.15vw, 1.2rem)",
+     fontWeight: 600,
     // paddingTop: "1%",
     // paddingBottom: "1%",
     textAlign: "center",
@@ -60,8 +62,14 @@ const RYIstyle = {
 
 const RegisterYourInterest = () => {
   const [validated, setValidated] = useState(false);
+  const [submitResult, setSubmitResult] = useState(false);
   //backend server port
-  const port = 5000;
+ // const port = 5000;
+  const [status, setStatus] = useState({
+    submitted: false,
+    submitting: false,
+    info: { error: false, msg: null },
+  });
 
   const [formData, setFormData] = useState({
     firstname: "",
@@ -72,36 +80,72 @@ const RegisterYourInterest = () => {
     country: "",
   });
 
+  const handleServerResponse = (ok, msg) => {
+    if (ok) {
+      setStatus({
+        submitted: true,
+        submitting: false,
+        info: { error: false, msg: msg },
+      });
+    } else {
+      setStatus({
+        info: { error: true, msg: msg },
+      });
+    }
+  };
+
   const handleChange = (event) => {
     setFormData({
       ...formData,
       [event.target.name]: event.target.value,
     });
+    setStatus({
+      submitted: false,
+      submitting: false,
+      info: { error: false, msg: null },
+    });
   };
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
+    console.log("Form Check: " +form.checkValidity());
+
     if (form.checkValidity() === false) {
+      console.log("Inside if condition - Form Check: " +form.checkValidity());
       event.preventDefault();
       event.stopPropagation();
+      event.nativeEvent.stopImmediatePropagation();
     }
-
+    else{
+    setSubmitResult(true);
+    console.log(process.env.REACT_APP_API_URL);
     setValidated(true);
     // backend server api endpoint (localhost:5000/api/registration)
-    Axios.post(`http://localhost:${port}/api/registration`, formData)
-  //  Axios.post(
-  //    `https://backend-server-theta.vercel.app/api/registration`,
-  //    formData
-  //  )
+   // Axios.post(`${process.env.REACT_APP_API_URL}/registration`, formData)
+   // Axios.post(`http://localhost:${port}/api/registration`, formData)
+        Axios.post(
+          `https://backend-server-theta.vercel.app/api/registration`,
+          formData
+        )
       .then((response) => {
-        console.log(response.data);
-        alert("Your registration has been received.");
+        console.log(response.config.data);
+        // alert("Your registration has been received.");
+        handleServerResponse(
+          true,
+          "Your registration has been submitted. Thank You!"
+        );
       })
       .catch((error) => {
         console.error(error);
+        handleServerResponse(false, error.response.data.error);
       });
+    }
   };
 
+  function submitInfo() {
+    console.log(process.env.REACT_APP_API_URL);
+    setSubmitResult(false);
+  }
   return (
     <Container fluid className="py-5 px-5">
       <Row className="py-3 justify-content-center align-items-center">
@@ -114,151 +158,178 @@ const RegisterYourInterest = () => {
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           </p>
-
-          <div className="career-form">
-            <Form
-              noValidate
-              validated={validated}
-              onSubmit={handleSubmit}
-              className="py-3"
-              style={RYIstyle.form}
-            >
-              <Row>
-                <Form.Group
-                  as={Col}
-                  md="6"
-                  controlId="formFirstName"
-                  className="mb-3"
-                >
-                  <Form.Label>First Name</Form.Label>
-                  <Form.Control
-                    required
-                    type="text"
-                    name="firstname"
-                    onChange={handleChange}
-                  />
-                  <Form.Control.Feedback type="invalid">
-                    Please provide your First Name
-                  </Form.Control.Feedback>
-                </Form.Group>
-
-                <Form.Group
-                  as={Col}
-                  md="6"
-                  controlId="formLastName"
-                  className="mb-3"
-                >
-                  <Form.Label>Last Name</Form.Label>
-                  <Form.Control
-                    type="text"
-                    required
-                    name="lastname"
-                    onChange={handleChange}
-                  />
-                  <Form.Control.Feedback type="invalid">
-                    Please provide your Last Name
-                  </Form.Control.Feedback>
-                </Form.Group>
-              </Row>
-              <Row>
-                <Form.Group
-                  style={RYIstyle.group}
-                  as={Col}
-                  md="6"
-                  className="mb-3"
-                  controlId="formBasicEmail"
-                >
-                  <Form.Label>Email</Form.Label>
-                  <Form.Control
-                    required
-                    type="email"
-                    name="email"
-                    onChange={handleChange}
-                  />
-                  <Form.Control.Feedback type="invalid">
-                    Please provide a valid email
-                  </Form.Control.Feedback>
-                </Form.Group>
-
-                <Form.Group
-                  as={Col}
-                  md="6"
-                  controlId="formContact"
-                  className="mb-3"
-                  style={RYIstyle.group}
-                >
-                  <Form.Label>Contact</Form.Label>
-                  <Form.Control
-                    required
-                    type="text"
-                    name="contact"
-                    onChange={handleChange}
-                  />
-                  <Form.Control.Feedback type="invalid">
-                    Please provide your contact number
-                  </Form.Control.Feedback>
-                </Form.Group>
-              </Row>
-
-              <Form.Group
-                as={Col}
-                controlId="formProgram"
-                className="mb-3"
-                style={RYIstyle.select}
+          {!submitResult ? (
+            <div className="career-form">
+              <Form
+                noValidate
+                validated={validated}
+                onSubmit={handleSubmit}
+                className="py-3"
+                style={RYIstyle.form}
               >
-                <Form.Label>Select Program</Form.Label>
-                <Form.Select
-                  required
-                  aria-label="Default select example"
-                  name="program"
-                  onChange={handleChange}
+                <Row>
+                  <Form.Group
+                    as={Col}
+                    md="6"
+                    controlId="formFirstName"
+                    className="mb-3"
+                  >
+                    <Form.Label>First Name</Form.Label>
+                    <Form.Control
+                      required
+                      type="text"
+                      name="firstname"
+                      onChange={handleChange}
+                    />
+                    <Form.Control.Feedback type="invalid">
+                      Please provide your First Name
+                    </Form.Control.Feedback>
+                  </Form.Group>
+
+                  <Form.Group
+                    as={Col}
+                    md="6"
+                    controlId="formLastName"
+                    className="mb-3"
+                  >
+                    <Form.Label>Last Name</Form.Label>
+                    <Form.Control
+                      type="text"
+                      required
+                      name="lastname"
+                      onChange={handleChange}
+                    />
+                    <Form.Control.Feedback type="invalid">
+                      Please provide your Last Name
+                    </Form.Control.Feedback>
+                  </Form.Group>
+                </Row>
+                <Row>
+                  <Form.Group
+                    style={RYIstyle.group}
+                    as={Col}
+                    md="6"
+                    className="mb-3"
+                    controlId="formBasicEmail"
+                  >
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
+                      required
+                      type="email"
+                      name="email"
+                      onChange={handleChange}
+                    />
+                    <Form.Control.Feedback type="invalid">
+                      Please provide a valid email
+                    </Form.Control.Feedback>
+                  </Form.Group>
+
+                  <Form.Group
+                    as={Col}
+                    md="6"
+                    controlId="formContact"
+                    className="mb-3"
+                    style={RYIstyle.group}
+                  >
+                    <Form.Label>Contact</Form.Label>
+                    <Form.Control
+                      required
+                      type="text"
+                      name="contact"
+                      onChange={handleChange}
+                    />
+                    <Form.Control.Feedback type="invalid">
+                      Please provide your contact number
+                    </Form.Control.Feedback>
+                  </Form.Group>
+                </Row>
+
+                <Form.Group
+                  as={Col}
+                  controlId="formProgram"
+                  className="mb-3"
+                  style={RYIstyle.select}
                 >
-                  {/* <option>Select Your Upskill Program</option> */}
-                  <option value="Java Developer">Java Developer</option>
-                  <option value="JavaScript Developer">
-                    Javscript Developer
-                  </option>
-                  <option value="DevOps Engineer">DevOps Engineer</option>
-                  <option value="Self-Paced (JAVA)">Self-Paced (JAVA)</option>
-                </Form.Select>
-                <Form.Control.Feedback type="invalid">
-                  Please select your program{" "}
-                </Form.Control.Feedback>
-              </Form.Group>
-              <Form.Group
-                as={Col}
-                controlId="formCountry"
-                className="mb-3"
-                style={RYIstyle.select}
-              >
-                <Form.Label>Country</Form.Label>
-                <Form.Select
-                  required
-                  aria-label="Default select example"
-                  name="country"
-                  onChange={handleChange}
+                  <Form.Label>Select Program</Form.Label>
+                  <Form.Select
+                    required
+                    aria-label="Default select example"
+                    name="program"
+                    onChange={handleChange}
+                  >
+                    {/* <option>Select Your Upskill Program</option> */}
+                    <option value="Java Developer">Java Developer</option>
+                    <option value="JavaScript Developer">
+                      Javscript Developer
+                    </option>
+                    <option value="DevOps Engineer">DevOps Engineer</option>
+                    <option value="Self-Paced (JAVA)">Self-Paced (JAVA)</option>
+                  </Form.Select>
+                  <Form.Control.Feedback type="invalid">
+                    Please select your program{" "}
+                  </Form.Control.Feedback>
+                </Form.Group>
+                <Form.Group
+                  as={Col}
+                  controlId="formCountry"
+                  className="mb-3"
+                  style={RYIstyle.select}
                 >
-                  {/*} <option>Select Country</option> */}
-                  <option valule="blank"></option>
-                  <option value="Singapore">Singapore</option>
-                  <option value="Philippines">Philippines</option>
-                </Form.Select>
-                <Form.Control.Feedback type="invalid">
-                  Please select your country. Currently, the program is for
-                  Singapore and Philippines only.
-                </Form.Control.Feedback>
-              </Form.Group>
-              <div className="d-grid mt-4">
-                <Button
-                  type="submit"
-                  style={RYIstyle.button}
-                  className="careerform-button"
-                >
-                  Submit
-                </Button>
+                  <Form.Label>Country</Form.Label>
+                  <Form.Select
+                    required
+                    aria-label="Default select example"
+                    name="country"
+                    onChange={handleChange}
+                  >
+                    {/*} <option>Select Country</option> */}
+                    <option valule="blank"></option>
+                    <option value="Singapore">Singapore</option>
+                    <option value="Philippines">Philippines</option>
+                  </Form.Select>
+                  <Form.Control.Feedback type="invalid">
+                    Please select your country. Currently, the program is for
+                    Singapore and Philippines only.
+                  </Form.Control.Feedback>
+                </Form.Group>
+                <div className="d-grid mt-4">
+                  <Button
+                    type="submit"
+                    // onClick={handleSubmit}
+                    style={RYIstyle.button}
+                    className="careerform-button"
+                  >
+                    Submit
+                  </Button>
+                </div>
+              </Form>
+
               </div>
-            </Form>
-          </div>
+          ) : (
+            <Card>
+              <Card.Body>
+                <Card.Text className="fw-bold">
+                  {status.info.error && (
+                    <div className="error">
+                      Error: {status.info.msg}
+                      
+                      <div style={{marginTop:'5px'}}>
+                        <Button onClick={submitInfo}>
+                          Back to Registration
+                        </Button>
+                        </div>
+                     
+                    </div>
+                  )}
+                  {!status.info.error && status.info.msg && (
+                    <div >
+                      <div> {status.info.msg}</div>
+                    </div>
+                  )}
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          )}
         </Col>
       </Row>
     </Container>

@@ -10,54 +10,63 @@ import SiteCore from "../../images/sitecore.png"
 
 export const careerPathData = [
     {
+        id: 0,
         image:JavaScriptIcon,
         title:'JavaScript',
         text: 'Developer',
         path: '/PathwayDetails/JavascriptCourse',
     },
     {
+        id: 1,
         image:JavaIcon,
         title:'Java',
         text: 'Developer',
         path: '/PathwayDetails/JavaCourse',
     },
     {
+        id: 2,
         image:DevOpsIcon,
         title:'DevOps',
         text: 'Engineer',
         path: '/PathwayDetails/DevOpsCourse',
     },
     {
+        id: 3,
         image:FullStackIcon,
         title:'Full-Stack',
         text: 'Developer',
         path: '/PathwayDetails/ComingSoonCourse',
     },
     {
+        id: 4,
         image: MS365Consultant,
         title:'MS 365',
         text: 'Consultant',
         path: '/PathwayDetails/ComingSoonCourse',
     },
     {
+        id: 5,
         image: Pega,
         title:'Pega',
         text: 'Developer',
         path: '/PathwayDetails/ComingSoonCourse',
     },
     {
+        id: 6,
         image: BusinessAnalyst,
         title:'Business',
         text: 'Analyst',
         path: '/PathwayDetails/ComingSoonCourse',
     },
     {
+        id: 7,
         image:DataAnalyst,
         title:'Data',
         text: 'Analyst',
         path: '/PathwayDetails/ComingSoonCourse',
     },
     {
+        id: 8,
         image:SiteCore,
         title:'Site Core',
         text: 'Developer',

@@ -8,7 +8,7 @@ import Testimontials from "./Testimontials";
 import HomeDescription from "./HomeDescription";
 import FindOutMore from "./FindOutMore";
 import BackTopButton from "../../components/BackToTopButton";
-import CompaniesMarquee from "./CompaniesMarquee";
+//import CompaniesMarquee from "./CompaniesMarquee";
 import Companies from "./Companies";
 
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import homemain from "../../../images/upskill-main.jpeg";
+//import homemain from "../../../images/upskill-main.jpeg";
 import home1980 from "../../../images/upskill-main-1980.jpeg"
 import homebc from "../../../images/home-b2c-1980.png";
 import homebb from "../../../images/home-tgt-1980.jpeg";
