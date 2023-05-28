@@ -6,7 +6,7 @@ const Term = "https://www.upskilltoday.com/termsandconditions"
 const Footer = () => {
   return (
     <>
-      <footer
+      <footer  data-testid="footer-1"
         className="text-center text-lg-start text-white"
         style={{ backgroundColor: "#2d2d2d" }}
       >

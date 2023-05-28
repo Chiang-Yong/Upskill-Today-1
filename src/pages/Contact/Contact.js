@@ -5,7 +5,7 @@ import BackTopButton from "../../components/BackToTopButton";
 
 const Contact = () => {
   return (
-    <div style={{marginTop:"5%"}}>
+    <div  data-testid="contact-1" style={{marginTop:"5%"}}>
       <GetInTouch />
       <FAQ />
       <BackTopButton />
