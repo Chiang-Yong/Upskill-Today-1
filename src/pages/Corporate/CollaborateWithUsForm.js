@@ -92,9 +92,9 @@ const CollaborateWithUsForm = () => {
             Collaborate With Us
           </h1>
           <p className="text-center pb-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            Upskill Today gives you an edge by finding great talent that's job-ready from day one.
+            We're here to support your digital transformation journey.  <br></br>Contact us today.
+
           </p>
           {!submitResult ? (
             <div className="corpform">

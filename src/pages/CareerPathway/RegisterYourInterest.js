@@ -45,7 +45,7 @@ const RYIstyle = {
 
   text: {
     fontSize: "clamp(1.0rem, 1.15vw, 1.2rem)",
-     fontWeight: 600,
+    fontWeight: 600,
     // paddingTop: "1%",
     // paddingBottom: "1%",
     textAlign: "center",
@@ -64,7 +64,7 @@ const RegisterYourInterest = () => {
   const [validated, setValidated] = useState(false);
   const [submitResult, setSubmitResult] = useState(false);
   //backend server port
- // const port = 5000;
+  // const port = 5000;
   const [status, setStatus] = useState({
     submitted: false,
     submitting: false,
@@ -108,37 +108,37 @@ const RegisterYourInterest = () => {
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
-    console.log("Form Check: " +form.checkValidity());
+    console.log("Form Check: " + form.checkValidity());
 
     if (form.checkValidity() === false) {
-      console.log("Inside if condition - Form Check: " +form.checkValidity());
+      console.log("Inside if condition - Form Check: " + form.checkValidity());
       event.preventDefault();
       event.stopPropagation();
       event.nativeEvent.stopImmediatePropagation();
     }
-    else{
-    setSubmitResult(true);
-    console.log(process.env.REACT_APP_API_URL);
-    setValidated(true);
-    // backend server api endpoint (localhost:5000/api/registration)
-   // Axios.post(`${process.env.REACT_APP_API_URL}/registration`, formData)
-   // Axios.post(`http://localhost:${port}/api/registration`, formData)
-        Axios.post(
-          `https://backend-server-theta.vercel.app/api/registration`,
-          formData
-        )
-      .then((response) => {
-        console.log(response.config.data);
-        // alert("Your registration has been received.");
-        handleServerResponse(
-          true,
-          "Your registration has been submitted. Thank You!"
-        );
-      })
-      .catch((error) => {
-        console.error(error);
-        handleServerResponse(false, error.response.data.error);
-      });
+    else {
+      setSubmitResult(true);
+      console.log(process.env.REACT_APP_API_URL);
+      setValidated(true);
+      // backend server api endpoint (localhost:5000/api/registration)
+      // Axios.post(`${process.env.REACT_APP_API_URL}/registration`, formData)
+      // Axios.post(`http://localhost:${port}/api/registration`, formData)
+      Axios.post(
+        `https://backend-server-theta.vercel.app/api/registration`,
+        formData
+      )
+        .then((response) => {
+          console.log(response.config.data);
+          // alert("Your registration has been received.");
+          handleServerResponse(
+            true,
+            "Your registration has been submitted. Thank You!"
+          );
+        })
+        .catch((error) => {
+          console.error(error);
+          handleServerResponse(false, error.response.data.error);
+        });
     }
   };
 
@@ -154,9 +154,9 @@ const RegisterYourInterest = () => {
             Register Your Interest Here
           </h1>
           <p className="text-center pb-4" style={RYIstyle.text}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            Please fill your contact details below. <br></br>
+            Currently, we are hiring in the Philippines and Singapore. <br></br>
+            We will archive candidates from other countries for future hiring
           </p>
           {!submitResult ? (
             <div className="career-form">
@@ -304,7 +304,7 @@ const RegisterYourInterest = () => {
                 </div>
               </Form>
 
-              </div>
+            </div>
           ) : (
             <Card>
               <Card.Body>
@@ -312,13 +312,13 @@ const RegisterYourInterest = () => {
                   {status.info.error && (
                     <div className="error">
                       Error: {status.info.msg}
-                      
-                      <div style={{marginTop:'5px'}}>
+
+                      <div style={{ marginTop: '5px' }}>
                         <Button onClick={submitInfo}>
                           Back to Registration
                         </Button>
-                        </div>
-                     
+                      </div>
+
                     </div>
                   )}
                   {!status.info.error && status.info.msg && (

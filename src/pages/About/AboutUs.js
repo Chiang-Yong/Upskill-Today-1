@@ -13,8 +13,8 @@ const AboutUs = () => {
             About Upskill Today
           </h1>
           <h4>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit amet nulla
-            nulla pellentesque tincidunt augue .
+            An innovative and a highly curated hire, upskill & deploy program
+
           </h4>
         </Col>
         <Col md={7}>

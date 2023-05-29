@@ -60,10 +60,10 @@ const GetInTouch = () => {
       setSubmitResult(true);
       setValidated(true);
       //Axios.post(`http://localhost:${port}/api/intouch`, intouchData)
-          Axios.post(
-           `https://backend-server-theta.vercel.app/api/intouch`,
-           intouchData
-         )
+      Axios.post(
+        `https://backend-server-theta.vercel.app/api/intouch`,
+        intouchData
+      )
         .then((response) => {
           console.log(response.data);
           handleServerResponse(
@@ -91,137 +91,137 @@ const GetInTouch = () => {
             Get In Touch
           </h1>
           <p className="mb-3">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            We're excited to hear from you.
+            For more information on how Upskill Today can transform your business, contact our team today.
+
           </p>
           <ContactCards />
         </Col>
-        
-        <Col md={5}>
-        {!submitResult ? (
-          <div className="contact-form">
-            <Form
-              noValidate
-              validated={validated}
-              onSubmit={handleSubmit}
-              className="  px-4 py-5"
-              style={{
-                borderColor: "#ff7b00",
-                borderRadius: "20px",
-              }}
-            >
-              <Row>
-                <Form.Group
-                  as={Col}
-                  lg={6}
-                  className="mb-3"
-                  controlId="formBasicName"
-                >
-                  <Form.Label>First Name</Form.Label>
-                  <Form.Control
-                    required
-                    type="text"
-                    name="firstname"
-                    onChange={handleChange}
-                    placeholder=""
-                  />
-                  <Form.Control.Feedback type="invalid">
-                    Please provide your First Name
-                  </Form.Control.Feedback>
-                </Form.Group>
-                <Form.Group
-                  as={Col}
-                  lg={6}
-                  className="mb-3"
-                  controlId="formBasicName"
-                >
-                  <Form.Label>Last Name</Form.Label>
-                  <Form.Control
-                    required
-                    type="text"
-                    name="lastname"
-                    onChange={handleChange}
-                    placeholder=""
-                  />
-                  <Form.Control.Feedback type="invalid">
-                    Please provide your Last Name
-                  </Form.Control.Feedback>
-                </Form.Group>
-              </Row>
-              <Row>
-                <Form.Group
-                  as={Col}
-                  className="mb-3"
-                  lg={6}
-                  controlId="formBasicEmail"
-                >
-                  <Form.Label>Email</Form.Label>
-                  <Form.Control
-                    required
-                    type="email"
-                    name="email"
-                    onChange={handleChange}
-                    placeholder=""
-                  />
-                  <Form.Control.Feedback type="invalid">
-                    Please provide a valid email
-                  </Form.Control.Feedback>
-                </Form.Group>
-                <Form.Group
-                  as={Col}
-                  lg={6}
-                  className="mb-3"
-                  controlId="formContact"
-                >
-                  <Form.Label>Contact</Form.Label>
-                  <Form.Control
-                    required
-                    type="text"
-                    name="contact"
-                    onChange={handleChange}
-                    placeholder=""
-                  />
-                  <Form.Control.Feedback type="invalid">
-                    Please provide your contact number
-                  </Form.Control.Feedback>
-                </Form.Group>
-              </Row>
-              <Form.Group className="mb-3">
-                <Form.Label>Subject</Form.Label>
-                <Form.Control
-                  required
-                  type="text"
-                  name="subject"
-                  onChange={handleChange}
-                  placeholder=""
-                />
-                <Form.Control.Feedback type="invalid">
-                  Please enter your subject
-                </Form.Control.Feedback>
-              </Form.Group>
 
-              <Form.Group className="mb-3">
-                <Form.Label>Message</Form.Label>
-                <Form.Control
-                  required
-                  as="textarea"
-                  name="message"
-                  onChange={handleChange}
-                  placeholder=""
-                  rows={4}
-                />
-                <Form.Control.Feedback type="invalid">
-                  Please write your message here
-                </Form.Control.Feedback>
-              </Form.Group>
-              <div className="d-grid mt-3">
-                <Button type="submit" size="lg" className="form-button">
-                  Submit
-                </Button>
-              </div>
-            </Form>
-          </div>
+        <Col md={5}>
+          {!submitResult ? (
+            <div className="contact-form">
+              <Form
+                noValidate
+                validated={validated}
+                onSubmit={handleSubmit}
+                className="  px-4 py-5"
+                style={{
+                  borderColor: "#ff7b00",
+                  borderRadius: "20px",
+                }}
+              >
+                <Row>
+                  <Form.Group
+                    as={Col}
+                    lg={6}
+                    className="mb-3"
+                    controlId="formBasicName"
+                  >
+                    <Form.Label>First Name</Form.Label>
+                    <Form.Control
+                      required
+                      type="text"
+                      name="firstname"
+                      onChange={handleChange}
+                      placeholder=""
+                    />
+                    <Form.Control.Feedback type="invalid">
+                      Please provide your First Name
+                    </Form.Control.Feedback>
+                  </Form.Group>
+                  <Form.Group
+                    as={Col}
+                    lg={6}
+                    className="mb-3"
+                    controlId="formBasicName"
+                  >
+                    <Form.Label>Last Name</Form.Label>
+                    <Form.Control
+                      required
+                      type="text"
+                      name="lastname"
+                      onChange={handleChange}
+                      placeholder=""
+                    />
+                    <Form.Control.Feedback type="invalid">
+                      Please provide your Last Name
+                    </Form.Control.Feedback>
+                  </Form.Group>
+                </Row>
+                <Row>
+                  <Form.Group
+                    as={Col}
+                    className="mb-3"
+                    lg={6}
+                    controlId="formBasicEmail"
+                  >
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
+                      required
+                      type="email"
+                      name="email"
+                      onChange={handleChange}
+                      placeholder=""
+                    />
+                    <Form.Control.Feedback type="invalid">
+                      Please provide a valid email
+                    </Form.Control.Feedback>
+                  </Form.Group>
+                  <Form.Group
+                    as={Col}
+                    lg={6}
+                    className="mb-3"
+                    controlId="formContact"
+                  >
+                    <Form.Label>Contact</Form.Label>
+                    <Form.Control
+                      required
+                      type="text"
+                      name="contact"
+                      onChange={handleChange}
+                      placeholder=""
+                    />
+                    <Form.Control.Feedback type="invalid">
+                      Please provide your contact number
+                    </Form.Control.Feedback>
+                  </Form.Group>
+                </Row>
+                <Form.Group className="mb-3">
+                  <Form.Label>Subject</Form.Label>
+                  <Form.Control
+                    required
+                    type="text"
+                    name="subject"
+                    onChange={handleChange}
+                    placeholder=""
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    Please enter your subject
+                  </Form.Control.Feedback>
+                </Form.Group>
+
+                <Form.Group className="mb-3">
+                  <Form.Label>Message</Form.Label>
+                  <Form.Control
+                    required
+                    as="textarea"
+                    name="message"
+                    onChange={handleChange}
+                    placeholder=""
+                    rows={4}
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    Please write your message here
+                  </Form.Control.Feedback>
+                </Form.Group>
+                <div className="d-grid mt-3">
+                  <Button type="submit" size="lg" className="form-button">
+                    Submit
+                  </Button>
+                </div>
+              </Form>
+            </div>
           ) : (
             <Card>
               <Card.Body>
@@ -229,13 +229,13 @@ const GetInTouch = () => {
                   {status.info.error && (
                     <div className="error">
                       Error: {status.info.msg}
-                      
-                      <div style={{marginTop:'5px'}}>
+
+                      <div style={{ marginTop: '5px' }}>
                         <Button onClick={submitInfo}>
                           Back to Registration
                         </Button>
-                        </div>
-                     
+                      </div>
+
                     </div>
                   )}
                   {!status.info.error && status.info.msg && (
