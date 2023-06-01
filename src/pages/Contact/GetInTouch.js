@@ -49,7 +49,7 @@ const GetInTouch = () => {
   };
 
   return (
-    <Container fluid className="getintouch py-5">
+    <Container  data-testid="getintouch-1" fluid className="getintouch py-5">
       <Row className="px-5 py-5">
         <Col md={{ span: 5, offset: 1 }} className="px-5">
           <h1 className="fw-bold mb-3" style={{ color: "#ff7b00" }}>
@@ -89,6 +89,7 @@ const GetInTouch = () => {
                     name="firstname"
                     onChange={handleChange}
                     placeholder=""
+                    data-testid="firstname-1" 
                   />
                   <Form.Control.Feedback type="invalid">
                     Please provide your First Name
@@ -107,6 +108,7 @@ const GetInTouch = () => {
                     name="lastname"
                     onChange={handleChange}
                     placeholder=""
+                    data-testid="lastname-1"
                   />
                   <Form.Control.Feedback type="invalid">
                     Please provide your Last Name
@@ -127,6 +129,7 @@ const GetInTouch = () => {
                     name="email"
                     onChange={handleChange}
                     placeholder=""
+                    data-testid="email-1"
                   />
                   <Form.Control.Feedback type="invalid">
                     Please provide a valid email
@@ -145,6 +148,7 @@ const GetInTouch = () => {
                     name="contact"
                     onChange={handleChange}
                     placeholder=""
+                    data-testid="contactnum-1"
                   />
                   <Form.Control.Feedback type="invalid">
                     Please provide your contact number
@@ -159,6 +163,7 @@ const GetInTouch = () => {
                   name="subject"
                   onChange={handleChange}
                   placeholder=""
+                  data-testid="subject-1"
                 />
                 <Form.Control.Feedback type="invalid">
                   Please enter your subject
@@ -174,13 +179,14 @@ const GetInTouch = () => {
                   onChange={handleChange}
                   placeholder=""
                   rows={4}
+                  data-testid="message-1"
                 />
                 <Form.Control.Feedback type="invalid">
                   Please write your message here
                 </Form.Control.Feedback>
               </Form.Group>
               <div className="d-grid mt-3">
-                <Button type="submit" size="lg" className="form-button">
+                 <Button data-testid="submit-1"  type="submit" size="lg" className="form-button">
                   Submit
                 </Button>
               </div>

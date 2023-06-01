@@ -3,6 +3,8 @@ import { BrowserRouter } from "react-router-dom";
 import { render, screen, cleanup } from '@testing-library/react';
 
 import Contact from "../pages/Contact/Contact";
+import GetInTouch from "../pages/Contact/GetInTouch";
+import BackTopButton from "../components/BackToTopButton";
 
 afterEach(() => {
   cleanup();
@@ -51,8 +53,6 @@ describe("Testing Contact Component", () => {
       expect(compElement).toBeInTheDocument();
   });    
 
-    it("if working...", () => {
-    expect(true).toBe(true);
+
   });
 
-});;
