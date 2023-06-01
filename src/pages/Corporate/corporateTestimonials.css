@@ -1,13 +1,11 @@
 .corporateTestimonials {
-    margin: 2rem auto;
+    margin: auto;
     height: auto;
-    padding-top: 2%;
+    padding-top: 5%;
+    padding-bottom: 5%;
     background-color: #fff9eb;
 }
 
-.corporateTestimonials .cust-style{
-    margin:auto;
-}
 
 .corporateTestimonials-title {
     font-size: clamp(1.5rem,2.0vw, 2.5rem);
@@ -19,18 +17,17 @@
 }
 
 .corporateTestimonials .cust-text{
-    font-size: clamp(1.0rem, 1.0vw, 1.1rem);
-    font-weight: 600;
+    font-size: clamp(0.9rem, 0.9vw, 1.0rem);
+    font-weight: 500;
 }
 
 
 .corporateTestimonials .card {
     background-color: #fff;
     width: 80%;
-    height: 25rem;
+    height: 15rem;
     padding: 10px;
-    margin:10px;
-
+    margin-top: 5px;
     border: solid;
     border-width: 1px;
     border-color: #ff7b00;
@@ -38,11 +35,41 @@
 }
 
 @media screen and (max-width:1500px) {
+    .corporateTestimonials .card {
+        height: 18rem;
+    }
+}
+
+@media screen and (max-width:1300px) {
+    .corporateTestimonials .card {
+        height: 19rem;
+    }
+}
+
+@media screen and (max-width:1100px) {
+    .corporateTestimonials .card {
+        height: 25rem;
+    }
+}
+
+@media screen and (max-width:768px) {
 
     .corporateTestimonials .card {
-        width: 35rem;
+        height: 15rem;
     }
     
+    .corporateTestimonials .cust-text{
+        font-size: clamp(0.75rem, 0.8vw, 0.8rem);
+    }
+
+    .corporateTestimonials .slick-list{
+        margin: 0;
+    }
+
+    .corporateTestimonials .slick-slide{
+        margin: 0;
+    }
+
 }
 
 .corporateTestimonials .slider {
@@ -54,4 +81,50 @@
 .corporateTestimonials .slick-dots{
     display: relative;
     margin-top: 0;
+}
+
+.corporateTestimonials .slick-initialized{
+    width:70%;
+}
+
+/* the parent */
+.corporateTestimonials .slick-list{
+    margin: 0 -16px;
+}
+
+/* the slides */
+.corporateTestimonials .slick-slide {
+    margin: 0 4px;
+}
+
+/* fading on both end */
+.corporateTestimonials .media{
+    margin-top: 50px;
+    position: relative;
+}
+
+.corporateTestimonials .media::before{
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    margin-left: -5px;
+    bottom: 15px;
+    pointer-events: none;
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0), #fff9eb 85%);
+    width: 45%;
+}
+
+.corporateTestimonials .media::after{
+    content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  margin-right: -5px;
+  bottom: 15px;
+  pointer-events: none;
+  background-image: linear-gradient(to right,rgba(255, 255, 255, 0), #fff9eb 85%);
+  width:45%;
 }

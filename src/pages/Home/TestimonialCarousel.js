@@ -11,6 +11,7 @@ import { Carousel, Col } from "react-bootstrap";
 
 const TestimonialCarousel = () => {
   return (
+    
     <Carousel variant="dark" fade className="testimonial-home py-5 px-2">
       <Carousel.Item className="text-center">
         <img
@@ -21,7 +22,7 @@ const TestimonialCarousel = () => {
           style={{ width: "150px" }}
         />
         <div className="d-flex justify-content-center">
-          <Col lg={8}>
+          <Col sm={8}>
             <h5 className="mb-3">Arvin Tiongson</h5>
             <p>Peoplesoft Technical Consultant</p>
             <p className="text-muted text-start">
@@ -47,7 +48,7 @@ const TestimonialCarousel = () => {
           style={{ width: "150px" }}
         />
         <div className="d-flex justify-content-center">
-          <Col lg={8}>
+          <Col sm={8}>
             <h5 className="mb-3">Giovani Campos</h5>
             <p>PeopleSoft Trainer</p>
             <p className="text-muted text-start">
@@ -73,7 +74,7 @@ const TestimonialCarousel = () => {
           style={{ width: "150px" }}
         />
         <div className="d-flex justify-content-center">
-          <Col lg={8}>
+          <Col sm={8}>
             <h5 className="mb-3">Kevin Chan</h5>
             <p>Senior Business Analyst</p>
             <p className="text-muted text-start">
@@ -88,6 +89,7 @@ const TestimonialCarousel = () => {
         </div>
       </Carousel.Item>
     </Carousel>
+    
   );
 };
 

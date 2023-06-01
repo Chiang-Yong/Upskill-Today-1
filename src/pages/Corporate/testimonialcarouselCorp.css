@@ -1,0 +1,23 @@
+.testimonial-corp {
+  width: 50%;
+  border-radius: 40px;
+  border: 2px solid #ff7b00;
+  background-color: #ffff;
+  justify-content: center;
+}
+
+.testimonial-corp .carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  
+}
+
+.testimonial-corp .carousel-indicators .active{
+  color: #ff7b00;
+  background-color: #ff7b00;
+}
+
+.testimonial-corp p{
+  font-weight: 500;
+}

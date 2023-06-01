@@ -53,13 +53,12 @@ const CollaborateWithUsForm = () => {
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
+    setValidated(true);
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
     } else {
       setSubmitResult(true);
-
-      setValidated(true);
       // backend server api endpoint
       // Axios.post(`${process.env.REACT_APP_API_URL}/corporate`, corporateData)
       Axios.post(

@@ -9,6 +9,7 @@ const GetInTouch = () => {
   // const port = 5000;
   const [validated, setValidated] = useState(false);
   const [submitResult, setSubmitResult] = useState(false);
+
   const [status, setStatus] = useState({
     submitted: false,
     submitting: false,
@@ -43,7 +44,7 @@ const GetInTouch = () => {
       ...intouchData,
       [event.target.name]: event.target.value,
     });
-
+    
     setStatus({
       submitted: false,
       submitting: false,
@@ -51,14 +52,18 @@ const GetInTouch = () => {
     });
   };
 
+  
+
   const handleSubmit = (event) => {
     const form = event.currentTarget;
+    setValidated(true)                           //turn on the validation
     if (form.checkValidity() === false) {
       event.preventDefault();
-      event.stopPropagation();
+      event.stopPropagation()
+      
     } else {
+
       setSubmitResult(true);
-      setValidated(true);
       //Axios.post(`http://localhost:${port}/api/intouch`, intouchData)
       Axios.post(
         `https://backend-server-theta.vercel.app/api/intouch`,

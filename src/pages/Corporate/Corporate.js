@@ -9,6 +9,7 @@ import CollaborateWithUsForm from "./CollaborateWithUsForm";
 import BackTopButton from "../../components/BackToTopButton";
 //import CompaniesMarquee from "../Home/CompaniesMarquee";
 import AccelerateLogos from "./AccelerateLogos";
+import TestimonialCarouselCorp from "./TestimonialCarouselCorp";
 
 const Corporate = () => {
   return (
@@ -24,6 +25,8 @@ const Corporate = () => {
       <AccelerateLogos />
 
       <CorporateTestimonials />
+
+      <TestimonialCarouselCorp />
 
       <CollaborateWithUsForm />
 

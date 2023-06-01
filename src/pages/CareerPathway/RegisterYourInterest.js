@@ -108,10 +108,10 @@ const RegisterYourInterest = () => {
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
-    console.log("Form Check: " + form.checkValidity());
-
+  //  console.log("Form Check: " + form.checkValidity());
+    setValidated(true);
     if (form.checkValidity() === false) {
-      console.log("Inside if condition - Form Check: " + form.checkValidity());
+   //   console.log("Inside if condition - Form Check: " + form.checkValidity());
       event.preventDefault();
       event.stopPropagation();
       event.nativeEvent.stopImmediatePropagation();
@@ -119,7 +119,7 @@ const RegisterYourInterest = () => {
     else {
       setSubmitResult(true);
       console.log(process.env.REACT_APP_API_URL);
-      setValidated(true);
+      
       // backend server api endpoint (localhost:5000/api/registration)
       // Axios.post(`${process.env.REACT_APP_API_URL}/registration`, formData)
       // Axios.post(`http://localhost:${port}/api/registration`, formData)
@@ -283,7 +283,7 @@ const RegisterYourInterest = () => {
                     onChange={handleChange}
                   >
                     {/*} <option>Select Country</option> */}
-                    <option valule="blank"></option>
+                    {/*<option valule="blank"></option> */}
                     <option value="Singapore">Singapore</option>
                     <option value="Philippines">Philippines</option>
                   </Form.Select>

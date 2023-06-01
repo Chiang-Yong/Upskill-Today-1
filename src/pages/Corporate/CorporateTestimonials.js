@@ -12,7 +12,7 @@ import TestimonialsData from "../Corporate/CorporateTestimonialsData";
 
 const CorporateTestimonials = () => {
   const settings = {
-   // centerMode: true,
+    centerMode: true,
     dots: true,
     infinite: true,
     lazyload: true,
@@ -29,6 +29,7 @@ const CorporateTestimonials = () => {
           slidesToScroll: 1,
           arrows: true,
           dots: true,
+          centerMode: true,
         },
       },
     ],
@@ -39,13 +40,13 @@ const CorporateTestimonials = () => {
       <h1 className="corporateTestimonials-title"> Testimonials</h1>
 
       <Row xs={1} md={2} className="mx-auto justify-content-evenly">
-        <Slider {...settings}>
+        <Slider {...settings} className="media">
           {TestimonialsData.map((data,index)=> (
         
          <Card key={index} className=" mb-4" style={{ paddingTop: "3%" }}>
             <Card.Body>
               <Card.Text className="text-center">
-                <p>{data.title} <br />
+                <p className="fw-bold">{data.title} <br />
                 {data.company}</p>
               </Card.Text>
               <Card.Text className="cust-text text-start">

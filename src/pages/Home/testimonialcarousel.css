@@ -1,12 +1,16 @@
-.testimonial-home {
+.testimonial-home{
   border-radius: 40px;
   border: 2px solid #ff7b00;
   background-color: #ffff;
 }
 
-.testimonial-home .carousel-indicators button {
+.testimonial-home .carousel-indicators button{
   width: 10px;
   height: 10px;
   border-radius: 50%;
 }
 
+.testimonial-home .carousel-indicators .active{
+   color:#ff7b00;
+   background-color: #ff7b00;
+}

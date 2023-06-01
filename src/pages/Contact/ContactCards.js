@@ -22,7 +22,7 @@ const ContactCards = () => {
           <Col md={8} className="">
             <Card.Body className="ps-1">
               <Card.Title className="fw-bold">Call Us</Card.Title>
-              <Card.Text className="">+65-1234 5678</Card.Text>
+              <Card.Text className="">+65-65603224</Card.Text>
             </Card.Body>
           </Col>
         </Row>
