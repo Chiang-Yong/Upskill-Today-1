@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Axios from "axios";
 import { Form, Col, Row, Button, Container, Card } from "react-bootstrap";
 import "./register.css";
+import { validContact } from "../../components/Regex";
 
 
 
@@ -63,6 +64,9 @@ const RYIstyle = {
 const RegisterYourInterest = () => {
   const [validated, setValidated] = useState(false);
   const [submitResult, setSubmitResult] = useState(false);
+  const [contactError, setContactError] = useState(false);
+
+
   //backend server port
   // const port = 5000;
   const [status, setStatus] = useState({
@@ -99,6 +103,16 @@ const RegisterYourInterest = () => {
       ...formData,
       [event.target.name]: event.target.value,
     });
+
+    if(!validContact.test(formData.contact)){
+      setContactError(true);
+      console.log("Contect Error: "+contactError);
+      console.log("Contact Number: " + formData.contact)
+    }
+    else {
+      setContactError(false);
+    }
+
     setStatus({
       submitted: false,
       submitting: false,
@@ -110,7 +124,18 @@ const RegisterYourInterest = () => {
     const form = event.currentTarget;
   //  console.log("Form Check: " + form.checkValidity());
     setValidated(true);
-    if (form.checkValidity() === false) {
+ /*   
+    if(!validContact.test(formData.contact)){
+      setContactError(true);
+      console.log("Contect Error: "+contactError);
+      console.log("Contact Number: " + formData.contact)
+    }
+    else {
+      setContactError(false);
+    }
+*/
+
+    if (form.checkValidity() === false || contactError === true) {
    //   console.log("Inside if condition - Form Check: " + form.checkValidity());
       event.preventDefault();
       event.stopPropagation();
@@ -118,7 +143,7 @@ const RegisterYourInterest = () => {
     }
     else {
       setSubmitResult(true);
-      console.log(process.env.REACT_APP_API_URL);
+      //console.log(process.env.REACT_APP_API_URL);
       
       // backend server api endpoint (localhost:5000/api/registration)
       // Axios.post(`${process.env.REACT_APP_API_URL}/registration`, formData)
@@ -233,15 +258,24 @@ const RegisterYourInterest = () => {
                   >
                     <Form.Label>Contact</Form.Label>
                     <Form.Control
+                      noValidate
                       required
-                      type="text"
+                      type="tel"
+                     // pattern="[0-9]{2,3]-[0-9]{2,4}-[0-9]{2,8}"
                       name="contact"
+                      validationState={contactError ? 'error' : 'success'}
                       onChange={handleChange}
-                    />
+                    />           
                     <Form.Control.Feedback type="invalid">
-                      Please provide your contact number
+                      Please provide your contact number, format:001-1234-12345678
                     </Form.Control.Feedback>
+                    {contactError && (
+                      <div>
+                        <p className="font-size: 8px, color: red">Invalid contact number!</p>
+                      </div>
+                    )}
                   </Form.Group>
+
                 </Row>
 
                 <Form.Group
