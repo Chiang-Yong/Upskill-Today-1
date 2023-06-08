@@ -8,5 +8,6 @@ export const validEmail = new RegExp(
 export const validPassword = new RegExp('^(?=.*?[A-Za-z])(?=.*?[0-9]).{6,}$');
 
 export const validContact = new RegExp(
-    '^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$'
+    '^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]{6,12}$'
 );
+

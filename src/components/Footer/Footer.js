@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-const Policy = "https://www.upskilltoday.com/privacypolicy"
-const Term = "https://www.upskilltoday.com/termsandconditions"
+const Policy = "https://www.upskilltoday.com/privacypolicy";
+const Term = "https://www.upskilltoday.com/termsandconditions";
 
 const Footer = () => {
   return (
@@ -24,9 +24,8 @@ const Footer = () => {
                 <a
                   href={Policy}
                   className="pe-1 text-nowrap text-white hover-effect"
-                  target='_blank' 
-                  rel='noreferrer'
-                                    
+                  target="_blank"
+                  rel="noreferrer"
                   style={{
                     textDecoration: "none",
                     fontWeight: "500",
@@ -40,24 +39,22 @@ const Footer = () => {
                 <a
                   href={Term}
                   className="ps-1 text-nowrap text-white hover-effect"
-                  target='_blank' 
-                  rel='noreferrer'
-                                 
+                  target="_blank"
+                  rel="noreferrer"
                   style={{
                     textDecoration: "none",
                     fontWeight: "500",
                   }}
                 >
-                 <span className="hover-effect"> Terms & Conditions </span>
+                  <span className="hover-effect"> Terms & Conditions </span>
                 </a>
 
                 <div className="pt-3 justify-content-evenly align-items-center">
                   <a
                     href="https://www.facebook.com/helloupskilltoday"
                     className="text-white btn-floating btn"
-                    target='_blank' 
-                    rel='noreferrer'
-                  
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     <i
                       className="bi bi-facebook hover-effect"
@@ -68,9 +65,8 @@ const Footer = () => {
                   <a
                     href="https://www.linkedin.com/company/upskilltoday"
                     className="btn-floating text-white btn"
-                    target='_blank' 
-                    rel='noreferrer'
-                    
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     <i
                       className="bi bi-linkedin hover-effect"
@@ -81,9 +77,8 @@ const Footer = () => {
                   <a
                     href="https://www.youtube.com/channel/UCEN2ltg-7TQTE1zRDWBzAOw"
                     className="btn-floating text-white btn"
-                    target='_blank' 
-                    rel='noreferrer'
-                    
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     <i
                       className="bi bi-youtube hover-effect"
@@ -120,7 +115,7 @@ const Footer = () => {
                     style={{ textDecoration: "none", fontWeight: "500" }}
                     to="/CareerPathway"
                   >
-                    <span className='hover-effect'>Career Pathways</span>
+                    <span className="hover-effect">Career Pathways</span>
                   </Link>
                 </p>
                 <p>
@@ -135,7 +130,15 @@ const Footer = () => {
               </div>
 
               <div className="col-md-4 col-lg-3 col-xl-3  mb-md-0 mb-4">
-                <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
+                <Link
+                  className="text-white"
+                  style={{ textDecoration: "none", fontWeight: "500" }}
+                  to="/Contact"
+                >
+                  <span className="hover-effect">
+                    <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
+                  </span>
+                </Link>
                 <p style={{ fontWeight: "500" }}>
                   <i className="bi bi-house-fill me-2"></i>2 Venture Drive
                   #10-18, Vision Exchange, Singapore 608526

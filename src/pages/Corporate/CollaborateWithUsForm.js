@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import { Card, Form, Button, Row, Col, Container } from "react-bootstrap";
-
+import { validContact } from "../../components/Regex";
 import "./collaborateWithUsForm.css";
 
 const CollaborateWithUsForm = () => {
   const [validated, setValidated] = useState(false);
   const [submitResult, setSubmitResult] = useState(false);
+  const [contactError, setContactError] = useState(false);
+  const [isFormComplete, setIsFormComplete] = useState(false);
 
   //backend server port
   //const port = 5000;
@@ -44,6 +46,37 @@ const CollaborateWithUsForm = () => {
       ...corporateData,
       [event.target.name]: event.target.value,
     });
+
+    const isCorporateDataComplete =
+      corporateData.lastname !== "" &&
+      corporateData.firstname !== "" &&
+      corporateData.email !== "" &&
+      corporateData.contact !== "" &&
+      corporateData.program !== "" &&
+      corporateData.country !== "";
+
+    setIsFormComplete(isCorporateDataComplete);
+    console.log("Form Complete: " + isFormComplete);
+    console.log("contact number before validation = " + corporateData.contact);
+
+    if (!validContact.test(corporateData.contact)) {
+      setContactError(true);
+      console.log("Contact Error: " + contactError);
+      console.log("Contact Number after validation: " + corporateData.contact);
+      setIsFormComplete(false);
+    } else {
+      setContactError(false);
+
+      if (!isCorporateDataComplete) {
+        setIsFormComplete(false);
+      } else {
+        setIsFormComplete(true);
+      }
+
+      console.log("Contact Error: " + contactError);
+      console.log("Contact Number: " + corporateData.contact);
+    }
+
     setStatus({
       submitted: false,
       submitting: false,
@@ -91,9 +124,9 @@ const CollaborateWithUsForm = () => {
             Collaborate With Us
           </h1>
           <p className="text-center pb-4">
-            Upskill Today gives you an edge by finding great talent that's job-ready from day one.
-            We're here to support your digital transformation journey.  <br></br>Contact us today.
-
+            Upskill Today gives you an edge by finding great talent that's
+            job-ready from day one. We're here to support your digital
+            transformation journey. <br></br>Contact us today.
           </p>
           {!submitResult ? (
             <div className="corpform">
@@ -158,7 +191,7 @@ const CollaborateWithUsForm = () => {
                       placeholder=""
                     />
                     <Form.Control.Feedback type="invalid">
-                      Please enter a valid email
+                      Please provide a valid email
                     </Form.Control.Feedback>
                   </Form.Group>
                   <Form.Group
@@ -173,11 +206,20 @@ const CollaborateWithUsForm = () => {
                       type="text"
                       name="contact"
                       onChange={handleChange}
+                      onBlur={handleChange}
+                      onMouseLeave={handleChange}
                       placeholder=""
                     />
                     <Form.Control.Feedback type="invalid">
                       Please provide your contact number
                     </Form.Control.Feedback>
+                    {contactError && (
+                      <div>
+                        <span style={{ color: "red" }}>
+                          Invalid contact number! Try again.
+                        </span>
+                      </div>
+                    )}
                   </Form.Group>
                 </Row>
 
@@ -194,7 +236,6 @@ const CollaborateWithUsForm = () => {
                     Please enter your company name
                   </Form.Control.Feedback>
                 </Form.Group>
-
                 <Form.Group as={Col} controlId="formCountry" className="mb-3">
                   <Form.Label>Select Country</Form.Label>
                   <Form.Select required name="country" onChange={handleChange}>
@@ -522,21 +563,25 @@ const CollaborateWithUsForm = () => {
                     Please select your country
                   </Form.Control.Feedback>
                 </Form.Group>
-
                 <div className="d-grid mt-4">
-                  <Button type="submit" size="lg" className="corpform-button">
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="corpform-button"
+                    disabled={!isFormComplete}
+                  >
                     Submit
                   </Button>
                 </div>
               </Form>
             </div>
           ) : (
-            <Card>
+            <Card className="corpform msgbox">
               <Card.Body>
-                <Card.Text className="fw-bold">
+                <Card.Text className="fw-bold text-center">
                   {status.info.error && (
                     <div className="error">
-                      Error: {status.info.msg}
+                      <span>Error: {status.info.msg}</span>
                       <div style={{ marginTop: "5px" }}>
                         <Button onClick={submitInfo}>
                           Back to Registration
@@ -546,7 +591,7 @@ const CollaborateWithUsForm = () => {
                   )}
                   {!status.info.error && status.info.msg && (
                     <div>
-                      <div> {status.info.msg}</div>
+                      <span> {status.info.msg}</span>
                     </div>
                   )}
                 </Card.Text>

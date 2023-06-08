@@ -14,3 +14,14 @@
    color:#ff7b00;
    background-color: #ff7b00;
 }
+
+@media screen and (max-width:768px) {
+  .testimonial-home .carousel-control-prev{
+    display: none;
+  }
+
+  .testimonial-home .carousel-control-next{
+    display: none;
+  }
+  
+}

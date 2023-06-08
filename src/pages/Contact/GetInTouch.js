@@ -3,12 +3,15 @@ import { Card, Form, Button, Row, Col, Container } from "react-bootstrap";
 import Axios from "axios";
 import "./getIntouch.css";
 import ContactCards from "./ContactCards";
+import { validContact } from "../../components/Regex";
 
 const GetInTouch = () => {
   //backend server port
   // const port = 5000;
   const [validated, setValidated] = useState(false);
   const [submitResult, setSubmitResult] = useState(false);
+  const [contactError, setContactError] = useState(false);
+  const [isFormComplete, setIsFormComplete] = useState(false);
 
   const [status, setStatus] = useState({
     submitted: false,
@@ -44,7 +47,36 @@ const GetInTouch = () => {
       ...intouchData,
       [event.target.name]: event.target.value,
     });
-    
+
+    const isFormDataComplete =
+      intouchData.lastname !== "" &&
+      intouchData.firstname !== "" &&
+      intouchData.email !== "" &&
+      intouchData.contact !== "" &&
+      intouchData.subject !== "" &&
+      intouchData.message !== "";
+
+    //  setIsFormComplete(isFormDataComplete);
+    console.log("Form Data Complete: " + isFormDataComplete);
+    console.log("Form Complete: " + isFormComplete);
+
+    if (!validContact.test(intouchData.contact)) {
+      setContactError(true);
+      console.log("Contact Error: " + contactError);
+      console.log("Contact Number after validation: " + intouchData.contact);
+      setIsFormComplete(false);
+    } else {
+      setContactError(false);
+      if (!isFormDataComplete) {
+        setIsFormComplete(false);
+      } else {
+        setIsFormComplete(true);
+      }
+
+      console.log("Contact Error: " + contactError);
+      console.log("Contact Number: " + intouchData.contact);
+    }
+
     setStatus({
       submitted: false,
       submitting: false,
@@ -52,17 +84,13 @@ const GetInTouch = () => {
     });
   };
 
-  
-
   const handleSubmit = (event) => {
     const form = event.currentTarget;
-    setValidated(true)                           //turn on the validation
+    setValidated(true); //turn on the validation
     if (form.checkValidity() === false) {
       event.preventDefault();
-      event.stopPropagation()
-      
+      event.stopPropagation();
     } else {
-
       setSubmitResult(true);
       //Axios.post(`http://localhost:${port}/api/intouch`, intouchData)
       Axios.post(
@@ -96,9 +124,8 @@ const GetInTouch = () => {
             Get In Touch
           </h1>
           <p className="mb-3">
-            We're excited to hear from you.
-            For more information on how Upskill Today can transform your business, contact our team today.
-
+            We're excited to hear from you. For more information on how Upskill
+            Today can transform your business, contact our team today.
           </p>
           <ContactCards />
         </Col>
@@ -185,11 +212,20 @@ const GetInTouch = () => {
                       type="text"
                       name="contact"
                       onChange={handleChange}
+                      onBlur={handleChange}
+                      onMouseMove={handleChange}
                       placeholder=""
                     />
                     <Form.Control.Feedback type="invalid">
                       Please provide your contact number
                     </Form.Control.Feedback>
+                    {contactError && (
+                      <div>
+                        <span style={{ color: "red" }}>
+                          Invalid contact number! Try again.
+                        </span>
+                      </div>
+                    )}
                   </Form.Group>
                 </Row>
                 <Form.Group className="mb-3">
@@ -221,7 +257,12 @@ const GetInTouch = () => {
                   </Form.Control.Feedback>
                 </Form.Group>
                 <div className="d-grid mt-3">
-                  <Button type="submit" size="lg" className="form-button">
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="form-button"
+                    disabled={!isFormComplete}
+                  >
                     Submit
                   </Button>
                 </div>
@@ -230,22 +271,21 @@ const GetInTouch = () => {
           ) : (
             <Card>
               <Card.Body>
-                <Card.Text className="fw-bold">
+                <Card.Text className="fw-bold text-center">
                   {status.info.error && (
                     <div className="error">
-                      Error: {status.info.msg}
+                      <span>Error: {status.info.msg}</span>
 
-                      <div style={{ marginTop: '5px' }}>
+                      <div style={{ marginTop: "5px" }}>
                         <Button onClick={submitInfo}>
                           Back to Registration
                         </Button>
                       </div>
-
                     </div>
                   )}
                   {!status.info.error && status.info.msg && (
-                    <div >
-                      <div> {status.info.msg}</div>
+                    <div>
+                      <span> {status.info.msg}</span>
                     </div>
                   )}
                 </Card.Text>

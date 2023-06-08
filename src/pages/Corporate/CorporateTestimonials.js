@@ -20,6 +20,7 @@ const CorporateTestimonials = () => {
     speed: 500,
     slidesToShow: 2.355,
     //slidesToScroll: 3,
+    initialSlide: 0,
 
     responsive: [
       {
@@ -27,9 +28,9 @@ const CorporateTestimonials = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: true,
-          dots: true,
-          centerMode: true,
+       //   arrows: true,
+       //   dots: true,
+       //   centerMode: true,
         },
       },
     ],
@@ -38,12 +39,11 @@ const CorporateTestimonials = () => {
   return (
     <Container fluid className="corporateTestimonials mb-4">
       <h1 className="corporateTestimonials-title"> Testimonials</h1>
-
-      <Row xs={1} md={2} className="mx-auto justify-content-evenly">
+      <Row xs={1} className="mx-auto justify-content-evenly">
         <Slider {...settings} className="media">
           {TestimonialsData.map((data,index)=> (
         
-         <Card key={index} className=" mb-4" style={{ paddingTop: "3%" }}>
+         <Card key={index} className=" mb-2" style={{ paddingTop: "5px" }}>
             <Card.Body>
               <Card.Text className="text-center">
                 <p className="fw-bold">{data.title} <br />

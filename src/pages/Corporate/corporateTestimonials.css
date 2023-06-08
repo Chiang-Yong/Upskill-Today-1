@@ -1,8 +1,8 @@
 .corporateTestimonials {
     margin: auto;
     height: auto;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 20px;
+    padding-bottom: 60px;
     background-color: #fff9eb;
 }
 
@@ -11,7 +11,6 @@
     font-size: clamp(1.5rem,2.0vw, 2.5rem);
     color: #ff7b00;
     font-weight: 800;
-    align-items: center;
     text-align: center;
     text-transform: uppercase;
 }
@@ -24,10 +23,9 @@
 
 .corporateTestimonials .card {
     background-color: #fff;
-    width: 80%;
+    width: 70%;
     height: 15rem;
-    padding: 10px;
-    margin-top: 5px;
+    padding: 5px;
     border: solid;
     border-width: 1px;
     border-color: #ff7b00;
@@ -53,21 +51,25 @@
 }
 
 @media screen and (max-width:768px) {
-
+    
     .corporateTestimonials .card {
         height: 15rem;
     }
     
     .corporateTestimonials .cust-text{
-        font-size: clamp(0.75rem, 0.8vw, 0.8rem);
+        font-size: clamp(0.70rem, 0.75vw, 0.8rem);
     }
 
     .corporateTestimonials .slick-list{
-        margin: 0;
+        margin: 0 -1.25px;
     }
 
     .corporateTestimonials .slick-slide{
-        margin: 0;
+        margin: 0 0px;
+    }
+
+    .corporateTestimonials .slick-initialized{
+        width: 75%;
     }
 
 }
@@ -83,19 +85,7 @@
     margin-top: 0;
 }
 
-.corporateTestimonials .slick-initialized{
-    width:70%;
-}
 
-/* the parent */
-.corporateTestimonials .slick-list{
-    margin: 0 -16px;
-}
-
-/* the slides */
-.corporateTestimonials .slick-slide {
-    margin: 0 4px;
-}
 
 /* fading on both end */
 .corporateTestimonials .media{
@@ -103,6 +93,8 @@
     position: relative;
 }
 
+@media screen and (min-width:769px) {
+    
 .corporateTestimonials .media::before{
     content: "";
     position: absolute;
@@ -113,7 +105,7 @@
     bottom: 15px;
     pointer-events: none;
     background-image: linear-gradient(to left, rgba(255, 255, 255, 0), #fff9eb 85%);
-    width: 45%;
+    width: 15%;
 }
 
 .corporateTestimonials .media::after{
@@ -126,5 +118,21 @@
   bottom: 15px;
   pointer-events: none;
   background-image: linear-gradient(to right,rgba(255, 255, 255, 0), #fff9eb 85%);
-  width:45%;
+  width:15%;
+}
+
+.corporateTestimonials .slick-initialized{
+    width:80%;
+}
+
+/* the parent */
+.corporateTestimonials .slick-list{
+    margin: 0 -16px;
+}
+
+/* the slides */
+.corporateTestimonials .slick-slide {
+    margin: 0 4px;
+}
+    
 }

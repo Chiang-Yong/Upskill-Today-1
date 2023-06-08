@@ -53,3 +53,14 @@
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
+
+.corpform .corpform-button[type="submit"]:disabled{
+  background-color: rgba(143, 138, 138, 0.6);
+  cursor: no-drop;
+}
+
+.corpform .msgbox{
+  border-radius: 25px;
+  border-color: #ff7b00;
+  border-width: 2px;
+}

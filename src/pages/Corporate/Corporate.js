@@ -26,8 +26,6 @@ const Corporate = () => {
 
       <CorporateTestimonials />
 
-      <TestimonialCarouselCorp />
-
       <CollaborateWithUsForm />
 
       <BackTopButton />

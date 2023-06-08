@@ -4,8 +4,6 @@ import { Form, Col, Row, Button, Container, Card } from "react-bootstrap";
 import "./register.css";
 import { validContact } from "../../components/Regex";
 
-
-
 const RYIstyle = {
   main: {
     // height: "auto",
@@ -65,7 +63,7 @@ const RegisterYourInterest = () => {
   const [validated, setValidated] = useState(false);
   const [submitResult, setSubmitResult] = useState(false);
   const [contactError, setContactError] = useState(false);
-
+  const [isFormComplete, setIsFormComplete] = useState(false);
 
   //backend server port
   // const port = 5000;
@@ -98,19 +96,38 @@ const RegisterYourInterest = () => {
     }
   };
 
-  const handleChange = (event) => {
-    setFormData({
+  const handleChange = async (event) => {
+    await setFormData({
       ...formData,
       [event.target.name]: event.target.value,
     });
 
-    if(!validContact.test(formData.contact)){
+    const isFormDataComplete =
+      formData.lastname !== "" &&
+      formData.firstname !== "" &&
+      formData.email !== "" &&
+      formData.contact !== "" &&
+      formData.program !== "" &&
+      formData.country !== "";
+
+    setIsFormComplete(isFormDataComplete);
+    console.log("Form Complete: " + isFormComplete);
+    console.log("contact number before validation = " + formData.contact);
+
+    if (!validContact.test(formData.contact)) {
       setContactError(true);
-      console.log("Contect Error: "+contactError);
-      console.log("Contact Number: " + formData.contact)
-    }
-    else {
+      console.log("Contact Error: " + contactError);
+      console.log("Contact Number after validation: " + formData.contact);
+      setIsFormComplete(false);
+    } else {
       setContactError(false);
+      if (!isFormDataComplete) {
+        setIsFormComplete(false);
+      } else {
+        setIsFormComplete(true);
+      }
+      console.log("Contact Error: " + contactError);
+      console.log("Contact Number: " + formData.contact);
     }
 
     setStatus({
@@ -122,9 +139,9 @@ const RegisterYourInterest = () => {
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
-  //  console.log("Form Check: " + form.checkValidity());
+    //  console.log("Form Check: " + form.checkValidity());
     setValidated(true);
- /*   
+    /*   
     if(!validContact.test(formData.contact)){
       setContactError(true);
       console.log("Contect Error: "+contactError);
@@ -134,17 +151,18 @@ const RegisterYourInterest = () => {
       setContactError(false);
     }
 */
-
-    if (form.checkValidity() === false || contactError === true) {
-   //   console.log("Inside if condition - Form Check: " + form.checkValidity());
+    // || contactError === true
+    if (form.checkValidity() === false) {
+      //   console.log("Inside if condition - Form Check: " + form.checkValidity());
       event.preventDefault();
       event.stopPropagation();
       event.nativeEvent.stopImmediatePropagation();
-    }
-    else {
+      //  setIsFormComplete(true);
+    } else {
       setSubmitResult(true);
+
       //console.log(process.env.REACT_APP_API_URL);
-      
+
       // backend server api endpoint (localhost:5000/api/registration)
       // Axios.post(`${process.env.REACT_APP_API_URL}/registration`, formData)
       // Axios.post(`http://localhost:${port}/api/registration`, formData)
@@ -261,21 +279,25 @@ const RegisterYourInterest = () => {
                       noValidate
                       required
                       type="tel"
-                     // pattern="[0-9]{2,3]-[0-9]{2,4}-[0-9]{2,8}"
+                      // pattern="[0-9]{2,3]-[0-9]{2,4}-[0-9]{2,8}"
                       name="contact"
-                      validationState={contactError ? 'error' : 'success'}
+                     // validationState={contactError ? "error" : "success"}
                       onChange={handleChange}
-                    />           
+                      onBlur={handleChange}
+                      onMouseMove={handleChange}
+                    />
                     <Form.Control.Feedback type="invalid">
-                      Please provide your contact number, format:001-1234-12345678
+                      Please provide your contact number,
+                      format:001-1234-12345678
                     </Form.Control.Feedback>
                     {contactError && (
                       <div>
-                        <p className="font-size: 8px, color: red">Invalid contact number!</p>
+                        <span style={{ color: "red" }}>
+                          Invalid contact number! Try again.
+                        </span>
                       </div>
                     )}
                   </Form.Group>
-
                 </Row>
 
                 <Form.Group
@@ -332,32 +354,30 @@ const RegisterYourInterest = () => {
                     // onClick={handleSubmit}
                     style={RYIstyle.button}
                     className="careerform-button"
+                    disabled={!isFormComplete}
                   >
                     Submit
                   </Button>
                 </div>
               </Form>
-
             </div>
           ) : (
             <Card>
               <Card.Body>
-                <Card.Text className="fw-bold">
+                <Card.Text className="fw-bold text-center">
                   {status.info.error && (
                     <div className="error">
-                      Error: {status.info.msg}
-
-                      <div style={{ marginTop: '5px' }}>
+                      <span>Error: {status.info.msg}</span>
+                      <div style={{ marginTop: "5px" }}>
                         <Button onClick={submitInfo}>
                           Back to Registration
                         </Button>
                       </div>
-
                     </div>
                   )}
                   {!status.info.error && status.info.msg && (
-                    <div >
-                      <div> {status.info.msg}</div>
+                    <div>
+                      <span> {status.info.msg}</span>
                     </div>
                   )}
                 </Card.Text>
