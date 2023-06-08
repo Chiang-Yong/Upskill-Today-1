@@ -157,7 +157,7 @@ const RegisterYourInterest = () => {
       event.preventDefault();
       event.stopPropagation();
       event.nativeEvent.stopImmediatePropagation();
-      //  setIsFormComplete(true);
+      setIsFormComplete(form.checkValidity());
     } else {
       setSubmitResult(true);
 
@@ -209,6 +209,7 @@ const RegisterYourInterest = () => {
                 onSubmit={handleSubmit}
                 className="py-3"
                 style={RYIstyle.form}
+                autoComplete="off"
               >
                 <Row>
                   <Form.Group
@@ -284,7 +285,7 @@ const RegisterYourInterest = () => {
                      // validationState={contactError ? "error" : "success"}
                       onChange={handleChange}
                       onBlur={handleChange}
-                      onMouseMove={handleChange}
+                    //  onMouseMove={handleChange}
                     />
                     <Form.Control.Feedback type="invalid">
                       Please provide your contact number,
@@ -306,14 +307,17 @@ const RegisterYourInterest = () => {
                   className="mb-3"
                   style={RYIstyle.select}
                 >
-                  <Form.Label>Select Program</Form.Label>
+                  <Form.Label>Program Track</Form.Label>
                   <Form.Select
                     required
                     aria-label="Default select example"
                     name="program"
                     onChange={handleChange}
-                  >
-                    {/* <option>Select Your Upskill Program</option> */}
+                    onBlur={handleChange}
+                    onClick={handleChange}
+                   //defaultValue="Java Developer" 
+                   >          
+                    <option value="">  Select Your Upskill Program</option>
                     <option value="Java Developer">Java Developer</option>
                     <option value="JavaScript Developer">
                       Javscript Developer
@@ -337,9 +341,11 @@ const RegisterYourInterest = () => {
                     aria-label="Default select example"
                     name="country"
                     onChange={handleChange}
+                    onBlur={handleChange}
+                    onClick={handleChange}
+                   // defaultValue="Singapore"
                   >
-                    {/*} <option>Select Country</option> */}
-                    {/*<option valule="blank"></option> */}
+                    <option value="">Select your country</option>
                     <option value="Singapore">Singapore</option>
                     <option value="Philippines">Philippines</option>
                   </Form.Select>

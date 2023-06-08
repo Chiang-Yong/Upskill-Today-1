@@ -52,7 +52,7 @@ const CollaborateWithUsForm = () => {
       corporateData.firstname !== "" &&
       corporateData.email !== "" &&
       corporateData.contact !== "" &&
-      corporateData.program !== "" &&
+      corporateData.company !== "" &&
       corporateData.country !== "";
 
     setIsFormComplete(isCorporateDataComplete);
@@ -90,6 +90,7 @@ const CollaborateWithUsForm = () => {
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
+      setIsFormComplete(form.checkValidity())
     } else {
       setSubmitResult(true);
       // backend server api endpoint
@@ -135,6 +136,7 @@ const CollaborateWithUsForm = () => {
                 validated={validated}
                 onSubmit={handleSubmit}
                 className="py-3 "
+                autoComplete="off"
               >
                 <Row>
                   <Form.Group
@@ -207,7 +209,7 @@ const CollaborateWithUsForm = () => {
                       name="contact"
                       onChange={handleChange}
                       onBlur={handleChange}
-                      onMouseLeave={handleChange}
+                      //  onMouseLeave={handleChange}
                       placeholder=""
                     />
                     <Form.Control.Feedback type="invalid">
@@ -237,8 +239,16 @@ const CollaborateWithUsForm = () => {
                   </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group as={Col} controlId="formCountry" className="mb-3">
-                  <Form.Label>Select Country</Form.Label>
-                  <Form.Select required name="country" onChange={handleChange}>
+                  <Form.Label>Country</Form.Label>
+                  <Form.Select
+                    required
+                    autoComplete="off"
+                    name="country"
+                    onChange={handleChange}
+                    onBlur={handleChange}
+                    onClick={handleChange}
+                  >
+                    <option value="" >Select your country</option>
                     <option value="blank"></option>
                     <option value="Afghanistan">Afghanistan</option>
                     <option value="Åland Islands">Åland Islands</option>

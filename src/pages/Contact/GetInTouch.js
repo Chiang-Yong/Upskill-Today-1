@@ -90,6 +90,7 @@ const GetInTouch = () => {
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
+      setIsFormComplete(form.checkValidity())
     } else {
       setSubmitResult(true);
       //Axios.post(`http://localhost:${port}/api/intouch`, intouchData)
@@ -135,6 +136,7 @@ const GetInTouch = () => {
             <div className="contact-form">
               <Form
                 noValidate
+                autoComplete="off"
                 validated={validated}
                 onSubmit={handleSubmit}
                 className="  px-4 py-5"
@@ -213,7 +215,7 @@ const GetInTouch = () => {
                       name="contact"
                       onChange={handleChange}
                       onBlur={handleChange}
-                      onMouseMove={handleChange}
+                    //  onMouseMove={handleChange}
                       placeholder=""
                     />
                     <Form.Control.Feedback type="invalid">
