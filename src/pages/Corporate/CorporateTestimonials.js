@@ -49,7 +49,7 @@ const CorporateTestimonials = () => {
                 <p className="fw-bold">{data.title} <br />
                 {data.company}</p>
               </Card.Text>
-              <Card.Text className="cust-text text-start">
+              <Card.Text className="cust-text text-start" style={{ margin: "-5px" }}>
                {data.content}
               </Card.Text>
             </Card.Body>

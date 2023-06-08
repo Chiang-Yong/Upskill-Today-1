@@ -118,7 +118,7 @@ const CollaborateWithUsForm = () => {
   };
 
   return (
-    <Container fluid className="py-5 px-5 ">
+    <Container fluid className="py-4 px-4 ">
       <Row className="py-3 justify-content-center align-items-center">
         <Col md={6}>
           <h1 className="fw-bold text-center" style={{ color: "#ff7b00" }}>

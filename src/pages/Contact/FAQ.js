@@ -1,6 +1,7 @@
 import React from "react";
 import FAQData from "./FAQData";
 import { Accordion, Container, Row, Col } from "react-bootstrap";
+import { HashLink } from "react-router-hash-link";
 import "./faq.css";
 
 const FAQ = () => {
@@ -21,11 +22,21 @@ const FAQ = () => {
                     </Accordion.Header>
 
                     <Accordion.Body className="fs-6 ">
-                      {faq.ans1}
+                      {faq.id != 11 && faq.ans1}
+                      {faq.id == 11 && (
+                        <HashLink
+                          smooth
+                          to="/CareerPathway#register"
+                          style={{ textDecoration: "none" }}
+                        >
+                          {faq.ans1}
+                        </HashLink>
+                      )}
                       <br />
                       {faq.ans2}
                       <br />
                       {faq.ans3}
+                      <br />
                       <br />
                       {faq.ans4}
                     </Accordion.Body>

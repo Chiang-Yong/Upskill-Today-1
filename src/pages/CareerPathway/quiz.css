@@ -1,6 +1,6 @@
 .selected-answer {
     background: #ff7b00;
-    border: 1px solid #800080;
+    /* border: 1px solid #800080; */
     border-radius: 20px;
     color: white;
     padding: 5px;
