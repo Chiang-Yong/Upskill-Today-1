@@ -54,8 +54,8 @@ const CPStyle = {
     width: "70%",
     height: "80%",
     padding: "10px",
-    marginLeft: "5px",
-    marginRight: "5px",
+    marginLeft: "auto",
+    marginRight: "auto",
     marginBottom: "5px",
   },
 };
@@ -92,7 +92,7 @@ const CareerPathway = () => {
       <Container className="mt-5" style={CPStyle.container} fluid>
         <Row>
           <p
-            className="d-flex justify-content-center mt-5"
+            className="d-flex justify-content-center mt-5 text-center"
             style={CPStyle.card_title}
           >
             Choose the right career through upskill program

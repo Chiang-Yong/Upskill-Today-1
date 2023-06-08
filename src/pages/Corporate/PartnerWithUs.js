@@ -9,7 +9,7 @@ const PartnerWithUs = () => {
         <Container className="partnerus" fluid='true'>
             <Row xs={1} md={2} className="mx-auto" >
                 <Col>
-                    <h1 style={{ marginTop: "20%" }}>Partner With Us</h1>
+                    <h1>Partner With Us</h1>
                     <p>
                         {" "}
                         Become part of our global hiring network and find the talent your company or startup needs today.

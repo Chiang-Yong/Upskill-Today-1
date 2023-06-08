@@ -12,8 +12,9 @@
     object-fit: contain;
     filter: brightness(0.8);
     display: block;
-    margin-left: 5%;
-    margin-bottom: 10%
+    margin-bottom: 10%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .partnerus h1 {
@@ -24,6 +25,7 @@
     align-items: center;
     margin-left: 10%;
     text-transform: uppercase;
+    margin-top: 25%;
 }
 
 .partnerus p {
@@ -42,3 +44,17 @@
 .partnerus .col {
     align-items: center;
 }
+
+@media (max-width: 768px) {
+    .partnerus h1 {
+        text-align: center;
+        margin-left: 0px;
+    }
+
+    .partnerus p {
+        text-align: center;
+        margin: 0px;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+  }
