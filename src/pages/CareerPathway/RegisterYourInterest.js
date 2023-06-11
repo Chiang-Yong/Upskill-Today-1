@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Axios from "axios";
 import { Form, Col, Row, Button, Container, Card } from "react-bootstrap";
 import "./register.css";
-import { validContact } from "../../components/Regex";
+import { validContact, validEmail } from "../../components/Regex";
 
 const RYIstyle = {
   main: {
@@ -62,8 +62,9 @@ const RYIstyle = {
 const RegisterYourInterest = () => {
   const [validated, setValidated] = useState(false);
   const [submitResult, setSubmitResult] = useState(false);
-  const [contactError, setContactError] = useState(false);
+  //  const [contactError, setContactError] = useState(false);
   const [isFormComplete, setIsFormComplete] = useState(false);
+  const [regexErrors, setRegexErrors] = useState({});
 
   //backend server port
   // const port = 5000;
@@ -101,35 +102,42 @@ const RegisterYourInterest = () => {
       ...formData,
       [event.target.name]: event.target.value,
     });
-
+    
+    setRegexErrors({});
     const isFormDataComplete =
-      formData.lastname !== "" &&
-      formData.firstname !== "" &&
-      formData.email !== "" &&
-      formData.contact !== "" &&
+      formData.lastname.trim() !== "" &&
+      formData.firstname.trim() !== "" &&
+      formData.email.trim() !== "" &&
+      formData.contact.trim() !== "" &&
       formData.program !== "" &&
       formData.country !== "";
 
+      console.log('form data program: ', formData.program)
     setIsFormComplete(isFormDataComplete);
-    console.log("Form Complete: " + isFormComplete);
-    console.log("contact number before validation = " + formData.contact);
-
-    if (!validContact.test(formData.contact)) {
-      setContactError(true);
-      console.log("Contact Error: " + contactError);
-      console.log("Contact Number after validation: " + formData.contact);
-      setIsFormComplete(false);
+    if(isFormComplete){
+      setValidated(true);
     } else {
-      setContactError(false);
-      if (!isFormDataComplete) {
-        setIsFormComplete(false);
-      } else {
-        setIsFormComplete(true);
-      }
-      console.log("Contact Error: " + contactError);
-      console.log("Contact Number: " + formData.contact);
+      setValidated(false);
     }
 
+    // console.log("Form Complete: " + isFormComplete);
+    // console.log("contact number before validation = " + formData.contact);
+    if (formData.email !== "" && formData.contact !== "") {
+      
+      const regexErrors = regexValidation();
+      if (Object.keys(regexErrors).length !== 0) {
+        setIsFormComplete(false);
+      //  if(!isFormComplete){
+          setValidated(false)
+      // }
+        
+        setRegexErrors(regexErrors);
+      } else {
+       // setValidated(true)
+        setRegexErrors({});
+      }
+    }
+    
     setStatus({
       submitted: false,
       submitting: false,
@@ -139,19 +147,9 @@ const RegisterYourInterest = () => {
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
-    //  console.log("Form Check: " + form.checkValidity());
-    setValidated(true);
-    /*   
-    if(!validContact.test(formData.contact)){
-      setContactError(true);
-      console.log("Contect Error: "+contactError);
-      console.log("Contact Number: " + formData.contact)
-    }
-    else {
-      setContactError(false);
-    }
-*/
-    // || contactError === true
+
+    setValidated(true); //Turn on the validation
+
     if (form.checkValidity() === false) {
       //   console.log("Inside if condition - Form Check: " + form.checkValidity());
       event.preventDefault();
@@ -160,8 +158,6 @@ const RegisterYourInterest = () => {
       setIsFormComplete(form.checkValidity());
     } else {
       setSubmitResult(true);
-
-      //console.log(process.env.REACT_APP_API_URL);
 
       // backend server api endpoint (localhost:5000/api/registration)
       // Axios.post(`${process.env.REACT_APP_API_URL}/registration`, formData)
@@ -183,6 +179,20 @@ const RegisterYourInterest = () => {
           handleServerResponse(false, error.response.data.error);
         });
     }
+  };
+
+  const regexValidation = () => {
+    const errors = {};
+
+    if (!validEmail.test(formData.email)) {
+      errors.email = "Invalid email format";
+    }
+
+    if (!validContact.test(formData.contact)) {
+      errors.contact = "Invalid contact number format";
+    }
+
+    return errors;
   };
 
   function submitInfo() {
@@ -224,6 +234,7 @@ const RegisterYourInterest = () => {
                       type="text"
                       name="firstname"
                       onChange={handleChange}
+                      onBlur={handleChange}
                     />
                     <Form.Control.Feedback type="invalid">
                       Please provide your First Name
@@ -242,6 +253,7 @@ const RegisterYourInterest = () => {
                       required
                       name="lastname"
                       onChange={handleChange}
+                      onBlur={handleChange}
                     />
                     <Form.Control.Feedback type="invalid">
                       Please provide your Last Name
@@ -262,10 +274,18 @@ const RegisterYourInterest = () => {
                       type="email"
                       name="email"
                       onChange={handleChange}
+                      onBlur={handleChange}
                     />
                     <Form.Control.Feedback type="invalid">
                       Please provide a valid email
                     </Form.Control.Feedback>
+                    {regexErrors.email && (
+                      <div>
+                        <span style={{ color: "red",fontSize:"14px" }}>
+                          {regexErrors.email}
+                        </span>
+                      </div>
+                    )}
                   </Form.Group>
 
                   <Form.Group
@@ -277,24 +297,24 @@ const RegisterYourInterest = () => {
                   >
                     <Form.Label>Contact</Form.Label>
                     <Form.Control
-                      noValidate
                       required
                       type="tel"
                       // pattern="[0-9]{2,3]-[0-9]{2,4}-[0-9]{2,8}"
                       name="contact"
-                     // validationState={contactError ? "error" : "success"}
+                      // validationState={contactError ? "error" : "success"}
                       onChange={handleChange}
                       onBlur={handleChange}
-                    //  onMouseMove={handleChange}
+                      //  onMouseMove={handleChange}
                     />
+                    {!isFormComplete && (
                     <Form.Control.Feedback type="invalid">
-                      Please provide your contact number,
-                      format:001-1234-12345678
+                      Please provide your contact number
                     </Form.Control.Feedback>
-                    {contactError && (
+                    )}
+                    {formData.contact && regexErrors.contact && (
                       <div>
-                        <span style={{ color: "red" }}>
-                          Invalid contact number! Try again.
+                        <span style={{ color: "red", fontSize:"14px" }}>
+                          {regexErrors.contact}
                         </span>
                       </div>
                     )}
@@ -315,9 +335,9 @@ const RegisterYourInterest = () => {
                     onChange={handleChange}
                     onBlur={handleChange}
                     onClick={handleChange}
-                   //defaultValue="Java Developer" 
-                   >          
-                    <option value="">  Select Your Upskill Program</option>
+                    //defaultValue="Java Developer"
+                  >
+                    <option value=""> Select Your Upskill Program</option>
                     <option value="Java Developer">Java Developer</option>
                     <option value="JavaScript Developer">
                       Javscript Developer
@@ -343,7 +363,7 @@ const RegisterYourInterest = () => {
                     onChange={handleChange}
                     onBlur={handleChange}
                     onClick={handleChange}
-                   // defaultValue="Singapore"
+                    // defaultValue="Singapore"
                   >
                     <option value="">Select your country</option>
                     <option value="Singapore">Singapore</option>

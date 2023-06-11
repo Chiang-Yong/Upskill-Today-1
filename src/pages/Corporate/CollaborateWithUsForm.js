@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import { Card, Form, Button, Row, Col, Container } from "react-bootstrap";
-import { validContact } from "../../components/Regex";
+import { validContact, validEmail } from "../../components/Regex";
 import "./collaborateWithUsForm.css";
 
 const CollaborateWithUsForm = () => {
   const [validated, setValidated] = useState(false);
   const [submitResult, setSubmitResult] = useState(false);
-  const [contactError, setContactError] = useState(false);
+  //const [contactError, setContactError] = useState(false);
   const [isFormComplete, setIsFormComplete] = useState(false);
-
+  const [regexErrors, setRegexErrors] = useState({});
   //backend server port
   //const port = 5000;
   const [status, setStatus] = useState({
@@ -48,36 +48,34 @@ const CollaborateWithUsForm = () => {
     });
 
     const isCorporateDataComplete =
-      corporateData.lastname !== "" &&
-      corporateData.firstname !== "" &&
-      corporateData.email !== "" &&
-      corporateData.contact !== "" &&
-      corporateData.company !== "" &&
+      corporateData.lastname.trim() !== "" &&
+      corporateData.firstname.trim() !== "" &&
+      corporateData.email.trim() !== "" &&
+      corporateData.contact.trim() !== "" &&
+      corporateData.company.trim() !== "" &&
       corporateData.country !== "";
 
     setIsFormComplete(isCorporateDataComplete);
-    console.log("Form Complete: " + isFormComplete);
-    console.log("contact number before validation = " + corporateData.contact);
-
-    if (!validContact.test(corporateData.contact)) {
-      setContactError(true);
-      console.log("Contact Error: " + contactError);
-      console.log("Contact Number after validation: " + corporateData.contact);
-      setIsFormComplete(false);
+    if(isFormComplete){
+      setValidated(true); //turn on the validation once the form is completed
     } else {
-      setContactError(false);
-
-      if (!isCorporateDataComplete) {
-        setIsFormComplete(false);
-      } else {
-        setIsFormComplete(true);
-      }
-
-      console.log("Contact Error: " + contactError);
-      console.log("Contact Number: " + corporateData.contact);
+      setValidated(false)
     }
+   // console.log("Form Complete: " + isFormComplete);
+   // console.log("contact number before validation = " + corporateData.contact);
 
-    setStatus({
+    if (corporateData.email !== "" && corporateData.contact !== "") {
+     
+      const regexErrors = regexValidation();
+      if (Object.keys(regexErrors).length !== 0) {
+        setIsFormComplete(false);
+        setValidated(false)
+        setRegexErrors(regexErrors);
+      } else {
+        setRegexErrors({});
+      }
+    }
+     setStatus({
       submitted: false,
       submitting: false,
       info: { error: false, msg: null },
@@ -86,7 +84,7 @@ const CollaborateWithUsForm = () => {
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
-    setValidated(true);
+    setValidated(true);  //Turn on the validation
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
@@ -115,6 +113,20 @@ const CollaborateWithUsForm = () => {
 
   const submitInfo = () => {
     setSubmitResult(false);
+  };
+
+  const regexValidation = () => {
+    const errors = {};
+
+    if (!validEmail.test(corporateData.email)) {
+      errors.email = "Invalid email format";
+    }
+
+    if (!validContact.test(corporateData.contact)) {
+      errors.contact = "Invalid contact number format";
+    }
+
+    return errors;
   };
 
   return (
@@ -151,6 +163,7 @@ const CollaborateWithUsForm = () => {
                       type="text"
                       name="firstname"
                       onChange={handleChange}
+                      onBlur={handleChange}
                       placeholder=""
                     />
                     <Form.Control.Feedback type="invalid">
@@ -169,6 +182,7 @@ const CollaborateWithUsForm = () => {
                       type="text"
                       name="lastname"
                       onChange={handleChange}
+                      onBlur={handleChange}
                       placeholder=""
                     />
                     <Form.Control.Feedback type="invalid">
@@ -190,11 +204,19 @@ const CollaborateWithUsForm = () => {
                       type="email"
                       name="email"
                       onChange={handleChange}
+                      onBlur={handleChange}
                       placeholder=""
                     />
                     <Form.Control.Feedback type="invalid">
                       Please provide a valid email
                     </Form.Control.Feedback>
+                    {regexErrors.email && (
+                      <div>
+                        <span style={{ color: "red" }}>
+                          {regexErrors.email}
+                        </span>
+                      </div>
+                    )}
                   </Form.Group>
                   <Form.Group
                     as={Col}
@@ -205,20 +227,22 @@ const CollaborateWithUsForm = () => {
                     <Form.Label>Contact</Form.Label>
                     <Form.Control
                       required
-                      type="text"
+                      type="tel"
                       name="contact"
                       onChange={handleChange}
                       onBlur={handleChange}
                       //  onMouseLeave={handleChange}
                       placeholder=""
                     />
+                    {!isFormComplete && (
                     <Form.Control.Feedback type="invalid">
                       Please provide your contact number
                     </Form.Control.Feedback>
-                    {contactError && (
+                    )}
+                    {corporateData.contact && regexErrors.contact && (
                       <div>
-                        <span style={{ color: "red" }}>
-                          Invalid contact number! Try again.
+                        <span style={{ color: "red", fontSize:"14px" }}>
+                          {regexErrors.contact}
                         </span>
                       </div>
                     )}
@@ -232,6 +256,7 @@ const CollaborateWithUsForm = () => {
                     type="text"
                     name="company"
                     onChange={handleChange}
+                    onBlur={handleChange}
                     placeholder=""
                   />
                   <Form.Control.Feedback type="invalid">
@@ -594,7 +619,7 @@ const CollaborateWithUsForm = () => {
                       <span>Error: {status.info.msg}</span>
                       <div style={{ marginTop: "5px" }}>
                         <Button onClick={submitInfo}>
-                          Back to Registration
+                          Back to Corporate
                         </Button>
                       </div>
                     </div>
