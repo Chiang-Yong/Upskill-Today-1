@@ -34,11 +34,11 @@ function SelfPacedModal() {
           <strong>* Currently, Self-paced Track is available under Java
           Developer and Javascript Developer Tracks.</strong>
         </Modal.Body>
-        <Modal.Footer style={{backgroundColor:"rgba(255,123,0,1)"}}>
+        {/* <Modal.Footer style={{backgroundColor:"rgba(255,123,0,1)"}}>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-        </Modal.Footer>
+        </Modal.Footer> */}
       </Modal>
     </div>
   );

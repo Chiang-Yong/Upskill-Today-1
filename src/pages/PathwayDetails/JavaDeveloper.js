@@ -12,7 +12,7 @@ const JDstyle = {
     width: "100%",
     height: "auto",
     backgroundColor: "white",
-    paddingTop:"3%",
+    // paddingTop:"3%",
   },
 
   row: {
@@ -56,7 +56,7 @@ const JDstyle = {
     fontWeight: 800,
     color: "#ff7b00",
     paddingBottom: "2%",
-    paddingTop:"2%",
+    // paddingTop:"2%",
   },
 
   title: {
@@ -69,18 +69,17 @@ const JDstyle = {
   text: {
     fontSize:"clamp(1.0rem, 1.15vw, 1.3rem)",
     fontWeight:600,
-
-  }
+  },
 };
 const JavaDeveloper = () => {
   return (
-    <div style={JDstyle.main} className="mt-5">
+    <div style={JDstyle.main} className="mt-5 pt-4">
      <Row
         className="d-flex justify-content-center text-center"
         style={JDstyle.row}
       >
         <h1 className="text-center" style={JDstyle.title}>
-          READY TO BE NEXT JAVA DEVELOPER
+          READY TO BE THE NEXT JAVA DEVELOPER?
         </h1>
         <p className="text-center" style={JDstyle.text}>Watch the video below</p>
         <div style={JDstyle.video}>
