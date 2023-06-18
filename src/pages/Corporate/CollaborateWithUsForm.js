@@ -64,7 +64,7 @@ const CollaborateWithUsForm = () => {
    // console.log("Form Complete: " + isFormComplete);
    // console.log("contact number before validation = " + corporateData.contact);
 
-    if (corporateData.email !== "" && corporateData.contact !== "") {
+    if (corporateData.email !== "" || corporateData.contact !== "") {
      
       const regexErrors = regexValidation();
       if (Object.keys(regexErrors).length !== 0) {
@@ -124,6 +124,12 @@ const CollaborateWithUsForm = () => {
 
     if (!validContact.test(corporateData.contact)) {
       errors.contact = "Invalid contact number format";
+    }
+
+    if(errors.email === "" && errors.contact === ""){
+      for (const key in errors) {
+        delete errors[key];
+      }
     }
 
     return errors;

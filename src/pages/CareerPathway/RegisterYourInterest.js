@@ -62,7 +62,6 @@ const RYIstyle = {
 const RegisterYourInterest = () => {
   const [validated, setValidated] = useState(false);
   const [submitResult, setSubmitResult] = useState(false);
-  //  const [contactError, setContactError] = useState(false);
   const [isFormComplete, setIsFormComplete] = useState(false);
   const [regexErrors, setRegexErrors] = useState({});
 
@@ -112,9 +111,12 @@ const RegisterYourInterest = () => {
       formData.program !== "" &&
       formData.country !== "";
 
-      console.log('form data program: ', formData.program)
+    //  console.log('Is form Data complete: ', isFormDataComplete);
     setIsFormComplete(isFormDataComplete);
-    if(isFormComplete){
+   // console.log("Outside if statement, is form complete: ", isFormComplete)
+    if(isFormDataComplete){
+      setIsFormComplete(true);
+    //  console.log("Inside if, Form Complete is: ", isFormComplete);
       setValidated(true);
     } else {
       setValidated(false);
@@ -122,11 +124,12 @@ const RegisterYourInterest = () => {
 
     // console.log("Form Complete: " + isFormComplete);
     // console.log("contact number before validation = " + formData.contact);
-    if (formData.email !== "" && formData.contact !== "") {
+    if (formData.email !== "" || formData.contact !== "") {
       
       const regexErrors = regexValidation();
       if (Object.keys(regexErrors).length !== 0) {
-        setIsFormComplete(false);
+        console.log("Length of RegexErrors: ", Object.keys(regexErrors).length)
+       setIsFormComplete(false);
       //  if(!isFormComplete){
           setValidated(false)
       // }
@@ -186,10 +189,21 @@ const RegisterYourInterest = () => {
 
     if (!validEmail.test(formData.email)) {
       errors.email = "Invalid email format";
+    } else {
+      errors.email = "";
     }
+
 
     if (!validContact.test(formData.contact)) {
       errors.contact = "Invalid contact number format";
+    } else {
+      errors.contact = "";
+    }
+
+    if(errors.email === "" && errors.contact === ""){
+      for (const key in errors) {
+        delete errors[key];
+      }
     }
 
     return errors;

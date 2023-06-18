@@ -10,7 +10,6 @@ const GetInTouch = () => {
   // const port = 5000;
   const [validated, setValidated] = useState(false);
   const [submitResult, setSubmitResult] = useState(false);
-  //  const [contactError, setContactError] = useState(false);
   const [isFormComplete, setIsFormComplete] = useState(false);
   const [regexErrors, setRegexErrors] = useState({});
 
@@ -66,7 +65,7 @@ const GetInTouch = () => {
       setValidated(false)
     }
 
-    if (intouchData.email !== "" && intouchData.contact !== "") {
+    if (intouchData.email !== "" || intouchData.contact !== "") {
       const regexErrors = regexValidation();
       
       if (Object.keys(regexErrors).length !== 0) {
@@ -115,6 +114,13 @@ const GetInTouch = () => {
     if (!validContact.test(intouchData.contact)) {
       errors.contact = "Invalid contact number format";
     }
+
+    if(errors.email === "" && errors.contact === ""){
+      for (const key in errors) {
+        delete errors[key];
+      }
+    }
+
     return errors;
   };
 

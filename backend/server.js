@@ -3,15 +3,29 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const nodemailer = require('nodemailer');
+const bcrypt = require("bcryptjs");
+const cookieParser = require("cookie-parser");
+const jwt = require("jsonwebtoken");
+
 
 const app = express();
 dotenv.config();
 
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json())
 app.use(express.json({ extended: false }));
+
+//Cross Origin Resource Sharing to allow sharing other domain, scheme, port resources
+app.use(cors({ credentials: true, origin: `http://localhost:3000` }));
+app.use(cookieParser());
 
 //backend server port
 const port = 5000;
+
+//Bcrypt
+const salt = bcrypt.genSaltSync(10);
+const secret = "ghz%45ud6a7k42h7ag4g3e$y$5j3jf7dk#2h3k2";
 
 mongoose.set('strictQuery', false);
 
@@ -66,6 +80,11 @@ const corporateSchema = new mongoose.Schema({
   {timestamps:true}
 )
 
+//May be good - define User Model outside Server.js
+const User = require("./model/User");
+
+const chatbotMessagesCollection = require("./model/ChatBotMessage")
+
 //Create a Mongoose model for corporate data
 const CorporateData = mongoose.model('corporate', corporateSchema);
 
@@ -73,8 +92,10 @@ const CorporateData = mongoose.model('corporate', corporateSchema);
 const IntouchData = mongoose.model('intouch', intouchSchema);
 
 // Create a Mongoose model for Registration data
-const FormData = mongoose.model('registration', registrationSchema);
+const RegisterData = mongoose.model('registration', registrationSchema);
 
+//This is just to test that the backend express is working by entering 
+//http://localhost:5000/
 app.get("/", function(req, res){
     res.send("express is working")
    
@@ -84,26 +105,47 @@ app.get("/api",(req, res)=>{
   res.send("Express is up at " + Date.now())
 })
 
-app.get("/api/registration", (req,res)=>{
-  res.send("registration page");
+//To retrieve the registrants' data from MongoDB
+app.get("/api/register", async (req,res)=>{
+  try{
+    const registerData = await RegisterData.find({}, {projection:{_id:0}});
+ //   console.log("Register Data: ", registerData)
+    res.json(registerData)
+  } catch(error){
+    console.error("Error receiving registrants' data: ", error)
+    res.status(500).json({error: "Failed to retrieve registrants' data"})
+  }
+ 
 })
 
-app.use(cors());
-app.use(bodyParser.json());
+// Assuming you have a collection called "chatbotMessages"
+//const chatbotMessagesCollection = client.db(ChatBot).collection('chatbotMessages');
+
+const getUserInputResponse = async (userInput) => {
+  try {
+    // Retrieve chatbot messages based on user input response
+    const chatbotMessages = await chatbotMessagesCollection.find({ userInputResponse: userInput }).toArray();
+
+    return chatbotMessages;
+  } catch (error) {
+    console.error('Error retrieving chatbot messages:', error);
+    throw error;
+  }
+};
 
 
 // POST request handler for the API endpoint
-app.post('/api/registration', (req, res) => {
+app.post('/api/register', (req, res) => {
 
-// Create a new FormData object with the request body data
-  const formData = new FormData(req.body);
+// Create a new RegisterData object with the request body data
+  const RegisterData = new RegisterData(req.body);
 
  // const current_date = new Date();
-  formData.createdAt = new Date();
-  formData.updatedAt = new Date();
+  RegisterData.createdAt = new Date();
+  RegisterData.updatedAt = new Date();
 
   // Save the form data to the database
-  formData.save()
+  RegisterData.save()
     .then(() => {
       res.send('Successfully saved form data to the database');
     })
@@ -135,6 +177,7 @@ app.post('/api/intouch', (req, res) => {
       });
   });
 
+  // POST request handler for the API corporate endpoint
   app.post('/api/corporate', (req, res) => {
 
     // Create a new intouchData object with the request body data
@@ -154,9 +197,100 @@ app.post('/api/intouch', (req, res) => {
         });
     });
 
+    app.post("/api/addusers", async (req, res) => {
+      const { firstName, lastName, email, password, roles, termPolicy } = req.body;
+    
+      //method 1 - define the schema within the server.js and save() is used.
+     /* const userDoc = new UserModel(req.body);
+     
+      userDoc.password = bcrypt.hashSync(password, salt);
+      userDoc.createdAt = new Date();
+      await userDoc
+        .save()
+        .then(() => {
+          res.send("success");
+        })
+        .catch((err) => {
+          console.error(err);
+          res.send("Error saving data to the database");
+        });
+     */
+      //Another method 2 - using User.js outside the server.js and create() is used
+      try {  
+       const userDoc = await User.create({
+          firstName,
+          lastName,
+          email,
+          password: bcrypt.hashSync(password, salt),
+          termPolicy,
+        });
+        res.json(userDoc);
+      } catch (err) {
+        console.log(err);
+       res.status(400).json(err);
+     } 
+    });
+    
+    app.post("/login", async (req, res) => {
+      const { email, password } = req.body;
+      const userDoc = await User.findOne({ email });
+     // console.log("User Email: " + userDoc.email);
+     // console.log("User Password: " + password);
+    // console.log("User Info: " + userDoc)
+      if(!userDoc){
+        console.log("User does not exist!");
+        const errorMsg = {Code: 11111, Error:'User does not exist!!!'};
+        return res.send(errorMsg);   
+      } 
+     const passOK = bcrypt.compareSync(password, userDoc.password);
+    
+      if (passOK) {   
+        res.send(userDoc) 
+        jwt.sign({ email, id: userDoc._id }, secret, {}, (err, token) => {
+          if (err) throw err;
+          res.cookie("token", token).json({
+            id: userDoc._id,
+            email,
+          });
+        });
+      } else {
+        res.status(400).json("Wrong Credentials!");
+      }
+    }); 
+    
+    app.get("/login", async (req,res)=>{
+      const { email } = req.body
+      const userDoc = await User.findOne({ email });
+      res.json(userDoc);
+    })
+    
+    // Function to send notification email
+const sendNotificationEmail = () => {
+  const transporter = nodemailer.createTransport({
+    service: 'hotmail',
+    auth: {
+      user: 'gecoupskill@hotmail.com',
+      pass: 'qljthcy888',
+    },
+  });
 
+  const mailOptions = {
+    from: 'gecoupskill@hotmail.com',
+    to: 'chiangyong.heng@geco.asia',
+    subject: 'Dashboard Notification',
+    text: 'There are new updates in the dashboard.',
+  };
 
-  console.log("Process Env port:   " + process.env.API_PORT);
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.error('Error sending email:', error);
+    } else {
+      console.log('Notification email sent:', info.response);
+    }
+  });
+};
+
+//  console.log("Process Env port:   " + process.env.API_PORT);
 app.listen(port, () => {
   //console.log(`Server listening on port ${port}`);
   console.log(`Server listening on port `+ process.env.API_PORT);
