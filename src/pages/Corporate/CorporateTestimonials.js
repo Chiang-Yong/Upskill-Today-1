@@ -46,8 +46,8 @@ const CorporateTestimonials = () => {
          <Card key={index} className=" mb-2" style={{ paddingTop: "5px" }}>
             <Card.Body>
               <Card.Text className="text-center">
-                <p className="fw-bold">{data.title} <br />
-                {data.company}</p>
+                <span className="fw-bold h6">{data.title} <br />
+                {data.company}</span>
               </Card.Text>
               <Card.Text className="cust-text text-start" style={{ margin: "-5px" }}>
                {data.content}

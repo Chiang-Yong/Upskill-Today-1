@@ -30,7 +30,7 @@
  .carousel-indicators button {
   position:relative;
   top:50%;
-  transform: translateY(-10%);
+  transform: translateY(-25%);
  }
 
 

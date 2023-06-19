@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import Diversity1Icon from "@mui/icons-material/Diversity1";
+//import Diversity1Icon from "@mui/icons-material/Diversity1";
 import "./navbar.css";
 import UpskillTodayLogo from "../images/UpskillToday Logo.jpg";
 

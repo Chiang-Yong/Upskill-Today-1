@@ -17,7 +17,7 @@ app.use(bodyParser.json())
 app.use(express.json({ extended: false }));
 
 //Cross Origin Resource Sharing to allow sharing other domain, scheme, port resources
-app.use(cors({ credentials: true, origin: `http://localhost:3000` }));
+app.use(cors({ credentials: true, origin: `https://upskill-today-123.vercel.app/` }));
 app.use(cookieParser());
 
 //backend server port
@@ -30,7 +30,6 @@ const secret = "ghz%45ud6a7k42h7ag4g3e$y$5j3jf7dk#2h3k2";
 mongoose.set('strictQuery', false);
 
 // Connect to the MongoDB database
-//mongoose.connect('mongodb+srv://mongo:mongo@clusterheng.uam6uok.mongodb.net/UpskillToday',
 mongoose.connect(`${process.env.MONGO_PROD_URI}`, 
   {
   useNewUrlParser: true,
@@ -114,6 +113,45 @@ app.get("/api/register", async (req,res)=>{
   } catch(error){
     console.error("Error receiving registrants' data: ", error)
     res.status(500).json({error: "Failed to retrieve registrants' data"})
+  }
+ 
+})
+
+//To retrieve the Corporate' data from MongoDB
+app.get("/api/corporate", async (req,res)=>{
+  try{
+    const corporateData = await CorporateData.find({}, {projection:{_id:0}});
+ //   console.log("Corporate Data: ", corporateData)
+    res.json(corporateData)
+  } catch(error){
+    console.error("Error receiving corporate' data: ", error)
+    res.status(500).json({error: "Failed to retrieve corporate' data"})
+  }
+ 
+})
+
+//To retrieve the Get In Touch' data from MongoDB
+app.get("/api/getintouch", async (req,res)=>{
+  try{
+    const intouchData = await IntouchData.find({}, {projection:{_id:0}});
+ //   console.log("Get In Touch Data: ", intouchData)
+    res.json(intouchData)
+  } catch(error){
+    console.error("Error receiving Get In Touch data: ", error)
+    res.status(500).json({error: "Failed to retrieve Get In Touch' data"})
+  }
+ 
+})
+
+//To retrieve the Users' data from MongoDB
+app.get("/api/users", async (req,res)=>{
+  try{
+    const userData = await User.find({}, {projection:{_id:0}});
+ //   console.log("User: ", userData)
+    res.json(userData)
+  } catch(error){
+    console.error("Error receiving Users data: ", error)
+    res.status(500).json({error: "Failed to retrieve users' data"})
   }
  
 })
@@ -258,11 +296,9 @@ app.post('/api/intouch', (req, res) => {
       }
     }); 
     
-    app.get("/login", async (req,res)=>{
-      const { email } = req.body
-      const userDoc = await User.findOne({ email });
-      res.json(userDoc);
-    })
+    app.post("/logout", (req, res) => {
+      res.cookie("token", "").json("ok");
+    });
     
     // Function to send notification email
 const sendNotificationEmail = () => {

@@ -33,11 +33,11 @@ const FindOutMore = () => {
         </Col>
       </Row>
       <Row
-        className="px-5 py-3 align-items-center flex-column-reverse flex-md-row"
+        className="px-5 py-5 align-items-center flex-column-reverse flex-md-row"
         style={{ backgroundColor: " #fff9eb" }}
       >
         <Col md={{ span: 5, offset: 1 }} className="ps-5 pb-5">
-          <h1 className="fw-bold mb-3" style={{ color: "#ff7b00" }}>
+          <h1 className="fw-bold mt-5 mb-3" style={{ color: "#ff7b00" }}>
             Find Your Match
           </h1>
           <h3 className="lh-md">Colloborate With Us For Business Solutions</h3>

@@ -38,17 +38,17 @@ const drawerWidth = 240;
 
 const admin = [
   {
-    title: "Add User",
+    title: "User List",
     icon: <PersonAdd fontSize="small" />,
-    path: "addAccount",
+    path: "Users",
   },
-  { title: "Settings", icon: <Settings fontSize="small" />, path: "settings" },
-  { title: "Logout", icon: <Logout fontSize="small" />, path: "logout" },
+  { title: "Settings", icon: <Settings fontSize="small" />, path: "settings", redirect: "" },
+  { title: "Logout", icon: <Logout fontSize="small" />, path: "logout", redirect: "logout" }, 
 ];
 
 const userAccount = [
-  { title: "Settings", icon: <Settings fontSize="small" />, path: "settings" },
-  { title: "Logout", icon: <Logout fontSize="small" />, path: "logout" },
+  { title: "Settings", icon: <Settings fontSize="small" />, path: "settings", redirect:"" },
+  { title: "Logout", icon: <Logout fontSize="small" />, path: "logout", redirect:"logout" },
 ];
 
 const menuLists = [
@@ -60,7 +60,7 @@ const menuLists = [
   {
     title: "Visitors",
     icon: <GroupsIcon />,
-    path: "/vistors",
+    path: "/visitors",
   },
   {
     title: "Settings",
@@ -105,13 +105,14 @@ export default function Admin(props: Props) {
   const navigate = useNavigate();
 
   const logout = async () => {
-    const res = await Axios.get("http://localhost:5000/logout", {
+   // const res = await Axios.get("http://localhost:5000/logout", {
+      const res = await Axios.get("https://backend-server-theta.vercel.app/logout", {
       withCredentials: true,
     });
     console.log(res.data);
     setAuth(false);
     setUserInfo("");
-    navigate("/login");
+    navigate("/home");
   };
 
   const drawer = (
@@ -119,13 +120,13 @@ export default function Admin(props: Props) {
       <Toolbar />
       <Divider />
       <List>
-        {menuLists.map((menu, index) => (
+        {menuLists.map((menu, index) => ([
           <ListItem key={index} disablePadding ButtonBase component={Link} to={menu.path}>
             <ListItemButton>
               <ListItemIcon>{menu.icon}</ListItemIcon>
               <ListItemText primary={menu.title} />
             </ListItemButton>
-          </ListItem>
+          </ListItem> ]
         ))}
       </List>
       <Divider />
@@ -133,7 +134,7 @@ export default function Admin(props: Props) {
         <ListSubheader component="div" inset>
           Saved reports
         </ListSubheader>
-        {reportLists.map((report, index) => (
+        {reportLists.map((report, index) => ([
           <ListItem key={index} disablePadding ButtonBase component={Link} to={report.path} >
             <ListItemButton>
               <ListItemIcon>
@@ -141,7 +142,7 @@ export default function Admin(props: Props) {
               </ListItemIcon>
               <ListItemText primary={report.title} />
             </ListItemButton>
-          </ListItem>
+          </ListItem> ]
         ))}
       </List>
     </div>
@@ -232,28 +233,28 @@ export default function Admin(props: Props) {
             >
               {userInfo.roles[0] === "admin" ? (
                 <>
-                  {admin.map((account) => (
+                  {admin.map((account) => ([
                     <MenuItem key={account} onClick={handleCloseUserMenu}>
                       <ListItemIcon>{account.icon}</ListItemIcon>
-                      <Link href={account.path} underline="none">
+                      <Link to={account.path} underline="none" onClick={account.redirect}>
                         <Typography textAlign="center">
                           {account.title}
                         </Typography>
                       </Link>
-                    </MenuItem>
+                    </MenuItem> ]
                   ))}
                 </>
               ) : (
                 <>
-                  {userAccount.map((account) => (
+                  {userAccount.map((account) => ( [
                     <MenuItem key={account} onClick={handleCloseUserMenu}>
                       <ListItemIcon>{account.icon}</ListItemIcon>
-                      <Link href={account.path} underline="none">
+                      <Link to={account.path} underline="none" onClick={account.redirect}>
                         <Typography textAlign="center">
                           {account.title}
                         </Typography>
                       </Link>
-                    </MenuItem>
+                    </MenuItem> ]
                   ))}
                 </>
               )}

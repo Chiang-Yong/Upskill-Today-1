@@ -5,7 +5,7 @@ import { useAuth } from "./components/AuthProvider";
 
 import './App.css';
 import Admin from './pages/Admin';
-import AuthNavbar from "./components/AuthNavbar";
+//import AuthNavbar from "./components/AuthNavbar";
 import Navbar from "./components/Navbar";
 import Layout from "./components/Layout";
 import LoginPage from "./pages/LoginPage";
@@ -15,6 +15,9 @@ import NewPartners from "./pages/NewPartners";
 import NewRegisters from "./pages/NewRegisters";
 import UsersList from "./pages/UsersList";
 import Home from "./pages/Home";
+import Settings from "./pages/Settings";
+import Dashboard from "./pages/Dashboard";
+import Visitors from "./pages/Visitors";
 
 function App() {
   const { auth } = useAuth();
@@ -27,18 +30,21 @@ function App() {
   return (
     <>
       <UserContextProvider>
-        {auth ? <Admin/>: <Navbar/>}
+        {auth ? <Admin/>: <Navbar />}
         <Routes>
           <Route path="/" element={<Layout />} />
-          <Route index element={<Home />} />
+        {/*  <Route index element={<Home />} /> */}
           <Route path="Login" element={<LoginPage />} />
           <Route path="Admin" element={<Admin />} />
           <Route path="addusers" element={<AddUsersPage />} />
           <Route path="NewEnquiries" element={<NewEnquiries />} />
           <Route path="NewPartners" element={<NewPartners />} />
           <Route path="NewRegisters" element={<NewRegisters />} />
-          <Route path="Users" element={<PrivateRoute><UsersList /></PrivateRoute>} />
-          <Route path="logout" element={<Home />} />
+          <Route path="Users" element= {<UsersList />} />
+          <Route path="Logout" element={<Home />} />
+          <Route path="Dashboard" element={<Dashboard />} />
+          <Route path="Visitors" element={<Visitors />} />
+          <Route path="Settings" element={<Settings />} />
         </Routes>
       </UserContextProvider>
     </>

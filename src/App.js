@@ -13,7 +13,8 @@ import Footer from "./components/Footer/Footer";
 import ScrollToTop from "./ScrollToTop";
 import Dropdown from "./components/Navbar/Dropdown";
 import NavBar from "./components/Navbar/NavBar";
-import ChatBotButton from "./components/ChatBot/ChatBotButton";
+//import ChatBotButton from "./components/ChatBot/ChatBotButton";
+import ChatBot from "./components/ChatBot/ChatBot";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,7 +49,7 @@ function App() {
           <Route path="/Corporate" element={<Corporate />} />
           <Route path="/Contact" element={<Contact />} />
         </Routes>
-        <ChatBotButton />
+        <ChatBot />
         <Footer />
       </BrowserRouter>
     </>
