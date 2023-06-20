@@ -180,7 +180,7 @@ const ChatBot = () => {
       </Form> */}
       <Container 
       className="container-sm"
-      style={cbStyle.container}
+     // style={cbStyle.container}
       >
         {isChatboxOpen ? (
           // Render chatbox when isChatboxOpen is true
@@ -189,9 +189,10 @@ const ChatBot = () => {
             config={config}
             messageParser={MessageParser}
             actionProvider={ActionProvider}
-            className="chatbox"
+            className="chatbot-container chatbox"
             saveMessages={saveMessages}
             validator={validateInput}
+            
           />
           
           <Button className="close-button mt-2" style={cbStyle.closeButton} onClick={handleChatboxClose}>

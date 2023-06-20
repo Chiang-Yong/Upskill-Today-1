@@ -1,5 +1,17 @@
 .chatbot-container{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
 }
+
+@media (max-width: 767px) {
+    /* Styles for mobile devices */
+    .chatbot-container {
+      bottom: 15px;
+      right: 10px;
+    }
+  }
 
 .react-chatbot-kit-chat-container {
     border: solid;

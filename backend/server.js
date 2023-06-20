@@ -16,6 +16,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json())
 app.use(express.json({ extended: false }));
 
+//Cross Origin Resource Sharing to allow sharing other domain, scheme, port resources
+app.use(cors({ credentials: true, origin: `https://upskilltoday-admin-app-chiang-yong.vercel.app` }));
+app.use(cookieParser());
+
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'https://upskilltoday-admin-app-chiang-yong.vercel.app');
   res.header('Access-Control-Allow-Credentials', 'true');
@@ -24,9 +28,7 @@ app.use((req, res, next) => {
   next();
 });
 
-//Cross Origin Resource Sharing to allow sharing other domain, scheme, port resources
-app.use(cors({ credentials: true, origin: `https://upskilltoday-admin-app-chiang-yong.vercel.app` }));
-app.use(cookieParser());
+
 
 //backend server port
 const port = 5000;
@@ -304,6 +306,7 @@ app.post('/api/intouch', (req, res) => {
       }
     }); 
     
+    //Link to Upskill Today Admin App - header.js
     app.get("/user", async (req,res)=>{
       const { email } = req.body
       const userDoc = await User.findOne({ email });
@@ -322,7 +325,7 @@ const sendNotificationEmail = () => {
     service: 'hotmail',
     auth: {
       user: 'gecoupskill@hotmail.com',
-      pass: 'qljthcy888',
+      pass: '',
     },
   });
 

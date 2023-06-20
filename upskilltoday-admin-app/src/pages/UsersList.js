@@ -21,7 +21,7 @@ const UsersList = () => {
   const fetchData = async () => {
     try {
     //  const response = await fetch("http://localhost:5000/api/users");
-      const response = await fetch("`https://backend-server-theta.vercel.app/api/users");
+      const response = await fetch("https://backend-server-theta.vercel.app/api/users");
       const jsonData = await response.json();
       //  console.log("Register Data: ", jsonData);
       setData(jsonData);

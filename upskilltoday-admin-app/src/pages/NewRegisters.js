@@ -30,13 +30,13 @@ const NewRegisters = () => {
   const fetchData = async () => {
     try {
      // const response = await fetch("http://localhost:5000/api/register");
-      const response = await fetch("`https://backend-server-theta.vercel.app/api/register");
+      const response = await fetch("https://backend-server-theta.vercel.app/api/register");
       const jsonData = await response.json();
       //  console.log("Register Data: ", jsonData);
       setData(jsonData);
       //    setData(response.data);
     } catch (error) {
-      console.error("Error retrieving data: ", error);
+      console.error("Error retrieving data: ", JSON.stringify(error));
     }
   };
 
