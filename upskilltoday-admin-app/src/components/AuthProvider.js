@@ -17,7 +17,8 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const isAuth = async () => {
       try {
-        const res = await Axios.get("http://localhost:5000/login", {
+       // const res = await Axios.get("http://localhost:5000/login", {
+          const res = await Axios.get("https://backend-server-theta.vercel.app/login", {
           withCredentials: true,
         });
         setUser(res.data);

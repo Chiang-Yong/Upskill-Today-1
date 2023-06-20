@@ -1,0 +1,127 @@
+.chatbot-container{
+}
+
+.react-chatbot-kit-chat-container {
+    border: solid;
+    border-color: #ff7b00;
+    border-radius: 7px;
+}
+
+.react-chatbot-kit-chat-inner-container {
+    
+}
+
+.react-chatbot-kit-chat-header {
+    background-color: #ff7b00;
+    color: white;
+    font-size: 1.0rem;
+}
+
+.react-chatbot-kit-chat-input-container {
+    
+}
+
+.react-chatbot-kit-chat-message-container {
+    background-color: #fff9eb;
+}
+
+.react-chatbot-kit-chat-input {
+   
+}
+
+.react-chatbot-kit-chat-input-form {
+   
+}
+
+.react-chatbot-kit-chat-input::placeholder {
+}
+
+.react-chatbot-kit-chat-btn-send {
+    background-color: #ff7b00;
+}
+
+.react-chatbot-kit-chat-btn-send-icon {
+    width: 20px;
+}
+
+.react-chatbot-kit-chat-bot-message-container {
+    
+}
+
+.react-chatbot-kit-chat-bot-avatar-container {
+    background-color: #ff7b00;
+ 
+}
+
+.react-chatbot-kit-chat-bot-avatar-icon {
+    
+}
+
+.react-chatbot-kit-chat-bot-avatar-letter {
+    color: white;
+}
+
+.react-chatbot-kit-chat-bot-message {
+    font-weight: 500;
+    background-color: #ff7b00;
+    color: white;
+}
+
+.react-chatbot-kit-chat-bot-message-arrow {
+      border-right: 8px solid #ff7b00;
+}
+
+.react-chatbot-kit-chat-bot-loading-icon-container {
+}
+
+.chatbot-loader-container {
+}
+
+#chatbot-loader #chatbot-loader-dot1 {
+}
+
+#chatbot-loader #chatbot-loader-dot2 {
+}
+
+#chatbot-loader #chatbot-loader-dot3 {
+}
+
+.react-chatbot-kit-error {
+}
+
+.react-chatbot-kit-error-container {
+}
+
+.react-chatbot-kit-error-header {
+}
+
+.react-chatbot-kit-error-docs {
+}
+
+.react-chatbot-kit-user-chat-message-container {
+    
+
+}
+
+.react-chatbot-kit-user-chat-message {
+    font-weight: 500;
+    background-color: rgb(245, 230, 249);
+
+}
+
+.react-chatbot-kit-user-chat-message-arrow {
+    border-left: 8px solid rgb(245, 230, 249);
+}
+
+.react-chatbot-kit-user-chat-avatar{
+
+}
+
+.react-chatbot-kit-user-chat-avatar-container{
+
+}
+
+.close-button{
+    background-color: #ff7b00;
+    color: white;
+}

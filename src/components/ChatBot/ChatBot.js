@@ -7,8 +7,8 @@ import config from "./Config";
 import MessageParser from "./MessageParser";
 import ActionProvider from "./ActionProvider";
 import { FiMessageSquare } from "react-icons/fi";
-import LetChat from "../../images/LetChat.gif"
-
+import ChatAI from "../../images/CHATBOT.png"
+import './chatbot.css'
 
 const cbStyle = {
   container: {
@@ -16,11 +16,16 @@ const cbStyle = {
     bottom: "20px",
     right: "-1000px",
     zIndex: 100,
+
+    '@media screen and (max-width:"1000px")': {
+      right: "-100px",
+
+    }
   },
 
   chatbotIcon:{
     position: "fixed",
-    bottom: "0px",
+    bottom: "120px",
     right: "50px",
     zIndex: 102,
     fontSize: "25px",
@@ -37,7 +42,14 @@ const cbStyle = {
     background: "none",
     cursor:"pointer",
     fontSize: "16px",
-  }
+  },
+
+  closeButton:{
+    backgroundColor: "#ff7b00",
+    color:"white",
+    fontWeight: 600,
+    border: "none",
+  },
 };
 
 const ChatBot = () => {
@@ -129,8 +141,21 @@ const ChatBot = () => {
     return chatbotResponse;
   };
 
+  const saveMessages = (messages, HTMLString) => {
+    localStorage.setItem('chat_messages', JSON.stringify(messages));
+  };
+
+  const validateInput = (userInput) => {
+    if(userInput === ""){
+      return false;
+    } else {
+      return true;
+    }
+
+  }
+
   return (
-    <div>
+    <div className="chatbot-container">
       {/*   <div>
         {messages.map((message, index) => (
           <div key={index}>
@@ -153,7 +178,10 @@ const ChatBot = () => {
           Send
         </Button>
       </Form> */}
-      <Container style={cbStyle.container}>
+      <Container 
+      className="container-sm"
+      style={cbStyle.container}
+      >
         {isChatboxOpen ? (
           // Render chatbox when isChatboxOpen is true
           <>
@@ -162,8 +190,11 @@ const ChatBot = () => {
             messageParser={MessageParser}
             actionProvider={ActionProvider}
             className="chatbox"
+            saveMessages={saveMessages}
+            validator={validateInput}
           />
-          <Button className="close-button" onClick={handleChatboxClose}>
+          
+          <Button className="close-button mt-2" style={cbStyle.closeButton} onClick={handleChatboxClose}>
             Close
           </Button>
           </>
@@ -172,8 +203,8 @@ const ChatBot = () => {
           <div className="chatbot-icon fs-3" onClick={handleToggleChatbox}>
           {/* <FiMessageSquare style={cbStyle.chatbotIcon}/> */}
             <Image 
-            src={LetChat}
-            alt="Let Chat"
+            src={ChatAI}
+            alt="Chat AI"
             height="64px"
             width="64px"
             background="none"

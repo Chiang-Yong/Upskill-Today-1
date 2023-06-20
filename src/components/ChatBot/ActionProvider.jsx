@@ -12,7 +12,10 @@ const USTselected = "Selected Consultants will be inducted into a Customer proje
 const USTperiod = "Our Upskilling program will be 8 to 12 weeks, depending on the type of skills."
 const USTcertificate = "Participants who have successfully demonstrated competence and meet/exceed this program deliverable will be sponsored for Industry Certifications."
 const USTstart = "Go to Career Pathway and register your interest via online form."
-
+const USTmorning = "Good Morning! How can I assist you today?"
+const USTafternoon = "Good Afternoon!, Nice to meet you. What can I assist you today?"
+const USTevening = "Good Evening! I'm ChatAI. Nice to meet you."
+const USTprogram = "There are 2 program tracks, Guided Track and Self-paced Track"
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
@@ -142,15 +145,56 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
           ...prev,
           messages: [...prev.messages, botMessage],
         }));
-
     }
+
+    const handleUSTmorning = () => {
+      const botMessage = createChatBotMessage(USTmorning);
+  
+      setState((prev) => ({
+        ...prev,
+        messages: [...prev.messages, botMessage],
+      }));
+  }
+
+  const handleUSTafternoon = () => {
+    const botMessage = createChatBotMessage(USTafternoon);
+
+    setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+}
+
+const handleUSTevening = () => {
+  const botMessage = createChatBotMessage(USTevening);
+
+  setState((prev) => ({
+    ...prev,
+    messages: [...prev.messages, botMessage],
+  }));
+}
+
+const handleUSTprogram = () => {
+  const botMessage = createChatBotMessage(USTprogram);
+
+  setState((prev) => ({
+    ...prev,
+    messages: [...prev.messages, botMessage],
+  }));
+}
+
     
   return (
     <div>
       {React.Children.map(children, (child) => {
         return React.cloneElement(child, {
             
-          actions: {handleHello,handleUSTmsg,handleUSTbond, handleUSTcertificate, handleUSTfee, handleUSTimpt, handleUSTpaid, handleUSTperiod,handleUSTselected, handleUSTselfpaced, handleUSTstart, handleUSTtrainingfee, handleUSTtrainingmode}
+          actions: {handleHello,handleUSTmsg,handleUSTbond, 
+            handleUSTcertificate, handleUSTfee, handleUSTimpt, 
+            handleUSTpaid, handleUSTperiod,handleUSTselected, 
+            handleUSTselfpaced, handleUSTstart, handleUSTtrainingfee, 
+            handleUSTtrainingmode, handleUSTmorning, handleUSTafternoon, 
+            handleUSTevening, handleUSTprogram}
           
         });
       })}

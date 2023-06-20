@@ -11,7 +11,7 @@ import Navbar from "./Navbar";
 const Header = () => {
   const { setUserInfo, userInfo } = useContext(UserContext);
   useEffect(() => {
-    fetch(`http://localhost:5000/user`, {
+    fetch(`https://backend-server-theta.vercel.app/user`, {
       credentials: "include",
       
     }).then((response) => {
@@ -22,7 +22,7 @@ const Header = () => {
   }, []);
 
   function logout() {
-    fetch(`http://localhost:5000/logout`, {
+    fetch(`https://backend-server-theta.vercel.app/logout`, {
       credentials: "include",
       method: "POST",
     });

@@ -33,7 +33,7 @@ function App() {
         {auth ? <Admin/>: <Navbar />}
         <Routes>
           <Route path="/" element={<Layout />} />
-        {/*  <Route index element={<Home />} /> */}
+          <Route index element={<Home />} /> 
           <Route path="Login" element={<LoginPage />} />
           <Route path="Admin" element={<Admin />} />
           <Route path="addusers" element={<AddUsersPage />} />

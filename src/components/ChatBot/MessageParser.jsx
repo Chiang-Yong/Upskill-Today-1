@@ -7,6 +7,21 @@ const MessageParser = ({ children, actions }) => {
     if (lowercasemessage.includes('hello')) {
         actions.handleHello();
       }
+      if (lowercasemessage.includes('hi')) {
+        actions.handleHello();
+      }
+
+      if (lowercasemessage.includes('morning')) {
+        actions.handleUSTmorning();
+      }
+
+      if (lowercasemessage.includes('afternoon')) {
+        actions.handleUSTafternoon();
+      }
+
+      if (lowercasemessage.includes('evening')) {
+        actions.handleUSTevening();
+      }
 
       if (lowercasemessage.includes('upskill today')) {
         actions.handleUSTmsg();
@@ -20,10 +35,6 @@ const MessageParser = ({ children, actions }) => {
         actions.handleUSTimpt();
       }
 
-      if(lowercasemessage.includes('fee')){
-        actions.handleUSTfee();
-      }
-
       if(lowercasemessage.includes('period')){
         actions.handleUSTperiod();
       }
@@ -33,7 +44,7 @@ const MessageParser = ({ children, actions }) => {
       }
 
       if(lowercasemessage.includes('program')){
-        actions.handleUSTperiod();
+        actions.handleUSTprogram();
       }
 
       if(lowercasemessage.includes('bond')){
