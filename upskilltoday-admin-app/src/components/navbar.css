@@ -65,6 +65,8 @@
     0 17px 50px 0 rgba(0, 0, 0, 0.19);  
 }
 
+
+
 @media screen and (max-width:768px) {
     .navbar .menu{
         display: none;
@@ -73,8 +75,35 @@
     .navbar .navbtn {
       display: none;
     }
+
+    
     
   }
 
+  .navbar .icon{
+    display: none;
+  }
+
+  @media screen and (max-width:768px) {
+    .navbar .icon{
+      display: block;
+      background-size: contain;
+      border-width: 1px;
+      border-radius: 5px;
+      outline: none;
+      padding-left: 0px;
+      height: 45px;
+      width: 45px;
+      font-size: 2.0rem;
+      font-weight: 600;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(0, 25%);
+      margin-right: 2%;
+    }
+    
+  }
 
 

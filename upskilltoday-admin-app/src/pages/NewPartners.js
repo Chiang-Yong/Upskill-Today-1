@@ -22,8 +22,10 @@ const NewPartners = () => {
 
   const fetchData = async () => {
     try {
-     // const response = await fetch("http://localhost:5000/api/corporate");
-      const response = await fetch("https://backend-server-theta.vercel.app/api/corporate");
+      // const response = await fetch("http://localhost:5000/api/corporate");
+      const response = await fetch(
+        "https://backend-server-theta.vercel.app/api/corporate"
+      );
       const jsonData = await response.json();
       setData(jsonData);
     } catch (error) {
@@ -56,7 +58,17 @@ const NewPartners = () => {
   };
 
   return (
-    <Container sx={{ mt: 3, ml: 30, width: "1200px" }}>
+    <Container
+      sx={{
+        mt: 3,
+        ml: 30,
+        width: "1200px",
+        "@media (max-width:768px)": {
+          width: "768px",
+          marginLeft: 5,
+        },
+      }}
+    >
       <Title>Corporate</Title>
       <TableContainer component={Paper}>
         <Table size="small">

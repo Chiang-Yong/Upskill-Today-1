@@ -23,8 +23,10 @@ const NewEnquiries = () => {
 
   const fetchData = async () => {
     try {
-     // const response = await fetch("http://localhost:5000/api/getintouch");
-     const response = await fetch("https://backend-server-theta.vercel.app/api/getintouch");
+      // const response = await fetch("http://localhost:5000/api/getintouch");
+      const response = await fetch(
+        "https://backend-server-theta.vercel.app/api/getintouch"
+      );
       const jsonData = await response.json();
       //  console.log("Register Data: ", jsonData);
       setData(jsonData);
@@ -60,7 +62,17 @@ const NewEnquiries = () => {
   };
 
   return (
-    <Container sx={{ mt: 3, ml: 30, width: "1400px" }}>
+    <Container
+      sx={{
+        mt: 3,
+        ml: 30,
+        width: "1400px",
+        "@media (max-width:768px)": {
+          width: "768px",
+          marginLeft: 5,
+        },
+      }}
+    >
       <Title>Get In Touch</Title>
       <TableContainer component={Paper}>
         <Table size="small">

@@ -20,8 +20,10 @@ const UsersList = () => {
 
   const fetchData = async () => {
     try {
-    //  const response = await fetch("http://localhost:5000/api/users");
-      const response = await fetch("https://backend-server-theta.vercel.app/api/users");
+      //  const response = await fetch("http://localhost:5000/api/users");
+      const response = await fetch(
+        "https://backend-server-theta.vercel.app/api/users"
+      );
       const jsonData = await response.json();
       //  console.log("Register Data: ", jsonData);
       setData(jsonData);
@@ -42,7 +44,17 @@ const UsersList = () => {
   const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
 
   return (
-    <Container sx={{ mt: 3, ml: 30, width: "1200px" }}>
+    <Container
+      sx={{
+        mt: 3,
+        ml: 30,
+        width: "1200px",
+        "@media (max-width:768px)": {
+          width: "768px",
+          marginLeft: 5,
+        },
+      }}
+    >
       <Title>Users</Title>
       <TableContainer component={Paper}>
         <Table size="small">

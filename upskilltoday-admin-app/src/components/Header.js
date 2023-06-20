@@ -1,15 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { UserContext } from "./UserContext";
 import Navbar from "./Navbar";
-//import AuthNavbar from "./AuthNavbar";
-
+import Dropdown from "./Dropdown";
 
 //const port = 5000;
 
 const Header = () => {
   const { setUserInfo, userInfo } = useContext(UserContext);
+  const [isOpen, setIsOpen] = useState(false);
+  
+  const toggle = () => {
+    setIsOpen(!isOpen)
+  }
+
   useEffect(() => {
     fetch(`https://backend-server-theta.vercel.app/user`, {
       credentials: "include",
@@ -45,7 +50,8 @@ const Header = () => {
         )}
         {!email && (
           <>
-            <Navbar />
+            <Navbar toggle={toggle}/>
+            <Dropdown isOpen={isOpen} toggle={toggle} />
             
           </>
         )}

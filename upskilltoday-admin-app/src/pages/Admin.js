@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext } from "react";
 import { useAuth } from "../components/AuthProvider";
 import { useNavigate, Link } from "react-router-dom";
 import Axios from "axios";
@@ -16,19 +16,13 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import ListSubheader from "@mui/material/ListSubheader";
-import NewRegisters from "./NewRegisters";
-import {MenuItem, Tooltip, Menu} from "@mui/material"
-//import Link from '@mui/material/Link';
-
+import { MenuItem, Tooltip, Menu } from "@mui/material";
 import SpaceDashboardIcon from "@mui/icons-material/SpaceDashboard";
 import GroupsIcon from "@mui/icons-material/Groups";
-import FileSaver from "../components/SaveToFile";
-
 import Avatar from "@mui/material/Avatar";
 import PersonAdd from "@mui/icons-material/PersonAdd";
 import Settings from "@mui/icons-material/Settings";
@@ -42,13 +36,33 @@ const admin = [
     icon: <PersonAdd fontSize="small" />,
     path: "Users",
   },
-  { title: "Settings", icon: <Settings fontSize="small" />, path: "settings", redirect: "" },
-  { title: "Logout", icon: <Logout fontSize="small" />, path: "logout", redirect: "logout" }, 
+  {
+    title: "Settings",
+    icon: <Settings fontSize="small" />,
+    path: "settings",
+    redirect: "",
+  },
+  {
+    title: "Logout",
+    icon: <Logout fontSize="small" />,
+    path: "logout",
+    redirect: "logout",
+  },
 ];
 
 const userAccount = [
-  { title: "Settings", icon: <Settings fontSize="small" />, path: "settings", redirect:"" },
-  { title: "Logout", icon: <Logout fontSize="small" />, path: "logout", redirect:"logout" },
+  {
+    title: "Settings",
+    icon: <Settings fontSize="small" />,
+    path: "settings",
+    redirect: "",
+  },
+  {
+    title: "Logout",
+    icon: <Logout fontSize="small" />,
+    path: "logout",
+    redirect: "logout",
+  },
 ];
 
 const menuLists = [
@@ -105,10 +119,13 @@ export default function Admin(props: Props) {
   const navigate = useNavigate();
 
   const logout = async () => {
-   // const res = await Axios.get("http://localhost:5000/logout", {
-      const res = await Axios.get("https://backend-server-theta.vercel.app/logout", {
-      withCredentials: true,
-    });
+    // const res = await Axios.get("http://localhost:5000/logout", {
+    const res = await Axios.get(
+      "https://backend-server-theta.vercel.app/logout",
+      {
+        withCredentials: true,
+      }
+    );
     console.log(res.data);
     setAuth(false);
     setUserInfo("");
@@ -120,30 +137,42 @@ export default function Admin(props: Props) {
       <Toolbar />
       <Divider />
       <List>
-        {menuLists.map((menu, index) => ([
-          <ListItem key={index} disablePadding ButtonBase component={Link} to={menu.path}>
+        {menuLists.map((menu, index) => [
+          <ListItem
+            key={index}
+            disablePadding
+            ButtonBase
+            component={Link}
+            to={menu.path}
+          >
             <ListItemButton>
               <ListItemIcon>{menu.icon}</ListItemIcon>
               <ListItemText primary={menu.title} />
             </ListItemButton>
-          </ListItem> ]
-        ))}
+          </ListItem>,
+        ])}
       </List>
       <Divider />
       <List>
         <ListSubheader component="div" inset>
           Saved reports
         </ListSubheader>
-        {reportLists.map((report, index) => ([
-          <ListItem key={index} disablePadding ButtonBase component={Link} to={report.path} >
+        {reportLists.map((report, index) => [
+          <ListItem
+            key={index}
+            disablePadding
+            ButtonBase
+            component={Link}
+            to={report.path}
+          >
             <ListItemButton>
               <ListItemIcon>
-                 <InboxIcon /> 
+                <InboxIcon />
               </ListItemIcon>
               <ListItemText primary={report.title} />
             </ListItemButton>
-          </ListItem> ]
-        ))}
+          </ListItem>,
+        ])}
       </List>
     </div>
   );
@@ -173,24 +202,36 @@ export default function Admin(props: Props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div" sx={{pl:2}}>
+          <Typography variant="h6" noWrap component="div" sx={{ pl: 2 }}>
             Admin Dashboard
           </Typography>
-          <Box sx={{ flexGrow: 1, display:{xs:"flex", md:"flex"}, justifyContent:"flex-end", mr:2, }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "flex" },
+              justifyContent: "flex-end",
+              mr: 2,
+            }}
+          >
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, mr:1 }}>
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, mr: 1 }}>
                 <Avatar
                   alt={userInfo.lastName}
                   src="/static/images/avatar/2.jpg"
                 />
               </IconButton>
             </Tooltip>
-            <Typography sx={{alignItems:"center", pt:2}}>
+            <Typography sx={{ alignItems: "center", pt: 2 }}>
               {userInfo.firstName}, {userInfo.roles[0]}
             </Typography>
             {/*console.log("user data: " + JSON.stringify(userInfo)) */}
             <Menu
-              sx={{ mt: "45px", display:"flex", justifyContent:"flex-end", alignContent:"center" }}
+              sx={{
+                mt: "45px",
+                display: "flex",
+                justifyContent: "flex-end",
+                alignContent: "center",
+              }}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
@@ -233,29 +274,37 @@ export default function Admin(props: Props) {
             >
               {userInfo.roles[0] === "admin" ? (
                 <>
-                  {admin.map((account) => ([
+                  {admin.map((account) => [
                     <MenuItem key={account} onClick={handleCloseUserMenu}>
                       <ListItemIcon>{account.icon}</ListItemIcon>
-                      <Link to={account.path} underline="none" onClick={account.redirect}>
+                      <Link
+                        to={account.path}
+                        underline="none"
+                        onClick={account.redirect}
+                      >
                         <Typography textAlign="center">
                           {account.title}
                         </Typography>
                       </Link>
-                    </MenuItem> ]
-                  ))}
+                    </MenuItem>,
+                  ])}
                 </>
               ) : (
                 <>
-                  {userAccount.map((account) => ( [
+                  {userAccount.map((account) => [
                     <MenuItem key={account} onClick={handleCloseUserMenu}>
                       <ListItemIcon>{account.icon}</ListItemIcon>
-                      <Link to={account.path} underline="none" onClick={account.redirect}>
+                      <Link
+                        to={account.path}
+                        underline="none"
+                        onClick={account.redirect}
+                      >
                         <Typography textAlign="center">
                           {account.title}
                         </Typography>
                       </Link>
-                    </MenuItem> ]
-                  ))}
+                    </MenuItem>,
+                  ])}
                 </>
               )}
             </Menu>
@@ -308,10 +357,7 @@ export default function Admin(props: Props) {
           width: { sm: `calc(100% - ${drawerWidth}px)` },
         }}
       >
-      {/*    <NewRegisters /> */}
-        
       </Box>
-     
     </Box>
   );
 }

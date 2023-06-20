@@ -29,8 +29,10 @@ const NewRegisters = () => {
 
   const fetchData = async () => {
     try {
-     // const response = await fetch("http://localhost:5000/api/register");
-      const response = await fetch("https://backend-server-theta.vercel.app/api/register");
+      // const response = await fetch("http://localhost:5000/api/register");
+      const response = await fetch(
+        "https://backend-server-theta.vercel.app/api/register"
+      );
       const jsonData = await response.json();
       //  console.log("Register Data: ", jsonData);
       setData(jsonData);
@@ -77,7 +79,17 @@ const NewRegisters = () => {
   };
 
   return (
-    <Container sx={{ mt: 3, ml: 30, width: "1200px" }}>
+    <Container
+      sx={{
+        mt: 3,
+        ml: 30,
+        width: "1200px",
+        '@media (max-width:768px)': {
+          width:"768px",
+          marginLeft: 5,
+        },
+      }}
+    >
       <Title>Registrants</Title>
       <TableContainer component={Paper}>
         <Table size="small">

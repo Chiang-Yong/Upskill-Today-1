@@ -6,7 +6,8 @@ import Button from "@mui/material/Button";
 //import Diversity1Icon from "@mui/icons-material/Diversity1";
 import "./navbar.css";
 import UpskillTodayLogo from "../images/UpskillToday Logo.jpg";
-
+import MenuOpenIcon from '@mui/icons-material/MenuOpen';
+import Icon from '@mui/material/Icon';
 const pages = [
   { title: "Log In", link: "/login" },
   { title: "Register New User", link: "/addusers" },
@@ -33,9 +34,11 @@ const Navbar = ({ toggle }) => {
           color: "black",
           textDecoration: "none",
         }}
-      >
-      
+      > 
       </Typography>
+      <Icon className="icon" fontSize="large" onClick={toggle}>
+          <MenuOpenIcon />
+        </Icon>
       <Box className="menu">
         {pages.map((page, index) => (
           <div key={index}>

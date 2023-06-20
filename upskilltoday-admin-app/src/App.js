@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+import React, { Children, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import UserContextProvider from "./components/UserContext";
 import { useAuth } from "./components/AuthProvider";
@@ -18,11 +18,15 @@ import Home from "./pages/Home";
 import Settings from "./pages/Settings";
 import Dashboard from "./pages/Dashboard";
 import Visitors from "./pages/Visitors";
+import Dropdown from "./components/Dropdown";
 
 function App() {
   const { auth } = useAuth();
   const navigate = useNavigate();
-
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => {
+    setIsOpen(!isOpen)
+  }
   const PrivateRoute = ({ auth, children }) => {
     return auth ? children : navigate("/Admin");
   };
@@ -30,7 +34,7 @@ function App() {
   return (
     <>
       <UserContextProvider>
-        {auth ? <Admin/>: <Navbar />}
+        {auth ? <Admin/>: <><Navbar toggle={toggle} /> <Dropdown isOpen={isOpen} toggle={toggle} /></>}
         <Routes>
           <Route path="/" element={<Layout />} />
           <Route index element={<Home />} /> 
