@@ -116,6 +116,15 @@ const NewRegisters = () => {
               <TableCell sx={{ color: "white", fontSize: "1rem" }}>
                 Country
               </TableCell>
+              <TableCell sx={{ color: "white", fontSize: "1rem" }}>
+                Terms & Conditions
+              </TableCell>
+              <TableCell sx={{ color: "white", fontSize: "1rem" }}>
+                Privacy Policy
+              </TableCell>
+              <TableCell sx={{ color: "white", fontSize: "1rem" }}>
+                Free 14 days
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -128,6 +137,9 @@ const NewRegisters = () => {
                 <TableCell>{row.contact}</TableCell>
                 <TableCell>{row.program}</TableCell>
                 <TableCell>{row.country}</TableCell>
+                <TableCell>{row.term}</TableCell>
+                <TableCell>{row.policy}</TableCell>
+                <TableCell>{row.free}</TableCell>
               </TableRow>
             ))}
           </TableBody>
