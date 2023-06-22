@@ -457,7 +457,7 @@ const RegisterYourInterest = () => {
                     name="free"
                     label={
                       <span style={{ fontSize: "13px" }}>
-                        I'd like to try out FREE Java/JavaScript self-paced learning(14days)
+                        I'd like to try out FREE Java/JavaScript self-paced learning (14 days)
                       </span>
                     }
                     checked={isChecked3}
