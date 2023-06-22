@@ -261,8 +261,10 @@ const Quiz = () => {
               </p>
 
               <ProgressBar
-                now={(id / quiz.totalQuestions) * 100}
-                label={`${(id / quiz.totalQuestions) * 100}%`}
+                now={((id-1) / quiz.totalQuestions) * 100}
+               
+                label={`${((id-1) / quiz.totalQuestions) * 100}%`}
+                
                 variant="success"
               />
               <Card.Title className="fs-5 text-left pt-4 pb-3">

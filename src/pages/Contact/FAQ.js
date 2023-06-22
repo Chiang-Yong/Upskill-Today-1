@@ -22,8 +22,8 @@ const FAQ = () => {
                     </Accordion.Header>
 
                     <Accordion.Body className="fs-6 ">
-                      {faq.id != 11 && faq.ans1}
-                      {faq.id == 11 && (
+                      {faq.id !== 11 && faq.ans1}
+                      {faq.id === 11 && (
                         <HashLink
                           smooth
                           to="/CareerPathway#register"

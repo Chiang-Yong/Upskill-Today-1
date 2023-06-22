@@ -3,15 +3,15 @@ import { Card, Form, Button, Row, Col, Container } from "react-bootstrap";
 import Axios from "axios";
 import "./getIntouch.css";
 import ContactCards from "./ContactCards";
-import { validContact } from "../../components/Regex";
+import { validContact, validEmail } from "../../components/Regex";
 
 const GetInTouch = () => {
   //backend server port
   // const port = 5000;
   const [validated, setValidated] = useState(false);
   const [submitResult, setSubmitResult] = useState(false);
-  const [contactError, setContactError] = useState(false);
   const [isFormComplete, setIsFormComplete] = useState(false);
+  const [regexErrors, setRegexErrors] = useState({});
 
   const [status, setStatus] = useState({
     submitted: false,
@@ -47,23 +47,43 @@ const GetInTouch = () => {
       ...intouchData,
       [event.target.name]: event.target.value,
     });
+    setRegexErrors({});
 
     const isFormDataComplete =
-      intouchData.lastname !== "" &&
-      intouchData.firstname !== "" &&
-      intouchData.email !== "" &&
-      intouchData.contact !== "" &&
-      intouchData.subject !== "" &&
-      intouchData.message !== "";
+      intouchData.lastname.trim() !== "" &&
+      intouchData.firstname.trim() !== "" &&
+      intouchData.email.trim() !== "" &&
+      intouchData.contact.trim() !== "" &&
+      intouchData.subject.trim() !== "" &&
+      intouchData.message.trim() !== "";
 
-    //  setIsFormComplete(isFormDataComplete);
-    console.log("Form Data Complete: " + isFormDataComplete);
-    console.log("Form Complete: " + isFormComplete);
+    
+    setIsFormComplete(isFormDataComplete);
+    if(isFormComplete){
+      setValidated(true); //Set the validation on once the form is complete.
+    } else {
+      setValidated(false)
+    }
 
+    if (intouchData.email !== "" || intouchData.contact !== "") {
+      const regexErrors = regexValidation();
+      
+      if (Object.keys(regexErrors).length !== 0) {
+        setIsFormComplete(false);
+        setValidated(false)
+        setRegexErrors(regexErrors);
+      } else {
+        setRegexErrors({});
+      }
+    }
+
+    //console.log("Form Data Complete: " + isFormDataComplete);
+    //console.log("Form Complete: " + isFormComplete);
+    /*
     if (!validContact.test(intouchData.contact)) {
       setContactError(true);
-      console.log("Contact Error: " + contactError);
-      console.log("Contact Number after validation: " + intouchData.contact);
+    //  console.log("Contact Error: " + contactError);
+    //  console.log("Contact Number after validation: " + intouchData.contact);
       setIsFormComplete(false);
     } else {
       setContactError(false);
@@ -73,15 +93,35 @@ const GetInTouch = () => {
         setIsFormComplete(true);
       }
 
-      console.log("Contact Error: " + contactError);
-      console.log("Contact Number: " + intouchData.contact);
+    //  console.log("Contact Error: " + contactError);
+    //  console.log("Contact Number: " + intouchData.contact);
     }
-
+*/
     setStatus({
       submitted: false,
       submitting: false,
       info: { error: false, msg: null },
     });
+  };
+
+  const regexValidation = () => {
+    const errors = {};
+
+    if (!validEmail.test(intouchData.email)) {
+      errors.email = "Invalid email format";
+    }
+
+    if (!validContact.test(intouchData.contact)) {
+      errors.contact = "Invalid contact number format";
+    }
+
+    if(errors.email === "" && errors.contact === ""){
+      for (const key in errors) {
+        delete errors[key];
+      }
+    }
+
+    return errors;
   };
 
   const handleSubmit = (event) => {
@@ -90,7 +130,7 @@ const GetInTouch = () => {
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
-      setIsFormComplete(form.checkValidity())
+      setIsFormComplete(form.checkValidity());
     } else {
       setSubmitResult(true);
       //Axios.post(`http://localhost:${port}/api/intouch`, intouchData)
@@ -158,6 +198,7 @@ const GetInTouch = () => {
                       type="text"
                       name="firstname"
                       onChange={handleChange}
+                      onBlur={handleChange}
                       placeholder=""
                     />
                     <Form.Control.Feedback type="invalid">
@@ -201,6 +242,13 @@ const GetInTouch = () => {
                     <Form.Control.Feedback type="invalid">
                       Please provide a valid email
                     </Form.Control.Feedback>
+                    {regexErrors.email && (
+                      <div>
+                        <span style={{ color: "red" }}>
+                          {regexErrors.email}
+                        </span>
+                      </div>
+                    )}
                   </Form.Group>
                   <Form.Group
                     as={Col}
@@ -211,20 +259,22 @@ const GetInTouch = () => {
                     <Form.Label>Contact</Form.Label>
                     <Form.Control
                       required
-                      type="text"
+                      type="tel"
                       name="contact"
                       onChange={handleChange}
                       onBlur={handleChange}
-                    //  onMouseMove={handleChange}
+                      //  onMouseMove={handleChange}
                       placeholder=""
                     />
-                    <Form.Control.Feedback type="invalid">
-                      Please provide your contact number
-                    </Form.Control.Feedback>
-                    {contactError && (
+                    {!isFormComplete && (
+                      <Form.Control.Feedback type="invalid">
+                        Please provide your contact number
+                      </Form.Control.Feedback>
+                    )}
+                    {intouchData.contact && regexErrors.contact && (
                       <div>
-                        <span style={{ color: "red" }}>
-                          Invalid contact number! Try again.
+                        <span style={{ color: "red", fontSize: "14px" }}>
+                          {regexErrors.contact}
                         </span>
                       </div>
                     )}
@@ -280,7 +330,7 @@ const GetInTouch = () => {
 
                       <div style={{ marginTop: "5px" }}>
                         <Button onClick={submitInfo}>
-                          Back to Registration
+                          Back to Contact Us
                         </Button>
                       </div>
                     </div>
