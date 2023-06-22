@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Axios from "axios";
+import { Link } from "react-router-dom";
 import { Form, Col, Row, Button, Container, Card } from "react-bootstrap";
 import "./register.css";
 import { validContact, validEmail } from "../../components/Regex";
@@ -64,6 +65,21 @@ const RegisterYourInterest = () => {
   const [submitResult, setSubmitResult] = useState(false);
   const [isFormComplete, setIsFormComplete] = useState(false);
   const [regexErrors, setRegexErrors] = useState({});
+  const [isChecked1, setIsChecked1] = useState(false);
+  const [isChecked2, setIsChecked2] = useState(false);
+  const [isChecked3, setIsChecked3] = useState(false);
+
+  const handleCheckboxChange1 = (event) => {
+    setIsChecked1(event.target.checked);
+  };
+
+  const handleCheckboxChange2 = (event) => {
+    setIsChecked2(event.target.checked);
+  };
+
+  const handleCheckboxChange3 = (event) => {
+    setIsChecked3(event.target.checked);
+  };
 
   //backend server port
   // const port = 5000;
@@ -80,6 +96,9 @@ const RegisterYourInterest = () => {
     contact: "",
     program: "",
     country: "",
+    term: "",
+    policy: "",
+    free: "",
   });
 
   const handleServerResponse = (ok, msg) => {
@@ -101,7 +120,7 @@ const RegisterYourInterest = () => {
       ...formData,
       [event.target.name]: event.target.value,
     });
-    
+
     setRegexErrors({});
     const isFormDataComplete =
       formData.lastname.trim() !== "" &&
@@ -109,14 +128,16 @@ const RegisterYourInterest = () => {
       formData.email.trim() !== "" &&
       formData.contact.trim() !== "" &&
       formData.program !== "" &&
-      formData.country !== "";
+      formData.country !== "" &&
+      formData.term !== "" &&
+      formData.policy !== "";
 
     //  console.log('Is form Data complete: ', isFormDataComplete);
     setIsFormComplete(isFormDataComplete);
-   // console.log("Outside if statement, is form complete: ", isFormComplete)
-    if(isFormDataComplete){
+    // console.log("Outside if statement, is form complete: ", isFormComplete)
+    if (isFormDataComplete) {
       setIsFormComplete(true);
-    //  console.log("Inside if, Form Complete is: ", isFormComplete);
+      //  console.log("Inside if, Form Complete is: ", isFormComplete);
       setValidated(true);
     } else {
       setValidated(false);
@@ -125,22 +146,21 @@ const RegisterYourInterest = () => {
     // console.log("Form Complete: " + isFormComplete);
     // console.log("contact number before validation = " + formData.contact);
     if (formData.email !== "" || formData.contact !== "") {
-      
       const regexErrors = regexValidation();
       if (Object.keys(regexErrors).length !== 0) {
-        console.log("Length of RegexErrors: ", Object.keys(regexErrors).length)
-       setIsFormComplete(false);
-      //  if(!isFormComplete){
-          setValidated(false)
-      // }
-        
+        console.log("Length of RegexErrors: ", Object.keys(regexErrors).length);
+        setIsFormComplete(false);
+        //  if(!isFormComplete){
+        setValidated(false);
+        // }
+
         setRegexErrors(regexErrors);
       } else {
-       // setValidated(true)
+        // setValidated(true)
         setRegexErrors({});
       }
     }
-    
+
     setStatus({
       submitted: false,
       submitting: false,
@@ -193,14 +213,13 @@ const RegisterYourInterest = () => {
       errors.email = "";
     }
 
-
     if (!validContact.test(formData.contact)) {
       errors.contact = "Invalid contact number format";
     } else {
       errors.contact = "";
     }
 
-    if(errors.email === "" && errors.contact === ""){
+    if (errors.email === "" && errors.contact === "") {
       for (const key in errors) {
         delete errors[key];
       }
@@ -295,7 +314,7 @@ const RegisterYourInterest = () => {
                     </Form.Control.Feedback>
                     {regexErrors.email && (
                       <div>
-                        <span style={{ color: "red",fontSize:"14px" }}>
+                        <span style={{ color: "red", fontSize: "14px" }}>
                           {regexErrors.email}
                         </span>
                       </div>
@@ -321,13 +340,13 @@ const RegisterYourInterest = () => {
                       //  onMouseMove={handleChange}
                     />
                     {!isFormComplete && (
-                    <Form.Control.Feedback type="invalid">
-                      Please provide your contact number
-                    </Form.Control.Feedback>
+                      <Form.Control.Feedback type="invalid">
+                        Please provide your contact number
+                      </Form.Control.Feedback>
                     )}
                     {formData.contact && regexErrors.contact && (
                       <div>
-                        <span style={{ color: "red", fontSize:"14px" }}>
+                        <span style={{ color: "red", fontSize: "14px" }}>
                           {regexErrors.contact}
                         </span>
                       </div>
@@ -388,6 +407,65 @@ const RegisterYourInterest = () => {
                     Singapore and Philippines only.
                   </Form.Control.Feedback>
                 </Form.Group>
+                <Form.Group>
+                  <Form.Check
+                    id="default-checkbox"
+                    required
+                    type="checkbox"
+                    name="term"
+                    label={
+                      <span style={{ fontSize: "13px" }}>
+                        * I agree to the <Link to="/">Terms & Conditions</Link>
+                      </span>
+                    }
+                    checked={isChecked1}
+                    value={isChecked1}
+                    onChange={handleCheckboxChange1}
+                    onClick={handleChange}
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    This is required
+                  </Form.Control.Feedback>
+                </Form.Group>
+                <Form.Group>
+                  <Form.Check
+                    id="default-checkbox"
+                    required
+                    type="checkbox"
+                    name="policy"
+                    label={
+                      <span style={{ fontSize: "13px" }}>
+                        * I give consent for Upskill Today o collect, use and
+                        process my personal information set out in this form on
+                        matters related to this event and job opportunities.{" "}
+                        <Link to="/">View Privacy Policy</Link>
+                      </span>
+                    }
+                    checked={isChecked2}
+                    value={isChecked2}
+                    onChange={handleCheckboxChange2}
+                    onClick={handleChange}
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    This is required
+                  </Form.Control.Feedback>
+                </Form.Group>
+                <Form.Group>
+                  <Form.Check
+                    id="default-checkbox"
+                    type="checkbox"
+                    name="free"
+                    label={
+                      <span style={{ fontSize: "13px" }}>
+                        I'd like to try out FREE Java/JavaScript self-paced learning (14 days)
+                      </span>
+                    }
+                    checked={isChecked3}
+                    value={isChecked3}
+                    onChange={handleCheckboxChange3}
+                    onClick={handleChange}
+                  />
+                  </Form.Group>
                 <div className="d-grid mt-4">
                   <Button
                     type="submit"
