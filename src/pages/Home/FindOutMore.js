@@ -19,34 +19,39 @@ const FindOutMore = () => {
             style={{ height: "auto", width: "90%" }}
           />
         </Col>
-        <Col md={5} className="px-5 py-5 ">
+        <Col md={5} className="px-4 py-5 ">
           <h1 className="fw-bold mb-3" style={{ color: "#ff7b00" }}>
             Follow Your Passion
           </h1>
 
           <h3 className="lh-md">Explore Our Various Career IT Pathways </h3>
-          <Link className="text-decoration-none text-white" to="/CareerPathway">
-            <Button size="lg" className=" mt-3 more-button">
-              Browse Our Pathways
-            </Button>
-          </Link>
+          <p>
+            <Link className="text-decoration-none text-white" to="/CareerPathway">
+              <Button size="lg" className=" mt-3 more-button">
+                Browse Our Pathways
+              </Button>
+            </Link>
+          </p>
         </Col>
       </Row>
       <Row
         className="px-5 py-5 align-items-center flex-column-reverse flex-md-row"
         style={{ backgroundColor: " #fff9eb" }}
       >
-        <Col md={{ span: 5, offset: 1 }} className="ps-5 pb-5">
-          <h1 className="fw-bold mt-5 mb-3" style={{ color: "#ff7b00" }}>
+        <Col md={{ span: 5, offset: 1 }} className="px-4 py-5">
+          <h1 className="fw-bold mb-3" style={{ color: "#ff7b00" }}>
             Find Your Match
           </h1>
           <h3 className="lh-md">Colloborate With Us For Business Solutions</h3>
 
-          <Link className="text-decoration-none text-white" to="/Corporate">
-            <Button size="lg" className=" mt-3 more-button">
-              Explore Our Solutions
-            </Button>
-          </Link>
+          <p>
+            <Link className="text-decoration-none text-white" to="/Corporate">
+              <Button size="lg" className=" mt-3 more-button">
+                Explore Our Solutions
+              </Button>
+            </Link>
+          </p>
+          
         </Col>
         <Col md={5} className=" text-center ">
           <img

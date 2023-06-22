@@ -7,9 +7,9 @@ import "./aboutUs.css";
 const AboutUs = () => {
   return (
     <Container fluid className="about-section py-4">
-      <Row className="px-5 py-5 align-items-center flex-column-reverse flex-md-row">
+      <Row className="px-5 pt-5 align-items-center flex-column-reverse flex-md-row">
         <Col md={{ span: 3, offset: 1 }} className="pe-1">
-          <h1 className="fw-bold" style={{ color: "#ff7b00" }}>
+          <h1 className="fw-bold mt-3" style={{ color: "#ff7b00" }}>
             About Upskill Today
           </h1>
           <h4>

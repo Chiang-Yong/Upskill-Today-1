@@ -43,11 +43,11 @@ function JobRoleFEModal() {
           principles and be able to create visually appealing, easy-to-use
           interfaces that are optimized for speed and performance.
         </Modal.Body>
-        <Modal.Footer style={{background: "linear-gradient(to left, rgba(156, 0, 252,0.8), rgba(227, 187, 252,0.8))"}}>
+        {/* <Modal.Footer style={{background: "linear-gradient(to left, rgba(156, 0, 252,0.8), rgba(227, 187, 252,0.8))"}}>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-        </Modal.Footer>
+        </Modal.Footer> */}
       </Modal>
     </div>
   );

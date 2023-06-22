@@ -55,7 +55,7 @@ function JobRoleDevOpsModal() {
           metrics to identify and resolve issues before they impact the
           end-users.
         </Modal.Body>
-        <Modal.Footer
+        {/* <Modal.Footer
           style={{
             background:
               "linear-gradient(to left, rgba(255, 123, 0,0.9), rgba(252, 147, 48,0.7))",
@@ -64,7 +64,7 @@ function JobRoleDevOpsModal() {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-        </Modal.Footer>
+        </Modal.Footer> */}
       </Modal>
     </div>
   );

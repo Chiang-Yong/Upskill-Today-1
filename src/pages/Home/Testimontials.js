@@ -1,6 +1,8 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import TestimonialCarousel from "./TestimonialCarousel";
+import "./Testimonials.css"
+
 const Testimontials = () => {
   return (
     <Container fluid style={{ backgroundColor: "#fff9eb" }}>
@@ -9,7 +11,7 @@ const Testimontials = () => {
           <h1 className=" fw-bold" style={{ color: "#ff7b00" }}>
             Get Inspired
           </h1>
-          <h3>View the success stories of our graduates</h3>
+          <h3 className="mb-4">View the success stories of our graduates</h3>
         </Col>
         {/* <Col md={{ span: 5, offset: 1 }}> */}
         <Col md={5} className="px-2 text-center">
