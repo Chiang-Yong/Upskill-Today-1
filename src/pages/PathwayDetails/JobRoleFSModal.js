@@ -39,11 +39,11 @@ function JobRoleFSModal() {
           writing the application logic in languages such as Java, Python, or
           Ruby, and managing the database using SQL or NoSQL technologies.
         </Modal.Body>
-        <Modal.Footer style={{background: "linear-gradient(to left, rgba(255, 123, 0,0.9), rgba(252, 147, 48,0.7))"}}>
+        {/* <Modal.Footer style={{background: "linear-gradient(to left, rgba(255, 123, 0,0.9), rgba(252, 147, 48,0.7))"}}>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-        </Modal.Footer>
+        </Modal.Footer> */}
       </Modal>
     </div>
   );

@@ -41,11 +41,11 @@ function JobRoleBEModal() {
           They must have a strong understanding of data structures, algorithms,
           and system architecture, as well as good problem-solving skills.
         </Modal.Body>
-        <Modal.Footer style={{ background: "linear-gradient(to left, rgba(48, 65, 252,0.8), rgba(93, 107, 252,0.5))" }}>
+        {/* <Modal.Footer style={{ background: "linear-gradient(to left, rgba(48, 65, 252,0.8), rgba(93, 107, 252,0.5))" }}>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-        </Modal.Footer>
+        </Modal.Footer> */}
       </Modal>
     </div>
   );

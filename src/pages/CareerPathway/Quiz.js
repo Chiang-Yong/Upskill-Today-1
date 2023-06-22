@@ -195,6 +195,39 @@ const Quiz = () => {
     }
   };
 
+  const onClickPrevious = () => {
+    if (selectedAnswerIndex === 0) {
+      result.javaType -= 1;
+      console.log("Java count: " + result.javaType);
+    } else if (selectedAnswerIndex === 1) {
+      result.jsType -= 1;
+      console.log("JavaScript count: " + result.jsType);
+    } else if (selectedAnswerIndex === 2) {
+      result.devopsType -= 1;
+      console.log("DevOPs count: " + result.devopsType);
+    } else {
+      result.selfPaced -= 1;
+      console.log("Self-paced count: " + result.selfPaced);
+    }
+    setSelectedAnswerIndex(null);
+  
+    if (activeQuestion) {
+      setResult((prev) =>
+        selectedAnswer
+          ? {
+              ...prev,
+              score: prev.score - 5,
+              correctAnswers: prev.correctAnswers - 1,
+            }
+          : { ...prev, wrongAnswers: prev.wrongAnswers - 1 }
+      );
+    }
+  
+    if (activeQuestion !== 0) {
+      setActiveQuestion((prev) => prev - 1);
+    }
+  };  
+
   const onAnswerSelected = (answer, index) => {
     setSelectedAnswerIndex(index);
 
@@ -261,12 +294,22 @@ const Quiz = () => {
                 ))}
               </ListGroup>
 
-              <Card.Text className="text-end quiz-main">
+              <Card.Text className="d-flex justify-content-between quiz-main">
+              {activeQuestion !== 0 && (
+                <Button
+                  type="button"
+                  onClick={onClickPrevious}
+                  className="quiz-button"
+                >
+                  Previous
+                </Button>
+              )}
+
                 <Button
                   type="button"
                   onClick={onClickNext}
                   disabled={selectedAnswerIndex === null}
-                  className="quiz-button"
+                  className={`quiz-button ${activeQuestion === 0 ? "ms-auto" : ""}`}
                 >
                   {activeQuestion === questions.length - 1 ? "Finish" : "Next"}
                 </Button>

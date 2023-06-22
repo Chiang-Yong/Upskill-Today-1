@@ -47,10 +47,12 @@ const DOEstyle = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    width: "480px",
+    height: "270px",
   },
 
    // Adding media query..
-   '@media (max-width: 768px)': {
+   '@media screen and (max-width: 768px)': {
     video: {
       width:"320px",
       height:"218px",
@@ -63,7 +65,7 @@ const DOEstyle = {
     fontWeight: 800,
     color: "#ff7b00",
     paddingBottom: "2%",
-    paddingTop: "2%",
+    // paddingTop: "2%",
   },
 
   title: {
@@ -81,15 +83,15 @@ const DOEstyle = {
 const DevOpsEngineer = () => {
   return (
     <div style={DOEstyle.main}>
-      <h1 style={DOEstyle.maintitle} className="text-center">
+      {/* <h1 style={DOEstyle.maintitle} className="text-center">
         
-      </h1>
+      </h1> */}
       <Row
         className="d-flex justify-content-center text-center"
         style={DOEstyle.row}
       >
         <h1 className="text-center" style={DOEstyle.title}>
-          READY TO BE NEXT DEVOPS ENGINEER
+          READY TO BE THE NEXT DEVOPS ENGINEER?
         </h1>
         <p className="text-center" style={DOEstyle.text}>
           Watch the video below

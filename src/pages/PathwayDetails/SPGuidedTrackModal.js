@@ -28,14 +28,14 @@ function SPGuidedTrackModal() {
           projects. 
           <br />
           <br />
-          <strong>Once you pass the technical test and you are ready for
+          <strong>*Once you pass the technical test and you are ready for
           deploy.</strong>
         </Modal.Body>
-        <Modal.Footer style={{backgroundColor:"rgba(255,123,0,1)"}}>
+        {/* <Modal.Footer style={{backgroundColor:"rgba(255,123,0,1)"}}>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-        </Modal.Footer>
+        </Modal.Footer> */}
       </Modal>
     </div>
   );
