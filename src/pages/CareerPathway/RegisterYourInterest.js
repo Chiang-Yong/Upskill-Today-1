@@ -185,10 +185,7 @@ const RegisterYourInterest = () => {
       // backend server api endpoint (localhost:5000/api/registration)
       // Axios.post(`${process.env.REACT_APP_API_URL}/registration`, formData)
       // Axios.post(`http://localhost:${port}/api/registration`, formData)
-      Axios.post(
-        `https://backend-server-theta.vercel.app/api/registration`,
-        formData
-      )
+      Axios.post(`https://backend-server-theta.vercel.app/api/registration`, formData)
         .then((response) => {
           console.log(response.config.data);
           // alert("Your registration has been received.");
@@ -198,7 +195,7 @@ const RegisterYourInterest = () => {
           );
         })
         .catch((error) => {
-          console.error(error);
+          console.log(error);
           handleServerResponse(false, error.response.data.error);
         });
     }
@@ -445,6 +442,7 @@ const RegisterYourInterest = () => {
                     value={isChecked2}
                     onChange={handleCheckboxChange2}
                     onClick={handleChange}
+                    onMouseMove={handleChange}
                   />
                   <Form.Control.Feedback type="invalid">
                     This is required
@@ -464,6 +462,7 @@ const RegisterYourInterest = () => {
                     value={isChecked3}
                     onChange={handleCheckboxChange3}
                     onClick={handleChange}
+                    onMouseMove={handleChange}
                   />
                   </Form.Group>
                 <div className="d-grid mt-4">

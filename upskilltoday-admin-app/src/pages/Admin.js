@@ -188,6 +188,7 @@ export default function Admin(props: Props) {
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
+          backgroundColor: '#ff7b00',
         }}
       >
         <Toolbar disableGutters>

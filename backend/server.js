@@ -15,20 +15,39 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.json({ extended: false }));
 
+const allowedOrigins = [
+  `https://upskilltoday-admin-app-chiang-yong.vercel.app`,
+  `https://upskilltoday-admin-app.vercel.app`,
+  `https://upskill-today-123-chiang-yong.vercel.app`,
+  `https://upskill-today-123.vercel.app`,
+]
 //Cross Origin Resource Sharing to allow sharing other domain, scheme, port resources
 app.use(
   cors({
     credentials: true,
-    origin: `https://upskilltoday-admin-app-chiang-yong.vercel.app`,
-  })
+  //  origin: `https://upskilltoday-admin-app-chiang-yong.vercel.app`,
+ origin: function (origin, callback){
+  if(allowedOrigins.includes(origin)){
+    callback(null,true);
+  } else {
+    callback(new Error("Not allowed by CORS"));
+  }
+ }
+})
 );
 app.use(cookieParser());
 
 app.use((req, res, next) => {
-  res.header(
-    "Access-Control-Allow-Origin",
-    "https://upskilltoday-admin-app-chiang-yong.vercel.app"
-  );
+//  res.header(
+//    "Access-Control-Allow-Origin",
+//    "https://upskilltoday-admin-app-chiang-yong.vercel.app"
+//  );
+const requestOrigin = req.headers.origin;
+console.log("CORS allowed: ", requestOrigin)
+  if (allowedOrigins.includes(requestOrigin)) {
+    console.log("CORS allowed: ", requestOrigin)
+  res.header("Access-Control-Allow-Origin", requestOrigin);
+  }
   res.header("Access-Control-Allow-Credentials", "true");
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
   res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
@@ -198,7 +217,7 @@ const getUserInputResponse = async (userInput) => {
 };
 
 // POST request handler for the API endpoint
-app.post("/api/register", (req, res) => {
+app.post("/api/registration", (req, res) => {
   // Create a new RegisterData object with the request body data
   const RegisterData = new RegisterData(req.body);
 

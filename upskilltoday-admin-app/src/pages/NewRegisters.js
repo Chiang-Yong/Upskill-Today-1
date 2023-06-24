@@ -156,7 +156,7 @@ const NewRegisters = () => {
 
       <div>
         <h3>Data Exporter</h3>
-        <Button onClick={exportExcel} color="primary" variant="contained">
+        <Button onClick={exportExcel} variant="contained" sx={{backgroundColor:"#ff7b00"}}>
           Save to File
         </Button>
       </div>

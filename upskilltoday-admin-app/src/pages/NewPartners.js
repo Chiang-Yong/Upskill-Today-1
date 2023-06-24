@@ -123,7 +123,7 @@ const NewPartners = () => {
 
       <div>
         <h3>Data Exporter</h3>
-        <Button onClick={exportExcel} color="primary" variant="contained">
+        <Button onClick={exportExcel} sx={{backgroundColor:"#ff7b00"}} variant="contained">
           Save to File
         </Button>
       </div>
