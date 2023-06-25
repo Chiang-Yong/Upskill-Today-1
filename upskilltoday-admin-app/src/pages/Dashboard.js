@@ -13,6 +13,7 @@ const Dashboard = () => {
       >
         Admin Dashboard
       </Typography>
+      <Typography variant="h6" align="center">Under Development!</Typography>
     </div>
   );
 };

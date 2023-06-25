@@ -20,33 +20,33 @@ const allowedOrigins = [
   `https://upskilltoday-admin-app.vercel.app`,
   `https://upskill-today-123-chiang-yong.vercel.app`,
   `https://upskill-today-123.vercel.app`,
-]
+];
 //Cross Origin Resource Sharing to allow sharing other domain, scheme, port resources
 app.use(
   cors({
     credentials: true,
-  //  origin: `https://upskilltoday-admin-app-chiang-yong.vercel.app`,
- origin: function (origin, callback){
-  if(allowedOrigins.includes(origin)){
-    callback(null,true);
-  } else {
-    callback(new Error("Not allowed by CORS"));
-  }
- }
-})
+    //  origin: `https://upskilltoday-admin-app-chiang-yong.vercel.app`,
+    origin: function (origin, callback) {
+      if (allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+  })
 );
 app.use(cookieParser());
 
 app.use((req, res, next) => {
-//  res.header(
-//    "Access-Control-Allow-Origin",
-//    "https://upskilltoday-admin-app-chiang-yong.vercel.app"
-//  );
-const requestOrigin = req.headers.origin;
-console.log("CORS allowed: ", requestOrigin)
+  //  res.header(
+  //    "Access-Control-Allow-Origin",
+  //    "https://upskilltoday-admin-app-chiang-yong.vercel.app"
+  //  );
+  const requestOrigin = req.headers.origin;
+  console.log("CORS allowed: ", requestOrigin);
   if (allowedOrigins.includes(requestOrigin)) {
-    console.log("CORS allowed: ", requestOrigin)
-  res.header("Access-Control-Allow-Origin", requestOrigin);
+    console.log("CORS allowed: ", requestOrigin);
+    res.header("Access-Control-Allow-Origin", requestOrigin);
   }
   res.header("Access-Control-Allow-Credentials", "true");
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
@@ -92,7 +92,8 @@ const registrationSchema = new mongoose.Schema(
     policy: String,
     free: String,
   },
-  { timestamps: true }
+  { timestamps: true },
+  { id: false }
 );
 
 //Create a intouch data schema
@@ -105,7 +106,8 @@ const intouchSchema = new mongoose.Schema(
     subject: String,
     message: String,
   },
-  { timestamps: true }
+  { timestamps: true },
+  { id: false }
 );
 
 //Create a corporate data schema
@@ -118,7 +120,8 @@ const corporateSchema = new mongoose.Schema(
     company: String,
     country: String,
   },
-  { timestamps: true }
+  { timestamps: true },
+  { id: false }
 );
 
 //May be good - define User Model outside Server.js
@@ -153,6 +156,7 @@ app.get("/api/register", async (req, res) => {
       { projection: { _id: 0 } }
     );
     //   console.log("Register Data: ", registerData)
+    //registerData.sort({createdAt: -1})
     res.json(registerData);
   } catch (error) {
     console.error("Error receiving registrants' data: ", error);
@@ -199,22 +203,7 @@ app.get("/api/users", async (req, res) => {
   }
 });
 
-// Assuming you have a collection called "chatbotMessages"
-//const chatbotMessagesCollection = client.db(ChatBot).collection('chatbotMessages');
 
-const getUserInputResponse = async (userInput) => {
-  try {
-    // Retrieve chatbot messages based on user input response
-    const chatbotMessages = await chatbotMessagesCollection
-      .find({ userInputResponse: userInput })
-      .toArray();
-
-    return chatbotMessages;
-  } catch (error) {
-    console.error("Error retrieving chatbot messages:", error);
-    throw error;
-  }
-};
 
 // POST request handler for the API endpoint
 app.post("/api/registration", (req, res) => {
@@ -231,7 +220,7 @@ app.post("/api/registration", (req, res) => {
       res.send("Successfully saved form data to the database");
     })
     .catch((error) => {
-      console.error(error);
+      console.error(error.response.data);
       res.send("Error saving form data to the database");
     });
 });
@@ -373,6 +362,23 @@ const sendNotificationEmail = () => {
       console.log("Notification email sent:", info.response);
     }
   });
+};
+
+// Assuming you have a collection called "chatbotMessages"
+//const chatbotMessagesCollection = client.db(ChatBot).collection('chatbotMessages');
+
+const getUserInputResponse = async (userInput) => {
+  try {
+    // Retrieve chatbot messages based on user input response
+    const chatbotMessages = await chatbotMessagesCollection
+      .find({ userInputResponse: userInput })
+      .toArray();
+
+    return chatbotMessages;
+  } catch (error) {
+    console.error("Error retrieving chatbot messages:", error);
+    throw error;
+  }
 };
 
 //  console.log("Process Env port:   " + process.env.API_PORT);

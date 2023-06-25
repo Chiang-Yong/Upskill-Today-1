@@ -99,7 +99,7 @@ const NewRegisters = () => {
                 Date
               </TableCell>
               <TableCell sx={{ color: "white", fontSize: "1rem" }}>
-                Frist Name
+                First Name
               </TableCell>
               <TableCell sx={{ color: "white", fontSize: "1rem" }}>
                 Last Name

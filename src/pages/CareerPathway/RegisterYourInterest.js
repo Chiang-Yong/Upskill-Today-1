@@ -185,7 +185,7 @@ const RegisterYourInterest = () => {
       // backend server api endpoint (localhost:5000/api/registration)
       // Axios.post(`${process.env.REACT_APP_API_URL}/registration`, formData)
       // Axios.post(`http://localhost:${port}/api/registration`, formData)
-      Axios.post(`https://backend-server-theta.vercel.app/api/registration`, formData)
+      Axios.post("https://backend-server-theta.vercel.app/api/registration", formData)
         .then((response) => {
           console.log(response.config.data);
           // alert("Your registration has been received.");
@@ -195,7 +195,7 @@ const RegisterYourInterest = () => {
           );
         })
         .catch((error) => {
-          console.log(error);
+          console.log(error.response.data);
           handleServerResponse(false, error.response.data.error);
         });
     }
@@ -417,6 +417,7 @@ const RegisterYourInterest = () => {
                     }
                     checked={isChecked1}
                     value={isChecked1}
+                    isInvalid={!isChecked1}
                     onChange={handleCheckboxChange1}
                     onClick={handleChange}
                   />
@@ -440,6 +441,7 @@ const RegisterYourInterest = () => {
                     }
                     checked={isChecked2}
                     value={isChecked2}
+                    isInvalid={!isChecked2}
                     onChange={handleCheckboxChange2}
                     onClick={handleChange}
                     onMouseMove={handleChange}
