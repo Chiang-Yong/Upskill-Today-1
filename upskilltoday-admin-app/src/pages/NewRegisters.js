@@ -31,7 +31,7 @@ const NewRegisters = () => {
     try {
       // const response = await fetch("http://localhost:5000/api/register");
       const response = await fetch(
-        "https://backend-server-theta.vercel.app/api/register"
+        "https://backend-rust-three.vercel.app/api/register"
       );
       const jsonData = await response.json();
       //  console.log("Register Data: ", jsonData);

@@ -18,7 +18,7 @@ const AuthProvider = ({ children }) => {
     const isAuth = async () => {
       try {
        // const res = await Axios.get("http://localhost:5000/login", {
-          const res = await Axios.get("https://backend-server-theta.vercel.app/login", {
+          const res = await Axios.get("https://backend-rust-three.vercel.app/login", {
           withCredentials: true,
         });
         setUser(res.data);

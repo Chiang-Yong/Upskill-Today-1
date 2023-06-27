@@ -25,7 +25,7 @@ const NewEnquiries = () => {
     try {
       // const response = await fetch("http://localhost:5000/api/getintouch");
       const response = await fetch(
-        "https://backend-server-theta.vercel.app/api/getintouch"
+        "https://backend-rust-three.vercel.app/api/getintouch"
       );
       const jsonData = await response.json();
       //  console.log("Register Data: ", jsonData);

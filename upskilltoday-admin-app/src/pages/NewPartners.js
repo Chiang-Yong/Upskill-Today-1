@@ -24,7 +24,7 @@ const NewPartners = () => {
     try {
       // const response = await fetch("http://localhost:5000/api/corporate");
       const response = await fetch(
-        "https://backend-server-theta.vercel.app/api/corporate"
+        "https://backend-rust-three.vercel.app/api/corporate"
       );
       const jsonData = await response.json();
       setData(jsonData);

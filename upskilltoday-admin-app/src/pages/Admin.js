@@ -121,7 +121,7 @@ export default function Admin(props: Props) {
   const logout = async () => {
     // const res = await Axios.get("http://localhost:5000/logout", {
     const res = await Axios.get(
-      "https://backend-server-theta.vercel.app/logout",
+      "https://backend-rust-three.vercel.app/logout",
       {
         withCredentials: true,
       }

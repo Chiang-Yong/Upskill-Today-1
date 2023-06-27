@@ -37,7 +37,8 @@ const LoginPage = () => {
       console.log(email, password);
       
     //  const response = await fetch(`http://localhost:${port}/login`, {
-        const response = await fetch(`https://backend-server-theta.vercel.app/login`, {  
+       const response = await fetch(`https://backend-rust-three.vercel.app/login`, {  
+    //    const response = await fetch(`${process.env.REACT_APP_API_URL}/login`, {  
         method: "POST",
         body: JSON.stringify({ email, password }),
         headers: { "Content-Type": "application/json" },

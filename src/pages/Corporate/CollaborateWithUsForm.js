@@ -94,7 +94,7 @@ const CollaborateWithUsForm = () => {
       // backend server api endpoint
       // Axios.post(`${process.env.REACT_APP_API_URL}/corporate`, corporateData)
       Axios.post(
-        `https://backend-server-theta.vercel.app/api/corporate`,
+        `https://backend-rust-three.vercel.app/api/corporate`,
         corporateData
       )
         .then((response) => {

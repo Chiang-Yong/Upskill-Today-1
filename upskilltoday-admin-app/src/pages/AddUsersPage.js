@@ -94,7 +94,7 @@ const AddUsersPage = () => {
 
       await Axios.post(
       //  `http://localhost:${port}/api/addusers`,
-      `https://backend-server-theta.vercel.app/api/addusers`,
+      `https://backend-rust-three.vercel.app/api/addusers`,
         document.querySelector('#register-form'),{
           body: JSON.stringify({ firstName, lastName, email, password, roles, termPolicy }),  
         headers: {'Content-Type':'application/json'}

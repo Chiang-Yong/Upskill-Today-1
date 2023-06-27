@@ -183,9 +183,9 @@ const RegisterYourInterest = () => {
       setSubmitResult(true);
 
       // backend server api endpoint (localhost:5000/api/registration)
-      // Axios.post(`${process.env.REACT_APP_API_URL}/registration`, formData)
+       Axios.post(`${process.env.REACT_APP_API_URL}/registration`, formData)
       // Axios.post(`http://localhost:${port}/api/registration`, formData)
-      Axios.post("https://backend-server-theta.vercel.app/api/registration", formData)
+    //  Axios.post("https://backend-rust-three.vercel.app/api/registration", formData)
         .then((response) => {
           console.log(response.config.data);
           // alert("Your registration has been received.");

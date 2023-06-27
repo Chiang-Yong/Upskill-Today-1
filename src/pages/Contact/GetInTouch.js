@@ -135,7 +135,7 @@ const GetInTouch = () => {
       setSubmitResult(true);
       //Axios.post(`http://localhost:${port}/api/intouch`, intouchData)
       Axios.post(
-        `https://backend-server-theta.vercel.app/api/intouch`,
+        `https://backend-rust-three.vercel.app/api/intouch`,
         intouchData
       )
         .then((response) => {

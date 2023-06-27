@@ -16,7 +16,7 @@ const Header = () => {
   }
 
   useEffect(() => {
-    fetch(`https://backend-server-theta.vercel.app/user`, {
+    fetch(`https://backend-rust-three.vercel.app/user`, {
       credentials: "include",
       
     }).then((response) => {
@@ -27,7 +27,7 @@ const Header = () => {
   }, []);
 
   function logout() {
-    fetch(`https://backend-server-theta.vercel.app/logout`, {
+    fetch(`https://backend-rust-three.vercel.app/logout`, {
       credentials: "include",
       method: "POST",
     });

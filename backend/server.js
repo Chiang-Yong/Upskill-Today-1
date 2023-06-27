@@ -291,6 +291,7 @@ app.post("/api/addusers", async (req, res) => {
       lastName,
       email,
       password: bcrypt.hashSync(password, salt),
+      roles,
       termPolicy,
     });
     res.json(userDoc);
